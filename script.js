@@ -49,6 +49,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.link) {
                 linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
             }
+            if (item.extraLinks) {
+                item.extraLinks.forEach(el => {
+                    linksHTML += `<a href="${el.url}" target="_blank" class="action-btn"><i class="fas fa-file-pdf"></i> ${el.label}</a>`;
+                });
+            }
 
             timelineHTML += `
                 <div class="timeline-item">

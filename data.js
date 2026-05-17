@@ -171,7 +171,10 @@ const itinerary = [
         icon: "fa-ticket-alt",
         description: "Operation Mincemeat at Fortune Theatre. See PDF with mincemeat tickets. ATG Order: 40349022",
         link: "https://www.atgtickets.com/",
-        mapLink: "https://maps.google.com/?q=Fortune+Theatre+London"
+        mapLink: "https://maps.google.com/?q=Fortune+Theatre+London",
+        extraLinks: [
+          { url: "assets/mincemeat_tickets.pdf", label: "Tickets PDF" }
+        ]
       },
       {
         time: "22:00",
@@ -232,7 +235,11 @@ const itinerary = [
         title: "Check-in: Eurostar",
         type: "travel",
         icon: "fa-train",
-        description: "Arrive for check-in to Eurostar to Rotterdam. (See Eurostar PDF for MJB and PMB)"
+        description: "Arrive for check-in to Eurostar to Rotterdam. (See Eurostar PDF for MJB and PMB)",
+        extraLinks: [
+          { url: "assets/Eurostar_Ticket_MJB.pdf", label: "Eurostar MJB" },
+          { url: "assets/Eurostar_Ticket_PMB.pdf", label: "Eurostar PMB" }
+        ]
       },
       {
         time: "15:04",
@@ -429,7 +436,11 @@ const itinerary = [
         title: "Holland America Cruise Boarding",
         type: "travel",
         icon: "fa-ship",
-        description: "Get to Terminal for 15:00 departure. (See Cruise Boarding Pass PDF)"
+        description: "Get to Terminal for 15:00 departure. (See Cruise Boarding Pass PDF)",
+        extraLinks: [
+          { url: "assets/CRUISE_BOARDING_MJB.pdf", label: "Boarding Pass MJB" },
+          { url: "assets/CRUISE_BOARDING_PMB.pdf", label: "Boarding Pass PMB" }
+        ]
       }
     ]
   }
