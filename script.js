@@ -54,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
             if (item.extraLinks) {
                 item.extraLinks.forEach(el => {
-                    linksHTML += `<a href="${el.url}" target="_blank" class="action-btn"><i class="fas fa-file-pdf"></i> ${el.label}</a>`;
+                    linksHTML += `<button onclick="openPDF('${el.url}', '${el.label}')" class="action-btn" style="cursor:pointer; border:none; background:#3a506b; color:white; padding:8px 12px; border-radius:6px; font-family:inherit; font-size:14px; display:inline-flex; align-items:center; gap:6px;"><i class="fas fa-file-pdf"></i> ${el.label}</button>`;
                 });
             }
 
@@ -102,5 +102,17 @@ document.addEventListener('DOMContentLoaded', () => {
         if (e.target === modal) {
             closeModal();
         }
+    });
+
+    // PDF Overlay Logic
+    window.openPDF = function(url, title) {
+        document.getElementById('pdf-title').textContent = title;
+        document.getElementById('pdf-object').data = url;
+        document.getElementById('pdf-overlay').style.display = 'flex';
+    };
+
+    document.getElementById('close-pdf-btn').addEventListener('click', () => {
+        document.getElementById('pdf-overlay').style.display = 'none';
+        document.getElementById('pdf-object').data = '';
     });
 });
