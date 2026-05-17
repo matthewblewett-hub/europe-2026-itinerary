@@ -87,7 +87,10 @@ const itinerary = [
         icon: "fa-bed",
         description: "Check-in and dinner at The Chapel. Booking Ref: DBM399525542786071",
         link: "https://guest.eu.guestline.app/SOCATC/reservations/ATC001070/roomPicks/1",
-        mapLink: "https://maps.google.com/?q=At+The+Chapel,+Bruton"
+        mapLink: "https://maps.google.com/?q=At+The+Chapel,+Bruton",
+        extraLinks: [
+          { url: "assets/The_Chapel.pdf", label: "Booking Details PDF" }
+        ]
       }
     ]
   },
@@ -157,7 +160,8 @@ const itinerary = [
         icon: "fa-hotel",
         description: "Zedwell Hotel Piccadilly Circus. Booking Ref: 5275680881",
         link: "https://secure.booking.com/confirmation.en-gb.html?label=the-chapel-lincolnshire-2OPh1en6YeL2DZe5bPvkNwS705842337285%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442888%3Akwd-2081490832028%3Alp1028951%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXdX6HrtnYy-Ml68sH-ljtU&sid=93414ccfffa220224c8a09accc34c602&aid=311984&auth_key=62QUZF9xdoS0pKTC&source=mytrips",
-        mapLink: "https://maps.google.com/?q=Zedwell+Hotel+Piccadilly+Circus"
+        mapLink: "https://maps.google.com/?q=Zedwell+Hotel+Piccadilly+Circus",
+        appLink: "booking://"
       },
       {
         time: "18:15",
@@ -271,7 +275,10 @@ const itinerary = [
         icon: "fa-bed",
         description: "Check-in and stay overnight.",
         mapLink: "https://maps.google.com/?q=Hotel+1635+Haarlem",
-        link: "https://app.mews.com/navigator/homepage/953cd2cb-ada3-47b2-a494-b44d006db4c1"
+        link: "https://app.mews.com/navigator/homepage/953cd2cb-ada3-47b2-a494-b44d006db4c1",
+        extraLinks: [
+          { url: "assets/Haarlem_Booking.pdf", label: "Booking PDF" }
+        ]
       }
     ]
   },
