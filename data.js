@@ -7,15 +7,15 @@ const itinerary = [
     bgImage: "assets/day1_bg_1778914424448.png",
     items: [
       {
-        time: "Afternoon",
-        title: "Leave Franschhoek for Airport",
+        time: "15:45",
+        title: "Leave Franschhoek (Home) for Airport",
         type: "travel",
         icon: "fa-car",
         description: "Drive to Cape Town International Airport.",
         mapLink: "https://maps.google.com/?q=Cape+Town+International+Airport"
       },
       {
-        time: "Evening",
+        time: "18:50",
         title: "Flight - BA058",
         type: "flight",
         icon: "fa-plane-departure",
