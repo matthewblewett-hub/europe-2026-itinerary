@@ -21,7 +21,7 @@ const itinerary = [
         icon: "fa-plane-departure",
         description: "Overnight flight to London Heathrow. Booking Ref: X8NXN8 (Open BA IOS APP)",
         link: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8",
-        appLink: "https://www.ba.com/"
+        appLink: "baapp://"
       }
     ]
   },
@@ -45,7 +45,7 @@ const itinerary = [
         type: "car",
         icon: "fa-car-side",
         description: "Collect car at T5. (OPEN AVIS IOS APP)",
-        appLink: "https://www.avis.com/"
+        appLink: "avis://"
       },
       {
         time: "Morning",

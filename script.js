@@ -118,10 +118,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // App Open Logic
     window.handleAppOpen = function(url) {
-        const isIOSChrome = navigator.userAgent.match("CriOS");
-        if (isIOSChrome) {
-            alert("Chrome on iOS prevents apps from launching directly from Web Apps.\n\nWhen the webpage opens, just pull down slightly and tap the 'OPEN IN APP' banner at the very top of your screen!");
+        if (url.startsWith('http')) {
+            window.open(url, '_blank');
+        } else {
+            // For custom app schemes (baapp://, avis://), setting location directly is best
+            window.location.href = url;
+            
+            // Add a small safety fallback timeout in case the app isn't installed
+            setTimeout(() => {
+                // If we are still here after 2 seconds, the scheme failed silently (rare on iOS, but good practice)
+                console.log("App launch may have failed.");
+            }, 2000);
         }
-        window.open(url, '_blank');
     };
 });
