@@ -50,7 +50,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
             }
             if (item.appLink) {
-                linksHTML += `<a href="${item.appLink}" target="_blank" class="action-btn"><i class="fas fa-mobile-alt"></i> Open App</a>`;
+                linksHTML += `<button onclick="handleAppOpen('${item.appLink}')" class="action-btn" style="cursor:pointer; border:none; background:#3a506b; color:white; padding:8px 12px; border-radius:6px; font-family:inherit; font-size:14px; display:inline-flex; align-items:center; gap:6px;"><i class="fas fa-mobile-alt"></i> Open App</button>`;
             }
             if (item.extraLinks) {
                 item.extraLinks.forEach(el => {
@@ -115,4 +115,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('pdf-overlay').style.display = 'none';
         document.getElementById('pdf-object').data = '';
     });
+
+    // App Open Logic
+    window.handleAppOpen = function(url) {
+        const isIOSChrome = navigator.userAgent.match("CriOS");
+        if (isIOSChrome) {
+            alert("Chrome on iOS prevents apps from launching directly from Web Apps.\n\nWhen the webpage opens, just pull down slightly and tap the 'OPEN IN APP' banner at the very top of your screen!");
+        }
+        window.open(url, '_blank');
+    };
 });
