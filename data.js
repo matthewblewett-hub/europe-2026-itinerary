@@ -19,7 +19,7 @@ const itinerary = [
         title: "Flight - BA058",
         type: "flight",
         icon: "fa-plane-departure",
-        description: "Overnight flight to London Heathrow. Booking Ref: X8NXN8",
+        description: "Overnight flight to London Heathrow. Booking Ref: X8NXN8 (Open BA IOS APP)",
         link: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8"
       }
     ]
@@ -43,7 +43,7 @@ const itinerary = [
         title: "Collect Avis Rental Car",
         type: "car",
         icon: "fa-car-side",
-        description: "Collect car at T5."
+        description: "Collect car at T5. (OPEN AVIS IOS APP)"
       },
       {
         time: "Morning",
@@ -84,7 +84,7 @@ const itinerary = [
         type: "hotel",
         icon: "fa-bed",
         description: "Check-in and dinner at The Chapel. Booking Ref: DBM399525542786071",
-        link: "https://guest.eu.guestline.app/SOCATC?reservationNumber=DBM399525542786071&familyName=Blewwtt&linkOrigin=dbm-booking-confirmation",
+        link: "https://guest.eu.guestline.app/SOCATC/reservations/ATC001070/roomPicks/1",
         mapLink: "https://maps.google.com/?q=At+The+Chapel,+Bruton"
       }
     ]
@@ -154,7 +154,7 @@ const itinerary = [
         type: "hotel",
         icon: "fa-hotel",
         description: "Zedwell Hotel Piccadilly Circus. Booking Ref: 5275680881",
-        link: "https://secure.booking.com/myreservations.html?bn=5275680881",
+        link: "https://secure.booking.com/confirmation.en-gb.html?label=the-chapel-lincolnshire-2OPh1en6YeL2DZe5bPvkNwS705842337285%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442888%3Akwd-2081490832028%3Alp1028951%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXdX6HrtnYy-Ml68sH-ljtU&sid=93414ccfffa220224c8a09accc34c602&aid=311984&auth_key=62QUZF9xdoS0pKTC&source=mytrips",
         mapLink: "https://maps.google.com/?q=Zedwell+Hotel+Piccadilly+Circus"
       },
       {
@@ -169,7 +169,7 @@ const itinerary = [
         title: "West-End Show: Operation Mincemeat",
         type: "activity",
         icon: "fa-ticket-alt",
-        description: "Operation Mincemeat at Fortune Theatre. ATG Order: 40349022",
+        description: "Operation Mincemeat at Fortune Theatre. See PDF with mincemeat tickets. ATG Order: 40349022",
         link: "https://www.atgtickets.com/",
         mapLink: "https://maps.google.com/?q=Fortune+Theatre+London"
       },
@@ -232,7 +232,7 @@ const itinerary = [
         title: "Check-in: Eurostar",
         type: "travel",
         icon: "fa-train",
-        description: "Arrive for check-in to Eurostar to Rotterdam."
+        description: "Arrive for check-in to Eurostar to Rotterdam. (See Eurostar PDF for MJB and PMB)"
       },
       {
         time: "15:04",
@@ -257,122 +257,142 @@ const itinerary = [
       },
       {
         time: "Night",
-        title: "Accommodation: Boutique Hotel Staats",
+        title: "Accommodation: Hotel 1635",
         type: "hotel",
         icon: "fa-bed",
         description: "Check-in and stay overnight.",
-        mapLink: "https://maps.google.com/?q=Boutique+Hotel+Staats+Haarlem",
-        link: "https://hotelstaats.nl/"
+        mapLink: "https://maps.google.com/?q=Hotel+1635+Haarlem",
+        link: "https://app.mews.com/navigator/homepage/953cd2cb-ada3-47b2-a494-b44d006db4c1"
       }
     ]
   },
   {
     id: "day-5",
     date: "Friday 22 May 2026",
-    title: "Haarlem & Amsterdam",
-    overview: "Morning in Haarlem, day trip to Amsterdam for canals and cycling.",
+    title: "Haarlem & Amsterdam Classic Day",
+    overview: "Morning run in Haarlem and a classic Amsterdam day: walking, cruising, and the Rijksmuseum.",
     bgImage: "assets/day5_bg.png",
     items: [
       {
         time: "07:00",
-        title: "Morning Run",
+        title: "Morning Run from Staats",
         type: "activity",
         icon: "fa-running",
-        description: "Run route: Staats → canals → Grote Markt → Spaarne River (optional windmill loop near Molen De Adriaan)."
+        description: "Route: Zijlstraat → Grote Markt → St. Bavo Church → Spaarne River → Molen De Adriaan."
       },
       {
-        time: "08:00",
+        time: "08:15",
         title: "Breakfast in Haarlem",
         type: "food",
         icon: "fa-coffee",
-        description: "Native Haarlem (Best Fit) or By Lima (Alternative)."
+        description: "Native or Mica Coffee bar."
       },
       {
-        time: "09:00",
+        time: "09:15",
         title: "Train to Amsterdam",
         type: "travel",
         icon: "fa-train",
-        description: "Take the Intercity or Sprinter train from Haarlem Station to Amsterdam Centraal (approx. 15-20 mins)."
+        description: "Take the train from Haarlem Station to Amsterdam Centraal (approx. 15-20 mins). Arrive around 09:35."
       },
       {
-        time: "10:00",
-        title: "Explore Amsterdam",
+        time: "09:45",
+        title: "Jordaan & 9 Streets Walk",
         type: "activity",
         icon: "fa-walking",
-        description: "Suggested Flow: Central Station, Jordaan district, Nine Streets, Canal ring, Vondelpark cycle, Museumplein area."
+        description: "Route: Amsterdam Centraal → Brouwersgracht → Prinsengracht → Westerkerk/Anne Frank exterior → 9 Streets. Best canal atmosphere without rushing."
       },
       {
-        time: "11:00",
-        title: "Bike Ride",
-        type: "activity",
-        icon: "fa-bicycle",
-        description: "Rent bikes from MacBike or Black Bikes. Ride in Jordaan, Vondelpark, Oud-Zuid. Avoid commuter rush lanes initially."
-      },
-      {
-        time: "13:00",
-        title: "Lunch",
-        type: "food",
-        icon: "fa-utensils",
-        description: "Pluk Amsterdam or canal-side at Café de Jaren."
-      },
-      {
-        time: "15:00",
+        time: "11:30",
         title: "Canal Cruise",
         type: "activity",
         icon: "fa-ship",
-        description: "Use 'Those Dam Boat Guys' for smaller, more personal boats. (Alternatives: Rijksmuseum, Anne Frank House exterior, Heineken terrace)."
+        description: "Pick a smaller open/semi-open boat if weather allows. Do this before the museum."
       },
       {
-        time: "18:00",
-        title: "Return to Haarlem",
-        type: "travel",
-        icon: "fa-train",
-        description: "Take the train from Amsterdam Centraal back to Haarlem Station."
-      },
-      {
-        time: "19:00",
-        title: "Dinner in Haarlem",
+        time: "12:45",
+        title: "Lunch",
         type: "food",
         icon: "fa-utensils",
-        description: "Restaurant ML (Best fit) or Toujours (More relaxed). Followed by an evening canal stroll."
+        description: "Pluk, Café de Jaren, or something around the 9 Streets / canal ring."
+      },
+      {
+        time: "14:30",
+        title: "Rijksmuseum",
+        type: "activity",
+        icon: "fa-university",
+        description: "Book a timed slot. The Night Watch, The Milkmaid, and Dutch masterpieces. (Do not cycle today, walk + boat + museum is enough)."
+      },
+      {
+        time: "17:15",
+        title: "Museumplein / Vondelpark Stroll",
+        type: "activity",
+        icon: "fa-tree",
+        description: "Short walk only, no bike needed."
+      },
+      {
+        time: "Night",
+        title: "Dinner in Amsterdam",
+        type: "food",
+        icon: "fa-utensils",
+        description: "SUGGESTIONS PLEASE!"
       }
     ]
   },
   {
     id: "day-6",
     date: "Saturday 23 May 2026",
-    title: "Dutch Countryside Day",
-    overview: "Iconic Dutch day: Keukenhof gardens and exploring Leiden.",
+    title: "Leiden & Countryside Cycling",
+    overview: "Leiden canals, gardens, and a beautiful short cycle through the flower region.",
     bgImage: "assets/day6_bg.png",
     items: [
       {
-        time: "Morning",
-        title: "Keukenhof Gardens",
-        type: "activity",
-        icon: "fa-seedling",
-        description: "Take the Keukenhof Express Bus (50 or 850) from Haarlem Station. Spend 2.5–3 hours enjoying the beautiful gardens.",
-        mapLink: "https://maps.google.com/?q=Keukenhof"
+        time: "08:30",
+        title: "Breakfast in Haarlem",
+        type: "food",
+        icon: "fa-coffee",
+        description: "Breakfast before heading out."
       },
       {
-        time: "Lunch",
+        time: "09:15",
+        title: "Train to Leiden",
+        type: "travel",
+        icon: "fa-train",
+        description: "Train Haarlem Station → Leiden Centraal (approx 35-45 minutes)."
+      },
+      {
+        time: "10:15",
+        title: "Hortus Botanicus Leiden",
+        type: "activity",
+        icon: "fa-leaf",
+        description: "Historic, botanical, contemplative garden. It fits the Le Sanctuaire eye."
+      },
+      {
+        time: "12:00",
         title: "Lunch in Leiden",
         type: "food",
         icon: "fa-utensils",
-        description: "Take Bus 854 from Keukenhof to Leiden Centraal. Lunch at Waag or Lot en de Walvis in Leiden."
+        description: "Waag or Lot en de Walvis."
       },
       {
-        time: "Afternoon",
-        title: "Explore Leiden",
+        time: "13:30",
+        title: "Countryside / Flower-Region Cycle",
         type: "activity",
-        icon: "fa-walking",
-        description: "Explore the canals, university atmosphere, hidden courtyards, and slower Dutch life."
+        icon: "fa-bicycle",
+        description: "Rent bikes in Leiden. Best practical route: Leiden → Oegstgeest → Warmond / Kagerplassen edge → back to Leiden."
       },
       {
-        time: "Late Afternoon",
-        title: "Zaanse Schans",
-        type: "activity",
-        icon: "fa-camera",
-        description: "Train from Leiden Centraal to Zaandijk Zaanse Schans (via Amsterdam Sloterdijk). Return to Haarlem Station afterwards. If too rushed, skip this entirely."
+        time: "17:00",
+        title: "Train back to Haarlem",
+        type: "travel",
+        icon: "fa-train",
+        description: "Train back to Haarlem."
+      },
+      {
+        time: "19:30",
+        title: "Dinner in Haarlem",
+        type: "food",
+        icon: "fa-utensils",
+        description: "Restaurant ML for special, Toujours for relaxed, or Café Colette for easy charm."
       }
     ]
   },
@@ -380,22 +400,36 @@ const itinerary = [
     id: "day-7",
     date: "Sunday 24 May 2026",
     title: "Rotterdam & Cruise",
-    overview: "Train to Rotterdam and luggage storage.",
+    overview: "Train to Rotterdam, mini-visit, and boarding the Holland America Cruise.",
     bgImage: "assets/day7_bg.png",
     items: [
+      {
+        time: "08:00",
+        title: "Breakfast and checkout",
+        type: "food",
+        icon: "fa-coffee",
+        description: "Ask hotel to call taxi only if needed; otherwise walk to station."
+      },
       {
         time: "09:00",
         title: "Train to Rotterdam",
         type: "travel",
         icon: "fa-train",
-        description: "Take the direct Intercity train from Haarlem Station to Rotterdam Centraal (approx. 45-55 mins)."
+        description: "Train from Haarlem Station to Rotterdam Centraal. Allow 1h15–1h30 with luggage."
       },
       {
-        time: "Morning",
-        title: "Rotterdam Centraal",
+        time: "10:30",
+        title: "Rotterdam Mini-Visit",
         type: "activity",
-        icon: "fa-suitcase",
-        description: "Store luggage if needed."
+        icon: "fa-building",
+        description: "Do one: Hotel New York / Kop van Zuid waterfront walk OR Markthal + Cube Houses."
+      },
+      {
+        time: "12:00",
+        title: "Holland America Cruise Boarding",
+        type: "travel",
+        icon: "fa-ship",
+        description: "Get to Terminal for 15:00 departure. (See Cruise Boarding Pass PDF)"
       }
     ]
   }
