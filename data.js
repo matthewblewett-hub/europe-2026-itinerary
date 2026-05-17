@@ -44,8 +44,10 @@ const itinerary = [
         title: "Collect Avis Rental Car",
         type: "car",
         icon: "fa-car-side",
-        description: "Collect car at T5. (OPEN AVIS IOS APP)",
-        appLink: "avis://"
+        description: "Collect car at T5.",
+        extraLinks: [
+          { url: "assets/Avis_Confirmation.pdf", label: "Avis Booking PDF" }
+        ]
       },
       {
         time: "Morning",
@@ -60,8 +62,8 @@ const itinerary = [
         title: "Breakfast Stop: Marlborough",
         type: "food",
         icon: "fa-coffee",
-        description: "Beautiful English market town directly on route. 45–60 mins: coffee + breakfast walk.",
-        mapLink: "https://maps.google.com/?q=Marlborough,+UK"
+        description: "Beautiful English market town directly on route. Top coffee pick: The Food Gallery (excellent coffee, end of High St) or Bunce's. 45–60 mins stop.",
+        mapLink: "https://maps.google.com/?q=The+Food+Gallery+Marlborough,+UK"
       },
       {
         time: "Late Morning",
@@ -129,8 +131,8 @@ const itinerary = [
         title: "Lunch: Salisbury",
         type: "food",
         icon: "fa-utensils",
-        description: "Excellent cathedral town for: relaxed lunch, quick stroll, coffee.",
-        mapLink: "https://maps.google.com/?q=Salisbury,+UK"
+        description: "Light lunch suggestion near the Cathedral: Rifleman's Table (charming courtyard, lite bites) or The Refectory Restaurant (glass roof views of spire).",
+        mapLink: "https://maps.google.com/?q=Rifleman's+Table+Salisbury,+UK"
       },
       {
         time: "Afternoon",
@@ -350,7 +352,7 @@ const itinerary = [
         title: "Dinner in Amsterdam",
         type: "food",
         icon: "fa-utensils",
-        description: "SUGGESTIONS PLEASE!"
+        description: "Suggestions: Jansz. (Elegant, modern Dutch, canal-side at Pulitzer) OR Brasserie van Baerle (Classic French-influenced near Museumplein) OR De Struisvogel (Intimate, highly rated in 9 Streets)."
       }
     ]
   },
