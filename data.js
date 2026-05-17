@@ -20,7 +20,8 @@ const itinerary = [
         type: "flight",
         icon: "fa-plane-departure",
         description: "Overnight flight to London Heathrow. Booking Ref: X8NXN8 (Open BA IOS APP)",
-        link: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8"
+        link: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8",
+        appLink: "britishairways://"
       }
     ]
   },
@@ -43,7 +44,8 @@ const itinerary = [
         title: "Collect Avis Rental Car",
         type: "car",
         icon: "fa-car-side",
-        description: "Collect car at T5. (OPEN AVIS IOS APP)"
+        description: "Collect car at T5. (OPEN AVIS IOS APP)",
+        appLink: "avis://"
       },
       {
         time: "Morning",

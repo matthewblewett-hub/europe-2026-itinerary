@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.link) {
                 linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
             }
+            if (item.appLink) {
+                linksHTML += `<a href="${item.appLink}" class="action-btn"><i class="fas fa-mobile-alt"></i> Open App</a>`;
+            }
             if (item.extraLinks) {
                 item.extraLinks.forEach(el => {
                     linksHTML += `<a href="${el.url}" target="_blank" class="action-btn"><i class="fas fa-file-pdf"></i> ${el.label}</a>`;
