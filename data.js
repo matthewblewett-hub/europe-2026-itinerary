@@ -21,7 +21,7 @@ const itinerary = [
         icon: "fa-plane-departure",
         description: "Overnight flight to London Heathrow. Booking Ref: X8NXN8 (Open BA IOS APP)",
         link: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8",
-        appLink: "britishairways://"
+        appLink: "https://www.britishairways.com/travel/managebooking/public/en_gb?bookingRef=X8NXN8"
       }
     ]
   },
@@ -45,7 +45,7 @@ const itinerary = [
         type: "car",
         icon: "fa-car-side",
         description: "Collect car at T5. (OPEN AVIS IOS APP)",
-        appLink: "avis://"
+        appLink: "https://www.avis.co.uk/"
       },
       {
         time: "Morning",
@@ -161,7 +161,7 @@ const itinerary = [
         description: "Zedwell Hotel Piccadilly Circus. Booking Ref: 5275680881",
         link: "https://secure.booking.com/confirmation.en-gb.html?label=the-chapel-lincolnshire-2OPh1en6YeL2DZe5bPvkNwS705842337285%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442888%3Akwd-2081490832028%3Alp1028951%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXdX6HrtnYy-Ml68sH-ljtU&sid=93414ccfffa220224c8a09accc34c602&aid=311984&auth_key=62QUZF9xdoS0pKTC&source=mytrips",
         mapLink: "https://maps.google.com/?q=Zedwell+Hotel+Piccadilly+Circus",
-        appLink: "booking://"
+        appLink: "https://secure.booking.com/confirmation.en-gb.html?label=the-chapel-lincolnshire-2OPh1en6YeL2DZe5bPvkNwS705842337285%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442888%3Akwd-2081490832028%3Alp1028951%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXdX6HrtnYy-Ml68sH-ljtU&sid=93414ccfffa220224c8a09accc34c602&aid=311984&auth_key=62QUZF9xdoS0pKTC&source=mytrips"
       },
       {
         time: "18:15",
