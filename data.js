@@ -460,4 +460,487 @@ const itinerary = [
       }
     ]
   }
-];
+,
+
+  {
+    "id": "day-p2-1",
+    "phase": "phase2",
+    "date": "Sunday 24 May 2026",
+    "title": "Boarding Norwegian Cruise",
+    "overview": "Boarding the Holland America Cruise in Rotterdam.",
+    "bgImage": "assets/rotterdam_cruise_bg_1778992332562.png",
+    "items": [
+      {
+        "time": "Afternoon",
+        "title": "Boarding",
+        "type": "activity",
+        "icon": "fa-ship",
+        "description": "Board the Holland America cruise ship.",
+        "extraLinks": [
+          {
+            "url": "assets/CRUISE_BOARDING_MJB.pdf",
+            "label": "MJB Boarding Pass"
+          },
+          {
+            "url": "assets/CRUISE_BOARDING_PMB.pdf",
+            "label": "PMB Boarding Pass"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": "day-p2-2",
+    "phase": "phase2",
+    "date": "Monday 25 May 2026",
+    "title": "At Sea",
+    "overview": "Cruising towards the Norwegian Fjords.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "At Sea",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "Enjoy the ship amenities."
+      }
+    ]
+  },
+  {
+    "id": "day-p2-3",
+    "phase": "phase2",
+    "date": "Tuesday 26 May 2026",
+    "title": "Eidfjord & Hardangerfjord",
+    "overview": "Exploring Eidfjord and Hardangerfjord.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Eidfjord",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "Scenic cruising and shore excursions."
+      }
+    ]
+  },
+  {
+    "id": "day-p2-4",
+    "phase": "phase2",
+    "date": "Wednesday 27 May 2026",
+    "title": "Alesund",
+    "overview": "Visiting Alesund.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Alesund",
+        "type": "activity",
+        "icon": "fa-city",
+        "description": "Explore the Art Nouveau architecture."
+      }
+    ]
+  },
+  {
+    "id": "day-p2-5",
+    "phase": "phase2",
+    "date": "Thursday 28 May 2026",
+    "title": "Geiranger",
+    "overview": "Geirangerfjord scenic cruising.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Geiranger",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "Waterfalls and incredible fjord views."
+      }
+    ]
+  },
+  {
+    "id": "day-p2-6",
+    "phase": "phase2",
+    "date": "Friday 29 May 2026",
+    "title": "Bergen",
+    "overview": "Exploring Bergen.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Bergen",
+        "type": "activity",
+        "icon": "fa-home",
+        "description": "Bryggen wharf and Mount Floyen."
+      }
+    ]
+  },
+  {
+    "id": "day-p2-7",
+    "phase": "phase2",
+    "date": "Saturday 30 May 2026",
+    "title": "At Sea",
+    "overview": "Cruising back to Rotterdam.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "At Sea",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "Final day at sea."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-1",
+    "phase": "phase3",
+    "date": "Sunday 31 May 2026",
+    "title": "Rotterdam to Manchester",
+    "overview": "Disembark cruise, fly to Manchester, pick up Indie Camper.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Disembark Cruise",
+        "type": "activity",
+        "icon": "fa-ship",
+        "description": "Disembark the cruise in Rotterdam."
+      },
+      {
+        "time": "Midday",
+        "title": "Flight to Manchester",
+        "type": "flight",
+        "icon": "fa-plane",
+        "description": "Fly from Rotterdam to Manchester.",
+        "extraLinks": [
+          {
+            "url": "assets/Flight_to_Manchester.pdf",
+            "label": "Flight Details PDF"
+          }
+        ]
+      },
+      {
+        "time": "Afternoon",
+        "title": "Pick up Campervan",
+        "type": "car",
+        "icon": "fa-caravan",
+        "description": "Collect the Indie Camper.",
+        "extraLinks": [
+          {
+            "url": "assets/Indie_Docs.jpg",
+            "label": "Indie Camper Docs"
+          }
+        ]
+      },
+      {
+        "time": "Night",
+        "title": "Arrive York (Rowntree Park)",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "First night in York at Rowntree Park.",
+        "mapLink": "https://maps.google.com/?q=Rowntree+Park+Caravan+Club+Site+York"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-2",
+    "phase": "phase3",
+    "date": "Monday 1 June 2026",
+    "title": "York",
+    "overview": "Exploring the historic centre of York.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Explore York",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Walk into the historic centre from Rowntree Park. York Minster, The Shambles."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-3",
+    "phase": "phase3",
+    "date": "Tuesday 2 June 2026",
+    "title": "Northumberland Coast",
+    "overview": "Drive to Northumberland Coast.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive North",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "York to Northumberland Coast via Alnwick and Bamburgh."
+      },
+      {
+        "time": "Night",
+        "title": "Waren Caravan & Camping Park",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Overnight at Waren Caravan Park.",
+        "mapLink": "https://maps.google.com/?q=Waren+Caravan+Park+Bamburgh"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-4",
+    "phase": "phase3",
+    "date": "Wednesday 3 June 2026",
+    "title": "Edinburgh",
+    "overview": "Head into Scotland to Edinburgh.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive to Edinburgh",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Northumberland to Edinburgh."
+      },
+      {
+        "time": "Night",
+        "title": "Mortonhall Caravan & Camping Park",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "South-of-city location with easy bus access for sightseeing.",
+        "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+and+Camping+Park"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-5",
+    "phase": "phase3",
+    "date": "Thursday 4 June 2026",
+    "title": "Edinburgh",
+    "overview": "Full day exploring Edinburgh.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Sightseeing Edinburgh",
+        "type": "activity",
+        "icon": "fa-city",
+        "description": "Bus into the city for sightseeing."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-6",
+    "phase": "phase3",
+    "date": "Friday 5 June 2026",
+    "title": "Glencoe",
+    "overview": "Scenic drive to the Scottish Highlands.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive to Glencoe",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Edinburgh to Glencoe (approx 4.5 - 5 hrs). Scenic, broken naturally by Perth/Pitlochry."
+      },
+      {
+        "time": "Night",
+        "title": "Invercoe Caravan & Camping Park",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Loch Leven frontage.",
+        "mapLink": "https://maps.google.com/?q=Invercoe+Caravan+and+Camping+Park"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-7",
+    "phase": "phase3",
+    "date": "Saturday 6 June 2026",
+    "title": "Glencoe",
+    "overview": "Exploring the dramatic Glencoe scenery.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Glencoe Lochan & Signal Rock",
+        "type": "activity",
+        "icon": "fa-hiking",
+        "description": "Short iconic walks around Glencoe."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-8",
+    "phase": "phase3",
+    "date": "Sunday 7 June 2026",
+    "title": "Isle of Skye",
+    "overview": "Drive to the majestic Isle of Skye.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive to Skye",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Glencoe to Isle of Skye."
+      },
+      {
+        "time": "Night",
+        "title": "Torvaig Caravan & Camping Site",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Central positioning near Portree.",
+        "mapLink": "https://maps.google.com/?q=Torvaig+Caravan+and+Camping+Site"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-9",
+    "phase": "phase3",
+    "date": "Monday 8 June 2026",
+    "title": "Isle of Skye",
+    "overview": "Trotternish loop and boat trips.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Skye Sightseeing",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "Trotternish loop, Old Man of Storr, Quiraing."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-10",
+    "phase": "phase3",
+    "date": "Tuesday 9 June 2026",
+    "title": "Isle of Skye",
+    "overview": "West coast sights.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "West Coast Sights",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "Neist Point and flexible weather contingency."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-11",
+    "phase": "phase3",
+    "date": "Wednesday 10 June 2026",
+    "title": "Fort William",
+    "overview": "Transit night heading south.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive South",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Skye to Fort William funnel."
+      },
+      {
+        "time": "Night",
+        "title": "Glen Nevis Caravan & Camping Park",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Transit night before the long drive south.",
+        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-12",
+    "phase": "phase3",
+    "date": "Thursday 11 June 2026",
+    "title": "Lake District",
+    "overview": "Long drive south to the Lake District.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive to Keswick",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Fort William to Keswick (approx 6 - 6.5 hrs)."
+      },
+      {
+        "time": "Night",
+        "title": "Castlerigg Hall Caravan & Camping Park",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "South of Keswick with panoramic views.",
+        "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+and+Camping+Park"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-13",
+    "phase": "phase3",
+    "date": "Friday 12 June 2026",
+    "title": "Lake District",
+    "overview": "Relaxing in the Lake District.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "All Day",
+        "title": "Keswick & Grasmere",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Catbells or Friars Crag. Village-hopping to Grasmere/Ambleside."
+      }
+    ]
+  },
+  {
+    "id": "day-p3-14",
+    "phase": "phase3",
+    "date": "Saturday 13 June 2026",
+    "title": "Yorkshire Dales",
+    "overview": "Heading to the Yorkshire Dales.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Drive to Grassington",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Keswick into the Yorkshire Dales."
+      },
+      {
+        "time": "Night",
+        "title": "Wharfedale Caravan Site",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Grassington. Perfect for Malham/Bolton Abbey.",
+        "mapLink": "https://maps.google.com/?q=Wharfedale+Caravan+Club+Site"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-15",
+    "phase": "phase3",
+    "date": "Sunday 14 June 2026",
+    "title": "Yorkshire Dales & Manchester",
+    "overview": "Final day and return to Manchester.",
+    "bgImage": "",
+    "items": [
+      {
+        "time": "Morning",
+        "title": "Malham / Bolton Abbey",
+        "type": "activity",
+        "icon": "fa-hiking",
+        "description": "Morning exploration before heading back."
+      },
+      {
+        "time": "Afternoon",
+        "title": "Return Camper",
+        "type": "travel",
+        "icon": "fa-caravan",
+        "description": "Drive from Dales to Manchester to return the Indie Camper."
+      }
+    ]
+  }
+]

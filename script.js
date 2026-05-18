@@ -5,29 +5,50 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalTitle = document.getElementById('modal-title');
     const closeBtn = document.querySelector('.close-btn');
 
-    // Render Days
-    itinerary.forEach(day => {
-        const card = document.createElement('div');
-        card.className = 'day-card';
-        if (day.bgImage) {
-            card.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.9)), url('${day.bgImage}')`;
-            card.style.backgroundSize = 'cover';
-            card.style.backgroundPosition = 'center';
-        }
-        card.innerHTML = `
-            <div class="day-header">
-                <span class="day-date">${day.date}</span>
-            </div>
-            <h2 class="day-title">${day.title}</h2>
-            <p class="day-overview">${day.overview}</p>
-            <div class="view-details">
-                View Day Plan <i class="fas fa-arrow-right"></i>
-            </div>
-        `;
+    let currentPhase = "phase1";
+
+    function renderItinerary() {
+        container.innerHTML = '';
         
-        card.addEventListener('click', () => openDayDetails(day));
-        container.appendChild(card);
+        // Filter days by phase
+        const daysToRender = itinerary.filter(day => (day.phase || 'phase1') === currentPhase);
+
+        daysToRender.forEach(day => {
+            const card = document.createElement('div');
+            card.className = 'day-card';
+            if (day.bgImage) {
+                card.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.9)), url('${day.bgImage}')`;
+                card.style.backgroundSize = 'cover';
+                card.style.backgroundPosition = 'center';
+            }
+            card.innerHTML = `
+                <div class="day-header">
+                    <span class="day-date">${day.date}</span>
+                </div>
+                <h2 class="day-title">${day.title}</h2>
+                <p class="day-overview">${day.overview}</p>
+                <div class="view-details">
+                    View Day Plan <i class="fas fa-arrow-right"></i>
+                </div>
+            `;
+            
+            card.addEventListener('click', () => openDayDetails(day));
+            container.appendChild(card);
+        });
+    }
+
+    // Initialize Phase Tabs
+    document.querySelectorAll('.phase-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentPhase = e.target.getAttribute('data-phase');
+            renderItinerary();
+        });
     });
+
+    // Initial render
+    renderItinerary();
 
     function openDayDetails(day) {
         modalTitle.textContent = day.date;
