@@ -49,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
             if (item.link) {
                 linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
             }
+            if (item.ticketLink) {
+                linksHTML += `<a href="${item.ticketLink}" target="_blank" class="action-btn" style="background-color: #d08c60; color: white; border: none;"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>`;
+            }
             if (item.appLink) {
                 linksHTML += `<button onclick="handleAppOpen('${item.appLink}')" class="action-btn" style="cursor:pointer; border:none; background:#3a506b; color:white; padding:8px 12px; border-radius:6px; font-family:inherit; font-size:14px; display:inline-flex; align-items:center; gap:6px;"><i class="fas fa-mobile-alt"></i> Open App</button>`;
             }

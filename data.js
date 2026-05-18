@@ -124,6 +124,7 @@ const itinerary = [
         icon: "fa-landmark",
         description: "Short scenic stop only: viewpoint, short walk.",
         link: "https://www.english-heritage.org.uk/visit/places/stonehenge/",
+        ticketLink: "https://www.english-heritage.org.uk/visit/places/stonehenge/prices-and-opening-times/",
         mapLink: "https://maps.google.com/?q=Stonehenge"
       },
       {
@@ -229,6 +230,7 @@ const itinerary = [
         type: "activity",
         icon: "fa-monument",
         description: "Explore Tower Bridge, then walk to St Katharine Docks.",
+        ticketLink: "https://www.towerbridge.org.uk/tickets",
         mapLink: "https://maps.google.com/?q=Tower+Bridge"
       },
       {
@@ -324,7 +326,8 @@ const itinerary = [
         title: "Canal Cruise",
         type: "activity",
         icon: "fa-ship",
-        description: "Pick a smaller open/semi-open boat if weather allows. Do this before the museum."
+        description: "Pick a smaller open/semi-open boat if weather allows. Do this before the museum.",
+        ticketLink: "https://www.lovers.nl/en/"
       },
       {
         time: "12:45",
@@ -338,7 +341,8 @@ const itinerary = [
         title: "Rijksmuseum",
         type: "activity",
         icon: "fa-university",
-        description: "Book a timed slot. The Night Watch, The Milkmaid, and Dutch masterpieces. (Do not cycle today, walk + boat + museum is enough)."
+        description: "Book a timed slot. The Night Watch, The Milkmaid, and Dutch masterpieces. (Do not cycle today, walk + boat + museum is enough).",
+        ticketLink: "https://www.rijksmuseum.nl/en/tickets/articles"
       },
       {
         time: "17:15",
@@ -382,7 +386,8 @@ const itinerary = [
         title: "Hortus Botanicus Leiden",
         type: "activity",
         icon: "fa-leaf",
-        description: "Historic, botanical, contemplative garden. It fits the Le Sanctuaire eye."
+        description: "Historic, botanical, contemplative garden. It fits the Le Sanctuaire eye.",
+        ticketLink: "https://hortusleiden.nl/en/plan-your-visit/tickets"
       },
       {
         time: "12:00",
