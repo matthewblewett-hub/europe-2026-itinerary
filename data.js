@@ -167,6 +167,14 @@ const itinerary = [
         appLink: "https://secure.booking.com/confirmation.en-gb.html?label=the-chapel-lincolnshire-2OPh1en6YeL2DZe5bPvkNwS705842337285%3Apl%3Ata%3Ap1%3Ap2%3Aac%3Aap%3Aneg%3Afi%3Atiaud-2382347442888%3Akwd-2081490832028%3Alp1028951%3Ali%3Adec%3Adm%3Appccp%3DUmFuZG9tSVYkc2RlIyh9YXdX6HrtnYy-Ml68sH-ljtU&sid=93414ccfffa220224c8a09accc34c602&aid=311984&auth_key=62QUZF9xdoS0pKTC&source=mytrips"
       },
       {
+        time: "17:30",
+        title: "Atmospheric Walk to Covent Garden",
+        type: "activity",
+        icon: "fa-walking",
+        description: "Since you are early, take a 15-minute detour: walk north into Soho (Kingly Court), cut through the Chinatown gates (Gerrard St), and wander straight into Covent Garden Piazza to watch the street performers before grabbing drinks.",
+        mapLink: "https://www.google.com/maps/dir/Zedwell+Piccadilly+Circus,+London/Kingly+Court,+London/Chinatown,+London/Covent+Garden+Piazza,+London"
+      },
+      {
         time: "18:15",
         title: "Pre-Show Drinks",
         type: "food",
