@@ -179,7 +179,7 @@ const itinerary = [
         title: "West-End Show: Operation Mincemeat",
         type: "activity",
         icon: "fa-ticket-alt",
-        description: "Operation Mincemeat at Fortune Theatre. See PDF with mincemeat tickets. ATG Order: 40349022",
+        description: "Operation Mincemeat at Fortune Theatre. See PDF with mincemeat tickets. ATG Order: 40349022. (Tip: There is a 15-20 min interval. Pre-order your drinks via the ATG website or at the bar before the show to skip the queues!)",
         link: "https://www.atgtickets.com/",
         mapLink: "https://maps.google.com/?q=Fortune+Theatre+London",
         extraLinks: [
