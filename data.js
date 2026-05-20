@@ -168,11 +168,11 @@ const itinerary = [
       },
       {
         time: "17:30",
-        title: "Atmospheric Walk to Covent Garden",
+        title: "Classic Trafalgar Walk",
         type: "activity",
         icon: "fa-walking",
-        description: "Since you are early, take a 15-minute detour: walk north into Soho (Kingly Court), cut through the Chinatown gates (Gerrard St), and wander straight into Covent Garden Piazza to watch the street performers before grabbing drinks.",
-        mapLink: "https://www.google.com/maps/dir/Zedwell+Piccadilly+Circus,+London/Kingly+Court,+London/Chinatown,+London/Covent+Garden+Piazza,+London"
+        description: "A beautiful early evening stroll: Walk south down Haymarket to Trafalgar Square. Sit by the fountains under Nelson's Column and snap a photo of Big Ben down Whitehall. From there, it's a short 10-minute walk northeast to your pre-show drinks.",
+        mapLink: "https://www.google.com/maps/dir/Zedwell+Piccadilly+Circus,+London/Trafalgar+Square,+London/Covent+Garden+Social+Club,+London"
       },
       {
         time: "18:15",
