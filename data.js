@@ -189,6 +189,7 @@ const itinerary = [
         icon: "fa-ticket-alt",
         description: "Operation Mincemeat at Fortune Theatre. See PDF with mincemeat tickets. ATG Order: 40349022. (Tip: There is a 15-20 min interval. Pre-order your drinks via the ATG website or at the bar before the show to skip the queues!)",
         link: "https://www.atgtickets.com/",
+        drinksLink: "https://www.atgtickets.com/pre-show-drinks/",
         mapLink: "https://maps.google.com/?q=Fortune+Theatre+London",
         extraLinks: [
           { url: "assets/mincemeat_tickets.pdf", label: "Tickets PDF" }
