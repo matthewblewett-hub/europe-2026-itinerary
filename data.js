@@ -168,10 +168,11 @@ const itinerary = [
       },
       {
         time: "18:15",
-        title: "Light Drinks",
+        title: "Pre-Show Drinks",
         type: "food",
         icon: "fa-glass-martini-alt",
-        description: "Pre-show drinks."
+        description: "Great value near Fortune Theatre: Covent Garden Social Club (daily happy hour 'double up' deals till 8pm) OR Be At One (Russell St, iconic 2-for-1 cocktails). For pure historic atmosphere, try The Lamb and Flag.",
+        mapLink: "https://maps.google.com/?q=Covent+Garden+Social+Club+London"
       },
       {
         time: "19:30",
