@@ -47,8 +47,30 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    function getTodayString() {
+        const today = new Date();
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        return `${days[today.getDay()]} ${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`;
+    }
+
+    const todayString = getTodayString();
+    let currentDayObj = itinerary.find(day => day.date === todayString);
+
+    if (currentDayObj) {
+        currentPhase = currentDayObj.phase || 'phase1';
+        document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.querySelector(`.phase-btn[data-phase="${currentPhase}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
     // Initial render
     renderItinerary();
+
+    // If today is in the itinerary, automatically open it
+    if (currentDayObj) {
+        openDayDetails(currentDayObj);
+    }
 
     function openDayDetails(day) {
         modalTitle.textContent = day.date;
