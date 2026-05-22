@@ -311,62 +311,68 @@ const itinerary = [
         description: "Route: Zijlstraat → Grote Markt → St. Bavo Church → Spaarne River → Molen De Adriaan."
       },
       {
-        time: "08:15",
+        time: "08:00",
         title: "Breakfast in Haarlem",
         type: "food",
         icon: "fa-coffee",
         description: "Native or Mica Coffee bar."
       },
       {
-        time: "09:15",
+        time: "08:45",
         title: "Train to Amsterdam",
         type: "travel",
         icon: "fa-train",
-        description: "Take the train from Haarlem Station to Amsterdam Centraal (approx. 15-20 mins). Arrive around 09:35."
+        description: "Take the train from Haarlem Station to Amsterdam Centraal (approx. 15-20 mins). Then grab a tram down to Museumplein."
       },
       {
-        time: "09:45",
-        title: "Jordaan & 9 Streets Walk",
-        type: "activity",
-        icon: "fa-walking",
-        description: "Route: Amsterdam Centraal → Brouwersgracht → Prinsengracht → Westerkerk/Anne Frank exterior → 9 Streets. Best canal atmosphere without rushing."
-      },
-      {
-        time: "11:30",
-        title: "Canal Cruise",
-        type: "activity",
-        icon: "fa-ship",
-        description: "Pick a smaller open/semi-open boat if weather allows. Do this before the museum.",
-        ticketLink: "https://www.lovers.nl/en/"
-      },
-      {
-        time: "12:45",
-        title: "Lunch",
-        type: "food",
-        icon: "fa-utensils",
-        description: "Pluk, Café de Jaren, or something around the 9 Streets / canal ring."
-      },
-      {
-        time: "14:30",
+        time: "10:00",
         title: "Rijksmuseum",
         type: "activity",
         icon: "fa-university",
-        description: "Book a timed slot. The Night Watch, The Milkmaid, and Dutch masterpieces. (Do not cycle today, walk + boat + museum is enough).",
-        ticketLink: "https://www.rijksmuseum.nl/en/tickets/articles"
+        description: "Timed Entry at 10:00 AM. See The Night Watch, The Milkmaid, and Dutch masterpieces.",
+        extraLinks: [
+          { url: "assets/Museum_1.PNG", label: "Ticket 1" },
+          { url: "assets/Museum_2.PNG", label: "Ticket 2" }
+        ]
       },
       {
-        time: "17:15",
-        title: "Museumplein / Vondelpark Stroll",
+        time: "12:30",
+        title: "Lunch & Vondelpark Stroll",
+        type: "food",
+        icon: "fa-utensils",
+        description: "Brasserie van Baerle (Classic French-influenced) near Museumplein, followed by a relaxed stroll through the Vondelpark."
+      },
+      {
+        time: "15:00",
+        title: "Jordaan & 9 Streets Walk",
         type: "activity",
-        icon: "fa-tree",
-        description: "Short walk only, no bike needed."
+        icon: "fa-walking",
+        description: "Walk north into the 9 Streets area and Jordaan. Best canal atmosphere, boutique shopping, and historic architecture."
       },
       {
-        time: "Night",
+        time: "17:30",
         title: "Dinner in Amsterdam",
         type: "food",
         icon: "fa-utensils",
-        description: "Suggestions: Jansz. (Elegant, modern Dutch, canal-side at Pulitzer) OR Brasserie van Baerle (Classic French-influenced near Museumplein) OR De Struisvogel (Intimate, highly rated in 9 Streets)."
+        description: "Suggestions: Jansz. (Elegant, modern Dutch, canal-side at Pulitzer) OR De Struisvogel (Intimate, highly rated in 9 Streets) before the cruise."
+      },
+      {
+        time: "19:15",
+        title: "Evening Canal Cruise",
+        type: "activity",
+        icon: "fa-ship",
+        description: "An atmospheric evening cruise through the illuminated canals.",
+        extraLinks: [
+          { url: "assets/Canal_1.PNG", label: "Cruise Ticket 1" },
+          { url: "assets/Canal_2.PNG", label: "Cruise Ticket 2" }
+        ]
+      },
+      {
+        time: "21:00",
+        title: "Train to Haarlem",
+        type: "travel",
+        icon: "fa-train",
+        description: "Head back to Amsterdam Centraal to catch a late train back to Haarlem."
       }
     ]
   },
