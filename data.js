@@ -384,6 +384,14 @@ const itinerary = [
     bgImage: "assets/day6_bg.png",
     items: [
       {
+        time: "08:00",
+        title: "Coffee at Native",
+        type: "food",
+        icon: "fa-coffee",
+        description: "Start the day with a fantastic coffee in Haarlem before heading to the station.",
+        mapLink: "https://maps.google.com/?q=Native+Haarlem"
+      },
+      {
         time: "09:30",
         title: "Train to Leiden",
         type: "travel",
