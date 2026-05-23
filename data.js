@@ -384,7 +384,7 @@ const itinerary = [
     bgImage: "assets/day6_bg.png",
     items: [
       {
-        time: "08:00",
+        time: "08:30",
         title: "Coffee at Native",
         type: "food",
         icon: "fa-coffee",
@@ -392,14 +392,14 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Native+Haarlem"
       },
       {
-        time: "09:30",
+        time: "10:00",
         title: "Train to Leiden",
         type: "travel",
         icon: "fa-train",
         description: "Depart Haarlem Centraal for a quick 30-minute ride to Leiden."
       },
       {
-        time: "10:00",
+        time: "10:30",
         title: "Molen de Valk (Windmill)",
         type: "activity",
         icon: "fa-camera",
@@ -407,7 +407,7 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Molen+de+Valk+Leiden"
       },
       {
-        time: "10:30",
+        time: "11:00",
         title: "Hortus Botanicus Leiden",
         type: "activity",
         icon: "fa-leaf",
@@ -416,7 +416,7 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Hortus+Botanicus+Leiden"
       },
       {
-        time: "12:00",
+        time: "12:30",
         title: "Easy Fiets Rental",
         type: "activity",
         icon: "fa-bicycle",
@@ -424,7 +424,7 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Easy+Fiets+Leiden"
       },
       {
-        time: "12:45",
+        time: "13:15",
         title: "Cheese Farm & Polder Lunch",
         type: "food",
         icon: "fa-cheese",
@@ -432,7 +432,7 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Kaasboerderij+Zoeterwoude"
       },
       {
-        time: "15:00",
+        time: "15:30",
         title: "The Burcht (Leiden Castle)",
         type: "activity",
         icon: "fa-monument",
@@ -440,14 +440,14 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Burcht+van+Leiden"
       },
       {
-        time: "16:00",
+        time: "16:30",
         title: "Canal Cruise",
         type: "activity",
         icon: "fa-ship",
         description: "A beautiful 1-hour cruise under Leiden's incredibly low bridges."
       },
       {
-        time: "17:15",
+        time: "17:45",
         title: "Early Dinner / Drinks",
         type: "food",
         icon: "fa-utensils",
@@ -455,7 +455,7 @@ const itinerary = [
         mapLink: "https://maps.google.com/?q=Beestenmarkt+Leiden"
       },
       {
-        time: "19:30",
+        time: "20:00",
         title: "Train to Haarlem",
         type: "travel",
         icon: "fa-train",
