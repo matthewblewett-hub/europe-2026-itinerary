@@ -384,54 +384,74 @@ const itinerary = [
     bgImage: "assets/day6_bg.png",
     items: [
       {
-        time: "08:30",
-        title: "Breakfast in Haarlem",
-        type: "food",
-        icon: "fa-coffee",
-        description: "Breakfast before heading out."
-      },
-      {
-        time: "09:15",
+        time: "09:30",
         title: "Train to Leiden",
         type: "travel",
         icon: "fa-train",
-        description: "Train Haarlem Station → Leiden Centraal (approx 35-45 minutes)."
+        description: "Depart Haarlem Centraal for a quick 30-minute ride to Leiden."
       },
       {
-        time: "10:15",
+        time: "10:00",
+        title: "Molen de Valk (Windmill)",
+        type: "activity",
+        icon: "fa-camera",
+        description: "Just 3 mins from the station. Great for exterior photos right on the canal edge.",
+        mapLink: "https://maps.google.com/?q=Molen+de+Valk+Leiden"
+      },
+      {
+        time: "10:30",
         title: "Hortus Botanicus Leiden",
         type: "activity",
         icon: "fa-leaf",
-        description: "Historic, botanical, contemplative garden. It fits the Le Sanctuaire eye.",
-        ticketLink: "https://hortusleiden.nl/en/plan-your-visit/tickets"
+        description: "Walk down the Rapenburg canal to the stunning historic greenhouses and Japanese garden.",
+        ticketLink: "https://hortusleiden.nl/en/plan-your-visit/tickets",
+        mapLink: "https://maps.google.com/?q=Hortus+Botanicus+Leiden"
       },
       {
         time: "12:00",
-        title: "Lunch in Leiden",
-        type: "food",
-        icon: "fa-utensils",
-        description: "Waag or Lot en de Walvis."
-      },
-      {
-        time: "13:30",
-        title: "Countryside / Flower-Region Cycle",
+        title: "Easy Fiets Rental",
         type: "activity",
         icon: "fa-bicycle",
-        description: "Rent bikes in Leiden. Best practical route: Leiden → Oegstgeest → Warmond / Kagerplassen edge → back to Leiden."
+        description: "Pick up bikes in the city center and cycle out into the Weipoort polders.",
+        mapLink: "https://maps.google.com/?q=Easy+Fiets+Leiden"
       },
       {
-        time: "17:00",
-        title: "Train back to Haarlem",
-        type: "travel",
-        icon: "fa-train",
-        description: "Train back to Haarlem."
+        time: "12:45",
+        title: "Cheese Farm & Polder Lunch",
+        type: "food",
+        icon: "fa-cheese",
+        description: "Arrive at Boerderij 't Geertje or Kaasboerderij Van Veen in Zoeterwoude. Authentic cheese making, clogs, and farm animals. Buy local farmhouse cheese/bread for a picnic or eat at the farm restaurant.",
+        mapLink: "https://maps.google.com/?q=Kaasboerderij+Zoeterwoude"
+      },
+      {
+        time: "15:00",
+        title: "The Burcht (Leiden Castle)",
+        type: "activity",
+        icon: "fa-monument",
+        description: "Return bikes and climb the hidden stairs to this 11th-century keep for panoramic views over Leiden.",
+        mapLink: "https://maps.google.com/?q=Burcht+van+Leiden"
+      },
+      {
+        time: "16:00",
+        title: "Canal Cruise",
+        type: "activity",
+        icon: "fa-ship",
+        description: "A beautiful 1-hour cruise under Leiden's incredibly low bridges."
+      },
+      {
+        time: "17:15",
+        title: "Early Dinner / Drinks",
+        type: "food",
+        icon: "fa-utensils",
+        description: "Find a table on the water along the Beestenmarkt or Aalmarkt for a relaxed evening.",
+        mapLink: "https://maps.google.com/?q=Beestenmarkt+Leiden"
       },
       {
         time: "19:30",
-        title: "Dinner in Haarlem",
-        type: "food",
-        icon: "fa-utensils",
-        description: "Restaurant ML for special, Toujours for relaxed, or Café Colette for easy charm."
+        title: "Train to Haarlem",
+        type: "travel",
+        icon: "fa-train",
+        description: "Head back to Haarlem to pack and prep for your Sunday transition."
       }
     ]
   },
