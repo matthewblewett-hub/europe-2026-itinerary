@@ -772,8 +772,8 @@ const itinerary = [
     "id": "day-p3-1",
     "phase": "phase3",
     "date": "Sunday 31 May 2026",
-    "title": "Rotterdam to Manchester",
-    "overview": "Disembark cruise, fly to Manchester, pick up Indie Camper.",
+    "title": "Rotterdam to York Meadows",
+    "overview": "Disembark cruise, fly to Manchester, pick up Indie Camper, and drive to York.",
     "bgImage": "",
     "items": [
       {
@@ -781,41 +781,44 @@ const itinerary = [
         "title": "Disembark Cruise",
         "type": "activity",
         "icon": "fa-ship",
-        "description": "Disembark the cruise in Rotterdam."
+        "description": "Leave the Holland America cruise and head to the airport."
       },
       {
-        "time": "Midday",
-        "title": "Flight to Manchester",
-        "type": "flight",
-        "icon": "fa-plane",
-        "description": "Fly from Rotterdam to Manchester.",
-        "extraLinks": [
-          {
-            "url": "assets/Flight_to_Manchester.pdf",
-            "label": "Flight Details PDF"
-          }
-        ]
-      },
-      {
-        "time": "Afternoon",
-        "title": "Pick up Campervan",
-        "type": "car",
+        "time": "13:00",
+        "title": "Pick up Indie Camper",
+        "type": "travel",
         "icon": "fa-caravan",
-        "description": "Collect the Indie Camper.",
+        "description": "Collect the campervan in Manchester.",
         "extraLinks": [
           {
             "url": "assets/Indie_Docs.jpg",
-            "label": "Indie Camper Docs"
+            "label": "Rental Docs"
           }
         ]
       },
       {
-        "time": "Night",
-        "title": "Arrive York (Rowntree Park)",
+        "time": "14:30",
+        "title": "Drive to York",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Drive M62/A64 towards York (approx 2 hours).",
+        "mapLink": "https://www.google.com/maps/dir/Manchester/York+Meadows+Caravan+Park"
+      },
+      {
+        "time": "16:30",
+        "title": "Arrive at York Meadows",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "First night in York at Rowntree Park.",
-        "mapLink": "https://maps.google.com/?q=Rowntree+Park+Caravan+Club+Site+York"
+        "description": "Set up at York Meadows Caravan Park (Sheriff Hutton).",
+        "mapLink": "https://maps.google.com/?q=York+Meadows+Caravan+Park"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner at Guy Fawkes Inn",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "If you have the energy, take the short drive/bus into York for an atmospheric pub dinner right next to the Minster.",
+        "mapLink": "https://maps.google.com/?q=Guy+Fawkes+Inn+York"
       }
     ]
   },
@@ -823,16 +826,49 @@ const itinerary = [
     "id": "day-p3-2",
     "phase": "phase3",
     "date": "Monday 1 June 2026",
-    "title": "York",
-    "overview": "Exploring the historic centre of York.",
+    "title": "Historic York",
+    "overview": "Explore the medieval streets, city walls, and have high tea at Bettys.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Explore York",
+        "time": "09:30",
+        "title": "Head into York",
+        "type": "travel",
+        "icon": "fa-bus",
+        "description": "Head from York Meadows into the city center."
+      },
+      {
+        "time": "10:00",
+        "title": "City Walls & York Minster",
         "type": "activity",
-        "icon": "fa-walking",
-        "description": "Walk into the historic centre from Rowntree Park. York Minster, The Shambles."
+        "icon": "fa-monument",
+        "description": "Walk the historic City Walls and visit the spectacular York Minster.",
+        "mapLink": "https://maps.google.com/?q=York+Minster",
+        "ticketLink": "https://yorkminster.org/visit/book-tickets/"
+      },
+      {
+        "time": "13:00",
+        "title": "Bettys Café Tea Rooms",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "High-end afternoon tea or lunch at the famous Bettys. (Pre-booking highly recommended!)",
+        "mapLink": "https://maps.google.com/?q=Bettys+Cafe+Tea+Rooms+York",
+        "ticketLink": "https://www.bettys.co.uk/cafe-tea-rooms/our-locations/bettys-york"
+      },
+      {
+        "time": "15:00",
+        "title": "The Shambles",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "Wander the famous medieval timber-framed street for shopping and photos.",
+        "mapLink": "https://maps.google.com/?q=The+Shambles+York"
+      },
+      {
+        "time": "17:30",
+        "title": "Return to York Meadows",
+        "type": "activity",
+        "icon": "fa-campground",
+        "description": "Return to York Meadows for a relaxed evening."
       }
     ]
   },
@@ -841,23 +877,49 @@ const itinerary = [
     "phase": "phase3",
     "date": "Tuesday 2 June 2026",
     "title": "Northumberland Coast",
-    "overview": "Drive to Northumberland Coast.",
+    "overview": "Drive north, visit Alnwick Castle, and arrive at Proctors Stead.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive North",
+        "time": "09:00",
+        "title": "Depart York",
         "type": "travel",
         "icon": "fa-route",
-        "description": "York to Northumberland Coast via Alnwick and Bamburgh."
+        "description": "Drive north via the A19/A1 (approx 2.5 hrs).",
+        "mapLink": "https://www.google.com/maps/dir/York+Meadows+Caravan+Park/Alnwick+Castle"
       },
       {
-        "time": "Night",
-        "title": "Waren Caravan & Camping Park",
+        "time": "11:30",
+        "title": "Alnwick Castle & Gardens",
+        "type": "activity",
+        "icon": "fa-chess-rook",
+        "description": "Perfect for the 'Le Sanctuaire' eye—see the famous Poison Garden and water cascades.",
+        "mapLink": "https://maps.google.com/?q=Alnwick+Castle",
+        "ticketLink": "https://www.alnwickcastle.com/book-tickets"
+      },
+      {
+        "time": "14:30",
+        "title": "Coastal Drive & Bamburgh Castle",
+        "type": "travel",
+        "icon": "fa-camera",
+        "description": "Drive the coastal road past Bamburgh Castle for dramatic beach photos.",
+        "mapLink": "https://www.google.com/maps/dir/Alnwick+Castle/Bamburgh+Castle/Proctors+Stead+Caravan+Park"
+      },
+      {
+        "time": "16:00",
+        "title": "Arrive at Proctors Stead",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Overnight at Waren Caravan Park.",
-        "mapLink": "https://maps.google.com/?q=Waren+Caravan+Park+Bamburgh"
+        "description": "Set up at Proctors Stead Caravan Park (near Craster).",
+        "mapLink": "https://maps.google.com/?q=Proctors+Stead+Caravan+Park"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner in Craster",
+        "type": "food",
+        "icon": "fa-fish",
+        "description": "Walk down into Craster village for fresh seafood right on the harbor (e.g., The Jolly Fisherman).",
+        "mapLink": "https://maps.google.com/?q=The+Jolly+Fisherman+Craster"
       }
     ]
   },
@@ -865,24 +927,49 @@ const itinerary = [
     "id": "day-p3-4",
     "phase": "phase3",
     "date": "Wednesday 3 June 2026",
-    "title": "Edinburgh",
-    "overview": "Head into Scotland to Edinburgh.",
+    "title": "Drive to Edinburgh",
+    "overview": "Coastal drive into Scotland and exploring the Royal Mile.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive to Edinburgh",
+        "time": "09:30",
+        "title": "Depart Proctors Stead",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Northumberland to Edinburgh."
+        "description": "Drive the scenic coastal A1 route north into Scotland (approx 2 hrs).",
+        "mapLink": "https://www.google.com/maps/dir/Proctors+Stead+Caravan+Park/Mortonhall+Caravan+Park"
       },
       {
-        "time": "Night",
-        "title": "Mortonhall Caravan & Camping Park",
+        "time": "12:30",
+        "title": "Arrive at Mortonhall",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "South-of-city location with easy bus access for sightseeing.",
-        "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+and+Camping+Park"
+        "description": "Arrive at Mortonhall Caravan & Camping Park. Set up the van.",
+        "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+Park"
+      },
+      {
+        "time": "14:00",
+        "title": "Bus to City Center",
+        "type": "travel",
+        "icon": "fa-bus",
+        "description": "Catch the quick local bus from outside the park straight into Edinburgh."
+      },
+      {
+        "time": "15:00",
+        "title": "The Royal Mile",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Walk the Royal Mile from the Castle down toward Holyrood.",
+        "mapLink": "https://maps.google.com/?q=The+Royal+Mile+Edinburgh"
+      },
+      {
+        "time": "18:30",
+        "title": "Dinner at The Witchery",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Incredibly gothic and atmospheric dining by the castle.",
+        "mapLink": "https://maps.google.com/?q=The+Witchery+by+the+Castle",
+        "ticketLink": "https://www.thewitchery.com/"
       }
     ]
   },
@@ -890,16 +977,47 @@ const itinerary = [
     "id": "day-p3-5",
     "phase": "phase3",
     "date": "Thursday 4 June 2026",
-    "title": "Edinburgh",
-    "overview": "Full day exploring Edinburgh.",
+    "title": "Edinburgh Elegance",
+    "overview": "Botanic Gardens, Stockbridge, and Calton Hill.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Sightseeing Edinburgh",
+        "time": "09:30",
+        "title": "Bus to New Town",
+        "type": "travel",
+        "icon": "fa-bus",
+        "description": "Head into the elegant Georgian New Town."
+      },
+      {
+        "time": "10:00",
+        "title": "Royal Botanic Garden",
         "type": "activity",
-        "icon": "fa-city",
-        "description": "Bus into the city for sightseeing."
+        "icon": "fa-leaf",
+        "description": "Phenomenal glasshouses and rock gardens.",
+        "mapLink": "https://maps.google.com/?q=Royal+Botanic+Garden+Edinburgh"
+      },
+      {
+        "time": "13:00",
+        "title": "Lunch in Stockbridge",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Wander the stylish Stockbridge neighborhood for lunch.",
+        "mapLink": "https://maps.google.com/?q=Stockbridge+Edinburgh"
+      },
+      {
+        "time": "15:00",
+        "title": "Calton Hill",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "Climb Calton Hill for panoramic photos of the city skyline.",
+        "mapLink": "https://maps.google.com/?q=Calton+Hill"
+      },
+      {
+        "time": "18:00",
+        "title": "Relax at Mortonhall",
+        "type": "activity",
+        "icon": "fa-wine-glass",
+        "description": "Relaxing evening back at the campsite with local Scottish deli produce."
       }
     ]
   },
@@ -907,24 +1025,47 @@ const itinerary = [
     "id": "day-p3-6",
     "phase": "phase3",
     "date": "Friday 5 June 2026",
-    "title": "Glencoe",
-    "overview": "Scenic drive to the Scottish Highlands.",
+    "title": "Drive to Glen Nevis",
+    "overview": "Cross Rannoch Moor and the dramatic Glencoe pass.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive to Glencoe",
+        "time": "09:00",
+        "title": "Depart Edinburgh",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Edinburgh to Glencoe (approx 4.5 - 5 hrs). Scenic, broken naturally by Perth/Pitlochry."
+        "description": "Drive north via Perth (approx 3.5 hrs total drive time).",
+        "mapLink": "https://www.google.com/maps/dir/Mortonhall+Caravan+Park/Pitlochry/Glen+Nevis+Caravan+Park"
       },
       {
-        "time": "Night",
-        "title": "Invercoe Caravan & Camping Park",
+        "time": "11:00",
+        "title": "Coffee in Pitlochry",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "Stop in the lovely highland town of Pitlochry."
+      },
+      {
+        "time": "13:30",
+        "title": "Rannoch Moor & Glencoe",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "Drive across the desolate Rannoch Moor and descend through the breathtaking Glencoe pass. Pull over for photos."
+      },
+      {
+        "time": "15:30",
+        "title": "Arrive at Glen Nevis",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Loch Leven frontage.",
-        "mapLink": "https://maps.google.com/?q=Invercoe+Caravan+and+Camping+Park"
+        "description": "Set up at Glen Nevis Caravan & Camping Park (sitting right at the foot of Ben Nevis).",
+        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner at Ben Nevis Inn",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Walk right next door for a hearty dinner at the famous mountaineers' pub.",
+        "mapLink": "https://maps.google.com/?q=Ben+Nevis+Inn"
       }
     ]
   },
@@ -932,16 +1073,32 @@ const itinerary = [
     "id": "day-p3-7",
     "phase": "phase3",
     "date": "Saturday 6 June 2026",
-    "title": "Glencoe",
-    "overview": "Exploring the dramatic Glencoe scenery.",
+    "title": "Steall Falls & Glencoe",
+    "overview": "A beautiful local hike to one of Scotland's highest waterfalls.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Glencoe Lochan & Signal Rock",
+        "time": "09:30",
+        "title": "Hike to Steall Falls",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Short iconic walks around Glencoe."
+        "description": "Leave the van parked and walk up the stunning Glen Nevis valley to Steall Falls (a moderate hike).",
+        "mapLink": "https://maps.google.com/?q=Steall+Waterfall"
+      },
+      {
+        "time": "13:30",
+        "title": "Glencoe Lochan Trail",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Drive back down into Glencoe to do this easy, serene walk around a pine-fringed loch reflecting the mountains.",
+        "mapLink": "https://maps.google.com/?q=Glencoe+Lochan"
+      },
+      {
+        "time": "17:00",
+        "title": "Relax at Campsite",
+        "type": "activity",
+        "icon": "fa-campground",
+        "description": "Relax at Glen Nevis campsite taking in the mountain views."
       }
     ]
   },
@@ -949,24 +1106,49 @@ const itinerary = [
     "id": "day-p3-8",
     "phase": "phase3",
     "date": "Sunday 7 June 2026",
-    "title": "Isle of Skye",
-    "overview": "Drive to the majestic Isle of Skye.",
+    "title": "Drive to Isle of Skye",
+    "overview": "Castles, bridges, and arriving on the magical Isle of Skye.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive to Skye",
+        "time": "09:00",
+        "title": "Depart Glen Nevis",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Glencoe to Isle of Skye."
+        "description": "Drive the scenic A87 toward Skye.",
+        "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Eilean+Donan+Castle/Portree+Campsite"
       },
       {
-        "time": "Night",
-        "title": "Torvaig Caravan & Camping Site",
+        "time": "11:30",
+        "title": "Eilean Donan Castle",
+        "type": "activity",
+        "icon": "fa-chess-rook",
+        "description": "Pull over for a walk around the exterior of the most photographed castle in Scotland.",
+        "mapLink": "https://maps.google.com/?q=Eilean+Donan+Castle"
+      },
+      {
+        "time": "13:30",
+        "title": "Skye Bridge & Portree",
+        "type": "travel",
+        "icon": "fa-caravan",
+        "description": "Cross the Skye Bridge and drive up the island to Portree."
+      },
+      {
+        "time": "15:00",
+        "title": "Arrive at Portree Campsite",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Central positioning near Portree.",
-        "mapLink": "https://maps.google.com/?q=Torvaig+Caravan+and+Camping+Site"
+        "description": "Set up at Portree Campsite (Torvaig).",
+        "mapLink": "https://maps.google.com/?q=Portree+Campsite"
+      },
+      {
+        "time": "17:00",
+        "title": "Dinner at Sea Breezes",
+        "type": "food",
+        "icon": "fa-fish",
+        "description": "Walk down into Portree harbor to see the colorful houses and grab incredible seafood at Sea Breezes.",
+        "mapLink": "https://maps.google.com/?q=Sea+Breezes+Portree",
+        "ticketLink": "https://www.seabreezes-portree.com/"
       }
     ]
   },
@@ -974,16 +1156,40 @@ const itinerary = [
     "id": "day-p3-9",
     "phase": "phase3",
     "date": "Monday 8 June 2026",
-    "title": "Isle of Skye",
-    "overview": "Trotternish loop and boat trips.",
+    "title": "Skye: Trotternish Loop",
+    "overview": "The epic landscapes of the Old Man of Storr and the Quiraing.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Skye Sightseeing",
+        "time": "08:30",
+        "title": "Start Trotternish Loop",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Early start to beat the crowds.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Old+Man+of+Storr/Kilt+Rock/Quiraing/Portree+Campsite"
+      },
+      {
+        "time": "09:30",
+        "title": "Hike Old Man of Storr",
+        "type": "activity",
+        "icon": "fa-hiking",
+        "description": "Steady climb for incredible aesthetic views.",
+        "mapLink": "https://maps.google.com/?q=Old+Man+of+Storr"
+      },
+      {
+        "time": "13:00",
+        "title": "Kilt Rock & The Quiraing",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "Trotternish loop, Old Man of Storr, Quiraing."
+        "description": "See the waterfall dropping into the ocean, then drive up into the otherworldly Quiraing.",
+        "mapLink": "https://maps.google.com/?q=Quiraing"
+      },
+      {
+        "time": "16:00",
+        "title": "Return to Portree",
+        "type": "activity",
+        "icon": "fa-campground",
+        "description": "Return to Portree Campsite to rest tired legs."
       }
     ]
   },
@@ -991,16 +1197,43 @@ const itinerary = [
     "id": "day-p3-10",
     "phase": "phase3",
     "date": "Tuesday 9 June 2026",
-    "title": "Isle of Skye",
-    "overview": "West coast sights.",
+    "title": "Skye: West Coast",
+    "overview": "Dunvegan Castle, sheer cliffs, and a premium dinner.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "West Coast Sights",
+        "time": "09:30",
+        "title": "Drive West",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Head to the west side of the island.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Dunvegan+Castle/Neist+Point+Lighthouse"
+      },
+      {
+        "time": "10:30",
+        "title": "Dunvegan Castle & Gardens",
         "type": "activity",
-        "icon": "fa-water",
-        "description": "Neist Point and flexible weather contingency."
+        "icon": "fa-chess-rook",
+        "description": "Visit the historic seat of Clan MacLeod and its beautiful walled garden.",
+        "mapLink": "https://maps.google.com/?q=Dunvegan+Castle",
+        "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
+      },
+      {
+        "time": "13:00",
+        "title": "Neist Point Lighthouse",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "Dramatic coastal walk along the sheer cliffs to the lighthouse.",
+        "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse"
+      },
+      {
+        "time": "18:00",
+        "title": "Premium Dinner",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Treat yourself to a final Skye dinner at The Three Chimneys (world-renowned, book months ahead!) or Edinbane Lodge.",
+        "mapLink": "https://maps.google.com/?q=The+Three+Chimneys",
+        "ticketLink": "https://threechimneys.co.uk/"
       }
     ]
   },
@@ -1008,24 +1241,32 @@ const itinerary = [
     "id": "day-p3-11",
     "phase": "phase3",
     "date": "Wednesday 10 June 2026",
-    "title": "Fort William",
-    "overview": "Transit night heading south.",
+    "title": "Transit to Fort William",
+    "overview": "Slower transit drive back down the Great Glen.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive South",
+        "time": "09:30",
+        "title": "Depart Skye",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Skye to Fort William funnel."
+        "description": "A beautiful, slower transit drive back over the Skye Bridge and down the Great Glen.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Glen+Nevis+Caravan+Park"
       },
       {
-        "time": "Night",
-        "title": "Glen Nevis Caravan & Camping Park",
+        "time": "14:00",
+        "title": "Arrive at Glen Nevis",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Transit night before the long drive south.",
+        "description": "Arrive back at Glen Nevis Caravan & Camping Park for your one-night transit stop.",
         "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+      },
+      {
+        "time": "15:00",
+        "title": "Relaxing Afternoon",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "A purely relaxing afternoon sitting by the river at the campsite."
       }
     ]
   },
@@ -1033,8 +1274,6 @@ const itinerary = [
     "id": "day-p3-12",
     "phase": "phase3",
     "date": "Thursday 11 June 2026",
-    "title": "Lake District",
-    "title": "Drive to the Lake District",
     "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
     "bgImage": "",
     "items": [
