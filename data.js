@@ -554,16 +554,40 @@ const itinerary = [
     "id": "day-p2-3",
     "phase": "phase2",
     "date": "Tuesday 26 May 2026",
-    "title": "Eidfjord & Hardangerfjord",
-    "overview": "Exploring Eidfjord and Hardangerfjord.",
+    "title": "Eidfjord",
+    "overview": "Nature immersion: dramatic waterfalls, high plateaus, and classic fjord scenery.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Eidfjord",
+        "time": "07:00",
+        "title": "Fjord Sail-In",
         "type": "activity",
-        "icon": "fa-mountain",
-        "description": "Scenic cruising and shore excursions."
+        "icon": "fa-ship",
+        "description": "Slow breakfast onboard while entering the deep, spectacular Hardangerfjord. Be on deck!"
+      },
+      {
+        "time": "08:30",
+        "title": "Vøringsfossen Waterfall",
+        "type": "travel",
+        "icon": "fa-water",
+        "description": "Take a taxi/excursion up the valley to see one of Norway's most dramatic waterfalls and the Hardangervidda plateau.",
+        "mapLink": "https://maps.google.com/?q=Voringfossen"
+      },
+      {
+        "time": "12:30",
+        "title": "Lunch in Eidfjord",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Head back down for a light lunch by the water in the village, or pop back onto the ship."
+      },
+      {
+        "time": "13:30",
+        "title": "Riverside Walk & Coffee",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Gentle walk around the village marina. Stop at Vik Bakery for excellent coffee and cardamom buns.",
+        "mapLink": "https://maps.google.com/?q=Vik+Bakery+Eidfjord",
+        "link": "https://www.facebook.com/VikPensjonat/"
       }
     ]
   },
@@ -571,16 +595,47 @@ const itinerary = [
     "id": "day-p2-4",
     "phase": "phase2",
     "date": "Wednesday 27 May 2026",
-    "title": "Alesund",
-    "overview": "Visiting Alesund.",
+    "title": "Olden",
+    "overview": "Mountain valleys and spiritual beauty: soaring cable cars and emerald lakes.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Alesund",
+        "time": "09:00",
+        "title": "Arrival in Olden",
         "type": "activity",
-        "icon": "fa-city",
-        "description": "Explore the Art Nouveau architecture."
+        "icon": "fa-ship",
+        "description": "Easy breakfast onboard as the ship docks in the lush, emerald Nordfjord."
+      },
+      {
+        "time": "10:00",
+        "title": "Loen Skylift & Hike",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "10-minute transport to the Skylift. Ride 1,000m up Mount Hoven for short walks and awe-inspiring views.",
+        "mapLink": "https://maps.google.com/?q=Loen+Skylift",
+        "ticketLink": "https://www.loenskylift.com/"
+      },
+      {
+        "time": "12:30",
+        "title": "Lunch at Hoven Restaurant",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Coffee or lunch at the top of the Skylift with panoramic mountain views.",
+        "link": "https://www.loenskylift.com/restaurant-hoven"
+      },
+      {
+        "time": "14:30",
+        "title": "Olden/Loen Valley Exploration",
+        "type": "activity",
+        "icon": "fa-leaf",
+        "description": "Explore the valley floor slowly. Optional: kayak on the glacial Oldevatnet lake or walk the riverside."
+      },
+      {
+        "time": "17:00",
+        "title": "Back Onboard",
+        "type": "food",
+        "icon": "fa-ship",
+        "description": "Waterside dinner onboard before the 19:00 departure."
       }
     ]
   },
@@ -588,16 +643,41 @@ const itinerary = [
     "id": "day-p2-5",
     "phase": "phase2",
     "date": "Thursday 28 May 2026",
-    "title": "Geiranger",
-    "overview": "Geirangerfjord scenic cruising.",
+    "title": "Ålesund",
+    "overview": "Beautiful Art Nouveau town, panoramic viewpoints, and elegant café culture.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Geiranger",
+        "time": "08:00",
+        "title": "Quiet Harbor Walk",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Walk the harbor and Art Nouveau streets (Kongens Gate, canals) quietly before the crowds build.",
+        "mapLink": "https://maps.google.com/?q=Kongens+Gate+Alesund"
+      },
+      {
+        "time": "11:00",
+        "title": "Aksla Viewpoint",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "Waterfalls and incredible fjord views."
+        "description": "Climb the 418 steps (or drive) up to the Fjellstua viewpoint for the extraordinary panoramic view.",
+        "mapLink": "https://maps.google.com/?q=Fjellstua+Alesund"
+      },
+      {
+        "time": "12:30",
+        "title": "Café Culture Lunch",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "Long, relaxed seafood lunch or coffee stop. Recommended: Apotekergata No. 5 or Green Garden.",
+        "mapLink": "https://maps.google.com/?q=Apotekergata+No.+5",
+        "link": "https://www.hotelbrosundet.no/apotekergata-no-5/"
+      },
+      {
+        "time": "14:00",
+        "title": "Optional Kayak or Wander",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "Optional Brosundet Canal kayak tour, or simply wander and photograph the architecture."
       }
     ]
   },
@@ -606,15 +686,40 @@ const itinerary = [
     "phase": "phase2",
     "date": "Friday 29 May 2026",
     "title": "Bergen",
-    "overview": "Exploring Bergen.",
+    "overview": "History, mountain overlooks, and wandering the old Hanseatic city.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Bergen",
+        "time": "08:00",
+        "title": "Bryggen Waterfront",
         "type": "activity",
-        "icon": "fa-home",
-        "description": "Bryggen wharf and Mount Floyen."
+        "icon": "fa-building",
+        "description": "Early harbor wander. Explore the deep, atmospheric wooden alleyways of the UNESCO-listed Bryggen before it gets busy.",
+        "mapLink": "https://maps.google.com/?q=Bryggen+Bergen"
+      },
+      {
+        "time": "10:30",
+        "title": "Fløibanen Funicular & Mount Fløyen",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "Take the funicular up. Do some forest walks, breathe the mountain air, and enjoy views over the fjords and city.",
+        "mapLink": "https://maps.google.com/?q=Floibanen+Bergen",
+        "ticketLink": "https://floyen.no/en/floibanen"
+      },
+      {
+        "time": "12:30",
+        "title": "Lunch/Coffee at the Summit",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "Have a reflective coffee or lunch at the top of Mount Fløyen."
+      },
+      {
+        "time": "13:30",
+        "title": "City Wandering",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Walk or funicular back down. Slowly wander through the fish market, laneways, and independent shops.",
+        "mapLink": "https://maps.google.com/?q=Bergen+Fish+Market"
       }
     ]
   },
