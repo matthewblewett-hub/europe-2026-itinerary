@@ -588,6 +588,13 @@ const itinerary = [
         "description": "Gentle walk around the village marina. Stop at Vik Bakery for excellent coffee and cardamom buns.",
         "mapLink": "https://maps.google.com/?q=Vik+Bakery+Eidfjord",
         "link": "https://www.facebook.com/VikPensjonat/"
+      },
+      {
+        "time": "15:00",
+        "title": "Ship Departs Eidfjord",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "Make sure you are back onboard before 15:00!"
       }
     ]
   },
@@ -636,6 +643,13 @@ const itinerary = [
         "type": "food",
         "icon": "fa-ship",
         "description": "Waterside dinner onboard before the 19:00 departure."
+      },
+      {
+        "time": "19:00",
+        "title": "Ship Departs Olden",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "Make sure you are back onboard before 19:00!"
       }
     ]
   },
@@ -678,6 +692,13 @@ const itinerary = [
         "type": "activity",
         "icon": "fa-water",
         "description": "Optional Brosundet Canal kayak tour, or simply wander and photograph the architecture."
+      },
+      {
+        "time": "17:00",
+        "title": "Ship Departs Ålesund",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "Make sure you are back onboard before 17:00!"
       }
     ]
   },
@@ -720,6 +741,13 @@ const itinerary = [
         "icon": "fa-walking",
         "description": "Walk or funicular back down. Slowly wander through the fish market, laneways, and independent shops.",
         "mapLink": "https://maps.google.com/?q=Bergen+Fish+Market"
+      },
+      {
+        "time": "17:00",
+        "title": "Ship Departs Bergen",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "Make sure you are back onboard before 17:00!"
       }
     ]
   },
