@@ -1034,23 +1034,41 @@ const itinerary = [
     "phase": "phase3",
     "date": "Thursday 11 June 2026",
     "title": "Lake District",
-    "overview": "Long drive south to the Lake District.",
+    "title": "Drive to the Lake District",
+    "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive to Keswick",
+        "time": "08:30",
+        "title": "Early Departure",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Fort William to Keswick (approx 6 - 6.5 hrs)."
+        "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District.",
+        "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
       },
       {
-        "time": "Night",
-        "title": "Castlerigg Hall Caravan & Camping Park",
+        "time": "14:00",
+        "title": "Arrive at Castlerigg Hall",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "South of Keswick with panoramic views.",
-        "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+and+Camping+Park"
+        "description": "Set up at Castlerigg Hall just south of Keswick. Panoramic views over Derwentwater.",
+        "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
+      },
+      {
+        "time": "15:30",
+        "title": "Friar's Crag",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Stretch your legs by walking down to the lake edge at Friar’s Crag.",
+        "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner at The Dog and Gun",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Head into Keswick for a pint and Hungarian Goulash.",
+        "mapLink": "https://maps.google.com/?q=The+Dog+and+Gun+Keswick"
       }
     ]
   },
@@ -1058,16 +1076,32 @@ const itinerary = [
     "id": "day-p3-13",
     "phase": "phase3",
     "date": "Friday 12 June 2026",
-    "title": "Lake District",
-    "overview": "Relaxing in the Lake District.",
+    "title": "Lake District Scenery",
+    "overview": "Catbells hike, Grasmere Gingerbread, and Wordsworth.",
     "bgImage": "",
     "items": [
       {
-        "time": "All Day",
-        "title": "Keswick & Grasmere",
+        "time": "09:30",
+        "title": "Catbells Hike",
         "type": "activity",
-        "icon": "fa-walking",
-        "description": "Catbells or Friars Crag. Village-hopping to Grasmere/Ambleside."
+        "icon": "fa-hiking",
+        "description": "Drive to the base of Catbells for a short, sharp climb with expansive, beautiful views.",
+        "mapLink": "https://maps.google.com/?q=Catbells+Lake+District"
+      },
+      {
+        "time": "13:00",
+        "title": "Grasmere & Dove Cottage",
+        "type": "activity",
+        "icon": "fa-home",
+        "description": "Visit Wordsworth’s Dove Cottage and buy the famous Grasmere Gingerbread.",
+        "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
+      },
+      {
+        "time": "17:00",
+        "title": "Sunset over the Fells",
+        "type": "activity",
+        "icon": "fa-sun",
+        "description": "Relax back at Castlerigg Hall watching the sunset over the fells."
       }
     ]
   },
@@ -1075,24 +1109,41 @@ const itinerary = [
     "id": "day-p3-14",
     "phase": "phase3",
     "date": "Saturday 13 June 2026",
-    "title": "Yorkshire Dales",
-    "overview": "Heading to the Yorkshire Dales.",
+    "title": "Drive to Yorkshire Dales",
+    "overview": "Picturesque villages and classic Dales pubs.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Drive to Grassington",
+        "time": "09:30",
+        "title": "Depart Keswick",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Keswick into the Yorkshire Dales."
+        "description": "Drive east via the A66/A65 into the Yorkshire Dales (~2 hours).",
+        "mapLink": "https://www.google.com/maps/dir/Castlerigg+Hall+Caravan+Park/Wood+Nook+Caravan+Park"
       },
       {
-        "time": "Night",
-        "title": "Wharfedale Caravan Site",
+        "time": "12:30",
+        "title": "Arrive at Wood Nook",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Grassington. Perfect for Malham/Bolton Abbey.",
-        "mapLink": "https://maps.google.com/?q=Wharfedale+Caravan+Club+Site"
+        "description": "Set up at Wood Nook Caravan Park in Grassington.",
+        "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
+      },
+      {
+        "time": "14:00",
+        "title": "Grassington Village",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Walk into the incredibly picturesque village of Grassington (which doubles as Darrowby in All Creatures Great and Small).",
+        "mapLink": "https://maps.google.com/?q=Grassington"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner at The Devonshire",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Enjoy a classic Dales pub dinner.",
+        "mapLink": "https://maps.google.com/?q=The+Devonshire+Grassington"
       }
     ]
   },
@@ -1100,24 +1151,27 @@ const itinerary = [
     "id": "day-p3-15",
     "phase": "phase3",
     "date": "Sunday 14 June 2026",
-    "title": "Yorkshire Dales & Manchester",
-    "overview": "Final day and return to Manchester.",
+    "title": "Return to Manchester",
+    "overview": "Final morning in the Dales and campervan return.",
     "bgImage": "",
     "items": [
       {
-        "time": "Morning",
-        "title": "Malham / Bolton Abbey",
+        "time": "09:00",
+        "title": "Bolton Abbey Ruins",
         "type": "activity",
-        "icon": "fa-hiking",
-        "description": "Morning exploration before heading back."
+        "icon": "fa-monument",
+        "description": "Pack up and visit the nearby Bolton Abbey ruins for a morning walk.",
+        "mapLink": "https://maps.google.com/?q=Bolton+Abbey",
+        "ticketLink": "https://boltonabbey.com/visit-us/"
       },
       {
-        "time": "Afternoon",
-        "title": "Return Camper",
+        "time": "11:30",
+        "title": "Drive to Manchester",
         "type": "travel",
-        "icon": "fa-caravan",
-        "description": "Drive from Dales to Manchester to return the Indie Camper."
+        "icon": "fa-route",
+        "description": "Drive the final stretch back to Manchester (~1.5 hours) to empty, clean, and drop off the Indie Camper before your flight home.",
+        "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Manchester+Airport"
       }
     ]
   }
-]
+];
