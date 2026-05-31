@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     let currentPhase = "phase1";
 
-    function renderItinerary() {
+    async function renderItinerary() {
         container.innerHTML = '';
         
         // Filter days by phase
@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
         daysToRender.forEach(day => {
             const card = document.createElement('div');
             card.className = 'day-card';
+            card.dataset.dayId = day.id;
             if (day.bgImage) {
                 card.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.9)), url('${day.bgImage}')`;
                 card.style.backgroundSize = 'cover';
@@ -24,6 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
             card.innerHTML = `
                 <div class="day-header">
                     <span class="day-date">${day.date}</span>
+                    <span class="card-weather-badge" id="weather-badge-${day.id}"></span>
                 </div>
                 <h2 class="day-title">${day.title}</h2>
                 <p class="day-overview">${day.overview}</p>
@@ -34,6 +36,17 @@ document.addEventListener('DOMContentLoaded', () => {
             
             card.addEventListener('click', () => openDayDetails(day));
             container.appendChild(card);
+
+            // Async: fetch weather and inject badge
+            if (day.coords) {
+                fetchWeather(day.coords, day.date).then(weather => {
+                    const badge = document.getElementById(`weather-badge-${day.id}`);
+                    if (badge && weather) {
+                        const { icon } = getWeatherInfo(weather.code);
+                        badge.innerHTML = `<span class="badge-emoji">${icon}</span><span class="badge-temp">${weather.max}°</span>`;
+                    }
+                });
+            }
         });
     }
 

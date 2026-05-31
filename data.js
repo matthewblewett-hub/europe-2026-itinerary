@@ -1380,6 +1380,7 @@ const itinerary = [
     "id": "day-p3-12",
     "phase": "phase3",
     "date": "Thursday 11 June 2026",
+    "title": "Drive to the Lake District",
     "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
     "bgImage": "",
     "coords": {"lat": 54.6, "lon": -3.13},

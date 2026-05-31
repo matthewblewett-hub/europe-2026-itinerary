@@ -435,3 +435,35 @@ body {
     font-size: 0.85rem;
 }
 
+/* Card weather badge (on day list cards) */
+.card-weather-badge {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 3px 10px 3px 6px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    min-width: 56px;
+    justify-content: center;
+    transition: opacity 0.4s ease;
+}
+
+.card-weather-badge:empty {
+    opacity: 0;
+}
+
+.badge-emoji {
+    font-size: 1rem;
+    line-height: 1;
+}
+
+.badge-temp {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
