@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 
 <head>
     <meta charset="UTF-8">
@@ -13,7 +13,7 @@
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
     <meta name="apple-mobile-web-app-title" content="EuroTrip">
     <link rel="apple-touch-icon" href="assets/app-icon.png">
-    <meta name="theme-color" content="#0d1b2a">
+    <meta name="theme-color" content="#0d1b2a" id="theme-color-meta">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,13 +25,18 @@
 <body>
     <div id="app">
         <header class="app-header">
+            <div class="header-top-bar">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode">
+                    <i class="fas fa-sun" id="theme-icon"></i>
+                </button>
+            </div>
             <div class="header-content">
                 <h1>Europe 2026</h1>
                 <p>Our Journey Awaits</p>
             </div>
             <div class="header-bg"></div>
             <nav class="phase-tabs">
-                <button class="phase-btn active" data-phase="phase1">Phase 1: Holland & UK</button>
+                <button class="phase-btn active" data-phase="phase1">Phase 1: Holland &amp; UK</button>
                 <button class="phase-btn" data-phase="phase2">Phase 2: Cruise</button>
                 <button class="phase-btn" data-phase="phase3">Phase 3: UK Camper</button>
             </nav>
@@ -42,16 +47,48 @@
         </main>
     </div>
 
+    <!-- Day Detail Modal -->
     <div id="detail-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
                 <h2 id="modal-title">Day Details</h2>
-                <button class="close-btn" aria-label="Close modal">&times;</button>
+                <div class="modal-header-actions">
+                    <button id="learn-more-btn" class="learn-more-btn" aria-label="Learn more about this area">
+                        <i class="fas fa-globe"></i> Explore Area
+                    </button>
+                    <button class="close-btn" aria-label="Close modal">&times;</button>
+                </div>
             </div>
             <div class="modal-scroll-area">
                 <div id="modal-body" class="timeline">
                     <!-- Timeline items injected here -->
                 </div>
+                <!-- Rate & Notes Section -->
+                <div class="day-rating-section">
+                    <h4 class="rating-title"><i class="fas fa-star"></i> Rate This Day</h4>
+                    <div class="star-rating" id="star-rating">
+                        <button class="star-btn" data-value="1" aria-label="1 star">★</button>
+                        <button class="star-btn" data-value="2" aria-label="2 stars">★</button>
+                        <button class="star-btn" data-value="3" aria-label="3 stars">★</button>
+                        <button class="star-btn" data-value="4" aria-label="4 stars">★</button>
+                        <button class="star-btn" data-value="5" aria-label="5 stars">★</button>
+                    </div>
+                    <textarea id="day-notes" class="day-notes" placeholder="Add your notes, memories or tips for this day…" rows="3"></textarea>
+                    <p class="notes-saved-indicator" id="notes-saved">✓ Saved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Learn More Area Panel -->
+    <div id="learn-more-panel" class="learn-more-panel">
+        <div class="learn-more-content">
+            <div class="learn-more-header">
+                <button id="close-learn-more" class="close-learn-btn" aria-label="Close area info">&larr; Back</button>
+                <h2 id="learn-more-title">Area Guide</h2>
+            </div>
+            <div id="learn-more-body" class="learn-more-body">
+                <!-- Area content injected here -->
             </div>
         </div>
     </div>

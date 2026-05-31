@@ -33,6 +33,20 @@ const itinerary = [
     bgImage: "assets/day2_bg_1778914442648.png",
     "coords": {"lat": 51.42, "lon": -1.73},
     "weatherLocation": "Marlborough",
+    "learnMore": {
+      "title": "Marlborough & the Wiltshire Downs",
+      "intro": "Marlborough is one of England's most handsome market towns, sitting in a broad valley of the River Kennet amid the rolling chalk downlands of Wiltshire. It's a natural gateway to some of Britain's most ancient and mysterious landscapes.",
+      "history": "The town's wide High Street — one of the broadest in England — was established in the 13th century and became a key coaching stop on the London–Bath road. The surrounding downs are home to some of Europe's most significant prehistoric sites: Avebury stone circle (older than Stonehenge), Silbury Hill — the largest man-made mound in Europe — and the Kennet Avenue of standing stones all lie within a 15-minute drive.",
+      "geography": "The North Wessex Downs AONB surrounds the town, a landscape of open chalk grassland, beech hangers and ancient drove roads. The Vale of Pewsey lies to the south, and the Marlborough Downs rise steeply to the north, carved by Iron Age hill forts.",
+      "highlights": [
+            "Marlborough High Street",
+            "Avebury Stone Circle",
+            "Silbury Hill",
+            "Savernake Forest",
+            "The Food Gallery café"
+      ],
+      "funFact": "Marlborough College, one of England's top public schools, occupies a mound that is almost certainly a Norman motte — itself built on top of the prehistoric Marlborough Mound, a Neolithic earthwork contemporary with Stonehenge."
+},
     items: [
       {
         time: "05:30",
@@ -106,6 +120,20 @@ const itinerary = [
     bgImage: "assets/day3_bg_1778914464506.png",
     "coords": {"lat": 51.11, "lon": -2.72},
     "weatherLocation": "Somerset",
+    "learnMore": {
+      "title": "Somerset & the Vale of Avalon",
+      "intro": "Somerset is a county of extraordinary contrasts — from the flat, mystical Somerset Levels to the rugged moorland of Exmoor, and from the limestone gorge at Cheddar to the gentle hills of the Blackdowns. It's a land of cider, myth and ancient legend.",
+      "history": "Glastonbury's Tor has drawn pilgrims and seekers for over a thousand years. The town claims to be the 'Isle of Avalon' — the legendary resting place of King Arthur — and Glastonbury Abbey was once the wealthiest in England before Henry VIII's Dissolution. The Levels were inhabited by lake-dwelling Iron Age communities and are one of Britain's great wetland wildernesses.",
+      "geography": "The Somerset Levels are one of the lowest-lying areas in Britain, reclaimed from ancient marshland. The Mendip Hills form a limestone plateau to the north, riddled with caves and gorges. Glastonbury Tor rises 158 metres from the flat plains, visible for miles in every direction.",
+      "highlights": [
+            "Glastonbury Tor",
+            "Glastonbury Abbey",
+            "Cheddar Gorge & Caves",
+            "Wells Cathedral",
+            "The Newt in Somerset"
+      ],
+      "funFact": "The 'Sweet Track' — a Neolithic wooden walkway discovered in the Somerset Levels — dates to 3806 BCE, making it one of the oldest engineered roads ever found anywhere in the world."
+},
     items: [
       {
         time: "Morning",
@@ -310,6 +338,21 @@ const itinerary = [
     bgImage: "assets/day5_bg.png",
     "coords": {"lat": 52.37, "lon": 4.9},
     "weatherLocation": "Amsterdam",
+    "learnMore": {
+      "title": "Amsterdam, The Netherlands",
+      "intro": "Amsterdam is one of Europe's great cities — intimate and walkable yet packed with world-class museums, extraordinary canal architecture and a rich, complex history. Built almost entirely on piles driven into soft peat, it's a city that simply shouldn't exist yet is utterly magnificent.",
+      "history": "Founded as a fishing village in the 13th century at the mouth of the Amstel river, Amsterdam rose to become the richest city on Earth during the 17th-century Dutch Golden Age. The Dutch East India Company (VOC) — the world's first multinational corporation — made the city the centre of global trade. This golden wealth funded the canal ring, the merchant houses, and the extraordinary art of Rembrandt and Vermeer.",
+      "geography": "Amsterdam sits at sea level, protected by a complex network of dykes and pumps. The city's iconic canal ring (grachtengordel) was laid out in a precise arc in the 17th century and is now a UNESCO World Heritage Site. The city is remarkably flat — the highest point is a bridge over a canal.",
+      "highlights": [
+            "Rijksmuseum",
+            "Van Gogh Museum",
+            "Anne Frank House",
+            "Jordaan neighbourhood",
+            "Canal boat tour",
+            "NDSM Wharf"
+      ],
+      "funFact": "Amsterdam has more bicycles than people — approximately 880,000 bikes for 800,000 residents. There are more bikes than cars, and the city has over 400km of dedicated cycle paths."
+},
     items: [
       {
         time: "07:00",
@@ -392,6 +435,20 @@ const itinerary = [
     bgImage: "assets/day6_bg.png",
     "coords": {"lat": 52.16, "lon": 4.49},
     "weatherLocation": "Leiden",
+    "learnMore": {
+      "title": "Leiden & Haarlem, Holland",
+      "intro": "Two of Holland's most beautiful and historic cities lie within easy reach of Amsterdam. Leiden is a canal-laced university city of great intellectual pedigree, while Haarlem — just 20km from Amsterdam — is everything its larger neighbour is, but quieter and arguably more authentic.",
+      "history": "Leiden is one of Europe's oldest and most distinguished university cities, founded in 1575 by William of Orange as a reward for the city's brave resistance to a Spanish siege. Rembrandt van Rijn was born here. The Pilgrim Fathers lived in Leiden for 11 years before sailing to America on the Mayflower in 1620. Haarlem is the capital of North Holland and contains one of the Netherlands' finest Gothic churches — the Grote Kerk (St Bavo).",
+      "geography": "Both cities sit in the low-lying coastal region of the Netherlands, intersected by canals and waterways. The Keukenhof flower gardens — the world's largest flower park — lie midway between them, near Lisse, surrounded by the bulb fields of the Bollenstreek.",
+      "highlights": [
+            "Haarlem Grote Markt",
+            "Teylers Museum (oldest in Netherlands)",
+            "Keukenhof Gardens",
+            "Leiden city walls",
+            "Leiden's Pieterskerk"
+      ],
+      "funFact": "The Leiden-based scientist Jan van der Waals, Albert Einstein's teacher Hendrik Lorentz, and Nobel laureate Heike Kamerlingh Onnes (who first liquefied helium) all worked at Leiden University — making it one of the most consequential physics institutions in history."
+},
     items: [
       {
         time: "08:30",
@@ -527,6 +584,20 @@ const itinerary = [
     "bgImage": "assets/rotterdam_cruise_bg_1778992332562.png",
     "coords": {"lat": 51.92, "lon": 4.48},
     "weatherLocation": "Rotterdam",
+    "learnMore": {
+      "title": "Rotterdam, The Netherlands",
+      "intro": "Rotterdam is unlike any other Dutch city — it was almost entirely destroyed by German bombing in May 1940 and rebuilt from scratch, becoming a living showcase of bold, visionary modern architecture. It's also Europe's largest seaport.",
+      "history": "Rotterdam's medieval city centre was obliterated in a single afternoon on 14 May 1940. Rather than rebuild in traditional Dutch style, the city chose to reinvent itself as a canvas for architectural experimentation. The result is extraordinary: the cube houses, the Markthal, the Erasmus Bridge (nicknamed 'The Swan'), and a skyline unlike anywhere else in Europe.",
+      "geography": "Rotterdam sits at the mouth of the Rhine and Meuse rivers, 30km from the North Sea. The Port of Rotterdam stretches 40km and handles more cargo than any other port in Europe. The city lies almost entirely below sea level.",
+      "highlights": [
+            "Markthal",
+            "Cube Houses (Kubuswoningen)",
+            "Erasmus Bridge",
+            "SS Rotterdam",
+            "Museum Boijmans Van Beuningen"
+      ],
+      "funFact": "The Rotterdam port handles over 469 million tonnes of cargo per year. If you lined up all the ships that pass through in a single year, they would stretch three times around the Earth's equator."
+},
     "items": [
       {
         "time": "Afternoon",
@@ -556,6 +627,20 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 60.47, "lon": 7.07},
     "weatherLocation": "Eidfjord",
+    "learnMore": {
+      "title": "Eidfjord & Hardangerfjord",
+      "intro": "Eidfjord sits at the innermost reach of the Hardangerfjord — Norway's second-longest fjord and widely regarded as the most beautiful. This tiny village of just 900 people is surrounded by scenery of almost supernatural drama: sheer cliffs, roaring waterfalls, ancient orchards and the vast plateau of the Hardangervidda.",
+      "history": "The Hardanger region has been inhabited since the Stone Age. The orchards — apple, cherry and plum — that line the fjordbanks have been cultivated for centuries, brought here by monks in medieval times. The Vøringsfossen waterfall was first measured and mapped in the 1800s and became one of Norway's earliest tourist attractions, drawing Victorian adventurers from across Europe.",
+      "geography": "The Hardangervidda plateau — Europe's largest mountain plateau at 8,000km² — dominates the landscape above Eidfjord. The plateau sits at around 1,200 metres and is home to Europe's largest wild reindeer herd. Below it, the cliffs drop 180 metres to the valley floor at Vøringsfossen.",
+      "highlights": [
+            "Vøringsfossen Waterfall",
+            "Hardangervidda plateau",
+            "Eidfjord village",
+            "Hardanger Bridge",
+            "Hardangerfjord cruise"
+      ],
+      "funFact": "Vøringsfossen drops 183 metres — but the water then continues to fall a further 163 metres in cascades. The total fall from the plateau to the valley floor is one of the most dramatic vertical descents in Europe."
+},
     "items": [
       {
         "time": "All Day",
@@ -575,6 +660,20 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 61.85, "lon": 6.79},
     "weatherLocation": "Olden",
+    "learnMore": {
+      "title": "Olden & Nordfjord",
+      "intro": "Olden is a small, immaculate village at the end of the Nordfjord, backdropped by the glistening ice of the Briksdalsbreen glacier — an arm of the Jostedalsbreen, the largest glacier on the European mainland. The combination of glacier, river, waterfalls and fjord makes this one of Norway's most photogenic destinations.",
+      "history": "Olden has been a popular tourist destination since the late 19th century when British tourists came by steamer to walk to the Briksdal glacier. At that time the glacier reached almost to the valley floor. Today it has retreated significantly due to climate change — a stark, visible reminder of global warming in one of Europe's most remote places.",
+      "geography": "Jostedalsbreen glacier covers 487km² and is up to 600 metres deep in places. The Briksdalsbreen arm flows down into a glacier lake in the valley, visible from the road. The surrounding mountains rise to over 1,700 metres.",
+      "highlights": [
+            "Briksdalsbreen Glacier",
+            "Glacier lake kayaking",
+            "Nordfjord boat cruise",
+            "Oldedalen valley hike",
+            "Trollstigen (nearby)"
+      ],
+      "funFact": "Jostedalsbreen is so massive that it influences local weather — it generates its own precipitation and microclimate. The glacier has existed in roughly its current form for over 2,500 years."
+},
     "items": [
       {
         "time": "07:00",
@@ -625,6 +724,20 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 62.47, "lon": 6.15},
     "weatherLocation": "Ålesund",
+    "learnMore": {
+      "title": "Ålesund",
+      "intro": "Ålesund is one of the world's most beautifully situated cities — an archipelago town spread across several islands at the meeting of fjords, sea and mountain. It is also Norway's finest example of Art Nouveau architecture, rebuilt entirely in this style after a devastating fire in 1904.",
+      "history": "On 23 January 1904, a fire swept through Ålesund destroying nearly 800 buildings and leaving 10,000 people homeless. Kaiser Wilhelm II of Germany — who had a personal fondness for the town — sent four ships of emergency supplies within days. The rebuilding, completed in just three years, resulted in an extraordinary concentration of Art Nouveau (Jugendstil) architecture, now the finest in Scandinavia.",
+      "geography": "Ålesund occupies a group of islands and peninsulas at the opening of the Geirangerfjord. The town is surrounded by the open Atlantic to the west and a maze of fjords, islands and mountains to the east. Aksla hill (189m) in the centre provides panoramic views over the entire archipelago.",
+      "highlights": [
+            "Aksla viewpoint",
+            "Art Nouveau Centre (Jugendstilsenteret)",
+            "Ålesund old town",
+            "Atlanterhavsparken aquarium",
+            "Hjørundfjord boat trip"
+      ],
+      "funFact": "The Geirangerfjord — accessible from Ålesund — is listed as a UNESCO World Heritage Site and is consistently rated the world's most beautiful fjord. The famous Seven Sisters waterfall drops 410 metres directly into the fjord."
+},
     "items": [
       {
         "time": "09:00",
@@ -682,6 +795,20 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 60.39, "lon": 5.32},
     "weatherLocation": "Bergen",
+    "learnMore": {
+      "title": "Bergen, Gateway to the Fjords",
+      "intro": "Bergen is Norway's second city and its cultural capital — a place of wooden houses, fish markets, funiculars and mountains. Founded in 1070, it was for centuries the most important city in Scandinavia and a key member of the Hanseatic League trading network.",
+      "history": "Bergen was Norway's capital during the Middle Ages and the country's largest city until the 19th century. The Bryggen wharf — a row of colourful Hanseatic merchant warehouses facing the harbour — dates from the 14th century and is one of Norway's UNESCO World Heritage Sites. The German Hanseatic merchants who dominated Bergen's trade from 1360 to 1754 lived in closed, self-contained communities on the wharf, forbidden from marrying local women.",
+      "geography": "Bergen sits between seven mountains (the 'Seven Mountains' or De syv fjell) and seven fjords. The Fløibanen funicular climbs to 320 metres above the city in just 8 minutes. The city receives over 2,250mm of rain per year — more than anywhere else in Norway — earned Bergen its nickname 'the City of Rain'.",
+      "highlights": [
+            "Bryggen Wharf (UNESCO)",
+            "Fish Market (Fisketorget)",
+            "Fløibanen funicular",
+            "KODE Art Museums",
+            "Troldhaugen (Grieg's home)"
+      ],
+      "funFact": "Bergen holds the Norwegian record for most consecutive days of rain: 85 days. Locals are so accustomed to it that they say: 'There is no bad weather, only bad clothing.'"
+},
     "items": [
       {
         "time": "08:00",
@@ -858,6 +985,21 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 53.96, "lon": -1.08},
     "weatherLocation": "York",
+    "learnMore": {
+      "title": "York — City of Layers",
+      "intro": "York is perhaps England's most historically layered city — founded by the Romans, ruled by the Vikings, shaped by the Normans, and now one of the best-preserved medieval cities in Europe. Within its ancient walls lies 2,000 years of continuous history.",
+      "history": "Founded as Eboracum in 71 CE, York was the most important Roman city north of London — Emperor Hadrian visited, and Constantine the Great was proclaimed Emperor here in 306 CE. The Vikings captured it in 866, renaming it Jorvik, and it became the second city of England under Scandinavian rule. The Normans built the castle and the minster. The city was a major centre of the textile trade in the medieval period, and later became the home of chocolate making — Rowntrees (Kit-Kat, Smarties) and Terry's (Chocolate Orange) were both based here.",
+      "geography": "York sits on the flat Vale of York at the confluence of the Rivers Ouse and Foss. The city is encircled by 3.4km of medieval walls — the most complete in England — and centred on the magnificent York Minster, the largest Gothic cathedral in Northern Europe.",
+      "highlights": [
+            "York Minster",
+            "The Shambles",
+            "JORVIK Viking Centre",
+            "National Railway Museum",
+            "York City Walls",
+            "Clifford's Tower"
+      ],
+      "funFact": "The Shambles — York's famous medieval street — appears in Harry Potter as Diagon Alley. The street's name comes from the Old English 'shamel' meaning shelves or counter, referring to the butchers' stalls that once lined it."
+},
     "items": [
       {
         "time": "09:30",
@@ -919,6 +1061,21 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 55.47, "lon": -1.7},
     "weatherLocation": "Northumberland",
+    "learnMore": {
+      "title": "Northumberland — England's Wild North",
+      "intro": "Northumberland is England's least densely populated county and its most dramatic — a land of wind-scoured moorland, ruined castles, vast sandy beaches and the Cheviot hills. It has more castles per mile than anywhere else in Europe, and some of England's darkest skies.",
+      "history": "Northumberland was England's most disputed border territory for over a thousand years. The county was shaped by conflict between English and Scottish kingdoms, Norman conquest, Viking raids and the constant warfare of the Border Reivers. Hadrian's Wall — built by Emperor Hadrian from 122 CE across the full 73-mile width of Britain — passes through the county. Bamburgh Castle was the seat of the ancient Northumbrian kings; Alnwick Castle has been home to the Percy family since 1309.",
+      "geography": "The Northumberland coast is one of England's most dramatic — wide, dune-backed sandy beaches facing the North Sea, with the Farne Islands offshore (home to vast puffin and seal colonies). The Cheviot Hills rise to 815 metres on the Scottish border. The county contains England's largest forest park (Kielder) and the Northumberland International Dark Sky Park, one of the darkest places in Europe.",
+      "highlights": [
+            "Bamburgh Castle",
+            "Alnwick Castle & Gardens",
+            "Holy Island (Lindisfarne)",
+            "Dunstanburgh Castle walk",
+            "Farne Islands boat trip",
+            "Craster kippers"
+      ],
+      "funFact": "Bamburgh Castle was the first castle in England to be captured using gunpowder artillery during the Wars of the Roses in 1464. It was also the inspiration for the castle in the film 'The Last Castle'."
+},
     "items": [
       {
         "time": "09:00",
@@ -980,6 +1137,22 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 55.95, "lon": -3.19},
     "weatherLocation": "Edinburgh",
+    "learnMore": {
+      "title": "Edinburgh — Athens of the North",
+      "intro": "Edinburgh is one of the world's great capital cities — a place of extraordinary beauty, intellectual heritage and theatrical drama, where ancient volcanic rock meets Georgian elegance and medieval grandeur sits alongside cutting-edge culture.",
+      "history": "Edinburgh Castle's volcanic rock has been inhabited since the Iron Age. The medieval Old Town grew along the Royal Mile from castle to palace in a uniquely dense, vertical style — 'tenement' buildings rose to 11 storeys, making them among the tallest in the world in their day. The 18th century Edinburgh Enlightenment made the city the intellectual capital of the Western world, producing figures including David Hume, Adam Smith, James Watt and James Hutton (the founder of modern geology).",
+      "geography": "Edinburgh sits on a dramatic landscape of ancient volcanic plugs and crags. Arthur's Seat (251m) is an extinct volcano rising from the centre of the city. The Old Town clings to a glacially-carved ridge, while the Georgian New Town was laid out in elegant planned streets below. The Firth of Forth estuary lies 3km to the north.",
+      "highlights": [
+            "Edinburgh Castle",
+            "Royal Mile",
+            "Arthur's Seat",
+            "Calton Hill",
+            "Royal Botanic Garden",
+            "Dean Village",
+            "National Museum of Scotland"
+      ],
+      "funFact": "Edinburgh has more listed buildings per square kilometre than anywhere else in the world. The Edinburgh Festival (August) is the largest arts festival on Earth, with over 3,000 shows performed in 300 venues across a single month."
+},
     "items": [
       {
         "time": "09:00",
@@ -1099,6 +1272,21 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 56.82, "lon": -5.1},
     "weatherLocation": "Glen Nevis",
+    "learnMore": {
+      "title": "Glen Nevis & Fort William",
+      "intro": "Glen Nevis is one of the most spectacular glens in Scotland — a deep, dramatic valley carved beneath Ben Nevis, Britain's highest mountain. The glen runs from Fort William into an increasingly wild landscape of gorge, waterfall and high corrie. Fort William itself is the 'Outdoor Capital of the UK'.",
+      "history": "Fort William was established as a garrison in 1690 to control the Jacobite Highland clans. The surrounding region was central to the Jacobite rising of 1745 — Bonnie Prince Charlie raised his standard at nearby Glenfinnan before marching south to claim the British throne. Glencoe, just to the south, was the site of the infamous 1692 massacre of the MacDonald clan by government troops.",
+      "geography": "Ben Nevis rises to 1,345 metres — 4,413 feet — making it the highest point in the British Isles. Its summit is in cloud 355 days of the year. Glen Nevis cuts east behind the mountain into a spectacular inner gorge where the Water of Nevis tumbles through a narrow rock channel. The Steall Falls — Scotland's second highest at 120m — drop into this hidden valley.",
+      "highlights": [
+            "Ben Nevis",
+            "Steall Falls gorge walk",
+            "Nevis Range Gondola",
+            "Glenfinnan Viaduct",
+            "Neptune's Staircase locks",
+            "Glencoe valley"
+      ],
+      "funFact": "Approximately 125,000 people attempt to climb Ben Nevis each year. The record for the ascent and descent is held by Kenny Stuart — 1 hour 25 minutes for what most walkers take 7-9 hours to complete."
+},
     "items": [
       {
         "time": "09:00",
@@ -1192,6 +1380,22 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 57.41, "lon": -6.2},
     "weatherLocation": "Portree, Skye",
+    "learnMore": {
+      "title": "Isle of Skye — The Winged Isle",
+      "intro": "Skye is Scotland's largest island and its most mythologised — a place of jagged black mountains, ancient Gaelic culture, fairy pools and some of the most otherworldly landscapes in Europe. The Cuillin ridge is considered the finest mountain terrain in the British Isles.",
+      "history": "Skye has been inhabited for at least 8,000 years. The island was Norse territory for 400 years before returning to Scottish rule in 1266. Clan MacLeod (based at Dunvegan) and Clan MacDonald dominated the island for centuries. Skye is inseparable from the Jacobite story — Bonnie Prince Charlie famously fled to Skye disguised as 'Betty Burke' after the defeat at Culloden in 1746, immortalised in the 'Skye Boat Song'. Gaelic culture and language have survived here more strongly than almost anywhere else.",
+      "geography": "Skye is 77km long and up to 40km wide — more a series of peninsulas than a single landmass. The Cuillin mountains rise to 993m and are the only true alpine environment in the British Isles — formed from gabbro rock so rough that conventional compass readings are unreliable. The Trotternish Ridge in the north is a 30km escarpment of pinnacles and cliffs formed by the world's largest inland landslip.",
+      "highlights": [
+            "Old Man of Storr",
+            "The Quiraing",
+            "Dunvegan Castle",
+            "Neist Point Lighthouse",
+            "Fairy Pools (Glen Brittle)",
+            "Eilean Donan Castle",
+            "Sligachan"
+      ],
+      "funFact": "The Cuillin mountains are so geologically unusual — formed from magnetic gabbro rock — that they distort compass needles by up to 10 degrees, making navigation with a standard compass unreliable. Climbers must use GPS or learn to read the terrain itself."
+},
     "items": [
       {
         "time": "09:00",
@@ -1385,6 +1589,21 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 54.6, "lon": -3.13},
     "weatherLocation": "Keswick",
+    "learnMore": {
+      "title": "Keswick & the Lake District",
+      "intro": "The Lake District is England's largest national park and one of its most beloved landscapes — a compact but remarkably varied region of mountain, lake and valley that has inspired poets, artists and walkers for three centuries. Keswick is its northern hub, sitting between Derwentwater and Blencathra.",
+      "history": "The Lakes were 'discovered' by the Romantics in the late 18th century — William Wordsworth, Samuel Taylor Coleridge and Robert Southey all lived here, sparking a revolution in how people related to wild landscape. John Ruskin spent the last 28 years of his life at Brantwood on Coniston Water. Beatrix Potter bought Hill Top Farm near Hawkshead with the proceeds of Peter Rabbit and donated 4,000 acres to the National Trust on her death.",
+      "geography": "The Lake District covers 2,362km² and was formed by glaciation — the lakes occupy U-shaped valleys carved by ice sheets that retreated 10,000 years ago. The highest point is Scafell Pike (978m), England's highest mountain. Derwentwater — beside Keswick — is frequently cited as the most beautiful lake in England.",
+      "highlights": [
+            "Derwentwater & Keswick Launch",
+            "Catbells hike",
+            "Castlerigg Stone Circle",
+            "Buttermere",
+            "Wastwater",
+            "Grasmere & Dove Cottage"
+      ],
+      "funFact": "Castlerigg Stone Circle, just outside Keswick, was erected around 3000 BCE — making it one of the earliest stone circles in Britain, predating Stonehenge. It was placed with extraordinary precision: on the winter solstice, the rising sun aligns perfectly with one of its stones."
+},
     "items": [
       {
         "time": "08:30",
@@ -1489,6 +1708,22 @@ const itinerary = [
     "bgImage": "",
     "coords": {"lat": 54.07, "lon": -2.0},
     "weatherLocation": "Grassington",
+    "learnMore": {
+      "title": "Yorkshire Dales — Limestone Country",
+      "intro": "The Yorkshire Dales are a landscape of rare, sculptural beauty — pale limestone pavements, green glacial valleys, stone-walled fields, ancient field barns and fast-flowing becks. Grassington is the most characterful of all the Dales market towns, and the landscape around it is as rich in geology and history as anywhere in England.",
+      "history": "The Dales were heavily settled by Norse Vikings who named almost every feature — 'dale' (valley), 'beck' (stream), 'scar' (cliff) and 'fell' (hill) are all Old Norse words. The area was mined for lead from Roman times through to the 19th century; the moors above Grassington are dotted with the remains of this industry. Grassington itself was the setting for the BBC's long-running series 'All Creatures Great and Small' (filmed as Darrowby).",
+      "geography": "The Yorkshire Dales National Park covers 2,179km² of high moorland and deeply carved limestone valleys. Wharfedale — the valley of the River Wharfe — is the most accessible and arguably the most beautiful of all the dales, running from the high moors near Buckden down through Grassington, Bolton Abbey and out to Ilkley.",
+      "highlights": [
+            "Grassington village",
+            "Bolton Abbey & Priory",
+            "The Strid gorge",
+            "Kilnsey Crag",
+            "Linton Falls",
+            "Malham Cove",
+            "Embsay Steam Railway"
+      ],
+      "funFact": "The Strid, near Bolton Abbey, appears to be a narrow stream you could leap across — but it's actually a catastrophically dangerous gorge where the full force of the River Wharfe is compressed through a rock channel just 1.5 metres wide. No one who has fallen in has ever survived."
+},
     "items": [
       {
         "time": "09:30",

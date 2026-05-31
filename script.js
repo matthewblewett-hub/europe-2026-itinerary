@@ -4,90 +4,39 @@ document.addEventListener('DOMContentLoaded', () => {
     const modalBody = document.getElementById('modal-body');
     const modalTitle = document.getElementById('modal-title');
     const closeBtn = document.querySelector('.close-btn');
+    const learnMoreBtn = document.getElementById('learn-more-btn');
+    const learnMorePanel = document.getElementById('learn-more-panel');
+    const learnMoreTitle = document.getElementById('learn-more-title');
+    const learnMoreBody = document.getElementById('learn-more-body');
+    const closeLearnMore = document.getElementById('close-learn-more');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
 
     let currentPhase = "phase1";
+    let currentDayForLearnMore = null;
 
-    async function renderItinerary() {
-        container.innerHTML = '';
-        
-        // Filter days by phase
-        const daysToRender = itinerary.filter(day => (day.phase || 'phase1') === currentPhase);
+    // ===== DARK / LIGHT MODE =====
+    const savedTheme = localStorage.getItem('eurotrip-theme') || 'dark';
+    applyTheme(savedTheme);
 
-        daysToRender.forEach((day, index) => {
-            const card = document.createElement('div');
-            card.className = 'day-card';
-            card.dataset.dayId = day.id;
-            if (day.bgImage) {
-                card.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.9)), url('${day.bgImage}')`;
-                card.style.backgroundSize = 'cover';
-                card.style.backgroundPosition = 'center';
-            }
-            card.innerHTML = `
-                <div class="day-header">
-                    <span class="day-date">${day.date}</span>
-                    <span class="card-weather-badge" id="weather-badge-${day.id}"></span>
-                </div>
-                <h2 class="day-title">${day.title}</h2>
-                <p class="day-overview">${day.overview}</p>
-                <div class="view-details">
-                    View Day Plan <i class="fas fa-arrow-right"></i>
-                </div>
-            `;
-            
-            card.addEventListener('click', () => openDayDetails(day));
-            container.appendChild(card);
-
-            // Stagger weather fetches by 120ms per card to avoid rate limiting
-            if (day.coords) {
-                setTimeout(() => {
-                    fetchWeather(day.coords, day.date).then(weather => {
-                        const badge = document.getElementById(`weather-badge-${day.id}`);
-                        if (badge && weather) {
-                            const { icon } = getWeatherInfo(weather.code);
-                            badge.innerHTML = `<span class="badge-emoji">${icon}</span><span class="badge-temp">${weather.max}°</span>`;
-                        }
-                    });
-                }, index * 120);
-            }
-        });
+    function applyTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('eurotrip-theme', theme);
+        if (theme === 'light') {
+            themeIcon.className = 'fas fa-moon';
+            document.getElementById('theme-color-meta').setAttribute('content', '#eef1f7');
+        } else {
+            themeIcon.className = 'fas fa-sun';
+            document.getElementById('theme-color-meta').setAttribute('content', '#0d1b2a');
+        }
     }
 
-    // Initialize Phase Tabs
-    document.querySelectorAll('.phase-btn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            currentPhase = e.target.getAttribute('data-phase');
-            renderItinerary();
-        });
+    themeToggle.addEventListener('click', () => {
+        const current = document.documentElement.getAttribute('data-theme');
+        applyTheme(current === 'dark' ? 'light' : 'dark');
     });
 
-    function getTodayString() {
-        const today = new Date();
-        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
-        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-        return `${days[today.getDay()]} ${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`;
-    }
-
-    const todayString = getTodayString();
-    let currentDayObj = itinerary.find(day => day.date === todayString);
-
-    if (currentDayObj) {
-        currentPhase = currentDayObj.phase || 'phase1';
-        document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
-        const activeBtn = document.querySelector(`.phase-btn[data-phase="${currentPhase}"]`);
-        if (activeBtn) activeBtn.classList.add('active');
-    }
-
-    // Initial render
-    renderItinerary();
-
-    // If today is in the itinerary, automatically open it
-    if (currentDayObj) {
-        openDayDetails(currentDayObj);
-    }
-
-    // Weather code to description + emoji
+    // ===== WEATHER HELPERS =====
     function getWeatherInfo(code) {
         const map = {
             0:  { label: 'Clear Sky', icon: '☀️' },
@@ -114,12 +63,10 @@ document.addEventListener('DOMContentLoaded', () => {
         return map[code] || { label: 'Unknown', icon: '🌡️' };
     }
 
-    // Parse "Monday 1 June 2026" → "2026-06-01"
     function parseDateToISO(dateStr) {
         const months = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06',
                          July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
         const parts = dateStr.trim().split(' ');
-        // parts: ["Monday", "1", "June", "2026"]
         const day = parts[1].padStart(2, '0');
         const month = months[parts[2]];
         const year = parts[3];
@@ -175,104 +122,356 @@ document.addEventListener('DOMContentLoaded', () => {
                 </div>
                 <div class="weather-stat">
                     <i class="fas fa-umbrella" style="color:${rainColor}"></i>
-                    <span>${weather.rain}% rain</span>
+                    <span>${weather.rain !== null ? weather.rain + '% rain' : '—'}</span>
                 </div>
             </div>
         </div>`;
     }
 
+    // ===== PHASE 3 ROAD TRIP PROGRESS TRACKER =====
+    function buildProgressTracker() {
+        const phase3Days = itinerary.filter(d => d.phase === 'phase3');
+        const total = phase3Days.length;
+        if (total === 0) return '';
+
+        const today = new Date();
+        today.setHours(0, 0, 0, 0);
+
+        // Find which day number we're on
+        let currentDayNum = 0;
+        let status = 'upcoming'; // 'upcoming', 'active', 'complete'
+
+        const firstDay = parseDateToISO(phase3Days[0].date);
+        const lastDay = parseDateToISO(phase3Days[total - 1].date);
+        const firstDate = firstDay ? new Date(firstDay) : null;
+        const lastDate = lastDay ? new Date(lastDay) : null;
+
+        if (firstDate && lastDate) {
+            if (today < firstDate) {
+                status = 'upcoming';
+                currentDayNum = 0;
+            } else if (today > lastDate) {
+                status = 'complete';
+                currentDayNum = total;
+            } else {
+                status = 'active';
+                for (let i = 0; i < phase3Days.length; i++) {
+                    const isoD = parseDateToISO(phase3Days[i].date);
+                    if (isoD) {
+                        const d = new Date(isoD);
+                        if (d <= today) currentDayNum = i + 1;
+                    }
+                }
+            }
+        }
+
+        const pct = Math.round((currentDayNum / total) * 100);
+
+        let statusMsg = '';
+        if (status === 'upcoming') {
+            const daysUntil = firstDate ? Math.ceil((firstDate - today) / (1000 * 60 * 60 * 24)) : '';
+            statusMsg = `<span class="tracker-status upcoming">Starts in ${daysUntil} days 🚐</span>`;
+        } else if (status === 'active') {
+            statusMsg = `<span class="tracker-status active">Day ${currentDayNum} of ${total} · On the road! 🏕️</span>`;
+        } else {
+            statusMsg = `<span class="tracker-status complete">Road trip complete! 🎉</span>`;
+        }
+
+        return `
+        <div class="trip-progress-tracker">
+            <div class="tracker-header">
+                <div class="tracker-title"><i class="fas fa-caravan"></i> UK Campervan Road Trip</div>
+                ${statusMsg}
+            </div>
+            <div class="tracker-bar-wrap">
+                <div class="tracker-bar-fill" style="width: ${pct}%"></div>
+            </div>
+            <div class="tracker-footer">
+                <span>${currentDayNum} / ${total} days</span>
+                <span>${pct}% complete</span>
+            </div>
+        </div>`;
+    }
+
+    // ===== RENDER ITINERARY =====
+    async function renderItinerary() {
+        container.innerHTML = '';
+
+        // Show progress tracker for Phase 3
+        if (currentPhase === 'phase3') {
+            const trackerEl = document.createElement('div');
+            trackerEl.innerHTML = buildProgressTracker();
+            if (trackerEl.firstElementChild) container.appendChild(trackerEl.firstElementChild);
+        }
+
+        const daysToRender = itinerary.filter(day => (day.phase || 'phase1') === currentPhase);
+
+        daysToRender.forEach((day, index) => {
+            const card = document.createElement('div');
+            card.className = 'day-card';
+            card.dataset.dayId = day.id;
+            if (day.bgImage) {
+                card.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.7), rgba(28, 37, 65, 0.9)), url('${day.bgImage}')`;
+                card.style.backgroundSize = 'cover';
+                card.style.backgroundPosition = 'center';
+            }
+
+            // Check for saved rating
+            const saved = loadDayData(day.id);
+            const starBadge = saved.rating ? `<span class="card-star-badge">${'★'.repeat(saved.rating)}</span>` : '';
+
+            card.innerHTML = `
+                <div class="day-header">
+                    <span class="day-date">${day.date}${starBadge}</span>
+                    <span class="card-weather-badge" id="weather-badge-${day.id}"></span>
+                </div>
+                <h2 class="day-title">${day.title}</h2>
+                <p class="day-overview">${day.overview}</p>
+                <div class="view-details">
+                    View Day Plan <i class="fas fa-arrow-right"></i>
+                </div>
+            `;
+
+            card.addEventListener('click', () => openDayDetails(day));
+            container.appendChild(card);
+
+            // Stagger weather badge fetches to avoid rate limiting
+            if (day.coords) {
+                setTimeout(() => {
+                    fetchWeather(day.coords, day.date).then(weather => {
+                        const badge = document.getElementById(`weather-badge-${day.id}`);
+                        if (badge && weather) {
+                            const { icon } = getWeatherInfo(weather.code);
+                            badge.innerHTML = `<span class="badge-emoji">${icon}</span><span class="badge-temp">${weather.max}°</span>`;
+                        }
+                    });
+                }, index * 120);
+            }
+        });
+    }
+
+    // ===== PHASE TABS =====
+    document.querySelectorAll('.phase-btn').forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+            e.target.classList.add('active');
+            currentPhase = e.target.getAttribute('data-phase');
+            renderItinerary();
+        });
+    });
+
+    // ===== TODAY DETECTION =====
+    function getTodayString() {
+        const today = new Date();
+        const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+        const months = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+        return `${days[today.getDay()]} ${today.getDate()} ${months[today.getMonth()]} ${today.getFullYear()}`;
+    }
+
+    const todayString = getTodayString();
+    let currentDayObj = itinerary.find(day => day.date === todayString);
+
+    if (currentDayObj) {
+        currentPhase = currentDayObj.phase || 'phase1';
+        document.querySelectorAll('.phase-btn').forEach(b => b.classList.remove('active'));
+        const activeBtn = document.querySelector(`.phase-btn[data-phase="${currentPhase}"]`);
+        if (activeBtn) activeBtn.classList.add('active');
+    }
+
+    renderItinerary();
+
+    if (currentDayObj) {
+        openDayDetails(currentDayObj);
+    }
+
+    // ===== OPEN DAY DETAILS =====
     async function openDayDetails(day) {
+        currentDayForLearnMore = day;
         modalTitle.textContent = day.date;
-        
+
+        // Show/hide learn more button
+        if (day.learnMore) {
+            learnMoreBtn.classList.remove('hidden');
+        } else {
+            learnMoreBtn.classList.add('hidden');
+        }
+
         if (day.bgImage) {
             const modalContent = document.querySelector('.modal-content');
             modalContent.style.backgroundImage = `linear-gradient(rgba(28, 37, 65, 0.85), rgba(28, 37, 65, 0.98)), url('${day.bgImage}')`;
             modalContent.style.backgroundSize = 'cover';
             modalContent.style.backgroundPosition = 'center';
+        } else {
+            const modalContent = document.querySelector('.modal-content');
+            modalContent.style.backgroundImage = '';
         }
-        
+
         let timelineHTML = '';
         day.items.forEach(item => {
             let linksHTML = '';
-            
-            if (item.mapLink) {
-                linksHTML += `<a href="${item.mapLink}" target="_blank" class="action-btn"><i class="fas fa-map-marker-alt"></i> Map</a>`;
-            }
-            if (item.link) {
-                linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
-            }
-            if (item.ticketLink) {
-                linksHTML += `<a href="${item.ticketLink}" target="_blank" class="action-btn" style="background-color: #d08c60; color: white; border: none;"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>`;
-            }
-            if (item.drinksLink) {
-                linksHTML += `<a href="${item.drinksLink}" target="_blank" class="action-btn" style="background-color: #7b2cbf; color: white; border: none;"><i class="fas fa-cocktail"></i> Order Drinks</a>`;
-            }
-            if (item.appLink) {
-                linksHTML += `<button onclick="handleAppOpen('${item.appLink}')" class="action-btn" style="cursor:pointer; border:none; background:#3a506b; color:white; padding:8px 12px; border-radius:6px; font-family:inherit; font-size:14px; display:inline-flex; align-items:center; gap:6px;"><i class="fas fa-mobile-alt"></i> Open App</button>`;
-            }
+            if (item.mapLink) linksHTML += `<a href="${item.mapLink}" target="_blank" class="action-btn"><i class="fas fa-map-marker-alt"></i> Map</a>`;
+            if (item.link) linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
+            if (item.ticketLink) linksHTML += `<a href="${item.ticketLink}" target="_blank" class="action-btn" style="background-color:#d08c60;color:white;border:none;"><i class="fas fa-ticket-alt"></i> Buy Tickets</a>`;
+            if (item.drinksLink) linksHTML += `<a href="${item.drinksLink}" target="_blank" class="action-btn" style="background-color:#7b2cbf;color:white;border:none;"><i class="fas fa-cocktail"></i> Order Drinks</a>`;
+            if (item.appLink) linksHTML += `<button onclick="handleAppOpen('${item.appLink}')" class="action-btn" style="cursor:pointer;border:none;background:#3a506b;color:white;padding:8px 12px;border-radius:6px;font-family:inherit;font-size:14px;display:inline-flex;align-items:center;gap:6px;"><i class="fas fa-mobile-alt"></i> Open App</button>`;
             if (item.extraLinks) {
                 item.extraLinks.forEach(el => {
-                    linksHTML += `<button onclick="openPDF('${el.url}', '${el.label}')" class="action-btn" style="cursor:pointer; border:none; background:#3a506b; color:white; padding:8px 12px; border-radius:6px; font-family:inherit; font-size:14px; display:inline-flex; align-items:center; gap:6px;"><i class="fas fa-file-pdf"></i> ${el.label}</button>`;
+                    linksHTML += `<button onclick="openPDF('${el.url}','${el.label}')" class="action-btn" style="cursor:pointer;border:none;background:#3a506b;color:white;padding:8px 12px;border-radius:6px;font-family:inherit;font-size:14px;display:inline-flex;align-items:center;gap:6px;"><i class="fas fa-file-pdf"></i> ${el.label}</button>`;
                 });
             }
-
             timelineHTML += `
                 <div class="timeline-item">
-                    <div class="timeline-icon">
-                        <i class="fas ${item.icon || 'fa-clock'}"></i>
-                    </div>
+                    <div class="timeline-icon"><i class="fas ${item.icon || 'fa-clock'}"></i></div>
                     <div class="timeline-content">
                         <div class="timeline-time">${item.time}</div>
                         <h3 class="timeline-title">${item.title}</h3>
                         <p class="timeline-desc">${item.description}</p>
                         ${linksHTML ? `<div class="timeline-links">${linksHTML}</div>` : ''}
                     </div>
-                </div>
-            `;
+                </div>`;
         });
 
-        // Show a loading weather widget first, then fill it in
-        const weatherPlaceholder = `<div class="weather-widget weather-loading">
-            <i class="fas fa-spinner fa-spin"></i>
-            <span>Loading forecast…</span>
-        </div>`;
+        // Weather placeholder
+        const weatherPlaceholder = `<div class="weather-widget weather-loading"><i class="fas fa-spinner fa-spin"></i><span>Loading forecast…</span></div>`;
+
+        // Load saved rating & notes
+        const saved = loadDayData(day.id);
 
         modalBody.innerHTML = weatherPlaceholder + `<div class="timeline">${timelineHTML}</div>`;
-        
+
+        // Add rating & notes section
+        const ratingSection = document.getElementById('day-rating-section') || document.querySelector('.day-rating-section');
+        loadRatingUI(day.id, saved);
+
         modal.style.display = 'flex';
-        setTimeout(() => { modal.classList.add('show'); }, 10);
+        setTimeout(() => modal.classList.add('show'), 10);
         document.body.style.overflow = 'hidden';
 
-        // Fetch weather asynchronously and swap in the result
+        // Fetch weather
         const weather = await fetchWeather(day.coords, day.date);
         const weatherHTML = buildWeatherWidget(weather, day.weatherLocation);
-        modalBody.querySelector('.weather-widget').outerHTML = weatherHTML;
-        // Re-select since outerHTML replaced the node
-        const newWidget = modalBody.querySelector('.weather-widget');
-        if (newWidget) newWidget.outerHTML = weatherHTML;
+        const wWidget = modalBody.querySelector('.weather-widget');
+        if (wWidget) wWidget.outerHTML = weatherHTML;
     }
 
+    // ===== RATING & NOTES (localStorage) =====
+    function loadDayData(dayId) {
+        try {
+            return JSON.parse(localStorage.getItem(`eurotrip-day-${dayId}`)) || {};
+        } catch { return {}; }
+    }
 
+    function saveDayData(dayId, data) {
+        localStorage.setItem(`eurotrip-day-${dayId}`, JSON.stringify(data));
+    }
+
+    function loadRatingUI(dayId, saved) {
+        const stars = document.querySelectorAll('.star-btn');
+        const notesEl = document.getElementById('day-notes');
+        const savedIndicator = document.getElementById('notes-saved');
+
+        // Set stars
+        stars.forEach(btn => {
+            const val = parseInt(btn.dataset.value);
+            btn.classList.toggle('active', val <= (saved.rating || 0));
+            btn.onclick = () => {
+                const rating = parseInt(btn.dataset.value);
+                const current = loadDayData(dayId);
+                saveDayData(dayId, { ...current, rating });
+                stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= rating));
+                // Refresh card star badge
+                refreshCardBadge(dayId, rating);
+            };
+        });
+
+        // Set notes
+        if (notesEl) {
+            notesEl.value = saved.notes || '';
+            let saveTimer;
+            notesEl.oninput = () => {
+                clearTimeout(saveTimer);
+                saveTimer = setTimeout(() => {
+                    const current = loadDayData(dayId);
+                    saveDayData(dayId, { ...current, notes: notesEl.value });
+                    if (savedIndicator) {
+                        savedIndicator.classList.add('show');
+                        setTimeout(() => savedIndicator.classList.remove('show'), 2000);
+                    }
+                }, 600);
+            };
+        }
+    }
+
+    function refreshCardBadge(dayId, rating) {
+        const card = document.querySelector(`[data-day-id="${dayId}"]`);
+        if (!card) return;
+        const dateSpan = card.querySelector('.day-date');
+        if (!dateSpan) return;
+        // Remove existing star badge
+        const existing = dateSpan.querySelector('.card-star-badge');
+        if (existing) existing.remove();
+        if (rating > 0) {
+            const badge = document.createElement('span');
+            badge.className = 'card-star-badge';
+            badge.textContent = '★'.repeat(rating);
+            dateSpan.appendChild(badge);
+        }
+    }
+
+    // ===== CLOSE MODAL =====
     function closeModal() {
         modal.classList.remove('show');
-        setTimeout(() => {
-            modal.style.display = 'none';
-        }, 300); // match transition duration
-        
-        // Restore body scrolling
+        setTimeout(() => { modal.style.display = 'none'; }, 300);
         document.body.style.overflow = '';
+        currentDayForLearnMore = null;
     }
 
     closeBtn.addEventListener('click', closeModal);
+    modal.addEventListener('click', (e) => { if (e.target === modal) closeModal(); });
 
-    // Close on outside click
-    modal.addEventListener('click', (e) => {
-        if (e.target === modal) {
-            closeModal();
-        }
+    // ===== LEARN MORE PANEL =====
+    learnMoreBtn.addEventListener('click', () => {
+        if (!currentDayForLearnMore || !currentDayForLearnMore.learnMore) return;
+        const lm = currentDayForLearnMore.learnMore;
+        learnMoreTitle.textContent = lm.title;
+        learnMoreBody.innerHTML = buildLearnMoreContent(lm);
+        learnMorePanel.style.display = 'flex';
+        setTimeout(() => learnMorePanel.classList.add('show'), 10);
     });
 
-    // PDF Overlay Logic
+    closeLearnMore.addEventListener('click', () => {
+        learnMorePanel.classList.remove('show');
+        setTimeout(() => { learnMorePanel.style.display = 'none'; }, 400);
+    });
+
+    function buildLearnMoreContent(lm) {
+        const highlightTags = (lm.highlights || []).map(h => `<span class="highlight-tag">${h}</span>`).join('');
+        return `
+            <p class="area-intro">${lm.intro}</p>
+
+            <div class="area-fun-fact">
+                <span class="area-fun-fact-icon">💡</span>
+                <p>${lm.funFact}</p>
+            </div>
+
+            <div class="area-section">
+                <div class="area-section-title"><i class="fas fa-landmark"></i> History</div>
+                <p>${lm.history}</p>
+            </div>
+
+            <div class="area-section">
+                <div class="area-section-title"><i class="fas fa-mountain"></i> Geography & Landscape</div>
+                <p>${lm.geography}</p>
+            </div>
+
+            <div class="area-section">
+                <div class="area-section-title"><i class="fas fa-map-pin"></i> Must-See Highlights</div>
+                <div class="area-highlights">${highlightTags}</div>
+            </div>
+        `;
+    }
+
+    // ===== PDF OVERLAY =====
     window.openPDF = function(url, title) {
         document.getElementById('pdf-title').textContent = title;
         document.getElementById('pdf-object').data = url;
@@ -284,19 +483,13 @@ document.addEventListener('DOMContentLoaded', () => {
         document.getElementById('pdf-object').data = '';
     });
 
-    // App Open Logic
+    // ===== APP LINK HANDLER =====
     window.handleAppOpen = function(url) {
         if (url.startsWith('http')) {
             window.open(url, '_blank');
         } else {
-            // For custom app schemes (baapp://, avis://), setting location directly is best
             window.location.href = url;
-            
-            // Add a small safety fallback timeout in case the app isn't installed
-            setTimeout(() => {
-                // If we are still here after 2 seconds, the scheme failed silently (rare on iOS, but good practice)
-                console.log("App launch may have failed.");
-            }, 2000);
+            setTimeout(() => console.log("App launch may have failed."), 2000);
         }
     };
 });
