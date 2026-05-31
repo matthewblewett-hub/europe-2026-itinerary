@@ -72,7 +72,101 @@ document.addEventListener('DOMContentLoaded', () => {
         openDayDetails(currentDayObj);
     }
 
-    function openDayDetails(day) {
+    // Weather code to description + emoji
+    function getWeatherInfo(code) {
+        const map = {
+            0:  { label: 'Clear Sky', icon: '☀️' },
+            1:  { label: 'Mainly Clear', icon: '🌤️' },
+            2:  { label: 'Partly Cloudy', icon: '⛅' },
+            3:  { label: 'Overcast', icon: '☁️' },
+            45: { label: 'Foggy', icon: '🌫️' },
+            48: { label: 'Icy Fog', icon: '🌫️' },
+            51: { label: 'Light Drizzle', icon: '🌦️' },
+            53: { label: 'Drizzle', icon: '🌦️' },
+            55: { label: 'Heavy Drizzle', icon: '🌧️' },
+            61: { label: 'Light Rain', icon: '🌧️' },
+            63: { label: 'Rain', icon: '🌧️' },
+            65: { label: 'Heavy Rain', icon: '🌧️' },
+            71: { label: 'Light Snow', icon: '🌨️' },
+            73: { label: 'Snow', icon: '❄️' },
+            75: { label: 'Heavy Snow', icon: '❄️' },
+            80: { label: 'Rain Showers', icon: '🌦️' },
+            81: { label: 'Showers', icon: '🌧️' },
+            82: { label: 'Heavy Showers', icon: '⛈️' },
+            95: { label: 'Thunderstorm', icon: '⛈️' },
+            99: { label: 'Thunderstorm', icon: '⛈️' },
+        };
+        return map[code] || { label: 'Unknown', icon: '🌡️' };
+    }
+
+    // Parse "Monday 1 June 2026" → "2026-06-01"
+    function parseDateToISO(dateStr) {
+        const months = { January:'01', February:'02', March:'03', April:'04', May:'05', June:'06',
+                         July:'07', August:'08', September:'09', October:'10', November:'11', December:'12' };
+        const parts = dateStr.trim().split(' ');
+        // parts: ["Monday", "1", "June", "2026"]
+        const day = parts[1].padStart(2, '0');
+        const month = months[parts[2]];
+        const year = parts[3];
+        if (!day || !month || !year) return null;
+        return `${year}-${month}-${day}`;
+    }
+
+    async function fetchWeather(coords, dateStr) {
+        const isoDate = parseDateToISO(dateStr);
+        if (!isoDate || !coords) return null;
+        const { lat, lon } = coords;
+        const url = `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&daily=temperature_2m_max,temperature_2m_min,precipitation_probability_max,weathercode&timezone=auto&start_date=${isoDate}&end_date=${isoDate}`;
+        try {
+            const res = await fetch(url);
+            if (!res.ok) return null;
+            const data = await res.json();
+            const d = data.daily;
+            if (!d || !d.time || d.time.length === 0) return null;
+            return {
+                max: Math.round(d.temperature_2m_max[0]),
+                min: Math.round(d.temperature_2m_min[0]),
+                rain: d.precipitation_probability_max[0],
+                code: d.weathercode[0],
+            };
+        } catch (e) {
+            return null;
+        }
+    }
+
+    function buildWeatherWidget(weather, location) {
+        if (!weather) {
+            return `<div class="weather-widget weather-unavailable">
+                <i class="fas fa-cloud"></i>
+                <span>Forecast not yet available</span>
+            </div>`;
+        }
+        const { label, icon } = getWeatherInfo(weather.code);
+        const rainColor = weather.rain >= 70 ? '#5b9bd5' : weather.rain >= 40 ? '#a3b1c6' : '#4caf50';
+        return `<div class="weather-widget">
+            <div class="weather-condition">
+                <span class="weather-emoji">${icon}</span>
+                <span class="weather-label">${label}</span>
+                ${location ? `<span class="weather-location"><i class="fas fa-map-marker-alt"></i> ${location}</span>` : ''}
+            </div>
+            <div class="weather-stats">
+                <div class="weather-stat">
+                    <i class="fas fa-temperature-high" style="color:#f5a623"></i>
+                    <span>${weather.max}°C</span>
+                </div>
+                <div class="weather-stat">
+                    <i class="fas fa-temperature-low" style="color:#5b9bd5"></i>
+                    <span>${weather.min}°C</span>
+                </div>
+                <div class="weather-stat">
+                    <i class="fas fa-umbrella" style="color:${rainColor}"></i>
+                    <span>${weather.rain}% rain</span>
+                </div>
+            </div>
+        </div>`;
+    }
+
+    async function openDayDetails(day) {
         modalTitle.textContent = day.date;
         
         if (day.bgImage) {
@@ -122,17 +216,27 @@ document.addEventListener('DOMContentLoaded', () => {
             `;
         });
 
-        modalBody.innerHTML = timelineHTML;
+        // Show a loading weather widget first, then fill it in
+        const weatherPlaceholder = `<div class="weather-widget weather-loading">
+            <i class="fas fa-spinner fa-spin"></i>
+            <span>Loading forecast…</span>
+        </div>`;
+
+        modalBody.innerHTML = weatherPlaceholder + `<div class="timeline">${timelineHTML}</div>`;
         
         modal.style.display = 'flex';
-        // Small delay for transition
-        setTimeout(() => {
-            modal.classList.add('show');
-        }, 10);
-        
-        // Prevent body scrolling
+        setTimeout(() => { modal.classList.add('show'); }, 10);
         document.body.style.overflow = 'hidden';
+
+        // Fetch weather asynchronously and swap in the result
+        const weather = await fetchWeather(day.coords, day.date);
+        const weatherHTML = buildWeatherWidget(weather, day.weatherLocation);
+        modalBody.querySelector('.weather-widget').outerHTML = weatherHTML;
+        // Re-select since outerHTML replaced the node
+        const newWidget = modalBody.querySelector('.weather-widget');
+        if (newWidget) newWidget.outerHTML = weatherHTML;
     }
+
 
     function closeModal() {
         modal.classList.remove('show');

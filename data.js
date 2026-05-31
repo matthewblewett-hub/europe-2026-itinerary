@@ -31,6 +31,8 @@ const itinerary = [
     title: "Marlborough & Somerset",
     overview: "Arrival in UK, scenic drive, and exploring Somerset.",
     bgImage: "assets/day2_bg_1778914442648.png",
+    "coords": {"lat": 51.42, "lon": -1.73},
+    "weatherLocation": "Marlborough",
     items: [
       {
         time: "05:30",
@@ -102,6 +104,8 @@ const itinerary = [
     title: "Stonehenge & London West-End",
     overview: "Stonehenge visit, return to London, and West-End show.",
     bgImage: "assets/day3_bg_1778914464506.png",
+    "coords": {"lat": 51.11, "lon": -2.72},
+    "weatherLocation": "Somerset",
     items: [
       {
         time: "Morning",
@@ -211,6 +215,8 @@ const itinerary = [
     title: "London & Eurostar to Rotterdam",
     overview: "Morning run and sightseeing in London, afternoon Eurostar to Rotterdam, and evening train to Haarlem.",
     bgImage: "assets/day4_bg.png",
+    "coords": {"lat": 51.18, "lon": -3.0},
+    "weatherLocation": "Glastonbury",
     items: [
       {
         time: "07:00",
@@ -302,6 +308,8 @@ const itinerary = [
     title: "Haarlem & Amsterdam Classic Day",
     overview: "Morning run in Haarlem and a classic Amsterdam day: walking, cruising, and the Rijksmuseum.",
     bgImage: "assets/day5_bg.png",
+    "coords": {"lat": 52.37, "lon": 4.9},
+    "weatherLocation": "Amsterdam",
     items: [
       {
         time: "07:00",
@@ -382,6 +390,8 @@ const itinerary = [
     title: "Leiden & Countryside Cycling",
     overview: "Leiden canals, gardens, and a beautiful short cycle through the flower region.",
     bgImage: "assets/day6_bg.png",
+    "coords": {"lat": 52.16, "lon": 4.49},
+    "weatherLocation": "Leiden",
     items: [
       {
         time: "08:30",
@@ -469,6 +479,8 @@ const itinerary = [
     title: "Rotterdam & Cruise",
     overview: "Train to Rotterdam, mini-visit, and boarding the Holland America Cruise.",
     bgImage: "assets/day7_bg.png",
+    "coords": {"lat": 52.16, "lon": 4.49},
+    "weatherLocation": "Leiden",
     items: [
       {
         time: "08:00",
@@ -513,6 +525,8 @@ const itinerary = [
     "title": "Boarding Norwegian Cruise",
     "overview": "Boarding the Holland America Cruise in Rotterdam.",
     "bgImage": "assets/rotterdam_cruise_bg_1778992332562.png",
+    "coords": {"lat": 51.92, "lon": 4.48},
+    "weatherLocation": "Rotterdam",
     "items": [
       {
         "time": "Afternoon",
@@ -540,6 +554,8 @@ const itinerary = [
     "title": "At Sea",
     "overview": "Cruising towards the Norwegian Fjords.",
     "bgImage": "",
+    "coords": {"lat": 60.47, "lon": 7.07},
+    "weatherLocation": "Eidfjord",
     "items": [
       {
         "time": "All Day",
@@ -557,6 +573,8 @@ const itinerary = [
     "title": "Eidfjord",
     "overview": "Nature immersion: dramatic waterfalls, high plateaus, and classic fjord scenery.",
     "bgImage": "",
+    "coords": {"lat": 61.85, "lon": 6.79},
+    "weatherLocation": "Olden",
     "items": [
       {
         "time": "07:00",
@@ -605,6 +623,8 @@ const itinerary = [
     "title": "Olden",
     "overview": "Mountain valleys and spiritual beauty: soaring cable cars and emerald lakes.",
     "bgImage": "",
+    "coords": {"lat": 62.47, "lon": 6.15},
+    "weatherLocation": "Ålesund",
     "items": [
       {
         "time": "09:00",
@@ -660,6 +680,8 @@ const itinerary = [
     "title": "Ålesund",
     "overview": "Beautiful Art Nouveau town, panoramic viewpoints, and elegant café culture.",
     "bgImage": "",
+    "coords": {"lat": 60.39, "lon": 5.32},
+    "weatherLocation": "Bergen",
     "items": [
       {
         "time": "08:00",
@@ -709,6 +731,8 @@ const itinerary = [
     "title": "Bergen",
     "overview": "History, mountain overlooks, and wandering the old Hanseatic city.",
     "bgImage": "",
+    "coords": {"lat": 60.39, "lon": 5.32},
+    "weatherLocation": "Bergen",
     "items": [
       {
         "time": "08:00",
@@ -758,6 +782,8 @@ const itinerary = [
     "title": "At Sea",
     "overview": "Cruising back to Rotterdam.",
     "bgImage": "",
+    "coords": {"lat": 57.0, "lon": 4.0},
+    "weatherLocation": "At Sea",
     "items": [
       {
         "time": "All Day",
@@ -775,6 +801,8 @@ const itinerary = [
     "title": "Rotterdam to York Meadows",
     "overview": "Disembark cruise, fly to Manchester, pick up Indie Camper, and drive to York.",
     "bgImage": "",
+    "coords": {"lat": 53.96, "lon": -1.08},
+    "weatherLocation": "York",
     "items": [
       {
         "time": "Morning",
@@ -828,6 +856,8 @@ const itinerary = [
     "title": "Historic York",
     "overview": "Explore the medieval streets, city walls, and have high tea at Bettys.",
     "bgImage": "",
+    "coords": {"lat": 53.96, "lon": -1.08},
+    "weatherLocation": "York",
     "items": [
       {
         "time": "09:30",
@@ -887,6 +917,8 @@ const itinerary = [
     "title": "Northumberland Coast",
     "overview": "Drive north, visit Alnwick Castle, and arrive at Proctors Stead.",
     "bgImage": "",
+    "coords": {"lat": 55.47, "lon": -1.7},
+    "weatherLocation": "Northumberland",
     "items": [
       {
         "time": "09:00",
@@ -946,6 +978,8 @@ const itinerary = [
     "title": "Drive to Edinburgh",
     "overview": "Coastal drive into Scotland and exploring the Royal Mile.",
     "bgImage": "",
+    "coords": {"lat": 55.95, "lon": -3.19},
+    "weatherLocation": "Edinburgh",
     "items": [
       {
         "time": "09:00",
@@ -1004,6 +1038,8 @@ const itinerary = [
     "title": "Edinburgh Elegance",
     "overview": "Botanic Gardens, Stockbridge, and Calton Hill.",
     "bgImage": "",
+    "coords": {"lat": 55.95, "lon": -3.19},
+    "weatherLocation": "Edinburgh",
     "items": [
       {
         "time": "09:30",
@@ -1061,6 +1097,8 @@ const itinerary = [
     "title": "Drive to Glen Nevis",
     "overview": "Cross Rannoch Moor and the dramatic Glencoe pass.",
     "bgImage": "",
+    "coords": {"lat": 56.82, "lon": -5.1},
+    "weatherLocation": "Glen Nevis",
     "items": [
       {
         "time": "09:00",
@@ -1117,6 +1155,8 @@ const itinerary = [
     "title": "Steall Falls & Glencoe",
     "overview": "A beautiful local hike to one of Scotland's highest waterfalls.",
     "bgImage": "",
+    "coords": {"lat": 56.82, "lon": -5.1},
+    "weatherLocation": "Glen Nevis",
     "items": [
       {
         "time": "09:30",
@@ -1150,6 +1190,8 @@ const itinerary = [
     "title": "Drive to Isle of Skye",
     "overview": "Castles, bridges, and arriving on the magical Isle of Skye.",
     "bgImage": "",
+    "coords": {"lat": 57.41, "lon": -6.2},
+    "weatherLocation": "Portree, Skye",
     "items": [
       {
         "time": "09:00",
@@ -1200,6 +1242,8 @@ const itinerary = [
     "title": "Skye: Trotternish Loop",
     "overview": "The epic landscapes of the Old Man of Storr and the Quiraing.",
     "bgImage": "",
+    "coords": {"lat": 57.41, "lon": -6.2},
+    "weatherLocation": "Portree, Skye",
     "items": [
       {
         "time": "08:30",
@@ -1250,6 +1294,8 @@ const itinerary = [
     "title": "Skye: West Coast",
     "overview": "Dunvegan Castle, sheer cliffs, and a premium dinner.",
     "bgImage": "",
+    "coords": {"lat": 57.41, "lon": -6.2},
+    "weatherLocation": "Portree, Skye",
     "items": [
       {
         "time": "09:30",
@@ -1302,6 +1348,8 @@ const itinerary = [
     "title": "Transit to Fort William",
     "overview": "Slower transit drive back down the Great Glen.",
     "bgImage": "",
+    "coords": {"lat": 56.82, "lon": -5.1},
+    "weatherLocation": "Glen Nevis",
     "items": [
       {
         "time": "09:30",
@@ -1334,6 +1382,8 @@ const itinerary = [
     "date": "Thursday 11 June 2026",
     "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
     "bgImage": "",
+    "coords": {"lat": 54.6, "lon": -3.13},
+    "weatherLocation": "Keswick",
     "items": [
       {
         "time": "08:30",
@@ -1384,6 +1434,8 @@ const itinerary = [
     "title": "Lake District Scenery",
     "overview": "Catbells hike, Buttermere, and Wordsworth.",
     "bgImage": "",
+    "coords": {"lat": 54.6, "lon": -3.13},
+    "weatherLocation": "Keswick",
     "items": [
       {
         "time": "09:00",
@@ -1434,6 +1486,8 @@ const itinerary = [
     "title": "Drive to Yorkshire Dales",
     "overview": "Picturesque villages and classic Dales pubs.",
     "bgImage": "",
+    "coords": {"lat": 54.07, "lon": -2.0},
+    "weatherLocation": "Grassington",
     "items": [
       {
         "time": "09:30",
@@ -1484,6 +1538,8 @@ const itinerary = [
     "title": "Return to Manchester",
     "overview": "Final morning in the Dales and campervan return.",
     "bgImage": "",
+    "coords": {"lat": 53.98, "lon": -1.92},
+    "weatherLocation": "Yorkshire Dales",
     "items": [
       {
         "time": "09:00",
