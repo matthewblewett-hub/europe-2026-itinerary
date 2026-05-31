@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Filter days by phase
         const daysToRender = itinerary.filter(day => (day.phase || 'phase1') === currentPhase);
 
-        daysToRender.forEach(day => {
+        daysToRender.forEach((day, index) => {
             const card = document.createElement('div');
             card.className = 'day-card';
             card.dataset.dayId = day.id;
@@ -37,15 +37,17 @@ document.addEventListener('DOMContentLoaded', () => {
             card.addEventListener('click', () => openDayDetails(day));
             container.appendChild(card);
 
-            // Async: fetch weather and inject badge
+            // Stagger weather fetches by 120ms per card to avoid rate limiting
             if (day.coords) {
-                fetchWeather(day.coords, day.date).then(weather => {
-                    const badge = document.getElementById(`weather-badge-${day.id}`);
-                    if (badge && weather) {
-                        const { icon } = getWeatherInfo(weather.code);
-                        badge.innerHTML = `<span class="badge-emoji">${icon}</span><span class="badge-temp">${weather.max}°</span>`;
-                    }
-                });
+                setTimeout(() => {
+                    fetchWeather(day.coords, day.date).then(weather => {
+                        const badge = document.getElementById(`weather-badge-${day.id}`);
+                        if (badge && weather) {
+                            const { icon } = getWeatherInfo(weather.code);
+                            badge.innerHTML = `<span class="badge-emoji">${icon}</span><span class="badge-temp">${weather.max}°</span>`;
+                        }
+                    });
+                }, index * 120);
             }
         });
     }

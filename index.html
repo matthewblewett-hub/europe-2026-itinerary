@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Europe 2026 Itinerary</title>
     <meta name="description" content="Interactive Itinerary for Europe 2026 Trip">
-    
+
     <!-- Web App / PWA Meta Tags -->
     <link rel="manifest" href="manifest.json">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -20,6 +21,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <div id="app">
         <header class="app-header">
@@ -39,7 +41,7 @@
             <!-- Days will be dynamically injected here -->
         </main>
     </div>
-    
+
     <div id="detail-modal" class="modal">
         <div class="modal-content">
             <div class="modal-header">
@@ -55,10 +57,13 @@
     </div>
 
     <!-- PDF Viewer Overlay -->
-    <div id="pdf-overlay" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#fff; flex-direction:column;">
-        <div style="background:#1c2541; padding: 15px 20px; padding-top: max(15px, env(safe-area-inset-top)); display:flex; justify-content:space-between; align-items:center;">
+    <div id="pdf-overlay"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:#fff; flex-direction:column;">
+        <div
+            style="background:#1c2541; padding: 15px 20px; padding-top: max(15px, env(safe-area-inset-top)); display:flex; justify-content:space-between; align-items:center;">
             <span id="pdf-title" style="color:white; font-weight:bold; font-size:18px;">Document</span>
-            <button id="close-pdf-btn" style="background:#3a506b; color:white; border:none; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer;">Done</button>
+            <button id="close-pdf-btn"
+                style="background:#3a506b; color:white; border:none; padding:10px 20px; border-radius:8px; font-weight:bold; cursor:pointer;">Done</button>
         </div>
         <div style="flex:1; -webkit-overflow-scrolling: touch; overflow-y: auto;">
             <object id="pdf-object" style="width:100%; height:100%; min-height:100vh;" type="application/pdf"></object>
@@ -68,4 +73,5 @@
     <script src="data.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>
