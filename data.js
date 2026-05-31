@@ -784,7 +784,14 @@ const itinerary = [
         "description": "Leave the Holland America cruise and head to the airport."
       },
       {
-        "time": "13:00",
+        "time": "15:30",
+        "title": "Flight to Manchester",
+        "type": "travel",
+        "icon": "fa-plane",
+        "description": "Flight departs 15:30, arrives Manchester 15:50."
+      },
+      {
+        "time": "17:00",
         "title": "Pick up Indie Camper",
         "type": "travel",
         "icon": "fa-caravan",
@@ -797,7 +804,7 @@ const itinerary = [
         ]
       },
       {
-        "time": "14:30",
+        "time": "17:30",
         "title": "Drive to York",
         "type": "travel",
         "icon": "fa-route",
@@ -805,20 +812,12 @@ const itinerary = [
         "mapLink": "https://www.google.com/maps/dir/Manchester/York+Meadows+Caravan+Park"
       },
       {
-        "time": "16:30",
+        "time": "20:00",
         "title": "Arrive at York Meadows",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Set up at York Meadows Caravan Park (Sheriff Hutton).",
+        "description": "Set up at York Meadows Caravan Park (Sheriff Hutton). Long day — relax and settle in!",
         "mapLink": "https://maps.google.com/?q=York+Meadows+Caravan+Park"
-      },
-      {
-        "time": "18:00",
-        "title": "Dinner at Guy Fawkes Inn",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "If you have the energy, take the short drive/bus into York for an atmospheric pub dinner right next to the Minster.",
-        "mapLink": "https://maps.google.com/?q=Guy+Fawkes+Inn+York"
       }
     ]
   },
