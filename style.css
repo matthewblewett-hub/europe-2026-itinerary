@@ -932,3 +932,156 @@ body {
     color: var(--text-secondary);
     font-weight: 500;
 }
+
+/* ===== TODAY BANNER ===== */
+.today-banner {
+    margin: 0 20px 16px;
+    cursor: pointer;
+    border-radius: 16px;
+    overflow: hidden;
+    animation: bannerSlideIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+@keyframes bannerSlideIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.today-banner-inner {
+    background: linear-gradient(135deg, #1a3a5c 0%, #0f2540 50%, #1c2f1a 100%);
+    border: 1px solid rgba(245,166,35,0.35);
+    border-radius: 16px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.today-banner-inner::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: linear-gradient(135deg, rgba(245,166,35,0.06), transparent 60%);
+    pointer-events: none;
+}
+
+.today-banner:hover .today-banner-inner,
+.today-banner:focus .today-banner-inner {
+    border-color: rgba(245,166,35,0.65);
+    box-shadow: 0 4px 20px rgba(245,166,35,0.15);
+}
+
+[data-theme="light"] .today-banner-inner {
+    background: linear-gradient(135deg, #1c3a5c, #1a2f44);
+}
+
+/* Pulsing live dot */
+.today-live-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4caf50;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 0 rgba(76,175,80,0.6);
+    animation: liveRipple 2s ease-out infinite;
+}
+
+@keyframes liveRipple {
+    0%   { box-shadow: 0 0 0 0 rgba(76,175,80,0.6); }
+    70%  { box-shadow: 0 0 0 8px rgba(76,175,80,0); }
+    100% { box-shadow: 0 0 0 0 rgba(76,175,80,0); }
+}
+
+.today-banner-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.today-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.today-day-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.8px;
+    color: var(--accent);
+    font-weight: 700;
+}
+
+.today-location {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #ffffff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 120px;
+}
+
+.today-banner-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-width: 0;
+    border-left: 1px solid rgba(255,255,255,0.1);
+    padding-left: 12px;
+}
+
+.today-now,
+.today-next {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    min-width: 0;
+}
+
+.today-badge {
+    font-size: 0.62rem;
+    font-weight: 800;
+    letter-spacing: 0.6px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.now-badge {
+    background: rgba(76,175,80,0.2);
+    color: #4caf50;
+    border: 1px solid rgba(76,175,80,0.35);
+}
+
+.next-badge {
+    background: rgba(245,166,35,0.15);
+    color: var(--accent);
+    border: 1px solid rgba(245,166,35,0.3);
+}
+
+.today-now span:last-child,
+.today-next span:last-child {
+    font-size: 0.82rem;
+    color: rgba(255,255,255,0.85);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.today-arrow {
+    color: rgba(255,255,255,0.3);
+    font-size: 0.9rem;
+    flex-shrink: 0;
+    transition: color 0.3s, transform 0.3s;
+}
+
+.today-banner:hover .today-arrow {
+    color: var(--accent);
+    transform: translateX(3px);
+}

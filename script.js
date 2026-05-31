@@ -284,6 +284,86 @@ document.addEventListener('DOMContentLoaded', () => {
         openDayDetails(currentDayObj);
     }
 
+    // ===== TODAY BANNER =====
+    function parseItemTime(timeStr) {
+        if (!timeStr) return null;
+        const match = timeStr.match(/^(\d{1,2}):(\d{2})$/);
+        if (!match) return null;
+        return parseInt(match[1]) * 60 + parseInt(match[2]);
+    }
+
+    function initTodayBanner() {
+        if (!currentDayObj) return;
+
+        const banner = document.getElementById('today-banner');
+        const bannerDayLabel = document.getElementById('banner-day-label');
+        const bannerLocation = document.getElementById('banner-location');
+        const bannerNowText = document.getElementById('banner-now-text');
+        const bannerNextText = document.getElementById('banner-next-text');
+        const bannerNext = document.getElementById('banner-next');
+
+        // Work out day number context
+        const phase3Days = itinerary.filter(d => d.phase === 'phase3');
+        const phase3Idx = phase3Days.findIndex(d => d.id === currentDayObj.id);
+        let dayLabel = 'Today';
+        if (phase3Idx >= 0) {
+            dayLabel = `UK Road Trip · Day ${phase3Idx + 1} of ${phase3Days.length}`;
+        } else {
+            const phDays = itinerary.filter(d => (d.phase || 'phase1') === (currentDayObj.phase || 'phase1'));
+            const phIdx = phDays.findIndex(d => d.id === currentDayObj.id);
+            if (phIdx >= 0) dayLabel = `Day ${phIdx + 1} of ${phDays.length}`;
+        }
+
+        bannerDayLabel.textContent = dayLabel;
+        bannerLocation.textContent = currentDayObj.title || '';
+
+        function updateNowNext() {
+            const now = new Date();
+            const nowMins = now.getHours() * 60 + now.getMinutes();
+            const items = currentDayObj.items || [];
+
+            // Find last item whose time has passed (NOW) and first upcoming (NEXT)
+            let currentItem = null;
+            let nextItem = null;
+
+            for (let i = 0; i < items.length; i++) {
+                const t = parseItemTime(items[i].time);
+                if (t !== null) {
+                    if (t <= nowMins) {
+                        currentItem = items[i];
+                    } else if (!nextItem) {
+                        nextItem = items[i];
+                    }
+                }
+            }
+
+            // Fallback: if before first timed item, use first item as 'next'
+            if (!currentItem && !nextItem && items.length > 0) {
+                nextItem = items[0];
+            }
+
+            bannerNowText.textContent = currentItem
+                ? `${currentItem.time} · ${currentItem.title}`
+                : 'Day starting soon';
+
+            if (nextItem) {
+                bannerNextText.textContent = `${nextItem.time} · ${nextItem.title}`;
+                bannerNext.style.display = 'flex';
+            } else {
+                bannerNext.style.display = 'none';
+            }
+        }
+
+        updateNowNext();
+        setInterval(updateNowNext, 60000); // refresh every minute
+
+        banner.style.display = 'block';
+        banner.onclick = () => openDayDetails(currentDayObj);
+        banner.onkeydown = (e) => { if (e.key === 'Enter') openDayDetails(currentDayObj); };
+    }
+
+    initTodayBanner();
+
     // ===== OPEN DAY DETAILS =====
     async function openDayDetails(day) {
         currentDayForLearnMore = day;

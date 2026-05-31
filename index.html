@@ -42,6 +42,30 @@
             </nav>
         </header>
 
+        <!-- Today Banner - shown when a day in the itinerary matches today -->
+        <div id="today-banner" class="today-banner" style="display:none;" role="button" tabindex="0" aria-label="View today's itinerary">
+            <div class="today-banner-inner">
+                <div class="today-banner-left">
+                    <div class="today-live-dot"></div>
+                    <div class="today-meta">
+                        <div class="today-day-label" id="banner-day-label">Today</div>
+                        <div class="today-location" id="banner-location">—</div>
+                    </div>
+                </div>
+                <div class="today-banner-right">
+                    <div class="today-now" id="banner-now">
+                        <span class="today-badge now-badge">NOW</span>
+                        <span id="banner-now-text">—</span>
+                    </div>
+                    <div class="today-next" id="banner-next">
+                        <span class="today-badge next-badge">NEXT</span>
+                        <span id="banner-next-text">—</span>
+                    </div>
+                </div>
+                <i class="fas fa-chevron-right today-arrow"></i>
+            </div>
+        </div>
+
         <main id="itinerary-container" class="itinerary-list">
             <!-- Days will be dynamically injected here -->
         </main>
