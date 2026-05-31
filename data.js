@@ -841,7 +841,7 @@ const itinerary = [
         "title": "City Walls & York Minster",
         "type": "activity",
         "icon": "fa-monument",
-        "description": "Walk the historic City Walls and visit the spectacular York Minster.",
+        "description": "Walk the historic 3.4km City Walls (about 2 hrs) and visit the spectacular York Minster with its Great East Window. (Oost List)",
         "mapLink": "https://maps.google.com/?q=York+Minster",
         "ticketLink": "https://yorkminster.org/visit/book-tickets/"
       },
@@ -859,8 +859,17 @@ const itinerary = [
         "title": "The Shambles",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "Wander the famous medieval timber-framed street for shopping and photos.",
+        "description": "Wander the famous medieval timber-framed butchers' street. (Oost List)",
         "mapLink": "https://maps.google.com/?q=The+Shambles+York"
+      },
+      {
+        "time": "16:00",
+        "title": "National Railway Museum OR JORVIK Viking Centre",
+        "type": "activity",
+        "icon": "fa-train",
+        "description": "Option A: National Railway Museum — world-class free collection (Mallard, Shinkansen), open 10:00-17:00. Option B: JORVIK Viking Centre — immersive ride and galleries on Viking-age York at Coppergate. (Oost List — choose one!)",
+        "mapLink": "https://maps.google.com/?q=National+Railway+Museum+York",
+        "ticketLink": "https://www.jorvikvikingcentre.co.uk/"
       },
       {
         "time": "17:30",
@@ -892,17 +901,17 @@ const itinerary = [
         "title": "Alnwick Castle & Gardens",
         "type": "activity",
         "icon": "fa-chess-rook",
-        "description": "Perfect for the 'Le Sanctuaire' eye—see the famous Poison Garden and water cascades.",
+        "description": "The famous Poison Garden and spectacular water cascades. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Alnwick+Castle",
         "ticketLink": "https://www.alnwickcastle.com/book-tickets"
       },
       {
-        "time": "14:30",
-        "title": "Coastal Drive & Bamburgh Castle",
-        "type": "travel",
-        "icon": "fa-camera",
-        "description": "Drive the coastal road past Bamburgh Castle for dramatic beach photos.",
-        "mapLink": "https://www.google.com/maps/dir/Alnwick+Castle/Bamburgh+Castle/Proctors+Stead+Caravan+Park"
+        "time": "14:00",
+        "title": "Bamburgh Beach Walk",
+        "type": "activity",
+        "icon": "fa-umbrella-beach",
+        "description": "Stop for a proper beach walk at Bamburgh — low tide reflections with the castle silhouette are extraordinary. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Bamburgh+Beach"
       },
       {
         "time": "16:00",
@@ -913,11 +922,19 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Proctors+Stead+Caravan+Park"
       },
       {
-        "time": "18:00",
-        "title": "Dinner in Craster",
-        "type": "food",
+        "time": "17:30",
+        "title": "Craster Smokehouses",
+        "type": "activity",
         "icon": "fa-fish",
-        "description": "Walk down into Craster village for fresh seafood right on the harbor (e.g., The Jolly Fisherman).",
+        "description": "L. Robson & Sons — world-famous traditional Craster kippers smokehouse, a 2-minute walk from camp. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Robsons+Craster+Kippers"
+      },
+      {
+        "time": "18:30",
+        "title": "Dinner at The Jolly Fisherman",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Fresh seafood right on the harbour in Craster village.",
         "mapLink": "https://maps.google.com/?q=The+Jolly+Fisherman+Craster"
       }
     ]
@@ -931,15 +948,23 @@ const itinerary = [
     "bgImage": "",
     "items": [
       {
-        "time": "09:30",
-        "title": "Depart Proctors Stead",
+        "time": "09:00",
+        "title": "Dunstanburgh Coastal Walk",
+        "type": "activity",
+        "icon": "fa-hiking",
+        "description": "Before packing up, do the iconic Craster → Dunstanburgh Castle → Embleton coastal walk (6-8km). Ruins on the headland, seabirds and dramatic cliffs. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Dunstanburgh+Castle"
+      },
+      {
+        "time": "11:30",
+        "title": "Depart for Edinburgh",
         "type": "travel",
         "icon": "fa-route",
         "description": "Drive the scenic coastal A1 route north into Scotland (approx 2 hrs).",
         "mapLink": "https://www.google.com/maps/dir/Proctors+Stead+Caravan+Park/Mortonhall+Caravan+Park"
       },
       {
-        "time": "12:30",
+        "time": "14:00",
         "title": "Arrive at Mortonhall",
         "type": "hotel",
         "icon": "fa-campground",
@@ -947,18 +972,18 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+Park"
       },
       {
-        "time": "14:00",
+        "time": "15:30",
         "title": "Bus to City Center",
         "type": "travel",
         "icon": "fa-bus",
-        "description": "Catch the quick local bus from outside the park straight into Edinburgh."
+        "description": "Catch the local bus from outside the park into Edinburgh. Use contactless — Lothian Buses TapTapCap caps daily fares. (Oost List tip)"
       },
       {
-        "time": "15:00",
-        "title": "The Royal Mile",
+        "time": "16:00",
+        "title": "The Royal Mile & St Giles' Cathedral",
         "type": "activity",
         "icon": "fa-walking",
-        "description": "Walk the Royal Mile from the Castle down toward Holyrood.",
+        "description": "Walk the Royal Mile from the Castle down toward Holyrood. Pop into St Giles' Cathedral — free entry. (Oost List)",
         "mapLink": "https://maps.google.com/?q=The+Royal+Mile+Edinburgh"
       },
       {
@@ -966,7 +991,7 @@ const itinerary = [
         "title": "Dinner at The Witchery",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "Incredibly gothic and atmospheric dining by the castle.",
+        "description": "Incredibly gothic and atmospheric dining by the castle. Pre-book essential.",
         "mapLink": "https://maps.google.com/?q=The+Witchery+by+the+Castle",
         "ticketLink": "https://www.thewitchery.com/"
       }
@@ -992,8 +1017,16 @@ const itinerary = [
         "title": "Royal Botanic Garden",
         "type": "activity",
         "icon": "fa-leaf",
-        "description": "Phenomenal glasshouses and rock gardens.",
+        "description": "Phenomenal 70-acre garden with glasshouses and rock garden — free entry. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Royal+Botanic+Garden+Edinburgh"
+      },
+      {
+        "time": "11:30",
+        "title": "Dean Village & Water of Leith",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Wander through the picturesque Dean Village along the Water of Leith — a hidden gem free from tourists. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Dean+Village+Edinburgh"
       },
       {
         "time": "13:00",
@@ -1005,11 +1038,12 @@ const itinerary = [
       },
       {
         "time": "15:00",
-        "title": "Calton Hill",
+        "title": "National Museum of Scotland OR Calton Hill",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "Climb Calton Hill for panoramic photos of the city skyline.",
-        "mapLink": "https://maps.google.com/?q=Calton+Hill"
+        "description": "Option A: National Museum of Scotland — free, world-class galleries, open 10:00-17:00. Option B: Calton Hill for 360° city panorama with monuments. (Oost List — choose one!)",
+        "mapLink": "https://maps.google.com/?q=Calton+Hill+Edinburgh",
+        "ticketLink": "https://www.nms.ac.uk/national-museum-of-scotland/"
       },
       {
         "time": "18:00",
@@ -1045,25 +1079,33 @@ const itinerary = [
       },
       {
         "time": "13:30",
-        "title": "Rannoch Moor & Glencoe",
+        "title": "Rannoch Moor & Glencoe Pass",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "Drive across the desolate Rannoch Moor and descend through the breathtaking Glencoe pass. Pull over for photos."
+        "description": "Drive across the desolate Rannoch Moor and descend through the breathtaking Glencoe pass. Pull over at the Glencoe Visitor Centre layby for photos. (Oost List)"
       },
       {
         "time": "15:30",
         "title": "Arrive at Glen Nevis",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Set up at Glen Nevis Caravan & Camping Park (sitting right at the foot of Ben Nevis).",
+        "description": "Set up at Glen Nevis Caravan & Camping Park at the foot of Ben Nevis.",
         "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+      },
+      {
+        "time": "16:30",
+        "title": "Neptune's Staircase (Banavie)",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "Quick detour to the 8-lock Caledonian Canal staircase — watch the lock-keepers work. Free, 15 mins from camp. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Neptune's+Staircase+Banavie"
       },
       {
         "time": "18:00",
         "title": "Dinner at Ben Nevis Inn",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "Walk right next door for a hearty dinner at the famous mountaineers' pub.",
+        "description": "Walk next door for a hearty dinner at the famous mountaineers' pub.",
         "mapLink": "https://maps.google.com/?q=Ben+Nevis+Inn"
       }
     ]
@@ -1164,7 +1206,7 @@ const itinerary = [
         "title": "Start Trotternish Loop",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Early start to beat the crowds.",
+        "description": "Early start to beat the crowds. Single-track roads with passing places — take it slow. (Oost List tip)",
         "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Old+Man+of+Storr/Kilt+Rock/Quiraing/Portree+Campsite"
       },
       {
@@ -1172,15 +1214,23 @@ const itinerary = [
         "title": "Hike Old Man of Storr",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Steady climb for incredible aesthetic views.",
+        "description": "Steady 45-min climb for Skye's most iconic silhouette views. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Old+Man+of+Storr"
+      },
+      {
+        "time": "12:00",
+        "title": "Lealt Falls & Brother's Point",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "En-route — free viewpoints and short coastal path to a dramatic headland. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Lealt+Falls+Skye"
       },
       {
         "time": "13:00",
         "title": "Kilt Rock & The Quiraing",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "See the waterfall dropping into the ocean, then drive up into the otherworldly Quiraing.",
+        "description": "Kilt Rock waterfall drops into the ocean, then walk up into the otherworldly Quiraing landscape. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Quiraing"
       },
       {
@@ -1188,7 +1238,8 @@ const itinerary = [
         "title": "Return to Portree",
         "type": "activity",
         "icon": "fa-campground",
-        "description": "Return to Portree Campsite to rest tired legs."
+        "description": "Return to Portree Campsite to rest tired legs. Consider a dram at Sligachan Hotel under the Cuillin on the way back. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Sligachan+Hotel"
       }
     ]
   },
@@ -1213,16 +1264,24 @@ const itinerary = [
         "title": "Dunvegan Castle & Gardens",
         "type": "activity",
         "icon": "fa-chess-rook",
-        "description": "Visit the historic seat of Clan MacLeod and its beautiful walled garden.",
+        "description": "Historic seat of Clan MacLeod with beautiful walled garden. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Dunvegan+Castle",
         "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
       },
       {
-        "time": "13:00",
+        "time": "12:30",
+        "title": "The Oyster Shed (Carbost)",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Casual waterside seafood shack near Talisker. Local favourite for fresh oysters. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=The+Oyster+Shed+Carbost"
+      },
+      {
+        "time": "14:00",
         "title": "Neist Point Lighthouse",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "Dramatic coastal walk along the sheer cliffs to the lighthouse.",
+        "description": "Dramatic coastal walk along the sheer cliffs to the lighthouse — heavenly evening light. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse"
       },
       {
@@ -1230,7 +1289,7 @@ const itinerary = [
         "title": "Premium Dinner",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "Treat yourself to a final Skye dinner at The Three Chimneys (world-renowned, book months ahead!) or Edinbane Lodge.",
+        "description": "Treat yourself to a final Skye dinner at The Three Chimneys (book months ahead!) or Edinbane Lodge. (Oost List)",
         "mapLink": "https://maps.google.com/?q=The+Three+Chimneys",
         "ticketLink": "https://threechimneys.co.uk/"
       }
@@ -1293,11 +1352,19 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
       },
       {
-        "time": "15:30",
-        "title": "Friar's Crag",
+        "time": "15:00",
+        "title": "Castlerigg Stone Circle",
+        "type": "activity",
+        "icon": "fa-circle",
+        "description": "Free, 10-min drive from camp — one of the most spectacular prehistoric stone circles in England with mountain backdrop. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
+      },
+      {
+        "time": "16:00",
+        "title": "Friar's Crag & Derwentwater",
         "type": "activity",
         "icon": "fa-walking",
-        "description": "Stretch your legs by walking down to the lake edge at Friar’s Crag.",
+        "description": "Stretch your legs with the short waterside walk to Friar's Crag for iconic lake views. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
       },
       {
@@ -1315,27 +1382,44 @@ const itinerary = [
     "phase": "phase3",
     "date": "Friday 12 June 2026",
     "title": "Lake District Scenery",
-    "overview": "Catbells hike, Grasmere Gingerbread, and Wordsworth.",
+    "overview": "Catbells hike, Buttermere, and Wordsworth.",
     "bgImage": "",
     "items": [
       {
-        "time": "09:30",
+        "time": "09:00",
+        "title": "Keswick Launch to Hawes End",
+        "type": "activity",
+        "icon": "fa-ship",
+        "description": "Take the hop-on/hop-off Derwentwater lake cruise to Hawes End jetty (50-min circuit). A stunning way to start the day. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Keswick+Launch",
+        "ticketLink": "https://keswick-launch.co.uk/"
+      },
+      {
+        "time": "10:00",
         "title": "Catbells Hike",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Drive to the base of Catbells for a short, sharp climb with expansive, beautiful views.",
+        "description": "From Hawes End, hike up Catbells for sweeping fell views — short but rewarding. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Catbells+Lake+District"
       },
       {
-        "time": "13:00",
+        "time": "12:30",
+        "title": "Buttermere Circuit",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Drive to Buttermere for a perfect low-level lake circuit with photogenic pine reflections and a café stop. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Buttermere"
+      },
+      {
+        "time": "15:00",
         "title": "Grasmere & Dove Cottage",
         "type": "activity",
         "icon": "fa-home",
-        "description": "Visit Wordsworth’s Dove Cottage and buy the famous Grasmere Gingerbread.",
+        "description": "Visit Wordsworth's Dove Cottage and buy the world-famous Grasmere Gingerbread. (Oost List)",
         "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
       },
       {
-        "time": "17:00",
+        "time": "17:30",
         "title": "Sunset over the Fells",
         "type": "activity",
         "icon": "fa-sun",
@@ -1358,6 +1442,14 @@ const itinerary = [
         "icon": "fa-route",
         "description": "Drive east via the A66/A65 into the Yorkshire Dales (~2 hours).",
         "mapLink": "https://www.google.com/maps/dir/Castlerigg+Hall+Caravan+Park/Wood+Nook+Caravan+Park"
+      },
+      {
+        "time": "11:15",
+        "title": "Kilnsey Crag Roadside Stop",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "En-route on the B6160 into Grassington — the iconic overhanging limestone crag towering over the road. A 5-minute photo stop. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Kilnsey+Crag"
       },
       {
         "time": "12:30",
