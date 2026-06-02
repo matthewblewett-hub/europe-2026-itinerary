@@ -1111,20 +1111,20 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Proctors+Stead+Caravan+Park"
       },
       {
-        "time": "17:30",
-        "title": "Craster Smokehouses",
+        "time": "16:15",
+        "title": "5km Run — Craster Area",
         "type": "activity",
-        "icon": "fa-fish",
-        "description": "L. Robson & Sons — world-famous traditional Craster kippers smokehouse, a 2-minute walk from camp. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Robsons+Craster+Kippers"
+        "icon": "fa-running",
+        "description": "An easy 5km run through the Craster coastal lanes and cliff paths. Great legs stretch after the long drive up.",
+        "mapLink": "https://maps.google.com/?q=Craster+Northumberland"
       },
       {
-        "time": "18:30",
-        "title": "Dinner at The Jolly Fisherman",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Fresh seafood right on the harbour in Craster village.",
-        "mapLink": "https://maps.google.com/?q=The+Jolly+Fisherman+Craster"
+        "time": "17:00",
+        "title": "Evening Stroll — Dunstanburgh Castle",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "1.5 hour gentle evening stroll from Craster north along the coastal path past the dramatic ruins of Dunstanburgh Castle on the headland. Golden hour light on the battlements is spectacular.",
+        "mapLink": "https://maps.google.com/?q=Dunstanburgh+Castle+Northumberland"
       }
     ]
   },
@@ -1132,8 +1132,8 @@ const itinerary = [
     "id": "day-p3-4",
     "phase": "phase3",
     "date": "Wednesday 3 June 2026",
-    "title": "Drive to Edinburgh",
-    "overview": "Coastal drive into Scotland and exploring the Royal Mile.",
+    "title": "Farne Islands & Edinburgh",
+    "overview": "Holy Island, a Puffin Cruise on the Farne Islands, then into Edinburgh.",
     "bgImage": "",
     "coords": {"lat": 55.95, "lon": -3.19},
     "weatherLocation": "Edinburgh",
@@ -1155,23 +1155,42 @@ const itinerary = [
 },
     "items": [
       {
-        "time": "09:00",
-        "title": "Dunstanburgh Coastal Walk",
-        "type": "activity",
-        "icon": "fa-hiking",
-        "description": "Before packing up, do the iconic Craster → Dunstanburgh Castle → Embleton coastal walk (6-8km). Ruins on the headland, seabirds and dramatic cliffs. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Dunstanburgh+Castle"
-      },
-      {
-        "time": "11:30",
-        "title": "Depart for Edinburgh",
+        "time": "08:00",
+        "title": "Depart Proctors Stead",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Drive the scenic coastal A1 route north into Scotland (approx 2 hrs).",
-        "mapLink": "https://www.google.com/maps/dir/Proctors+Stead+Caravan+Park/Mortonhall+Caravan+Park"
+        "description": "Pack up and head north. First stop: Holy Island (Lindisfarne). Note the causeway tide times before crossing — check at holyislandcrossingtimes.northumberland.gov.uk",
+        "mapLink": "https://www.google.com/maps/dir/Proctors+Stead+Caravan+Park/Holy+Island+Northumberland",
+        "ticketLink": "https://holyislandcrossingtimes.northumberland.gov.uk/"
       },
       {
-        "time": "14:00",
+        "time": "09:00",
+        "title": "Holy Island & Lindisfarne Abbey",
+        "type": "activity",
+        "icon": "fa-church",
+        "description": "Visit Holy Island — one of the most sacred sites in England. Walk to Lindisfarne Priory (ruined abbey), views across the causeway and estuary, and take in Bamburgh Castle on the skyline to the south. Allow ~1 hour.",
+        "mapLink": "https://maps.google.com/?q=Lindisfarne+Priory+Holy+Island",
+        "ticketLink": "https://www.english-heritage.org.uk/visit/places/lindisfarne-priory/"
+      },
+      {
+        "time": "10:15",
+        "title": "Puffin Cruise — Farne Islands (Serenity)",
+        "type": "activity",
+        "icon": "fa-ship",
+        "description": "2-hour boat cruise to the Farne Islands with Serenity Boat Cruises from Seahouses. Home to one of Britain's largest puffin colonies (40,000+ birds) plus grey seals, guillemots and razorbills. A truly unmissable wildlife experience.",
+        "mapLink": "https://maps.google.com/?q=Seahouses+Harbour+Northumberland",
+        "ticketLink": "https://www.serenityboattrips.co.uk/"
+      },
+      {
+        "time": "12:30",
+        "title": "Drive to Edinburgh",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Head north on the A1 into Scotland — one of the great coastal drives, crossing the border near Berwick-upon-Tweed. ~2 hrs to Edinburgh.",
+        "mapLink": "https://www.google.com/maps/dir/Seahouses/Mortonhall+Caravan+Park+Edinburgh"
+      },
+      {
+        "time": "15:00",
         "title": "Arrive at Mortonhall",
         "type": "hotel",
         "icon": "fa-campground",
@@ -1179,26 +1198,26 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+Park"
       },
       {
-        "time": "15:30",
-        "title": "Bus to City Center",
+        "time": "16:30",
+        "title": "Bus to City Centre",
         "type": "travel",
         "icon": "fa-bus",
-        "description": "Catch the local bus from outside the park into Edinburgh. Use contactless — Lothian Buses TapTapCap caps daily fares. (Oost List tip)"
+        "description": "Catch the local bus from outside the park into Edinburgh. Use contactless — Lothian Buses TapTapCap caps daily fares."
       },
       {
-        "time": "16:00",
+        "time": "17:00",
         "title": "The Royal Mile & St Giles' Cathedral",
         "type": "activity",
         "icon": "fa-walking",
-        "description": "Walk the Royal Mile from the Castle down toward Holyrood. Pop into St Giles' Cathedral — free entry. (Oost List)",
+        "description": "Walk the Royal Mile from the Castle down toward Holyrood. Pop into St Giles' Cathedral — free entry, stunning interior. (Oost List)",
         "mapLink": "https://maps.google.com/?q=The+Royal+Mile+Edinburgh"
       },
       {
-        "time": "18:30",
+        "time": "19:00",
         "title": "Dinner at The Witchery",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "Incredibly gothic and atmospheric dining by the castle. Pre-book essential.",
+        "description": "Gothic and atmospheric dining right by the castle. Pre-book essential.",
         "mapLink": "https://maps.google.com/?q=The+Witchery+by+the+Castle",
         "ticketLink": "https://www.thewitchery.com/"
       }
@@ -1244,6 +1263,14 @@ const itinerary = [
         "icon": "fa-utensils",
         "description": "Wander the stylish Stockbridge neighborhood for lunch.",
         "mapLink": "https://maps.google.com/?q=Stockbridge+Edinburgh"
+      },
+      {
+        "time": "14:00",
+        "title": "🎀 Carryn: Handbag Workshop — Arch 10",
+        "type": "activity",
+        "icon": "fa-shopping-bag",
+        "description": "Carryn only — Edinburgh Handbag Workshop Experience at Arch 10 with Islander Edinburgh Ltd. 2:00pm–3:00pm. Reserved for 1. East Market Street, Edinburgh.",
+        "mapLink": "https://maps.google.com/?q=Arch+10+East+Market+Street+Edinburgh"
       },
       {
         "time": "15:00",
