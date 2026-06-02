@@ -1125,6 +1125,14 @@ const itinerary = [
         "icon": "fa-walking",
         "description": "1.5 hour gentle evening stroll from Craster north along the coastal path past the dramatic ruins of Dunstanburgh Castle on the headland. Golden hour light on the battlements is spectacular.",
         "mapLink": "https://maps.google.com/?q=Dunstanburgh+Castle+Northumberland"
+      },
+      {
+        "time": "18:30",
+        "title": "Fish & Chips — The Jolly Fisherman",
+        "type": "food",
+        "icon": "fa-fish",
+        "description": "Craster's famous harbourside pub — fresh fish and chips right on the water. The perfect end to the day.",
+        "mapLink": "https://maps.google.com/?q=The+Jolly+Fisherman+Craster"
       }
     ]
   },
