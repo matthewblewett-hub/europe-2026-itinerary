@@ -1132,8 +1132,8 @@ const itinerary = [
     "id": "day-p3-4",
     "phase": "phase3",
     "date": "Wednesday 3 June 2026",
-    "title": "Farne Islands & Edinburgh",
-    "overview": "Holy Island, a Puffin Cruise on the Farne Islands, then into Edinburgh.",
+    "title": "Farne Islands & Meeting Valerie",
+    "overview": "Puffins on the Farne Islands, then Valerie joins for the Forth Bridges, Kelpies and Falkirk Wheel.",
     "bgImage": "",
     "coords": {"lat": 55.95, "lon": -3.19},
     "weatherLocation": "Edinburgh",
@@ -1183,43 +1183,51 @@ const itinerary = [
       },
       {
         "time": "12:30",
-        "title": "Drive to Edinburgh",
+        "title": "Drive Straight to Mortonhall",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Head north on the A1 into Scotland — one of the great coastal drives, crossing the border near Berwick-upon-Tweed. ~2 hrs to Edinburgh.",
+        "description": "Head straight to Edinburgh — ~2 hrs from Seahouses on the A1.",
         "mapLink": "https://www.google.com/maps/dir/Seahouses/Mortonhall+Caravan+Park+Edinburgh"
       },
       {
-        "time": "15:00",
-        "title": "Arrive at Mortonhall",
+        "time": "14:30",
+        "title": "Arrive Mortonhall — Meet Valerie! 🤗",
         "type": "hotel",
         "icon": "fa-campground",
-        "description": "Arrive at Mortonhall Caravan & Camping Park. Set up the van.",
+        "description": "Set up the van and meet Valerie who's joining you for the afternoon's sightseeing.",
         "mapLink": "https://maps.google.com/?q=Mortonhall+Caravan+Park"
       },
       {
-        "time": "16:30",
-        "title": "Bus to City Centre",
-        "type": "travel",
-        "icon": "fa-bus",
-        "description": "Catch the local bus from outside the park into Edinburgh. Use contactless — Lothian Buses TapTapCap caps daily fares."
+        "time": "15:00",
+        "title": "South Queensferry & Forth Bridges",
+        "type": "activity",
+        "icon": "fa-camera",
+        "description": "With Valerie — stunning views of all three Forth Bridges: the iconic red Victorian railway bridge (UNESCO), the road bridge and the modern Queensferry Crossing. Just 15 mins from Mortonhall.",
+        "mapLink": "https://maps.google.com/?q=South+Queensferry+Forth+Bridge"
       },
       {
-        "time": "17:00",
-        "title": "The Royal Mile & St Giles' Cathedral",
+        "time": "16:15",
+        "title": "The Kelpies — Helix Park, Falkirk",
         "type": "activity",
-        "icon": "fa-walking",
-        "description": "Walk the Royal Mile from the Castle down toward Holyrood. Pop into St Giles' Cathedral — free entry, stunning interior. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=The+Royal+Mile+Edinburgh"
+        "icon": "fa-horse",
+        "description": "With Valerie — two 30-metre steel horse-head sculptures by Andy Scott, extraordinary up close. Free to view from outside. ~30 min drive from Queensferry.",
+        "mapLink": "https://maps.google.com/?q=The+Kelpies+Falkirk"
+      },
+      {
+        "time": "17:15",
+        "title": "Falkirk Wheel",
+        "type": "activity",
+        "icon": "fa-sync",
+        "description": "With Valerie — the world's only rotating boat lift, connecting two canals 24 metres apart. Take a boat trip up it if time allows.",
+        "mapLink": "https://maps.google.com/?q=Falkirk+Wheel",
+        "ticketLink": "https://www.scottishcanals.co.uk/falkirk-wheel/"
       },
       {
         "time": "19:00",
-        "title": "Dinner at The Witchery",
+        "title": "Return to Mortonhall — Dinner",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "Gothic and atmospheric dining right by the castle. Pre-book essential.",
-        "mapLink": "https://maps.google.com/?q=The+Witchery+by+the+Castle",
-        "ticketLink": "https://www.thewitchery.com/"
+        "description": "Head back to the campsite. Quiet evening meal at the van or local takeaway."
       }
     ]
   },
@@ -1234,35 +1242,37 @@ const itinerary = [
     "weatherLocation": "Edinburgh",
     "items": [
       {
-        "time": "09:30",
-        "title": "Bus to New Town",
+        "time": "08:00",
+        "title": "Early Start — Valerie Collects You",
         "type": "travel",
-        "icon": "fa-bus",
-        "description": "Head into the elegant Georgian New Town."
+        "icon": "fa-car",
+        "description": "Valerie is driving you to the park & ride / tram into Edinburgh. Big day — start early to fit it all in!"
       },
       {
-        "time": "10:00",
-        "title": "Royal Botanic Garden",
+        "time": "09:00",
+        "title": "Edinburgh Castle",
         "type": "activity",
-        "icon": "fa-leaf",
-        "description": "Phenomenal 70-acre garden with glasshouses and rock garden — free entry. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Royal+Botanic+Garden+Edinburgh"
+        "icon": "fa-chess-rook",
+        "description": "Start at the top — Edinburgh Castle commands the whole city from its volcanic crag. The Crown Jewels and Stone of Destiny are inside. Pre-booking strongly advised.",
+        "mapLink": "https://maps.google.com/?q=Edinburgh+Castle",
+        "ticketLink": "https://www.edinburghcastle.scot/"
       },
       {
-        "time": "11:30",
-        "title": "Dean Village & Water of Leith",
+        "time": "10:30",
+        "title": "Mary King's Close",
         "type": "activity",
-        "icon": "fa-walking",
-        "description": "Wander through the picturesque Dean Village along the Water of Leith — a hidden gem free from tourists. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Dean+Village+Edinburgh"
+        "icon": "fa-ghost",
+        "description": "100% worth it (Valerie's words!) — underground warren of 17th-century closes sealed beneath the Royal Mile. Guided tour ~75 mins. Pre-booking essential.",
+        "mapLink": "https://maps.google.com/?q=Mary+King's+Close+Edinburgh",
+        "ticketLink": "https://www.realmarykingsclose.com/"
       },
       {
-        "time": "13:00",
-        "title": "Lunch in Stockbridge",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Wander the stylish Stockbridge neighborhood for lunch.",
-        "mapLink": "https://maps.google.com/?q=Stockbridge+Edinburgh"
+        "time": "12:00",
+        "title": "Greyfriars Bobby & Grassmarket",
+        "type": "activity",
+        "icon": "fa-dog",
+        "description": "Visit the famous loyal Skye Terrier statue outside Greyfriars Kirk, then lunch in the lively Grassmarket — great pubs and cafes.",
+        "mapLink": "https://maps.google.com/?q=Greyfriars+Bobby+Edinburgh"
       },
       {
         "time": "14:00",
@@ -1273,20 +1283,44 @@ const itinerary = [
         "mapLink": "https://maps.google.com/?q=Arch+10+East+Market+Street+Edinburgh"
       },
       {
-        "time": "15:00",
-        "title": "National Museum of Scotland OR Calton Hill",
+        "time": "14:00",
+        "title": "Holyrood Palace & Arthur's Seat",
         "type": "activity",
-        "icon": "fa-camera",
-        "description": "Option A: National Museum of Scotland — free, world-class galleries, open 10:00-17:00. Option B: Calton Hill for 360° city panorama with monuments. (Oost List — choose one!)",
-        "mapLink": "https://maps.google.com/?q=Calton+Hill+Edinburgh",
-        "ticketLink": "https://www.nms.ac.uk/national-museum-of-scotland/"
+        "icon": "fa-crown",
+        "description": "Others — visit the Palace of Holyroodhouse (official Scottish residence of the King), then attempt Arthur's Seat for spectacular 360° city views. Allow ~2 hrs for the full climb.",
+        "mapLink": "https://maps.google.com/?q=Arthur's+Seat+Edinburgh",
+        "ticketLink": "https://www.rct.uk/visit/palace-of-holyroodhouse"
+      },
+      {
+        "time": "15:30",
+        "title": "Calton Hill",
+        "type": "activity",
+        "icon": "fa-monument",
+        "description": "All together — 10-min climb to Calton Hill for the classic Edinburgh panorama: Princes Street, the New Town, the Firth of Forth and Arthur's Seat. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Calton+Hill+Edinburgh"
+      },
+      {
+        "time": "17:00",
+        "title": "Princes Street Gardens & Scott Monument",
+        "type": "activity",
+        "icon": "fa-tree",
+        "description": "Stroll the beautiful gardens beneath the castle. The Gothic Scott Monument is worth climbing for the views over Princes Street.",
+        "mapLink": "https://maps.google.com/?q=Princes+Street+Gardens+Edinburgh"
       },
       {
         "time": "18:00",
-        "title": "Relax at Mortonhall",
+        "title": "Dean's Village & Water of Leith",
         "type": "activity",
-        "icon": "fa-wine-glass",
-        "description": "Relaxing evening back at the campsite with local Scottish deli produce."
+        "icon": "fa-walking",
+        "description": "End the day with a golden-hour stroll through Dean Village along the Water of Leith — a hidden gem most tourists never find. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Dean+Village+Edinburgh"
+      },
+      {
+        "time": "19:30",
+        "title": "Return to Mortonhall",
+        "type": "travel",
+        "icon": "fa-bus",
+        "description": "Bus or tram back to Mortonhall. Dinner at the van."
       }
     ]
   },
@@ -1294,8 +1328,8 @@ const itinerary = [
     "id": "day-p3-6",
     "phase": "phase3",
     "date": "Friday 5 June 2026",
-    "title": "Drive to Glen Nevis",
-    "overview": "Cross Rannoch Moor and the dramatic Glencoe pass.",
+    "title": "Stirling with Valerie & Drive North",
+    "overview": "Stirling Castle, the Wallace Monument and farewell to Valerie, then a spectacular scenic drive north through the Trossachs, Killin and Glencoe to Glen Nevis.",
     "bgImage": "",
     "coords": {"lat": 56.82, "lon": -5.1},
     "weatherLocation": "Glen Nevis",
@@ -1316,50 +1350,103 @@ const itinerary = [
 },
     "items": [
       {
-        "time": "09:00",
-        "title": "Depart Edinburgh",
+        "time": "08:30",
+        "title": "Drive to Stirling — Meet Valerie",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Drive north via Perth (approx 3.5 hrs total drive time).",
-        "mapLink": "https://www.google.com/maps/dir/Mortonhall+Caravan+Park/Pitlochry/Glen+Nevis+Caravan+Park"
+        "description": "Drive west from Edinburgh to Stirling (~1 hr). Meet Valerie at Stirling Park & Ride.",
+        "mapLink": "https://www.google.com/maps/dir/Mortonhall+Caravan+Park/Stirling+Castle"
+      },
+      {
+        "time": "09:30",
+        "title": "Stirling Castle",
+        "type": "activity",
+        "icon": "fa-chess-rook",
+        "description": "With Valerie — Scotland's most spectacular castle, once seat of Scottish kings. Mary Queen of Scots was crowned here. Superb views from the ramparts over the Forth valley.",
+        "mapLink": "https://maps.google.com/?q=Stirling+Castle",
+        "ticketLink": "https://www.stirlingcastle.scot/"
       },
       {
         "time": "11:00",
-        "title": "Coffee in Pitlochry",
+        "title": "Wallace Monument",
+        "type": "activity",
+        "icon": "fa-monument",
+        "description": "With Valerie — the striking tower on Abbey Craig commemorates William Wallace's victory at Stirling Bridge (1297). 246 steps to the top for commanding views.",
+        "mapLink": "https://maps.google.com/?q=Wallace+Monument+Stirling",
+        "ticketLink": "https://www.nationalwallacemonument.com/"
+      },
+      {
+        "time": "12:00",
+        "title": "Old Town Bridge & Town Jail",
+        "type": "activity",
+        "icon": "fa-landmark",
+        "description": "With Valerie — walk the medieval Old Town Bridge (1415) and the entertaining Town Jail experience. Farewell to Valerie and head north!",
+        "mapLink": "https://maps.google.com/?q=Stirling+Old+Town+Bridge"
+      },
+      {
+        "time": "13:00",
+        "title": "Lunch & Depart North via A84",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "Quick lunch in Stirling then head north on the A84 into the Trossachs — where the Highlands really begin.",
+        "mapLink": "https://www.google.com/maps/dir/Stirling/Glen+Nevis+Caravan+Park"
+      },
+      {
+        "time": "14:30",
+        "title": "Callander — Coffee Stop",
         "type": "food",
         "icon": "fa-coffee",
-        "description": "Stop in the lovely highland town of Pitlochry."
+        "description": "Callander is the lovely gateway town to the Trossachs — a 5-min stop for coffee on the High Street before the highland scenery really begins.",
+        "mapLink": "https://maps.google.com/?q=Callander+Scotland"
       },
       {
-        "time": "13:30",
-        "title": "Rannoch Moor & Glencoe Pass",
+        "time": "15:00",
+        "title": "Kilmahog — Feed the Highland Cows!",
         "type": "activity",
-        "icon": "fa-mountain",
-        "description": "Drive across the desolate Rannoch Moor and descend through the breathtaking Glencoe pass. Pull over at the Glencoe Visitor Centre layby for photos. (Oost List)"
+        "icon": "fa-cow",
+        "description": "Stop at Kilmahog to see and feed the famous shaggy Highland Cattle. Guaranteed to produce the best photos of the trip.",
+        "mapLink": "https://maps.google.com/?q=Kilmahog+Scotland"
       },
       {
-        "time": "15:30",
-        "title": "Arrive at Glen Nevis",
-        "type": "hotel",
-        "icon": "fa-campground",
-        "description": "Set up at Glen Nevis Caravan & Camping Park at the foot of Ben Nevis.",
-        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
-      },
-      {
-        "time": "16:30",
-        "title": "Neptune's Staircase (Banavie)",
+        "time": "15:20",
+        "title": "Loch Lubnaig Viewpoint",
         "type": "activity",
         "icon": "fa-water",
-        "description": "Quick detour to the 8-lock Caledonian Canal staircase — watch the lock-keepers work. Free, 15 mins from camp. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Neptune's+Staircase+Banavie"
+        "description": "Pull into the first car park on beautiful Loch Lubnaig — a narrow loch hemmed in by steep mountains. Short photo stop.",
+        "mapLink": "https://maps.google.com/?q=Loch+Lubnaig"
+      },
+      {
+        "time": "16:15",
+        "title": "Killin — Falls of Dochart",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "The spectacular Falls of Dochart tumble through the village centre under an old stone bridge — a possible rendezvous with Valerie and her caravan! 30-min stop.",
+        "mapLink": "https://maps.google.com/?q=Falls+of+Dochart+Killin"
+      },
+      {
+        "time": "17:30",
+        "title": "A82 via Glencoe — Stunning Drive",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Past Loch Lomond, across Rannoch Moor and down through Glencoe — one of the world's great drives. Use the lay-bys!",
+        "mapLink": "https://www.google.com/maps/dir/Killin/Glen+Nevis+Caravan+Park"
       },
       {
         "time": "18:00",
-        "title": "Dinner at Ben Nevis Inn",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Walk next door for a hearty dinner at the famous mountaineers' pub.",
-        "mapLink": "https://maps.google.com/?q=Ben+Nevis+Inn"
+        "title": "Glencoe Mountain Gondola (Optional)",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "If there's energy left — the Glencoe Mountain gondola gives effortless views over Rannoch Moor and the glen. Check operating hours.",
+        "mapLink": "https://maps.google.com/?q=Glencoe+Mountain+Ski+Centre",
+        "ticketLink": "https://www.glencoemountain.co.uk/"
+      },
+      {
+        "time": "19:30",
+        "title": "Arrive Glen Nevis",
+        "type": "hotel",
+        "icon": "fa-campground",
+        "description": "Set up at Glen Nevis Caravan & Camping Park at the foot of Ben Nevis. Dinner at the Ben Nevis Inn next door.",
+        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
       }
     ]
   },
@@ -1367,34 +1454,59 @@ const itinerary = [
     "id": "day-p3-7",
     "phase": "phase3",
     "date": "Saturday 6 June 2026",
-    "title": "Steall Falls & Glencoe",
-    "overview": "A beautiful local hike to one of Scotland's highest waterfalls.",
+    "title": "Glen Etive, Glencoe & Glenfinnan",
+    "overview": "A spectacular day: the wild Glen Etive loop, hiking or Glencoe Visitors Centre, and the iconic Glenfinnan Viaduct.",
     "bgImage": "",
     "coords": {"lat": 56.82, "lon": -5.1},
     "weatherLocation": "Glen Nevis",
     "items": [
       {
-        "time": "09:30",
-        "title": "Hike to Steall Falls",
+        "time": "09:00",
+        "title": "Glen Etive Drive",
+        "type": "activity",
+        "icon": "fa-route",
+        "description": "Drive the stunning 15-mile Glen Etive dead-end road off the A82 at Glencoe — one of the most spectacular and wild glens in Scotland, used as a Bond filming location. Return the same way.",
+        "mapLink": "https://maps.google.com/?q=Glen+Etive+Scotland"
+      },
+      {
+        "time": "11:00",
+        "title": "Hike in Glencoe OR Visitors Centre",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Leave the van parked and walk up the stunning Glen Nevis valley to Steall Falls (a moderate hike).",
-        "mapLink": "https://maps.google.com/?q=Steall+Waterfall"
+        "description": "Walkers: choose any of the stunning Glencoe valley trails. Non-hikers: the Glencoe Visitor Centre has excellent exhibitions on the geology and the 1692 Glencoe Massacre.",
+        "mapLink": "https://maps.google.com/?q=Glencoe+Visitor+Centre"
       },
       {
         "time": "13:30",
-        "title": "Glencoe Lochan Trail",
-        "type": "activity",
-        "icon": "fa-walking",
-        "description": "Drive back down into Glencoe to do this easy, serene walk around a pine-fringed loch reflecting the mountains.",
-        "mapLink": "https://maps.google.com/?q=Glencoe+Lochan"
+        "title": "Drive to Glenfinnan Viaduct",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Head north from Fort William to Glenfinnan (~45 min). Park and walk up to the viewpoint for the famous Harry Potter railway bridge view.",
+        "mapLink": "https://www.google.com/maps/dir/Glen+Nevis/Glenfinnan+Viaduct"
       },
       {
-        "time": "17:00",
-        "title": "Relax at Campsite",
+        "time": "14:30",
+        "title": "Glenfinnan Viaduct & Monument",
         "type": "activity",
+        "icon": "fa-train",
+        "description": "The most photographed railway viaduct in the world — the Jacobite steam train crosses it at 10:42 and 14:50 if you time it right. Also visit the Glenfinnan Monument at the head of Loch Shiel. (Oost List)",
+        "mapLink": "https://maps.google.com/?q=Glenfinnan+Viaduct"
+      },
+      {
+        "time": "16:30",
+        "title": "Return to Glen Nevis",
+        "type": "travel",
         "icon": "fa-campground",
-        "description": "Relax at Glen Nevis campsite taking in the mountain views."
+        "description": "Back to camp. Valerie heads home from here. Prepare the van for tomorrow's drive to Skye.",
+        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+      },
+      {
+        "time": "18:00",
+        "title": "Dinner at Ben Nevis Inn",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "One last dinner at the legendary mountaineers' pub next to the campsite.",
+        "mapLink": "https://maps.google.com/?q=Ben+Nevis+Inn"
       }
     ]
   },
