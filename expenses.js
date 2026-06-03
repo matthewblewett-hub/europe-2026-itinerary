@@ -1,4 +1,4 @@
-// expenses.js — Blues vs Oosties Trip Expense Splitter
+// expenses.js — Blues vs Oosties Trip Expense Splitter (v2: custom splits)
 
 document.addEventListener('DOMContentLoaded', () => {
     const fab          = document.getElementById('split-fab');
@@ -12,8 +12,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const photoPreview = document.getElementById('receipt-preview');
     const photoHolder  = document.getElementById('photo-placeholder');
 
+    // Split mode elements
+    const splitEqualBtn   = document.getElementById('split-equal-btn');
+    const splitCustomBtn  = document.getElementById('split-custom-btn');
+    const equalSection    = document.getElementById('equal-split-section');
+    const customSection   = document.getElementById('custom-split-section');
+    const customPreview   = document.getElementById('custom-total-preview');
+    const bluesInput      = document.getElementById('expense-blues');
+    const oostiesInput    = document.getElementById('expense-oosties');
+    const totalInput      = document.getElementById('expense-total');
+
     let selectedPaidBy = null;
     let capturedPhoto  = null;
+    let splitMode      = 'equal'; // 'equal' | 'custom'
 
     // ===== STORAGE =====
     function getExpenses() {
@@ -23,6 +34,32 @@ document.addEventListener('DOMContentLoaded', () => {
     function saveExpenses(list) {
         localStorage.setItem('eurotrip-expenses', JSON.stringify(list));
     }
+
+    // ===== SPLIT MODE TOGGLE =====
+    splitEqualBtn.addEventListener('click', () => {
+        splitMode = 'equal';
+        splitEqualBtn.classList.add('active');
+        splitCustomBtn.classList.remove('active');
+        equalSection.style.display = 'block';
+        customSection.style.display = 'none';
+    });
+
+    splitCustomBtn.addEventListener('click', () => {
+        splitMode = 'custom';
+        splitCustomBtn.classList.add('active');
+        splitEqualBtn.classList.remove('active');
+        customSection.style.display = 'block';
+        equalSection.style.display = 'none';
+    });
+
+    // Auto-update total preview in custom mode
+    function updateCustomPreview() {
+        const b = parseFloat(bluesInput.value) || 0;
+        const o = parseFloat(oostiesInput.value) || 0;
+        customPreview.textContent = `Total: £${(b + o).toFixed(2)}`;
+    }
+    bluesInput.addEventListener('input', updateCustomPreview);
+    oostiesInput.addEventListener('input', updateCustomPreview);
 
     // ===== FAB: OPEN PANEL =====
     fab.addEventListener('click', () => {
@@ -90,26 +127,48 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== SAVE =====
     saveBtn.addEventListener('click', () => {
         const desc     = document.getElementById('expense-desc').value.trim();
-        const amountRaw = document.getElementById('expense-amount').value;
-        const amount   = parseFloat(amountRaw);
         const category = document.getElementById('expense-category').value;
 
-        if (!desc)               { shake('expense-desc');   return; }
-        if (!amount || amount <= 0) { shake('expense-amount'); return; }
-        if (!selectedPaidBy)     { shake('paid-by-row');    return; }
+        if (!desc) { shake('expense-desc'); return; }
+        if (!selectedPaidBy) { shake('paid-by-row'); return; }
+
+        let bluesShare, oostiesShare;
+
+        if (splitMode === 'equal') {
+            const total = parseFloat(totalInput.value);
+            if (!total || total <= 0) { shake('expense-total'); return; }
+            bluesShare   = Math.round((total / 2) * 100) / 100;
+            oostiesShare = Math.round((total - bluesShare) * 100) / 100;
+        } else {
+            bluesShare   = parseFloat(bluesInput.value) || 0;
+            oostiesShare = parseFloat(oostiesInput.value) || 0;
+            if (bluesShare <= 0 && oostiesShare <= 0) { shake('custom-split-section'); return; }
+        }
+
+        const total = bluesShare + oostiesShare;
+
+        // Who owes whom for this expense
+        // If Blues paid: Oosties owe Blues their share
+        // If Oosties paid: Blues owe Oosties their share
+        const owestAmount = selectedPaidBy === 'blues' ? oostiesShare : bluesShare;
+        const owesDirection = selectedPaidBy === 'blues' ? 'oosties-owes-blues' : 'blues-owes-oosties';
 
         const today = new Date();
         const dateLabel = today.toLocaleDateString('en-GB', { day: 'numeric', month: 'short' });
 
         const list = getExpenses();
         list.unshift({
-            id:          Date.now(),
-            date:        dateLabel,
-            description: desc,
-            amount:      Math.round(amount * 100) / 100,
-            paidBy:      selectedPaidBy,
+            id:           Date.now(),
+            date:         dateLabel,
+            description:  desc,
+            total:        Math.round(total * 100) / 100,
+            bluesShare,
+            oostiesShare,
+            paidBy:       selectedPaidBy,
+            owestAmount,
+            owesDirection,
             category,
-            photo:       capturedPhoto || null
+            photo:        capturedPhoto || null
         });
         saveExpenses(list);
         closeAddSheet();
@@ -127,14 +186,22 @@ document.addEventListener('DOMContentLoaded', () => {
     function resetForm() {
         capturedPhoto  = null;
         selectedPaidBy = null;
-        document.getElementById('expense-desc').value    = '';
-        document.getElementById('expense-amount').value  = '';
+        splitMode      = 'equal';
+        document.getElementById('expense-desc').value = '';
         document.getElementById('expense-category').value = 'food';
+        totalInput.value = '';
+        bluesInput.value = '';
+        oostiesInput.value = '';
+        customPreview.textContent = 'Total: £0.00';
         photoPreview.src = '';
         photoPreview.style.display = 'none';
         photoHolder.style.display  = 'flex';
         photoInput.value = '';
         document.querySelectorAll('.paid-btn').forEach(b => b.classList.remove('active'));
+        splitEqualBtn.classList.add('active');
+        splitCustomBtn.classList.remove('active');
+        equalSection.style.display = 'block';
+        customSection.style.display = 'none';
     }
 
     // ===== RENDER PANEL =====
@@ -147,20 +214,29 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== SUMMARY CARD =====
     function renderSummary(list) {
         const el = document.getElementById('split-summary');
-        const bluesPaid   = list.filter(e => e.paidBy === 'blues').reduce((s, e) => s + e.amount, 0);
-        const oostiesPaid = list.filter(e => e.paidBy === 'oosties').reduce((s, e) => s + e.amount, 0);
-        const total       = bluesPaid + oostiesPaid;
-        const diff        = Math.abs(bluesPaid - oostiesPaid) / 2;
 
+        // Net balance: sum up what each couple owes the other
+        let oostiesOwesBlues = 0;
+        let bluesOwesOosties = 0;
+        list.forEach(exp => {
+            if (exp.owesDirection === 'oosties-owes-blues') oostiesOwesBlues += (exp.owestAmount || 0);
+            else if (exp.owesDirection === 'blues-owes-oosties') bluesOwesOosties += (exp.owestAmount || 0);
+        });
+
+        const bluesPaid   = list.filter(e => e.paidBy === 'blues').reduce((s, e) => s + (e.total || 0), 0);
+        const oostiesPaid = list.filter(e => e.paidBy === 'oosties').reduce((s, e) => s + (e.total || 0), 0);
+        const total       = bluesPaid + oostiesPaid;
+
+        const net = oostiesOwesBlues - bluesOwesOosties;
         let balanceHTML;
         if (total === 0) {
             balanceHTML = `<div class="balance-indicator balance-even">No expenses yet</div>`;
-        } else if (diff < 0.005) {
+        } else if (Math.abs(net) < 0.005) {
             balanceHTML = `<div class="balance-indicator balance-even">✓ All square!</div>`;
-        } else if (bluesPaid > oostiesPaid) {
-            balanceHTML = `<div class="balance-indicator balance-blues">Oosties owe Blues <strong>£${diff.toFixed(2)}</strong></div>`;
+        } else if (net > 0) {
+            balanceHTML = `<div class="balance-indicator balance-blues">Oosties owe Blues <strong>£${net.toFixed(2)}</strong></div>`;
         } else {
-            balanceHTML = `<div class="balance-indicator balance-oosties">Blues owe Oosties <strong>£${diff.toFixed(2)}</strong></div>`;
+            balanceHTML = `<div class="balance-indicator balance-oosties">Blues owe Oosties <strong>£${Math.abs(net).toFixed(2)}</strong></div>`;
         }
 
         el.innerHTML = `
@@ -169,14 +245,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="couple-emoji">🔵</div>
                     <div class="couple-name">Blues</div>
                     <div class="couple-paid">£${bluesPaid.toFixed(2)}</div>
-                    <div class="couple-label">paid</div>
+                    <div class="couple-label">paid out</div>
                 </div>
                 <div class="couple-divider"></div>
                 <div class="couple-card oosties-card">
                     <div class="couple-emoji">🟡</div>
                     <div class="couple-name">Oosties</div>
                     <div class="couple-paid">£${oostiesPaid.toFixed(2)}</div>
-                    <div class="couple-label">paid</div>
+                    <div class="couple-label">paid out</div>
                 </div>
             </div>
             <div class="summary-total-row">
@@ -204,7 +280,16 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        el.innerHTML = list.map(exp => `
+        el.innerHTML = list.map(exp => {
+            const owedLabel = exp.paidBy === 'blues'
+                ? `Oosties owe Blues £${(exp.owestAmount||0).toFixed(2)}`
+                : `Blues owe Oosties £${(exp.owestAmount||0).toFixed(2)}`;
+
+            const splitLabel = exp.bluesShare === exp.oostiesShare
+                ? `50:50 · £${(exp.bluesShare||0).toFixed(2)} each`
+                : `🔵 £${(exp.bluesShare||0).toFixed(2)} / 🟡 £${(exp.oostiesShare||0).toFixed(2)}`;
+
+            return `
             <div class="expense-item" data-id="${exp.id}">
                 <div class="expense-left">
                     ${exp.photo
@@ -217,20 +302,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     <div class="expense-meta">
                         <span class="expense-date-lbl">${exp.date}</span>
                         <span class="paid-tag ${exp.paidBy === 'blues' ? 'blues-tag' : 'oosties-tag'}">
-                            ${exp.paidBy === 'blues' ? '🔵 Blues' : '🟡 Oosties'}
+                            ${exp.paidBy === 'blues' ? '🔵 Blues paid' : '🟡 Oosties paid'}
                         </span>
                     </div>
+                    <div class="expense-split-detail">${splitLabel}</div>
+                    <div class="expense-owed-label">${owedLabel}</div>
                 </div>
                 <div class="expense-right-col">
-                    <div class="expense-amt">£${exp.amount.toFixed(2)}</div>
+                    <div class="expense-amt">£${(exp.total||0).toFixed(2)}</div>
                     <button class="del-btn" data-id="${exp.id}" aria-label="Delete">
                         <i class="fas fa-trash-alt"></i>
                     </button>
                 </div>
-            </div>
-        `).join('');
+            </div>`;
+        }).join('');
 
-        // Delete handlers
         el.querySelectorAll('.del-btn').forEach(btn => {
             btn.addEventListener('click', () => {
                 if (!confirm('Remove this expense?')) return;
@@ -240,11 +326,8 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
 
-        // Expand photo on tap
         el.querySelectorAll('.expense-thumb').forEach(img => {
-            img.addEventListener('click', () => {
-                showPhotoLightbox(img.src);
-            });
+            img.addEventListener('click', () => showPhotoLightbox(img.src));
         });
     }
 

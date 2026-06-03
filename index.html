@@ -196,9 +196,32 @@
 
             <input type="text" id="expense-desc" class="expense-input" placeholder="What was this for? e.g. Fish & Chips">
 
-            <div class="amount-row">
-                <span class="currency-symbol">£</span>
-                <input type="number" id="expense-amount" class="expense-input amount-input" placeholder="0.00" step="0.01" min="0">
+            <!-- Split mode toggle -->
+            <div class="split-mode-row">
+                <span class="paid-by-label">Split</span>
+                <div class="split-mode-toggle">
+                    <button class="split-mode-btn active" id="split-equal-btn">50 : 50</button>
+                    <button class="split-mode-btn" id="split-custom-btn">Custom</button>
+                </div>
+            </div>
+            <div id="equal-split-section">
+                <div class="amount-row">
+                    <span class="currency-symbol">&pound;</span>
+                    <input type="number" id="expense-total" class="expense-input amount-input" placeholder="Total amount" step="0.01" min="0">
+                </div>
+            </div>
+            <div id="custom-split-section" style="display:none">
+                <div class="custom-split-row">
+                    <div class="custom-split-col">
+                        <label class="split-col-label">&#128309; Blues &pound;</label>
+                        <input type="number" id="expense-blues" class="expense-input" placeholder="0.00" step="0.01" min="0">
+                    </div>
+                    <div class="custom-split-col">
+                        <label class="split-col-label">&#128993; Oosties &pound;</label>
+                        <input type="number" id="expense-oosties" class="expense-input" placeholder="0.00" step="0.01" min="0">
+                    </div>
+                </div>
+                <div class="custom-total-preview" id="custom-total-preview">Total: &pound;0.00</div>
             </div>
 
             <div class="paid-by-row">
@@ -220,6 +243,34 @@
             </select>
 
             <button id="save-expense-btn" class="save-expense-btn">Add Expense</button>
+        </div>
+    </div>
+
+    <!-- Group Location Tracker Panel -->
+    <div id="tracker-panel" class="hof-panel">
+        <div class="hof-content">
+            <div class="hof-header-bar">
+                <button id="close-tracker" class="close-hof-btn">&larr; Back</button>
+                <h2>&#128205; Where Is Everyone?</h2>
+            </div>
+            <div class="hof-body">
+                <div class="tracker-share-card">
+                    <p class="tracker-note">Tap <strong>Share My Location</strong> to open WhatsApp with your Google Maps pin ready to send to the group.</p>
+                    <div class="tracker-name-row">
+                        <input type="text" id="tracker-name" class="expense-input" placeholder="Your name (e.g. Matt)" style="margin-bottom:0;flex:1">
+                        <button id="share-location-btn" class="save-expense-btn" style="width:auto;padding:12px 16px;white-space:nowrap;margin-top:0">
+                            <i class="fas fa-map-marker-alt"></i> Share
+                        </button>
+                    </div>
+                    <div id="tracker-status" class="tracker-status"></div>
+                </div>
+                <h4 class="rating-title" style="margin:16px 16px 10px"><i class="fas fa-history"></i> Saved Locations (this device)</h4>
+                <div id="tracker-list"></div>
+                <div class="tracker-tip">
+                    <i class="fas fa-info-circle"></i>
+                    <span>For real-time live tracking, use <strong>WhatsApp &rarr; Share Live Location</strong> in your group chat.</span>
+                </div>
+            </div>
         </div>
     </div>
 

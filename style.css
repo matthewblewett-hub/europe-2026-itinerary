@@ -1431,3 +1431,39 @@ body {
     background: rgba(231,76,60,0.12); border-color: rgba(231,76,60,0.3);
     color: #e74c3c;
 }
+
+/* ===== SPLIT MODE UI ===== */
+.split-mode-row { display:flex; align-items:center; gap:12px; margin-bottom:12px; }
+.split-mode-toggle { display:flex; gap:6px; }
+.split-mode-btn {
+    background:var(--input-bg); border:2px solid var(--input-border);
+    color:var(--text-secondary); padding:7px 16px; border-radius:20px;
+    font-size:0.85rem; font-weight:600; font-family:'Outfit',sans-serif;
+    cursor:pointer; transition:all 0.2s ease;
+}
+.split-mode-btn.active { background:rgba(46,204,113,0.15); border-color:#2ecc71; color:#2ecc71; }
+.custom-split-row { display:flex; gap:10px; margin-bottom:8px; }
+.custom-split-col { flex:1; }
+.split-col-label { font-size:0.8rem; font-weight:600; color:var(--text-secondary); display:block; margin-bottom:5px; }
+.custom-total-preview { font-size:0.85rem; color:var(--text-secondary); text-align:right; margin-bottom:12px; }
+.expense-split-detail { font-size:0.75rem; color:var(--text-secondary); margin-top:3px; }
+.expense-owed-label { font-size:0.75rem; color:#2ecc71; font-weight:600; margin-top:2px; }
+
+/* ===== TRACKER ===== */
+.tracker-share-card {
+    background:var(--learn-more-card); border:1px solid var(--learn-more-border);
+    border-radius:14px; padding:16px; margin:16px;
+}
+.tracker-note { font-size:0.88rem; color:var(--text-secondary); margin-bottom:12px; line-height:1.5; }
+.tracker-name-row { display:flex; gap:8px; align-items:center; }
+.tracker-status { font-size:0.85rem; margin-top:10px; min-height:20px; }
+.tracker-status-info  { color:var(--text-secondary); }
+.tracker-status-success { color:#2ecc71; }
+.tracker-status-error { color:#e74c3c; }
+.tracker-tip {
+    display:flex; align-items:flex-start; gap:10px;
+    background:var(--learn-more-card); border:1px solid var(--learn-more-border);
+    border-radius:12px; padding:14px 16px; margin:16px; font-size:0.83rem;
+    color:var(--text-secondary); line-height:1.5;
+}
+.tracker-tip i { color:var(--accent); margin-top:2px; flex-shrink:0; }
