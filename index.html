@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 </head>
 
 <body>
@@ -256,22 +257,23 @@
                 <button id="close-tracker" class="close-hof-btn">&larr; Back</button>
                 <h2>&#128205; Where Is Everyone?</h2>
             </div>
-            <div class="hof-body">
-                <div class="tracker-share-card">
-                    <p class="tracker-note">Tap <strong>Share My Location</strong> to open WhatsApp with your Google Maps pin ready to send to the group.</p>
-                    <div class="tracker-name-row">
-                        <input type="text" id="tracker-name" class="expense-input" placeholder="Your name (e.g. Matt)" style="margin-bottom:0;flex:1">
-                        <button id="share-location-btn" class="save-expense-btn" style="width:auto;padding:12px 16px;white-space:nowrap;margin-top:0">
-                            <i class="fas fa-map-marker-alt"></i> Share
-                        </button>
+            <div class="hof-body" style="padding:0;display:flex;flex-direction:column;overflow:hidden">
+                <!-- Live Map -->
+                <div id="tracker-map" style="height:280px;flex-shrink:0;z-index:1"></div>
+
+                <!-- Share card -->
+                <div style="flex:1;overflow-y:auto;padding-bottom:30px">
+                    <div class="tracker-share-card">
+                        <div class="tracker-name-row">
+                            <input type="text" id="tracker-name" class="expense-input" placeholder="Your name (e.g. Matt)" style="margin-bottom:0;flex:1">
+                            <button id="share-location-btn" class="save-expense-btn" style="width:auto;padding:12px 16px;white-space:nowrap;margin-top:0">
+                                <i class="fas fa-map-marker-alt"></i> Share My Location
+                            </button>
+                        </div>
+                        <div id="tracker-status" class="tracker-status"></div>
                     </div>
-                    <div id="tracker-status" class="tracker-status"></div>
-                </div>
-                <h4 class="rating-title" style="margin:16px 16px 10px"><i class="fas fa-history"></i> Saved Locations (this device)</h4>
-                <div id="tracker-list"></div>
-                <div class="tracker-tip">
-                    <i class="fas fa-info-circle"></i>
-                    <span>For real-time live tracking, use <strong>WhatsApp &rarr; Share Live Location</strong> in your group chat.</span>
+                    <h4 class="rating-title" style="margin:12px 16px 8px"><i class="fas fa-users"></i> Group Locations</h4>
+                    <div id="tracker-list"></div>
                 </div>
             </div>
         </div>
@@ -281,6 +283,9 @@
     <script src="script.js"></script>
     <script src="expenses.js"></script>
     <script src="quotes.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="tracker.js"></script>
 </body>
 
