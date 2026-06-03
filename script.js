@@ -367,6 +367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ===== OPEN DAY DETAILS =====
     async function openDayDetails(day) {
         currentDayForLearnMore = day;
+        window.__currentDayForQuotes = day.id;
         modalTitle.textContent = day.date;
 
         // Show/hide learn more button
@@ -446,25 +447,51 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function loadRatingUI(dayId, saved) {
-        const stars = document.querySelectorAll('.star-btn');
+        const stars = document.querySelectorAll('.star[data-star]');
+        const valEl  = document.getElementById('star-val');
         const notesEl = document.getElementById('day-notes');
         const savedIndicator = document.getElementById('notes-saved');
 
-        // Set stars
-        stars.forEach(btn => {
-            const val = parseInt(btn.dataset.value);
-            btn.classList.toggle('active', val <= (saved.rating || 0));
-            btn.onclick = () => {
-                const rating = parseInt(btn.dataset.value);
+        const currentRating = saved.rating || 0;
+        renderStarDisplay(currentRating);
+
+        stars.forEach(star => {
+            star.addEventListener('click', (e) => {
+                const rect = star.getBoundingClientRect();
+                const isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
+                const starNum = parseInt(star.dataset.star);
+                const rating = isLeftHalf ? starNum - 0.5 : starNum;
                 const current = loadDayData(dayId);
                 saveDayData(dayId, { ...current, rating });
-                stars.forEach(s => s.classList.toggle('active', parseInt(s.dataset.value) <= rating));
-                // Refresh card star badge
+                renderStarDisplay(rating);
                 refreshCardBadge(dayId, rating);
-            };
+            });
+
+            // Hover preview
+            star.addEventListener('mousemove', (e) => {
+                const rect = star.getBoundingClientRect();
+                const isLeftHalf = (e.clientX - rect.left) < rect.width / 2;
+                const starNum = parseInt(star.dataset.star);
+                renderStarDisplay(isLeftHalf ? starNum - 0.5 : starNum);
+            });
         });
 
-        // Set notes
+        document.getElementById('star-rating').addEventListener('mouseleave', () => {
+            const cur = loadDayData(dayId);
+            renderStarDisplay(cur.rating || 0);
+        });
+
+        function renderStarDisplay(rating) {
+            stars.forEach(star => {
+                const n = parseInt(star.dataset.star);
+                star.classList.remove('full', 'half', 'empty');
+                if (rating >= n)        star.classList.add('full');
+                else if (rating >= n - 0.5) star.classList.add('half');
+                else                    star.classList.add('empty');
+            });
+            if (valEl) valEl.textContent = rating > 0 ? `${rating} / 5` : '';
+        }
+
         if (notesEl) {
             notesEl.value = saved.notes || '';
             let saveTimer;
@@ -487,13 +514,12 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!card) return;
         const dateSpan = card.querySelector('.day-date');
         if (!dateSpan) return;
-        // Remove existing star badge
         const existing = dateSpan.querySelector('.card-star-badge');
         if (existing) existing.remove();
         if (rating > 0) {
             const badge = document.createElement('span');
             badge.className = 'card-star-badge';
-            badge.textContent = '★'.repeat(rating);
+            badge.textContent = ` ★${rating}`;
             dateSpan.appendChild(badge);
         }
     }

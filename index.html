@@ -29,6 +29,9 @@
                 <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle light/dark mode">
                     <i class="fas fa-sun" id="theme-icon"></i>
                 </button>
+                <button id="hof-btn" class="hof-header-btn" aria-label="Trip Sayings Hall of Fame">
+                    🏆
+                </button>
             </div>
             <div class="header-content">
                 <h1>Europe 2026</h1>
@@ -91,14 +94,27 @@
                 <div class="day-rating-section">
                     <h4 class="rating-title"><i class="fas fa-star"></i> Rate This Day</h4>
                     <div class="star-rating" id="star-rating">
-                        <button class="star-btn" data-value="1" aria-label="1 star">★</button>
-                        <button class="star-btn" data-value="2" aria-label="2 stars">★</button>
-                        <button class="star-btn" data-value="3" aria-label="3 stars">★</button>
-                        <button class="star-btn" data-value="4" aria-label="4 stars">★</button>
-                        <button class="star-btn" data-value="5" aria-label="5 stars">★</button>
+                        <span class="star" data-star="1">★</span>
+                        <span class="star" data-star="2">★</span>
+                        <span class="star" data-star="3">★</span>
+                        <span class="star" data-star="4">★</span>
+                        <span class="star" data-star="5">★</span>
+                        <span class="star-rating-val" id="star-val"></span>
                     </div>
                     <textarea id="day-notes" class="day-notes" placeholder="Add your notes, memories or tips for this day…" rows="3"></textarea>
                     <p class="notes-saved-indicator" id="notes-saved">✓ Saved</p>
+                </div>
+                <!-- Sayings of the Day -->
+                <div class="quotes-section">
+                    <h4 class="rating-title"><i class="fas fa-quote-left"></i> Sayings of the Day</h4>
+                    <div class="quotes-day-list" id="quotes-day-list"></div>
+                    <div class="quote-input-area">
+                        <textarea id="new-quote-text" class="day-notes" placeholder="A funny or memorable quote from today…" rows="2"></textarea>
+                        <div class="quote-author-row">
+                            <input type="text" id="new-quote-author" class="quote-author-input" placeholder="Who said it?">
+                            <button id="save-quote-btn" class="save-quote-btn"><i class="fas fa-plus"></i> Save</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -131,8 +147,86 @@
         </div>
     </div>
 
+    <!-- Hall of Fame Panel -->
+    <div id="hof-panel" class="hof-panel">
+        <div class="hof-content">
+            <div class="hof-header-bar">
+                <button id="close-hof" class="close-hof-btn">&#8592; Back</button>
+                <h2>🏆 Trip Sayings</h2>
+            </div>
+            <div id="hof-body" class="hof-body"></div>
+        </div>
+    </div>
+
+    <!-- Split Expense Tracker FAB -->
+    <button id="split-fab" class="split-fab" aria-label="Open expense splitter">
+        <i class="fas fa-receipt"></i>
+    </button>
+
+    <!-- Split Expense Panel -->
+    <div id="split-panel" class="split-panel">
+        <div class="split-content">
+            <div class="split-header">
+                <button id="close-split" class="close-split-btn">&#8592; Back</button>
+                <h2>💰 Trip Expenses</h2>
+                <button id="add-expense-btn" class="add-expense-fab-btn"><i class="fas fa-plus"></i> Add</button>
+            </div>
+            <div id="split-summary" class="split-summary"></div>
+            <div id="split-list" class="split-list"></div>
+        </div>
+    </div>
+
+    <!-- Add Expense Bottom Sheet -->
+    <div id="add-expense-modal" class="add-expense-modal">
+        <div class="add-expense-sheet">
+            <div class="add-expense-handle"></div>
+            <div class="add-expense-header">
+                <h3>Add Expense</h3>
+                <button id="close-add-expense" class="close-add-btn">&#10005;</button>
+            </div>
+
+            <label class="photo-capture-area" id="photo-capture-area" for="receipt-photo">
+                <input type="file" accept="image/*" capture="environment" id="receipt-photo">
+                <img id="receipt-preview" alt="Receipt preview">
+                <div id="photo-placeholder" class="photo-placeholder">
+                    <i class="fas fa-camera"></i>
+                    <span>Tap to photograph receipt (optional)</span>
+                </div>
+            </label>
+
+            <input type="text" id="expense-desc" class="expense-input" placeholder="What was this for? e.g. Fish & Chips">
+
+            <div class="amount-row">
+                <span class="currency-symbol">£</span>
+                <input type="number" id="expense-amount" class="expense-input amount-input" placeholder="0.00" step="0.01" min="0">
+            </div>
+
+            <div class="paid-by-row">
+                <span class="paid-by-label">Who paid?</span>
+                <div class="paid-by-toggle">
+                    <button class="paid-btn" data-team="blues" id="btn-blues">🔵 Blues</button>
+                    <button class="paid-btn" data-team="oosties" id="btn-oosties">🟡 Oosties</button>
+                </div>
+            </div>
+
+            <select id="expense-category" class="expense-input expense-select">
+                <option value="food">🍽️ Food &amp; Drink</option>
+                <option value="activity">🎯 Activity / Entry</option>
+                <option value="fuel">⛽ Fuel</option>
+                <option value="accommodation">🏕️ Accommodation</option>
+                <option value="transport">🚌 Transport</option>
+                <option value="shopping">🛍️ Shopping</option>
+                <option value="other">📦 Other</option>
+            </select>
+
+            <button id="save-expense-btn" class="save-expense-btn">Add Expense</button>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
+    <script src="expenses.js"></script>
+    <script src="quotes.js"></script>
 </body>
 
 </html>
