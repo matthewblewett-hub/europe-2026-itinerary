@@ -15,6 +15,15 @@
         firebase.initializeApp(FIREBASE_CONFIG);
     }
 
-    window.fbDb      = (typeof firebase !== 'undefined') ? firebase.database() : null;
-    window.fbStorage = (typeof firebase !== 'undefined' && firebase.storage) ? firebase.storage() : null;
+    window.fbDb = (typeof firebase !== 'undefined') ? firebase.database() : null;
+
+    // Storage may not be enabled yet — catch gracefully
+    try {
+        window.fbStorage = (typeof firebase !== 'undefined' && typeof firebase.storage === 'function')
+            ? firebase.storage()
+            : null;
+    } catch (e) {
+        console.warn('Firebase Storage not available:', e.message);
+        window.fbStorage = null;
+    }
 })();

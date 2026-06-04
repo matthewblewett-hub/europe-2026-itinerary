@@ -43,6 +43,17 @@ document.addEventListener('DOMContentLoaded', () => {
         galleryPanel.style.display = 'flex';
         setTimeout(() => galleryPanel.classList.add('show'), 10);
         attachListener();
+
+        // Show storage status diagnostic in grid area
+        if (!storage) {
+            if (gridEl) gridEl.innerHTML = `
+                <div class="no-quotes" style="grid-column:1/-1">
+                    <i class="fas fa-exclamation-triangle" style="font-size:2rem;color:#e74c3c;margin-bottom:12px;display:block"></i>
+                    <p style="color:#e74c3c"><strong>Firebase Storage not enabled</strong><br><br>
+                    To fix: go to <strong>Firebase Console → Storage → Get started → Start in test mode</strong><br><br>
+                    Then hard refresh this app.</p>
+                </div>`;
+        }
     });
     closeGallery.addEventListener('click', () => {
         galleryPanel.classList.remove('show');
