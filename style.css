@@ -1510,3 +1510,33 @@ body {
 .gallery-lightbox-inner img { max-width: 95vw; max-height: 75vh; object-fit: contain; border-radius: 8px; }
 .gallery-lb-caption { color: white; font-size: 1rem; font-weight: 600; margin-top: 12px; text-align: center; }
 .gallery-lb-uploader { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 4px; }
+
+/* ===== APP UPDATE BANNER ===== */
+.update-banner {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 9000;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: white; padding: 12px 16px;
+    display: flex; align-items: center; justify-content: space-between; gap: 10px;
+    box-shadow: 0 4px 20px rgba(168,85,247,0.4);
+    transform: translateY(-100%); transition: transform 0.4s cubic-bezier(0.16,1,0.3,1);
+    box-sizing: border-box;
+}
+.update-banner.show { transform: translateY(0); }
+.update-banner-content { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.update-icon { font-size: 1.4rem; flex-shrink: 0; }
+.update-text { font-size: 0.82rem; line-height: 1.4; min-width: 0; }
+.update-text strong { display: block; font-size: 0.9rem; }
+.update-text span { opacity: 0.9; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.update-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
+.update-wa-btn {
+    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
+    color: white; padding: 6px 12px; border-radius: 16px;
+    font-size: 0.8rem; font-weight: 600; font-family: 'Outfit', sans-serif;
+    cursor: pointer; display: flex; align-items: center; gap: 5px;
+    transition: background 0.2s;
+}
+.update-wa-btn:hover { background: rgba(255,255,255,0.3); }
+.update-dismiss-btn {
+    background: none; border: none; color: rgba(255,255,255,0.7);
+    font-size: 1rem; cursor: pointer; padding: 4px 6px; line-height: 1;
+}
