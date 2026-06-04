@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // WhatsApp share button
         waBtn.addEventListener('click', () => {
             const msg = `🚀 *EuroTrip App Update!*\n\n${update.title}\n\n${update.desc}\n\n👉 Everyone please *hard refresh* the app:\n• *iPhone*: Hold the refresh icon → Reload\n• *Android*: Pull down on page, then refresh\n\n${APP_URL}`;
-            window.open('https://wa.me/?text=' + encodeURIComponent(msg), '_blank');
+            window.open('https://api.whatsapp.com/send/?text=' + encodeURIComponent(msg), '_blank');
         });
 
         // Dismiss
