@@ -1,28 +1,38 @@
-// quotes.js — Sayings of the Day + Hall of Fame
+// quotes.js — Sayings of the Day + Hall of Fame (Firebase-backed, shared across all devices)
 
 document.addEventListener('DOMContentLoaded', () => {
+    const db        = window.fbDb;
+    const QTS_REF   = db ? db.ref('quotes') : null;
+    let allQuotes   = []; // local cache from Firebase snapshot
 
-    // ===== STORAGE =====
-    function getQuotes() {
-        try { return JSON.parse(localStorage.getItem('eurotrip-quotes')) || []; }
-        catch { return []; }
-    }
-    function saveQuotes(list) {
-        localStorage.setItem('eurotrip-quotes', JSON.stringify(list));
+    // ===== FIREBASE LISTENER (runs once globally) =====
+    if (QTS_REF) {
+        QTS_REF.on('value', (snap) => {
+            const raw = snap.val() || {};
+            allQuotes = Object.entries(raw)
+                .map(([key, val]) => ({ ...val, fbKey: key }))
+                .sort((a, b) => (b.likes || 0) - (a.likes || 0));
+            // Refresh HOF if it's open
+            if (document.getElementById('hof-panel').classList.contains('show')) {
+                renderHOF();
+            }
+            // Refresh day list if modal is open
+            const dayId = window.__currentDayForQuotes;
+            if (dayId && document.getElementById('detail-modal').classList.contains('open')) {
+                renderDayQuotes(dayId);
+            }
+        });
     }
 
     // ===== QUOTE SECTION IN DAY MODAL =====
-    // Called by script.js when modal opens (see integration below)
-    window.loadDayQuotes = function(dayId, dayTitle, dayDate) {
-        const listEl = document.getElementById('quotes-day-list');
-        const saveBtn = document.getElementById('save-quote-btn');
-        const textEl  = document.getElementById('new-quote-text');
+    window.loadDayQuotes = function (dayId, dayTitle, dayDate) {
+        const saveBtn  = document.getElementById('save-quote-btn');
+        const textEl   = document.getElementById('new-quote-text');
         const authorEl = document.getElementById('new-quote-author');
-        if (!listEl || !saveBtn) return;
+        if (!saveBtn) return;
 
-        renderDayQuotes(dayId, listEl);
+        renderDayQuotes(dayId);
 
-        // Avoid duplicate listeners by cloning
         const newSave = saveBtn.cloneNode(true);
         saveBtn.parentNode.replaceChild(newSave, saveBtn);
 
@@ -31,46 +41,60 @@ document.addEventListener('DOMContentLoaded', () => {
             const author = authorEl.value.trim() || 'Someone';
             if (!text) { textEl.focus(); return; }
 
-            const list = getQuotes();
-            list.push({
-                id:        Date.now(),
-                dayId,
-                dayTitle,
-                dayDate,
-                text,
-                author,
-                likes:     0
-            });
-            saveQuotes(list);
-            textEl.value   = '';
+            const record = {
+                dayId, dayTitle, dayDate,
+                text, author,
+                likes: 0,
+                ts:    Date.now()
+            };
+
+            if (QTS_REF) {
+                QTS_REF.push(record).catch(e => console.error('Quote save error:', e));
+            } else {
+                // localStorage fallback
+                const list = getLocalQuotes();
+                list.push({ ...record, fbKey: Date.now().toString() });
+                localStorage.setItem('eurotrip-quotes', JSON.stringify(list));
+                allQuotes = list.sort((a, b) => (b.likes||0) - (a.likes||0));
+                renderDayQuotes(dayId);
+            }
+            textEl.value = '';
             authorEl.value = '';
-            renderDayQuotes(dayId, listEl);
         });
     };
 
-    function renderDayQuotes(dayId, listEl) {
-        const quotes = getQuotes().filter(q => q.dayId === dayId);
-        if (quotes.length === 0) {
-            listEl.innerHTML = '';
-            return;
-        }
+    function renderDayQuotes(dayId) {
+        const listEl = document.getElementById('quotes-day-list');
+        if (!listEl) return;
+        const source = QTS_REF ? allQuotes : getLocalQuotes();
+        const quotes = source.filter(q => q.dayId === dayId);
+
+        if (quotes.length === 0) { listEl.innerHTML = ''; return; }
+
         listEl.innerHTML = quotes.map(q => `
-            <div class="quote-day-item" data-qid="${q.id}">
+            <div class="quote-day-item" data-fbkey="${q.fbKey || ''}">
                 <div class="quote-day-body">
                     <div class="quote-day-text">"${q.text}"</div>
-                    <div class="quote-day-author">— ${q.author}</div>
+                    <div class="quote-day-author">— ${q.author}
+                        ${q.likes > 0 ? `<span style="color:var(--accent);margin-left:6px">❤️ ${q.likes}</span>` : ''}
+                    </div>
                 </div>
-                <button class="quote-del-btn" data-qid="${q.id}" aria-label="Delete quote">
+                <button class="quote-del-btn" data-fbkey="${q.fbKey || ''}" aria-label="Delete">
                     <i class="fas fa-trash-alt"></i>
                 </button>
-            </div>
-        `).join('');
+            </div>`).join('');
 
         listEl.querySelectorAll('.quote-del-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const id = parseInt(btn.dataset.qid);
-                saveQuotes(getQuotes().filter(q => q.id !== id));
-                renderDayQuotes(dayId, listEl);
+                const key = btn.dataset.fbkey;
+                if (key && QTS_REF) {
+                    QTS_REF.child(key).remove();
+                } else {
+                    const local = getLocalQuotes().filter(q => q.fbKey !== key);
+                    localStorage.setItem('eurotrip-quotes', JSON.stringify(local));
+                    allQuotes = local;
+                    renderDayQuotes(dayId);
+                }
             });
         });
     }
@@ -79,7 +103,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const hofBtn   = document.getElementById('hof-btn');
     const hofPanel = document.getElementById('hof-panel');
     const closeHof = document.getElementById('close-hof');
-    const hofBody  = document.getElementById('hof-body');
 
     if (hofBtn) {
         hofBtn.addEventListener('click', () => {
@@ -88,7 +111,6 @@ document.addEventListener('DOMContentLoaded', () => {
             renderHOF();
         });
     }
-
     if (closeHof) {
         closeHof.addEventListener('click', () => {
             hofPanel.classList.remove('show');
@@ -97,24 +119,24 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function renderHOF() {
-        const list = getQuotes();
-        if (list.length === 0) {
+        const hofBody = document.getElementById('hof-body');
+        const source  = QTS_REF ? allQuotes : getLocalQuotes().sort((a,b) => (b.likes||0)-(a.likes||0));
+
+        if (source.length === 0) {
             hofBody.innerHTML = `
                 <div class="no-quotes">
                     <i class="fas fa-quote-left"></i>
-                    <p>No sayings saved yet.<br>Open a day and add a memorable quote!</p>
+                    <p>No sayings saved yet.<br>Open any day and add a memorable quote!</p>
                 </div>`;
             return;
         }
 
-        // Sort by likes descending
-        const sorted = [...list].sort((a, b) => (b.likes || 0) - (a.likes || 0));
-        const topLikes = sorted[0].likes || 0;
+        const topLikes = source[0].likes || 0;
 
-        hofBody.innerHTML = sorted.map((q, i) => {
-            const isTop = i === 0 && topLikes > 0;
+        hofBody.innerHTML = source.map((q, i) => {
+            const isTop = (i === 0 && topLikes > 0);
             return `
-            <div class="hof-quote-card ${isTop ? 'top-quote' : ''}" data-qid="${q.id}">
+            <div class="hof-quote-card ${isTop ? 'top-quote' : ''}">
                 ${isTop ? '<div class="hof-quote-trophy">🏆 Trip Favourite</div>' : ''}
                 <div class="hof-quote-text">${q.text}</div>
                 <div class="hof-quote-meta">
@@ -122,7 +144,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="hof-quote-who">— ${q.author}</div>
                         <div class="hof-quote-day">${q.dayTitle || q.dayDate || ''}</div>
                     </div>
-                    <button class="hof-like-btn" data-qid="${q.id}">
+                    <button class="hof-like-btn" data-fbkey="${q.fbKey || ''}">
                         ❤️ <span class="like-count">${q.likes || 0}</span>
                     </button>
                 </div>
@@ -131,27 +153,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         hofBody.querySelectorAll('.hof-like-btn').forEach(btn => {
             btn.addEventListener('click', () => {
-                const id = parseInt(btn.dataset.qid);
-                const quotes = getQuotes();
-                const q = quotes.find(x => x.id === id);
-                if (q) {
-                    q.likes = (q.likes || 0) + 1;
-                    saveQuotes(quotes);
-                    renderHOF(); // re-render to re-sort
+                const key = btn.dataset.fbkey;
+                if (key && QTS_REF) {
+                    // Atomic increment using Firebase transaction
+                    QTS_REF.child(key + '/likes').transaction(cur => (cur || 0) + 1);
+                } else {
+                    const local = getLocalQuotes();
+                    const q = local.find(x => x.fbKey === key);
+                    if (q) { q.likes = (q.likes || 0) + 1; }
+                    localStorage.setItem('eurotrip-quotes', JSON.stringify(local));
+                    allQuotes = local.sort((a,b) => (b.likes||0)-(a.likes||0));
+                    renderHOF();
                 }
+                btn.classList.add('liked');
             });
         });
     }
 
-    // ===== INTEGRATE WITH SCRIPT.JS MODAL OPEN =====
-    // Patch openDayDetails to also call loadDayQuotes
-    const origOpenDayDetails = window.__origOpenDayDetails;
-    // We use a MutationObserver to detect when the modal title changes (modal opens)
+    // ===== INTEGRATE WITH MODAL =====
     const modalTitle = document.getElementById('modal-title');
     if (modalTitle) {
         const obs = new MutationObserver(() => {
-            // Find current day from itinerary by matching the title shown
-            // We use a global currentDayForQuotes set by the modal
             const dayId = window.__currentDayForQuotes;
             if (dayId) {
                 const day = (typeof itinerary !== 'undefined')
@@ -160,5 +182,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
         obs.observe(modalTitle, { characterData: true, childList: true, subtree: true });
+    }
+
+    // ===== LOCAL FALLBACK =====
+    function getLocalQuotes() {
+        try { return JSON.parse(localStorage.getItem('eurotrip-quotes')) || []; }
+        catch { return []; }
     }
 });
