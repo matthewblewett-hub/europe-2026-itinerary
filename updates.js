@@ -6,39 +6,78 @@ document.addEventListener('DOMContentLoaded', () => {
     const db = window.fbDb;
     if (!db) return;
 
-    const banner      = document.getElementById('update-banner');
-    const titleEl     = document.getElementById('update-title');
-    const descEl      = document.getElementById('update-desc');
-    const waBtn       = document.getElementById('update-whatsapp-btn');
-    const dismissBtn  = document.getElementById('update-dismiss-btn');
+    const banner     = document.getElementById('update-banner');
+    const titleEl    = document.getElementById('update-title');
+    const descEl     = document.getElementById('update-desc');
+    const waBtn      = document.getElementById('update-whatsapp-btn');
+    const dismissBtn = document.getElementById('update-dismiss-btn');
 
     if (!banner) return;
 
-    // Listen for the latest update record in Firebase
+    let currentUpdate = null;
+
+    // ===== Listen for latest update from Firebase =====
     db.ref('appUpdate').on('value', (snap) => {
         const update = snap.val();
         if (!update) return;
 
         const lastSeen = parseInt(localStorage.getItem('lastSeenUpdate') || '0');
-        if (update.ts <= lastSeen) return; // already seen
+        if (update.ts <= lastSeen) return; // already dismissed
 
-        // Show banner
-        titleEl.textContent = update.title  || '🚀 App Updated!';
-        descEl.textContent  = update.desc   || 'New features added.';
+        currentUpdate = update;
+
+        titleEl.textContent  = update.title || 'App Updated!';
+        descEl.textContent   = update.desc  || 'New features added.';
         banner.style.display = 'flex';
         setTimeout(() => banner.classList.add('show'), 10);
+    });
 
-        // WhatsApp share button
-        waBtn.addEventListener('click', () => {
-            const msg = `🚀 *EuroTrip App Update!*\n\n${update.title}\n\n${update.desc}\n\n👉 Everyone please *hard refresh* the app:\n• *iPhone*: Hold the refresh icon → Reload\n• *Android*: Pull down on page, then refresh\n\n${APP_URL}`;
-            window.open('https://api.whatsapp.com/send/?text=' + encodeURIComponent(msg), '_blank');
-        });
+    // ===== Share button — native share sheet on iPhone, clipboard fallback =====
+    waBtn.addEventListener('click', async () => {
+        if (!currentUpdate) return;
 
-        // Dismiss
-        dismissBtn.addEventListener('click', () => {
-            banner.classList.remove('show');
-            setTimeout(() => { banner.style.display = 'none'; }, 400);
-            localStorage.setItem('lastSeenUpdate', update.ts.toString());
-        });
+        const msg = [
+            '🚀 *EuroTrip App Update!*',
+            '',
+            currentUpdate.title,
+            '',
+            currentUpdate.desc,
+            '',
+            '👉 Everyone please *hard refresh* the app:',
+            '• iPhone: Hold reload icon → Reload',
+            '• Android: Pull down to refresh',
+            '',
+            APP_URL
+        ].join('\n');
+
+        // ---- Option 1: native share sheet (iOS/Android) ----
+        if (navigator.share) {
+            try {
+                await navigator.share({ title: 'EuroTrip App Update', text: msg });
+                return;
+            } catch (e) {
+                // User cancelled or error — fall through to clipboard
+                if (e.name === 'AbortError') return;
+            }
+        }
+
+        // ---- Option 2: copy to clipboard ----
+        try {
+            await navigator.clipboard.writeText(msg);
+            waBtn.textContent = '✅ Copied!';
+            setTimeout(() => { waBtn.innerHTML = '<i class="fab fa-whatsapp"></i> Share'; }, 2500);
+        } catch {
+            // ---- Option 3: last resort — prompt so they can copy manually ----
+            prompt('Copy this message and paste into your WhatsApp group:', msg);
+        }
+    });
+
+    // ===== Dismiss =====
+    dismissBtn.addEventListener('click', () => {
+        banner.classList.remove('show');
+        setTimeout(() => { banner.style.display = 'none'; }, 400);
+        if (currentUpdate) {
+            localStorage.setItem('lastSeenUpdate', currentUpdate.ts.toString());
+        }
     });
 });
