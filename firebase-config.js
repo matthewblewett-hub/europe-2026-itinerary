@@ -1,4 +1,4 @@
-// firebase-config.js — initialise Firebase once, expose window.fbDb to all scripts
+// firebase-config.js — initialise Firebase once, expose window.fbDb and window.fbStorage
 
 (function () {
     const FIREBASE_CONFIG = {
@@ -15,5 +15,6 @@
         firebase.initializeApp(FIREBASE_CONFIG);
     }
 
-    window.fbDb = (typeof firebase !== 'undefined') ? firebase.database() : null;
+    window.fbDb      = (typeof firebase !== 'undefined') ? firebase.database() : null;
+    window.fbStorage = (typeof firebase !== 'undefined' && firebase.storage) ? firebase.storage() : null;
 })();

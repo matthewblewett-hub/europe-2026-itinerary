@@ -1467,3 +1467,46 @@ body {
     color:var(--text-secondary); line-height:1.5;
 }
 .tracker-tip i { color:var(--accent); margin-top:2px; flex-shrink:0; }
+
+/* ===== TRIP GALLERY ===== */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+}
+.gallery-card {
+    background: var(--learn-more-card);
+    border: 1px solid var(--learn-more-border);
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.gallery-card:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(0,0,0,0.25); }
+.gallery-img-wrap { aspect-ratio: 1; overflow: hidden; cursor: pointer; }
+.gallery-img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; display: block; }
+.gallery-img:hover { transform: scale(1.04); }
+.gallery-card-body { padding: 8px 10px 10px; }
+.gallery-caption { font-size: 0.82rem; font-weight: 600; color: var(--text-primary); margin-bottom: 4px; line-height: 1.35; }
+.gallery-meta { display: flex; flex-wrap: wrap; gap: 4px; align-items: center; }
+.gallery-uploader { font-size: 0.72rem; color: #a855f7; font-weight: 700; }
+.gallery-day { font-size: 0.68rem; color: var(--text-secondary); background: var(--input-bg); padding: 2px 6px; border-radius: 8px; }
+.gallery-date { font-size: 0.68rem; color: var(--text-secondary); }
+.gallery-del-btn {
+    position: absolute; top: 6px; right: 6px;
+    background: rgba(0,0,0,0.55); border: none; color: rgba(255,255,255,0.7);
+    width: 28px; height: 28px; border-radius: 50%; font-size: 0.7rem;
+    cursor: pointer; display: flex; align-items: center; justify-content: center;
+    opacity: 0; transition: opacity 0.2s;
+}
+.gallery-card:hover .gallery-del-btn { opacity: 1; }
+.gallery-del-btn:hover { background: rgba(231,76,60,0.8); color: white; }
+
+/* Lightbox inner for gallery */
+.gallery-lightbox-inner {
+    display: flex; flex-direction: column; align-items: center;
+    max-width: 95vw; max-height: 90vh;
+}
+.gallery-lightbox-inner img { max-width: 95vw; max-height: 75vh; object-fit: contain; border-radius: 8px; }
+.gallery-lb-caption { color: white; font-size: 1rem; font-weight: 600; margin-top: 12px; text-align: center; }
+.gallery-lb-uploader { color: rgba(255,255,255,0.6); font-size: 0.85rem; margin-top: 4px; }

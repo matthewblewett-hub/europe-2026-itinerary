@@ -33,6 +33,9 @@
                 <button id="hof-btn" class="hof-header-btn" aria-label="Trip Sayings Hall of Fame">
                     🏆
                 </button>
+                <button id="gallery-btn" class="hof-header-btn" aria-label="Trip Photo Gallery" title="Trip Gallery">
+                    📸
+                </button>
                 <button id="tracker-btn" class="hof-header-btn" aria-label="Where is everyone" title="Where is everyone?">
                     📍
                 </button>
@@ -279,15 +282,57 @@
         </div>
     </div>
 
+    <!-- Trip Gallery Panel -->
+    <div id="gallery-panel" class="hof-panel">
+        <div class="hof-content">
+            <div class="hof-header-bar">
+                <button id="close-gallery" class="close-hof-btn">&larr; Back</button>
+                <h2>&#128248; Trip Gallery</h2>
+                <button id="open-upload-btn" class="add-expense-fab-btn"><i class="fas fa-plus"></i> Add Photo</button>
+            </div>
+            <div class="hof-body" id="gallery-body" style="padding:12px">
+                <div id="gallery-grid" class="gallery-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Upload Photo Sheet -->
+    <div id="upload-photo-modal" class="add-expense-modal">
+        <div class="add-expense-sheet">
+            <div class="add-expense-handle"></div>
+            <div class="add-expense-header">
+                <h3>Add Your Best Photo</h3>
+                <button id="close-upload" class="close-add-btn">&#10005;</button>
+            </div>
+            <label class="photo-capture-area" for="gallery-photo-input">
+                <input type="file" accept="image/*" capture="environment" id="gallery-photo-input">
+                <img id="gallery-preview" alt="Preview" style="display:none;width:100%;max-height:200px;object-fit:contain;border-radius:8px">
+                <div id="gallery-placeholder" class="photo-placeholder">
+                    <i class="fas fa-camera" style="color:#a855f7"></i>
+                    <span>Tap to choose or photograph</span>
+                </div>
+            </label>
+            <input type="text" id="gallery-uploader" class="expense-input" placeholder="Your name (e.g. Matt)">
+            <input type="text" id="gallery-caption" class="expense-input" placeholder="Caption — where is this? What happened?">
+            <select id="gallery-day" class="expense-input expense-select">
+                <option value="">Which day? (optional)</option>
+            </select>
+            <div id="upload-progress" class="tracker-status" style="min-height:20px"></div>
+            <button id="upload-photo-btn" class="save-expense-btn" style="background:linear-gradient(135deg,#a855f7,#7c3aed)">Upload Photo</button>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="firebase-config.js"></script>
     <script src="expenses.js"></script>
     <script src="quotes.js"></script>
     <script src="tracker.js"></script>
+    <script src="gallery.js"></script>
 </body>
 
 </html>
