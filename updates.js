@@ -37,26 +37,23 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!currentUpdate) return;
 
         const msg = [
-            '🚀 *EuroTrip App Update!*',
+            '🚀 EuroTrip App Update!',
             '',
             currentUpdate.title,
             '',
             currentUpdate.desc,
             '',
-            '👉 Everyone please *hard refresh* the app:',
-            '• iPhone: Hold reload icon → Reload',
-            '• Android: Pull down to refresh',
-            '',
-            APP_URL
+            '👉 Hard refresh the app to see the new features:',
+            'iPhone: Hold the reload icon → tap Reload',
+            'Android: Pull down to refresh'
         ].join('\n');
 
         // ---- Option 1: native share sheet (iOS/Android) ----
         if (navigator.share) {
             try {
-                await navigator.share({ title: 'EuroTrip App Update', text: msg });
+                await navigator.share({ text: msg });
                 return;
             } catch (e) {
-                // User cancelled or error — fall through to clipboard
                 if (e.name === 'AbortError') return;
             }
         }
