@@ -1587,54 +1587,132 @@ const itinerary = [
     ]
   },
   {
-    "id": "day-p3-9",
     "phase": "phase3",
+    "id": "day-p3-9",
     "date": "Monday 8 June 2026",
     "title": "Skye: Trotternish Loop",
-    "overview": "The epic landscapes of the Old Man of Storr and the Quiraing.",
+    "overview": "The iconic Old Man of Storr hike at dawn, Kilt Rock, the Quiraing, and a scenic northern loop back through Duntulm and Uig.",
     "bgImage": "",
-    "coords": {"lat": 57.41, "lon": -6.2},
+    "coords": {"lat": 57.50, "lon": -6.18},
     "weatherLocation": "Portree, Skye",
     "items": [
       {
-        "time": "08:30",
-        "title": "Start Trotternish Loop",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Early start to beat the crowds. Single-track roads with passing places — take it slow. (Oost List tip)",
-        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Old+Man+of+Storr/Kilt+Rock/Quiraing/Portree+Campsite"
+        "time": "07:00",
+        "title": "Early Breakfast & Pack for Hike",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "Quick breakfast at camp and fill water bottles. Pack layers — it can be cold at the summit even in June. Bring snacks for the hike. Early start is essential to beat the crowds at Old Man of Storr — the carpark fills fast."
       },
       {
-        "time": "09:30",
-        "title": "Hike Old Man of Storr",
+        "time": "07:25",
+        "title": "Drive to Old Man of Storr",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "13km north on the A855 — about 18 minutes. The road hugs the coast with views of Raasay and the mainland mountains. The new carpark has a pay machine — bring a card.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Old+Man+of+Storr+Car+Park"
+      },
+      {
+        "time": "07:45",
+        "title": "Arrive Old Man of Storr Carpark",
+        "type": "activity",
+        "icon": "fa-parking",
+        "description": "Pay for parking (card accepted). The trail starts directly from the carpark. At this time you should find space — by 09:30 it will be packed.",
+        "mapLink": "https://maps.google.com/?q=Old+Man+of+Storr+Car+Park+Skye"
+      },
+      {
+        "time": "08:00",
+        "title": "Old Man of Storr Hike 🥾",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Steady 45-min climb for Skye's most iconic silhouette views. (Oost List)",
+        "description": "5.5km return, 400m elevation gain — allow 3 hours total. The path zigzags steeply through forestry then opens onto a lunar landscape of black pinnacles. The Old Man himself is the 50m basalt stack — get underneath it for the iconic silhouette shot against the sky. The ridge views across the Sound of Raasay on a clear morning are exceptional. Wear boots — it gets boggy. Take your time at the top for photos.",
         "mapLink": "https://maps.google.com/?q=Old+Man+of+Storr"
       },
       {
-        "time": "12:00",
-        "title": "Lealt Falls & Brother's Point",
+        "time": "11:00",
+        "title": "Back at Carpark — Drive to Kilt Rock",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Continue north on the A855 for 13km (~18 min). The road passes through Bearreraig Bay with views down to a dramatic sea cave.",
+        "mapLink": "https://www.google.com/maps/dir/Old+Man+of+Storr/Kilt+Rock+Viewpoint"
+      },
+      {
+        "time": "11:20",
+        "title": "Kilt Rock & Mealt Falls",
         "type": "activity",
         "icon": "fa-water",
-        "description": "En-route — free viewpoints and short coastal path to a dramatic headland. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Lealt+Falls+Skye"
+        "description": "Free viewpoint with a safety rail over a sheer 180m cliff. The dolerite columns look exactly like the pleats of a kilt — hence the name. Mealt Falls drops the full height of the cliff straight into the sea below. One of the most photogenic spots on Skye. Allow 20-30 minutes.",
+        "mapLink": "https://maps.google.com/?q=Kilt+Rock+Viewpoint+Skye"
       },
       {
-        "time": "13:00",
-        "title": "Kilt Rock & The Quiraing",
+        "time": "11:50",
+        "title": "Drive to Quiraing",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "8km south through Staffin village to the Quiraing carpark on the road pass (~15 min). The carpark is small and on a sharp bend — take care entering.",
+        "mapLink": "https://www.google.com/maps/dir/Kilt+Rock+Viewpoint/Quiraing+Car+Park"
+      },
+      {
+        "time": "12:05",
+        "title": "The Quiraing Walk 🥾",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "Kilt Rock waterfall drops into the ocean, then walk up into the otherworldly Quiraing landscape. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Quiraing"
+        "description": "Allow 2 hours for the shorter circuit to The Table and The Needle — the most dramatic features of the world's largest inland landslip. The path runs along a vast green amphitheatre with sheer rock walls rising on one side and a 400m drop to the sea on the other. The Table is a hidden flat plateau — genuinely jaw-dropping. Path is rough in places — boots essential. Total distance ~4km for the shorter loop.",
+        "mapLink": "https://maps.google.com/?q=Quiraing+Skye"
       },
       {
-        "time": "16:00",
-        "title": "Return to Portree",
+        "time": "14:05",
+        "title": "Drive to Flodigarry Hotel for Lunch",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "5km north to Flodigarry — 10 minutes.",
+        "mapLink": "https://www.google.com/maps/dir/Quiraing/Flodigarry+Hotel+Skye"
+      },
+      {
+        "time": "14:15",
+        "title": "Lunch at Flodigarry Hotel 🍽️",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "A beautifully-positioned country hotel on the clifftops of north Skye with views across to the Outer Hebrides. The old cottage in the grounds was once home to Flora MacDonald (who helped Bonnie Prince Charlie escape). Good pub food, local seafood, and a real fire. No booking usually needed for lunch. Perfect post-hike reward.",
+        "mapLink": "https://maps.google.com/?q=Flodigarry+Hotel+Skye"
+      },
+      {
+        "time": "15:15",
+        "title": "Duntulm Castle Ruins",
         "type": "activity",
+        "icon": "fa-chess-rook",
+        "description": "10 min drive north to the tip of Trotternish. Duntulm Castle is a dramatic clifftop ruin — once the seat of Clan MacDonald. Free, open access. The views across the Minch to the Outer Hebrides are stunning. Allow 20-30 min. Park on the verge and walk the short path down.",
+        "mapLink": "https://maps.google.com/?q=Duntulm+Castle+Skye"
+      },
+      {
+        "time": "15:50",
+        "title": "Kilmuir — Flora MacDonald's Grave",
+        "type": "activity",
+        "icon": "fa-landmark",
+        "description": "5 min drive. The small churchyard at Kilmuir holds Flora MacDonald's grave — marked by a large Celtic cross. She died on Skye in 1790. Dr Johnson visited her here and wrote: 'A name that will be mentioned in history, and if courage and fidelity be virtues, mentioned with honour.' 15-minute stop.",
+        "mapLink": "https://maps.google.com/?q=Kilmuir+Cemetery+Skye"
+      },
+      {
+        "time": "16:15",
+        "title": "Uig Bay",
+        "type": "activity",
+        "icon": "fa-mug-hot",
+        "description": "12km south to Uig (15 min) — a lovely sheltered bay with a small working ferry terminal serving the Outer Hebrides. Stop at the Uig Hotel or The Ferry Inn for tea or a cold drink. The bay is calm and beautiful — a lovely contrast to the wild north. Allow 30-40 minutes.",
+        "mapLink": "https://maps.google.com/?q=Uig+Skye"
+      },
+      {
+        "time": "17:05",
+        "title": "Drive Back to Portree",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "27km south on the A87 back to Portree — 35 minutes. Quick stop at Co-op in Portree if you need supplies for camp dinner.",
+        "mapLink": "https://www.google.com/maps/dir/Uig/Portree"
+      },
+      {
+        "time": "18:00",
+        "title": "Camp Dinner at Portree Campsite 🏕️",
+        "type": "food",
         "icon": "fa-campground",
-        "description": "Return to Portree Campsite to rest tired legs. Consider a dram at Sligachan Hotel under the Cuillin on the way back. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Sligachan+Hotel"
+        "description": "A well-earned rest and home-cooked dinner at camp after a big day on the hills. Two serious hikes, coastal clifftops, castles, and history — that's a proper Skye day. Raise a dram to the Old Man! 🥃"
       }
     ]
   },
@@ -1642,53 +1720,117 @@ const itinerary = [
     "id": "day-p3-10",
     "phase": "phase3",
     "date": "Tuesday 9 June 2026",
-    "title": "Skye: West Coast",
-    "overview": "Dunvegan Castle, sheer cliffs, and a premium dinner.",
+    "title": "Skye: Fairy Pools, Talisker & Neist Point Sunset",
+    "overview": "Crystal pools, Scotland's finest whisky distillery, Cuillin views, and one of the most spectacular sunsets in Europe.",
     "bgImage": "",
-    "coords": {"lat": 57.41, "lon": -6.2},
+    "coords": {"lat": 57.25, "lon": -6.35},
     "weatherLocation": "Portree, Skye",
     "items": [
       {
-        "time": "09:30",
-        "title": "Drive West",
+        "time": "07:00",
+        "title": "Early Breakfast & Pack Day Bags",
+        "type": "food",
+        "icon": "fa-coffee",
+        "description": "Light breakfast at camp. Pack layers, water, snacks — and a picnic dinner if you plan to stay for the full sunset at Neist Point (highly recommended). Sunset is at ~22:00 so it will be a long, magical day.",
+        "mapLink": ""
+      },
+      {
+        "time": "07:30",
+        "title": "Drive to Fairy Pools",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Head to the west side of the island.",
-        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Dunvegan+Castle/Neist+Point+Lighthouse"
+        "description": "45km south via A87 through Sligachan, then B8009 through Glen Brittle — about 55 minutes. The drive through Sligachan under the Black Cuillin is stunning on a clear morning. The Fairy Pools carpark on the Glen Brittle road fills quickly — early start is worthwhile.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Fairy+Pools+Car+Park+Skye"
+      },
+      {
+        "time": "08:25",
+        "title": "Arrive Fairy Pools Carpark",
+        "type": "activity",
+        "icon": "fa-parking",
+        "description": "Paid carpark — card accepted. Toilets on site. The trail starts from here.",
+        "mapLink": "https://maps.google.com/?q=Fairy+Pools+Car+Park+Skye"
+      },
+      {
+        "time": "08:30",
+        "title": "Fairy Pools Walk 🥾",
+        "type": "activity",
+        "icon": "fa-water",
+        "description": "5km return, allow 2 hours. The Fairy Pools are a series of crystal-clear turquoise pools fed by waterfalls cascading off the Black Cuillin ridge above. The water comes straight off the mountains — cold even in summer, but you can wade in the shallows. The pools get progressively more dramatic the further you walk upstream. The Cuillin as a backdrop makes this one of the most photographed walks in Scotland. Easy to moderate path.",
+        "mapLink": "https://maps.google.com/?q=Fairy+Pools+Skye"
       },
       {
         "time": "10:30",
-        "title": "Dunvegan Castle & Gardens",
+        "title": "Drive to Talisker Distillery",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "8km back down the B8009 to Carbost village — about 15 minutes.",
+        "mapLink": "https://www.google.com/maps/dir/Fairy+Pools/Talisker+Distillery+Carbost"
+      },
+      {
+        "time": "11:00",
+        "title": "Talisker Distillery Tour & Tasting 🥃",
+        "type": "activity",
+        "icon": "fa-wine-bottle",
+        "description": "Scotland's only island single malt — and one of the finest. Talisker is famous for its peaty, maritime character with a famous 'warming kick' finish. Tours run at specific times and MUST be booked in advance. Typically 45-60 minutes including tasting. Book at talisker-whisky.com — check for a 11:00 or 11:30 slot. The distillery shop has exclusive expressions not available elsewhere.",
+        "mapLink": "https://maps.google.com/?q=Talisker+Distillery+Carbost",
+        "ticketLink": "https://www.malts.com/en-gb/distilleries/talisker/visit-us/"
+      },
+      {
+        "time": "12:15",
+        "title": "Lunch at The Oyster Shed 🦪",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "2 minutes from Talisker down to the lochside at Carbost. The Oyster Shed is an iconic informal seafood shack on the shore of Loch Harport — fresh oysters, langoustines, and seafood chowder from a tiny hut. Eat outside on the pier watching the loch. Cash handy (though they may take cards now). Food sells out — arrive before 12:30 to be safe. One of the best lunches you'll have on the whole trip.",
+        "mapLink": "https://maps.google.com/?q=The+Oyster+Shed+Carbost+Skye"
+      },
+      {
+        "time": "13:30",
+        "title": "Glen Brittle Beach & Cuillin Views",
+        "type": "activity",
+        "icon": "fa-mountain",
+        "description": "20 min drive back toward Glen Brittle to the beach at the foot of the Cuillin. The black volcanic beach backed by the full Cuillin ridge is one of the most dramatic landscapes in Britain. Walk the shoreline, photograph the mountains, and let the afternoon unfold. The ridge is the birthplace of modern British mountaineering. Allow 1-1.5 hours to linger.",
+        "mapLink": "https://maps.google.com/?q=Glen+Brittle+Beach+Skye"
+      },
+      {
+        "time": "15:00",
+        "title": "Drive to Dunvegan via West Coast",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "35km north on the A863 to Dunvegan — about 45 minutes following the coast.",
+        "mapLink": "https://www.google.com/maps/dir/Glen+Brittle+Beach/Dunvegan+Castle"
+      },
+      {
+        "time": "15:45",
+        "title": "Dunvegan Castle & Coral Beach Option",
         "type": "activity",
         "icon": "fa-chess-rook",
-        "description": "Historic seat of Clan MacLeod with beautiful walled garden. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Dunvegan+Castle",
+        "description": "Dunvegan Castle is the ancient seat of Clan MacLeod — the oldest continuously inhabited castle in Scotland (since 1237). You can visit the castle and gardens (book at dunvegancastle.com) or just stop in the village for coffee at the Dunvegan Hotel. A beautiful and easy alternative nearby: Coral Beach (2km walk from Claigan) — a beach made entirely of white maerl (coralline algae) with turquoise water. Allow 1 hour for either option.",
+        "mapLink": "https://maps.google.com/?q=Dunvegan+Castle+Skye",
         "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
       },
       {
-        "time": "12:30",
-        "title": "The Oyster Shed (Carbost)",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Casual waterside seafood shack near Talisker. Local favourite for fresh oysters. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=The+Oyster+Shed+Carbost"
+        "time": "17:00",
+        "title": "Drive to Neist Point",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "18km via the B884 Glendale road — allow 45 minutes. This is single-track road all the way — take it steady and use the passing places. The road winds through the Glendale valley and out to the very westernmost tip of Skye.",
+        "mapLink": "https://www.google.com/maps/dir/Dunvegan/Neist+Point+Lighthouse"
       },
       {
-        "time": "14:00",
-        "title": "Neist Point Lighthouse",
+        "time": "17:45",
+        "title": "Neist Point Lighthouse Walk & Sunset Vigil 🌅",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "Dramatic coastal walk along the sheer cliffs to the lighthouse — heavenly evening light. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse"
+        "description": "3km return to the lighthouse on the clifftops — 45 minutes walking. Then stay for one of the finest sunsets in Scotland. Neist Point juts into the Minch at the westernmost tip of Skye — on a clear evening the sun drops into the Atlantic with the Outer Hebrides silhouetted on the horizon. Sunset is approximately 22:00 on 9 June. The light is extraordinary from about 20:30 onwards. Pack your picnic dinner and a dram — eat it on the clifftops as the light changes. Bring a warm layer, it gets chilly even in summer.",
+        "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse+Skye"
       },
       {
-        "time": "18:00",
-        "title": "Premium Dinner",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Treat yourself to a final Skye dinner at The Three Chimneys (book months ahead!) or Edinbane Lodge. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=The+Three+Chimneys",
-        "ticketLink": "https://threechimneys.co.uk/"
+        "time": "22:15",
+        "title": "Drive Back to Portree Campsite",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "1h15m drive back to Portree via Dunvegan and the A850. It will still be light — this is the magic of June on Skye. You will be tired, full of good food, and carrying memories that last a lifetime.",
+        "mapLink": "https://www.google.com/maps/dir/Neist+Point+Lighthouse/Portree+Campsite"
       }
     ]
   },
