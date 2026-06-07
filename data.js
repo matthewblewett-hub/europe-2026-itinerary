@@ -1624,7 +1624,7 @@ const itinerary = [
         "title": "Old Man of Storr Hike 🥾",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "5.5km return, 400m elevation gain — allow 3 hours total. The path zigzags steeply through forestry then opens onto a lunar landscape of black pinnacles. The Old Man himself is the 50m basalt stack — get underneath it for the iconic silhouette shot against the sky. The ridge views across the Sound of Raasay on a clear morning are exceptional. Wear boots — it gets boggy. Take your time at the top for photos.",
+        "description": "🌤️ FORECAST: Mainly clear at 08:00, 11°C, 10mph wind, 20% rain chance — the best weather window of both days. 5.5km return, 400m elevation gain — allow 3 hours total. The path zigzags steeply through forestry then opens onto a lunar landscape of black pinnacles. The Old Man himself is the 50m basalt stack — get underneath it for the iconic silhouette shot against the sky. The ridge views across the Sound of Raasay on a clear morning are exceptional. Wear boots — it gets boggy. Take your time at the top for photos.",
         "mapLink": "https://maps.google.com/?q=Old+Man+of+Storr"
       },
       {
@@ -1656,7 +1656,7 @@ const itinerary = [
         "title": "The Quiraing Walk 🥾",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "Allow 2 hours for the shorter circuit to The Table and The Needle — the most dramatic features of the world's largest inland landslip. The path runs along a vast green amphitheatre with sheer rock walls rising on one side and a 400m drop to the sea on the other. The Table is a hidden flat plateau — genuinely jaw-dropping. Path is rough in places — boots essential. Total distance ~4km for the shorter loop.",
+        "description": "⛅ FORECAST: Overcast but DRY at noon, 12°C, 12mph — the misty atmosphere actually makes the Quiraing look incredibly dramatic. Expect moody, mystical conditions rather than blue sky. Allow 2 hours for the shorter circuit to The Table and The Needle — the most dramatic features of the world's largest inland landslip. The path runs along a vast green amphitheatre with sheer rock walls rising on one side and a 400m drop to the sea on the other. The Table is a hidden flat plateau — genuinely jaw-dropping. Path is rough in places — boots essential. ~4km loop.",
         "mapLink": "https://maps.google.com/?q=Quiraing+Skye"
       },
       {
@@ -1680,7 +1680,7 @@ const itinerary = [
         "title": "Duntulm Castle Ruins",
         "type": "activity",
         "icon": "fa-chess-rook",
-        "description": "10 min drive north to the tip of Trotternish. Duntulm Castle is a dramatic clifftop ruin — once the seat of Clan MacDonald. Free, open access. The views across the Minch to the Outer Hebrides are stunning. Allow 20-30 min. Park on the verge and walk the short path down.",
+        "description": "⛅ FORECAST: Overcast but dry, 13°C — fine for a short stop. 10 min drive north. Duntulm Castle is a dramatic clifftop ruin — NO ENTRY FEE, completely free open access. Just park on the verge and walk the short path to the cliff edge. Once the seat of Clan MacDonald, now an atmospheric shell of walls on a headland with views across to the Outer Hebrides. 15-20 minutes is enough — no guided tour, no ticket, just history and views.",
         "mapLink": "https://maps.google.com/?q=Duntulm+Castle+Skye"
       },
       {
@@ -1712,7 +1712,7 @@ const itinerary = [
         "title": "Camp Dinner at Portree Campsite 🏕️",
         "type": "food",
         "icon": "fa-campground",
-        "description": "A well-earned rest and home-cooked dinner at camp after a big day on the hills. Two serious hikes, coastal clifftops, castles, and history — that's a proper Skye day. Raise a dram to the Old Man! 🥃"
+        "description": "🌧️ FORECAST: Light drizzle arrives from 18:00 — perfect timing to be indoors! A well-earned rest and home-cooked dinner at camp after a big day on the hills. Two serious hikes, clifftop ruins, a cemetery full of Jacobite history, and a sheltered bay — that's a proper Skye day. Raise a dram to the Old Man! 🥃"
       }
     ]
   },
@@ -1755,7 +1755,7 @@ const itinerary = [
         "title": "Fairy Pools Walk 🥾",
         "type": "activity",
         "icon": "fa-water",
-        "description": "5km return, allow 2 hours. The Fairy Pools are a series of crystal-clear turquoise pools fed by waterfalls cascading off the Black Cuillin ridge above. The water comes straight off the mountains — cold even in summer, but you can wade in the shallows. The pools get progressively more dramatic the further you walk upstream. The Cuillin as a backdrop makes this one of the most photographed walks in Scotland. Easy to moderate path.",
+        "description": "🌦️ FORECAST: Light drizzle, 9-10°C, very light 4mph wind. The Fairy Pools are actually magical in soft rain — waterfalls run stronger, mist sits in the valley, and the turquoise colour is intensified. Bring a waterproof jacket and enjoy it. 5km return, allow 2 hours. The pools get progressively more dramatic further upstream. The Cuillin as a misty backdrop in drizzle is extraordinarily atmospheric.",
         "mapLink": "https://maps.google.com/?q=Fairy+Pools+Skye"
       },
       {
@@ -1771,7 +1771,7 @@ const itinerary = [
         "title": "Talisker Distillery Tour & Tasting 🥃",
         "type": "activity",
         "icon": "fa-wine-bottle",
-        "description": "Scotland's only island single malt — and one of the finest. Talisker is famous for its peaty, maritime character with a famous 'warming kick' finish. Tours run at specific times and MUST be booked in advance. Typically 45-60 minutes including tasting. Book at talisker-whisky.com — check for a 11:00 or 11:30 slot. The distillery shop has exclusive expressions not available elsewhere.",
+        "description": "🏠 INDOORS — perfectly timed for the wet morning! Scotland's only island single malt. Talisker is famous for its peaty, maritime character with a famous 'warming kick' finish. Tours MUST be booked in advance at malts.com — check for an 11:00 or 11:30 slot. 45-60 minutes including tasting. The distillery shop has exclusive expressions not available elsewhere. 12°C inside — a warm dry haven while the rain continues outside.",
         "mapLink": "https://maps.google.com/?q=Talisker+Distillery+Carbost",
         "ticketLink": "https://www.malts.com/en-gb/distilleries/talisker/visit-us/"
       },
@@ -1788,7 +1788,7 @@ const itinerary = [
         "title": "Glen Brittle Beach & Cuillin Views",
         "type": "activity",
         "icon": "fa-mountain",
-        "description": "20 min drive back toward Glen Brittle to the beach at the foot of the Cuillin. The black volcanic beach backed by the full Cuillin ridge is one of the most dramatic landscapes in Britain. Walk the shoreline, photograph the mountains, and let the afternoon unfold. The ridge is the birthplace of modern British mountaineering. Allow 1-1.5 hours to linger.",
+        "description": "⛅ FORECAST: Overcast but DRY by early afternoon, 13°C, 9mph. The Cuillin in cloud is dramatic — you may not see the full ridge but the scale and atmosphere are extraordinary. 20 min drive from Oyster Shed. The black volcanic beach is stunning. Walk the shoreline and photograph the mountains.",
         "mapLink": "https://maps.google.com/?q=Glen+Brittle+Beach+Skye"
       },
       {
@@ -1804,7 +1804,7 @@ const itinerary = [
         "title": "Dunvegan Castle & Coral Beach Option",
         "type": "activity",
         "icon": "fa-chess-rook",
-        "description": "Dunvegan Castle is the ancient seat of Clan MacLeod — the oldest continuously inhabited castle in Scotland (since 1237). You can visit the castle and gardens (book at dunvegancastle.com) or just stop in the village for coffee at the Dunvegan Hotel. A beautiful and easy alternative nearby: Coral Beach (2km walk from Claigan) — a beach made entirely of white maerl (coralline algae) with turquoise water. Allow 1 hour for either option.",
+        "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. No need to do a castle entry (you have had enough castles!). Instead: coffee at the Dunvegan Hotel and consider the Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
         "mapLink": "https://maps.google.com/?q=Dunvegan+Castle+Skye",
         "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
       },
@@ -1821,15 +1821,15 @@ const itinerary = [
         "title": "Neist Point Lighthouse Walk & Sunset Vigil 🌅",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "3km return to the lighthouse on the clifftops — 45 minutes walking. Then stay for one of the finest sunsets in Scotland. Neist Point juts into the Minch at the westernmost tip of Skye — on a clear evening the sun drops into the Atlantic with the Outer Hebrides silhouetted on the horizon. Sunset is approximately 22:00 on 9 June. The light is extraordinary from about 20:30 onwards. Pack your picnic dinner and a dram — eat it on the clifftops as the light changes. Bring a warm layer, it gets chilly even in summer.",
+        "description": "⛅→🌤️ FORECAST: BEST WINDOW OF THE DAY — partly cloudy, 0mm rain, 10mph wind from 18:00–20:00. Dramatic cloud effects over the sea. ⚠️ IMPORTANT: Camp gates close at 22:00 — you MUST leave Neist Point by 20:45 for the 1h15m drive back. Plan: walk to the lighthouse (3km return, 45 min), then settle on the clifftops and enjoy the evening light from 19:00–20:30. Pack dinner and a dram to eat on the headland — one of the finest viewpoints in Scotland. Actual sunset at 22:00 but the golden light peaks 19:30–20:30. Bring a warm layer.",
         "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse+Skye"
       },
       {
-        "time": "22:15",
-        "title": "Drive Back to Portree Campsite",
+        "time": "20:45",
+        "title": "Drive Back to Portree Campsite — Gates Close at 22:00!",
         "type": "travel",
         "icon": "fa-route",
-        "description": "1h15m drive back to Portree via Dunvegan and the A850. It will still be light — this is the magic of June on Skye. You will be tired, full of good food, and carrying memories that last a lifetime.",
+        "description": "⚠️ Depart by 20:45 sharp — gates close at 22:00 and it is exactly 1h15m. Route: B884 back to Glendale, then A850 to Portree. It will still be light — this is June on Skye. Arrive camp ~22:00.",
         "mapLink": "https://www.google.com/maps/dir/Neist+Point+Lighthouse/Portree+Campsite"
       }
     ]
