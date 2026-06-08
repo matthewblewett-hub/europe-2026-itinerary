@@ -1720,7 +1720,7 @@ const itinerary = [
     "id": "day-p3-10",
     "phase": "phase3",
     "date": "Tuesday 9 June 2026",
-    "title": "Skye: Fairy Pools, Raasay, Portree Harbour & Sunset",
+    "title": "Skye: Fairy Pools, Raasay, Dunvegan & Sunset",
     "overview": "Crystal pools, Scotland's finest whisky distillery, Cuillin views, and one of the most spectacular sunsets in Europe.",
     "bgImage": "",
     "coords": {"lat": 57.25, "lon": -6.35},
@@ -1793,31 +1793,23 @@ const itinerary = [
       },
       {
         "time": "12:30",
-        "title": "Drive to Portree Harbour",
+        "title": "Drive directly to Dunvegan",
         "type": "travel",
         "icon": "fa-route",
-        "description": "15 miles north on the A87 to Portree Harbour — about 25 minutes. Time for some authentic fish and chips!",
-        "mapLink": "https://www.google.com/maps/dir/Sconser+Ferry+Terminal/Portree+Harbour"
+        "description": "Head straight across the island via the A863 through Sligachan and Bracadale — a beautiful 45-minute drive directly to Dunvegan.",
+        "mapLink": "https://www.google.com/maps/dir/Sconser+Ferry+Terminal/Dunvegan"
       },
       {
-        "time": "13:00",
-        "title": "Lunch: The Chippy at Portree Harbour 🍟🐟",
+        "time": "13:15",
+        "title": "Lunch: Fish & Chips by the Loch 🍟🐟",
         "type": "food",
         "icon": "fa-fish",
-        "description": "Head down to 'The Chippy' in Portree. This is the most authentic, casual, harbourside fish and chips experience on Skye. Grab your takeaway and eat it on the pier overlooking the iconic colourful houses and the water.",
-        "mapLink": "https://maps.google.com/?q=The+Chippy+Portree"
+        "description": "Two great options near Dunvegan: 1. 'Blas' right in Dunvegan village for excellent takeaway haddock and hand-cut chips, eaten overlooking Loch Dunvegan. 2. A 10-minute drive north to 'The Stein Inn' (the oldest inn on Skye) for proper pub fish and chips right on the harbour in Waternish.",
+        "mapLink": "https://maps.google.com/?q=Blas+Dunvegan"
       },
       {
-        "time": "14:15",
-        "title": "Drive to Dunvegan",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "22 miles west via the A850 to Dunvegan — about 40 minutes.",
-        "mapLink": "https://www.google.com/maps/dir/Portree+Harbour/Dunvegan"
-      },
-      {
-        "time": "15:00",
-        "title": "Dunvegan — Coffee & Coral Beach Option",
+        "time": "14:30",
+        "title": "Dunvegan — Coral Beach Walk Option",
         "type": "activity",
         "icon": "fa-mug-hot",
         "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. Grab a coffee at the Dunvegan Hotel. Optional: Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
