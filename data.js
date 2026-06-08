@@ -1731,7 +1731,7 @@ const itinerary = [
         "title": "Early Breakfast & Pack Day Bags",
         "type": "food",
         "icon": "fa-coffee",
-        "description": "Light breakfast at camp. Pack layers, water, snacks — and a picnic dinner if you plan to stay for the full sunset at Neist Point (highly recommended). Sunset is at ~22:00 so it will be a long, magical day.",
+        "description": "Light breakfast at camp. Pack layers and waterproofs — drizzly morning expected. Pack a picnic snack for the Raasay ferry. Today has a brilliant structure: walk, eat, island distillery, sunset cliff.",
         "mapLink": ""
       },
       {
@@ -1760,48 +1760,80 @@ const itinerary = [
       },
       {
         "time": "10:30",
-        "title": "Drive to Talisker Distillery",
+        "title": "Drive to The Oyster Shed, Carbost",
         "type": "travel",
         "icon": "fa-route",
-        "description": "8km back down the B8009 to Carbost village — about 15 minutes.",
-        "mapLink": "https://www.google.com/maps/dir/Fairy+Pools/Talisker+Distillery+Carbost"
+        "description": "15 min back down B8009 to Carbost — just below Loch Harport.",
+        "mapLink": "https://www.google.com/maps/dir/Fairy+Pools/The+Oyster+Shed+Carbost"
       },
       {
-        "time": "11:00",
-        "title": "Talisker Distillery Tour & Tasting 🥃",
-        "type": "activity",
-        "icon": "fa-wine-bottle",
-        "description": "🏠 INDOORS — perfectly timed for the wet morning! Scotland's only island single malt. Talisker is famous for its peaty, maritime character with a famous 'warming kick' finish. Tours MUST be booked in advance at malts.com — check for an 11:00 or 11:30 slot. 45-60 minutes including tasting. The distillery shop has exclusive expressions not available elsewhere. 12°C inside — a warm dry haven while the rain continues outside.",
-        "mapLink": "https://maps.google.com/?q=Talisker+Distillery+Carbost",
-        "ticketLink": "https://www.malts.com/en-gb/distilleries/talisker/visit-us/"
-      },
-      {
-        "time": "12:15",
+        "time": "10:45",
         "title": "Lunch at The Oyster Shed 🦪",
         "type": "food",
         "icon": "fa-utensils",
-        "description": "2 minutes from Talisker down to the lochside at Carbost. The Oyster Shed is an iconic informal seafood shack on the shore of Loch Harport — fresh oysters, langoustines, and seafood chowder from a tiny hut. Eat outside on the pier watching the loch. Cash handy (though they may take cards now). Food sells out — arrive before 12:30 to be safe. One of the best lunches you'll have on the whole trip.",
+        "description": "Iconic seafood shack on the shore of Loch Harport — fresh oysters, langoustines, and chowder from a tiny hut. Eat outside watching the loch. Cash handy. Food sells out — arrive early. One of the best lunches of the trip.",
         "mapLink": "https://maps.google.com/?q=The+Oyster+Shed+Carbost+Skye"
       },
       {
-        "time": "13:30",
-        "title": "Glen Brittle Beach & Cuillin Views",
-        "type": "activity",
-        "icon": "fa-mountain",
-        "description": "⛅ FORECAST: Overcast but DRY by early afternoon, 13°C, 9mph. The Cuillin in cloud is dramatic — you may not see the full ridge but the scale and atmosphere are extraordinary. 20 min drive from Oyster Shed. The black volcanic beach is stunning. Walk the shoreline and photograph the mountains.",
-        "mapLink": "https://maps.google.com/?q=Glen+Brittle+Beach+Skye"
-      },
-      {
-        "time": "15:00",
-        "title": "Drive to Dunvegan via West Coast",
+        "time": "12:15",
+        "title": "Drive to Sconser Ferry Terminal",
         "type": "travel",
         "icon": "fa-route",
-        "description": "35km north on the A863 to Dunvegan — about 45 minutes following the coast.",
-        "mapLink": "https://www.google.com/maps/dir/Glen+Brittle+Beach/Dunvegan+Castle"
+        "description": "20km from Carbost back via B8009 to A87 at Sconser — about 25 minutes. Sconser is right on the A87. The CalMac ferry terminal is well signed.",
+        "mapLink": "https://www.google.com/maps/dir/The+Oyster+Shed+Carbost/Sconser+Ferry+Terminal"
+      },
+      {
+        "time": "12:45",
+        "title": "Arrive Sconser — Board Ferry to Raasay ⛴️",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "No advance booking needed for the ferry — buy tickets on board (card accepted). Arrive 10-15 min before departure. The 13:00 sailing gets you to Raasay at 13:25. The 25-minute crossing on the MV Hallaig gives you spectacular Cuillin views across the Sound of Raasay — have your camera ready.",
+        "mapLink": "https://maps.google.com/?q=Sconser+Ferry+Terminal+Skye"
+      },
+      {
+        "time": "13:00",
+        "title": "Ferry Sconser → Isle of Raasay (25 min)",
+        "type": "travel",
+        "icon": "fa-water",
+        "description": "Sit on the outer deck for the crossing — the view of the Cuillin ridge rising above Skye from the water is extraordinary. Raasay is a quiet, beautiful island of about 160 people. The distillery is a 10-minute walk up from the terminal.",
+        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay+Ferry+Terminal"
+      },
+      {
+        "time": "13:45",
+        "title": "Isle of Raasay Distillery Tour & Tasting 🥃",
+        "type": "activity",
+        "icon": "fa-wine-bottle",
+        "description": "🏠 INDOORS — warm and dry while the drizzle continues outside! Raasay distillery only produced its first legal whisky in 2021 — and it has already won major international awards. The tour covers the full production process in a stunning converted Victorian villa with floor-to-ceiling views of the Cuillin across the water. 45 minutes, includes a tasting of their single malt and gin. Far more intimate and exclusive than Talisker — a real find. Tour is booked — confirm via raasaydistillery.com.",
+        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay+Distillery",
+        "ticketLink": "https://raasaydistillery.com/visit/"
+      },
+      {
+        "time": "14:30",
+        "title": "Explore Raasay — Relax at the Distillery",
+        "type": "activity",
+        "icon": "fa-island-tropical",
+        "description": "The tour ends at 14:30. Take 30-40 minutes to enjoy the distillery lounge and the terrace — the view of the Cuillin from here is one of the finest in Scotland. If time allows, walk 10 minutes down to the shoreline. The island is peaceful and traffic-free.",
+        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay"
+      },
+      {
+        "time": "15:10",
+        "title": "Return Ferry Raasay → Sconser",
+        "type": "travel",
+        "icon": "fa-ship",
+        "description": "Catch the ~15:10 return ferry (25 min). Arrive back at Sconser ~15:35. Check CalMac app on the day for exact return times — they run roughly every 90 minutes.",
+        "mapLink": "https://maps.google.com/?q=Sconser+Ferry+Terminal+Skye"
       },
       {
         "time": "15:45",
-        "title": "Dunvegan Castle & Coral Beach Option",
+        "title": "Drive to Dunvegan",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "40km north on A87 then A850 to Dunvegan — about 45 minutes.",
+        "mapLink": "https://www.google.com/maps/dir/Glen+Brittle+Beach/Dunvegan+Castle"
+      },
+      {
+        "time": "16:30",
+        "title": "Dunvegan — Coffee & Coral Beach Option",
         "type": "activity",
         "icon": "fa-chess-rook",
         "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. No need to do a castle entry (you have had enough castles!). Instead: coffee at the Dunvegan Hotel and consider the Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
@@ -1809,7 +1841,7 @@ const itinerary = [
         "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
       },
       {
-        "time": "17:00",
+        "time": "17:15",
         "title": "Drive to Neist Point",
         "type": "travel",
         "icon": "fa-route",
@@ -1817,7 +1849,7 @@ const itinerary = [
         "mapLink": "https://www.google.com/maps/dir/Dunvegan/Neist+Point+Lighthouse"
       },
       {
-        "time": "17:45",
+        "time": "18:00",
         "title": "Neist Point Lighthouse Walk & Sunset Vigil 🌅",
         "type": "activity",
         "icon": "fa-camera",
