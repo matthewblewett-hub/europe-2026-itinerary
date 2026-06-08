@@ -2067,28 +2067,119 @@ const itinerary = [
     "id": "day-p3-15",
     "phase": "phase3",
     "date": "Sunday 14 June 2026",
-    "title": "Return to Manchester",
-    "overview": "Final morning in the Dales and campervan return.",
+    "title": "Yorkshire Dales: Abbeys & Limestone Scars",
+    "overview": "A full day exploring the majestic ruins of Bolton Abbey and the dramatic limestone pavement of Malham Cove.",
     "bgImage": "",
-    "coords": {"lat": 53.98, "lon": -1.92},
-    "weatherLocation": "Yorkshire Dales",
+    "coords": {"lat": 54.06, "lon": -2.15},
+    "weatherLocation": "Grassington, Yorkshire Dales",
     "items": [
       {
         "time": "09:00",
-        "title": "Bolton Abbey Ruins",
+        "title": "Slow Morning at Wood Nook",
+        "type": "activity",
+        "icon": "fa-coffee",
+        "description": "Enjoy a relaxed breakfast at camp on your final full day in the UK. No packing up today!",
+        "mapLink": ""
+      },
+      {
+        "time": "10:00",
+        "title": "Drive to Bolton Abbey",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "A 20-minute drive south through Wharfedale to the Bolton Abbey Estate.",
+        "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Bolton+Abbey"
+      },
+      {
+        "time": "10:30",
+        "title": "Bolton Abbey Ruins & The Strid Walk",
         "type": "activity",
         "icon": "fa-monument",
-        "description": "Pack up and visit the nearby Bolton Abbey ruins for a morning walk.",
+        "description": "Explore the majestic 12th-century ruins of the Augustinian Priory sitting by the River Wharfe. Walk the woodland trails up the river to 'The Strid' — a famously narrow and dangerous gorge where the entire river is forced through a gap just 1.5 metres wide.",
         "mapLink": "https://maps.google.com/?q=Bolton+Abbey",
         "ticketLink": "https://boltonabbey.com/visit-us/"
       },
       {
-        "time": "11:30",
-        "title": "Drive to Manchester",
+        "time": "13:00",
+        "title": "Lunch at Cavendish Pavilion",
+        "type": "food",
+        "icon": "fa-utensils",
+        "description": "A charming riverside cafe on the Bolton Abbey estate, perfect for a light lunch and a pot of Yorkshire Tea.",
+        "mapLink": "https://maps.google.com/?q=Cavendish+Pavilion"
+      },
+      {
+        "time": "14:15",
+        "title": "Drive to Malham Cove",
         "type": "travel",
         "icon": "fa-route",
-        "description": "Drive the final stretch back to Manchester (~1.5 hours) to empty, clean, and drop off the Indie Camper before your flight home.",
-        "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Manchester+Airport"
+        "description": "Drive ~40 minutes west across the scenic Dales to the village of Malham.",
+        "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Malham+Cove"
+      },
+      {
+        "time": "15:00",
+        "title": "Hike Malham Cove 🥾",
+        "type": "activity",
+        "icon": "fa-hiking",
+        "description": "Hike up to the top of Malham Cove, a massive curving amphitheatre of white limestone rock rising 80 metres high. The top features a rare 'limestone pavement' (featured in Harry Potter and the Deathly Hallows) offering incredible views across the Yorkshire Dales.",
+        "mapLink": "https://maps.google.com/?q=Malham+Cove"
+      },
+      {
+        "time": "17:30",
+        "title": "Return to Wood Nook",
+        "type": "travel",
+        "icon": "fa-campground",
+        "description": "Drive ~30 minutes back to Grassington and the campsite.",
+        "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Wood+Nook+Caravan+Park"
+      },
+      {
+        "time": "19:00",
+        "title": "Final Trip Celebration Dinner",
+        "type": "food",
+        "icon": "fa-glass-cheers",
+        "description": "Head into Grassington for a final celebratory pub dinner (try The Foresters Arms or The Devonshire), or enjoy a final BBQ at camp to use up any remaining supplies.",
+        "mapLink": "https://maps.google.com/?q=Grassington"
+      }
+    ]
+  },
+  {
+    "id": "day-p3-16",
+    "phase": "phase3",
+    "date": "Monday 15 June 2026",
+    "title": "Departure: Return Campervan",
+    "overview": "Early morning drive to Manchester to return the camper by 10am, and fly home.",
+    "bgImage": "",
+    "coords": {"lat": 53.48, "lon": -2.24},
+    "weatherLocation": "Manchester",
+    "items": [
+      {
+        "time": "06:30",
+        "title": "Early Wake-up & Pack Down",
+        "type": "activity",
+        "icon": "fa-box",
+        "description": "An early start to pack all bags, empty the chemical toilet, drain grey water, and ensure the camper is clean for the return."
+      },
+      {
+        "time": "07:30",
+        "title": "Depart Wood Nook for Manchester",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "Drive the final stretch back to Manchester. It's approximately a 1.5 to 2 hour drive down the M66/M60 depending on morning traffic.",
+        "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Indie+Campers+Manchester"
+      },
+      {
+        "time": "09:30",
+        "title": "Arrive at Indie Campers Manchester",
+        "type": "activity",
+        "icon": "fa-truck-front",
+        "description": "Arrive at the depot with enough time to do the final handover. The vehicle MUST be returned by 10:00 AM to avoid late fees.",
+        "mapLink": "https://maps.google.com/?q=Indie+Campers+Manchester"
+      },
+      {
+        "time": "10:30",
+        "title": "Head to Manchester Airport",
+        "type": "travel",
+        "icon": "fa-plane-departure",
+        "description": "Grab a taxi or Uber from the depot to Manchester Airport for your flight home. Safe travels! ✈️",
+        "mapLink": "https://maps.google.com/?q=Manchester+Airport"
       }
     ]
   }
