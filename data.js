@@ -1720,140 +1720,123 @@ const itinerary = [
     "id": "day-p3-10",
     "phase": "phase3",
     "date": "Tuesday 9 June 2026",
-    "title": "Skye: Fairy Pools, Talisker & Neist Point Sunset",
+    "title": "Skye: Fairy Pools, Raasay, Portree Harbour & Sunset",
     "overview": "Crystal pools, Scotland's finest whisky distillery, Cuillin views, and one of the most spectacular sunsets in Europe.",
     "bgImage": "",
     "coords": {"lat": 57.25, "lon": -6.35},
     "weatherLocation": "Portree, Skye",
     "items": [
       {
-        "time": "07:00",
+        "time": "06:30",
         "title": "Early Breakfast & Pack Day Bags",
         "type": "food",
         "icon": "fa-coffee",
-        "description": "Light breakfast at camp. Pack layers and waterproofs — drizzly morning expected. Pack a picnic snack for the Raasay ferry. Today has a brilliant structure: walk, eat, island distillery, sunset cliff.",
+        "description": "Light breakfast at camp. Pack waterproofs — drizzly morning expected. We need an earlier start today to catch the 10:25 ferry to Raasay.",
         "mapLink": ""
       },
       {
-        "time": "07:30",
+        "time": "07:00",
         "title": "Drive to Fairy Pools",
         "type": "travel",
         "icon": "fa-route",
-        "description": "45km south via A87 through Sligachan, then B8009 through Glen Brittle — about 55 minutes. The drive through Sligachan under the Black Cuillin is stunning on a clear morning. The Fairy Pools carpark on the Glen Brittle road fills quickly — early start is worthwhile.",
+        "description": "45km south via A87 through Sligachan, then B8009 through Glen Brittle — about 55 minutes. The drive through Sligachan under the Black Cuillin is stunning.",
         "mapLink": "https://www.google.com/maps/dir/Portree+Campsite/Fairy+Pools+Car+Park+Skye"
       },
       {
-        "time": "08:25",
-        "title": "Arrive Fairy Pools Carpark",
-        "type": "activity",
-        "icon": "fa-parking",
-        "description": "Paid carpark — card accepted. Toilets on site. The trail starts from here.",
-        "mapLink": "https://maps.google.com/?q=Fairy+Pools+Car+Park+Skye"
-      },
-      {
-        "time": "08:30",
+        "time": "08:00",
         "title": "Fairy Pools Walk 🥾",
         "type": "activity",
         "icon": "fa-water",
-        "description": "🌦️ FORECAST: Light drizzle, 9-10°C, very light 4mph wind. The Fairy Pools are actually magical in soft rain — waterfalls run stronger, mist sits in the valley, and the turquoise colour is intensified. Bring a waterproof jacket and enjoy it. 5km return, allow 2 hours. The pools get progressively more dramatic further upstream. The Cuillin as a misty backdrop in drizzle is extraordinarily atmospheric.",
+        "description": "🌦️ FORECAST: Light drizzle, 9-10°C. The Fairy Pools are actually magical in soft rain — waterfalls run stronger, mist sits in the valley, and the turquoise colour is intensified. Bring a waterproof jacket and enjoy it. Walk for about 1h 45m before heading back to the car.",
         "mapLink": "https://maps.google.com/?q=Fairy+Pools+Skye"
       },
       {
-        "time": "10:30",
-        "title": "Drive to The Oyster Shed, Carbost",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "15 min back down B8009 to Carbost — just below Loch Harport.",
-        "mapLink": "https://www.google.com/maps/dir/Fairy+Pools/The+Oyster+Shed+Carbost"
-      },
-      {
-        "time": "10:45",
-        "title": "Lunch at The Oyster Shed 🦪",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Iconic seafood shack on the shore of Loch Harport — fresh oysters, langoustines, and chowder from a tiny hut. Eat outside watching the loch. Cash handy. Food sells out — arrive early. One of the best lunches of the trip.",
-        "mapLink": "https://maps.google.com/?q=The+Oyster+Shed+Carbost+Skye"
-      },
-      {
-        "time": "12:15",
+        "time": "09:45",
         "title": "Drive to Sconser Ferry Terminal",
         "type": "travel",
         "icon": "fa-route",
-        "description": "20km from Carbost back via B8009 to A87 at Sconser — about 25 minutes. Sconser is right on the A87. The CalMac ferry terminal is well signed.",
-        "mapLink": "https://www.google.com/maps/dir/The+Oyster+Shed+Carbost/Sconser+Ferry+Terminal"
+        "description": "22km from Fairy Pools back to the A87 at Sconser — about 25 minutes. Must arrive by 10:10 for the ferry.",
+        "mapLink": "https://www.google.com/maps/dir/Fairy+Pools/Sconser+Ferry+Terminal"
       },
       {
-        "time": "12:45",
+        "time": "10:15",
         "title": "Arrive Sconser — Board Ferry to Raasay ⛴️",
         "type": "travel",
         "icon": "fa-ship",
-        "description": "No advance booking needed for the ferry — buy tickets on board (card accepted). Arrive 10-15 min before departure. The 13:00 sailing gets you to Raasay at 13:25. The 25-minute crossing on the MV Hallaig gives you spectacular Cuillin views across the Sound of Raasay — have your camera ready.",
+        "description": "No advance booking needed for the ferry — buy tickets on board (card accepted). The 10:25 sailing gets you to Raasay at 10:50. The 25-minute crossing on the MV Hallaig gives you spectacular Cuillin views.",
         "mapLink": "https://maps.google.com/?q=Sconser+Ferry+Terminal+Skye"
       },
       {
-        "time": "13:00",
-        "title": "Ferry Sconser → Isle of Raasay (25 min)",
-        "type": "travel",
-        "icon": "fa-water",
-        "description": "Sit on the outer deck for the crossing — the view of the Cuillin ridge rising above Skye from the water is extraordinary. Raasay is a quiet, beautiful island of about 160 people. The distillery is a 10-minute walk up from the terminal.",
-        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay+Ferry+Terminal"
+        "time": "10:50",
+        "title": "Arrive Raasay & Walk to Distillery",
+        "type": "activity",
+        "icon": "fa-walking",
+        "description": "Arrive on Raasay at 10:50. The distillery is a short 5-10 minute walk up the hill from the ferry terminal.",
+        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay+Distillery"
       },
       {
-        "time": "13:45",
+        "time": "11:00",
         "title": "Isle of Raasay Distillery Tour & Tasting 🥃",
         "type": "activity",
         "icon": "fa-wine-bottle",
-        "description": "🏠 INDOORS — warm and dry while the drizzle continues outside! Raasay distillery only produced its first legal whisky in 2021 — and it has already won major international awards. The tour covers the full production process in a stunning converted Victorian villa with floor-to-ceiling views of the Cuillin across the water. 45 minutes, includes a tasting of their single malt and gin. Far more intimate and exclusive than Talisker — a real find. Tour is booked — confirm via raasaydistillery.com.",
+        "description": "🏠 INDOORS — warm and dry while the drizzle continues outside! Raasay distillery only produced its first legal whisky in 2021 — and it has already won major international awards. The tour covers the full production process in a stunning converted Victorian villa with floor-to-ceiling views of the Cuillin across the water. 45 minutes, includes a tasting of their single malt and gin. Book the 11:00 tour at raasaydistillery.com.",
         "mapLink": "https://maps.google.com/?q=Isle+of+Raasay+Distillery",
         "ticketLink": "https://raasaydistillery.com/visit/"
       },
       {
-        "time": "14:30",
-        "title": "Explore Raasay — Relax at the Distillery",
-        "type": "activity",
-        "icon": "fa-island-tropical",
-        "description": "The tour ends at 14:30. Take 30-40 minutes to enjoy the distillery lounge and the terrace — the view of the Cuillin from here is one of the finest in Scotland. If time allows, walk 10 minutes down to the shoreline. The island is peaceful and traffic-free.",
-        "mapLink": "https://maps.google.com/?q=Isle+of+Raasay"
-      },
-      {
-        "time": "15:10",
+        "time": "12:00",
         "title": "Return Ferry Raasay → Sconser",
         "type": "travel",
         "icon": "fa-ship",
-        "description": "Catch the ~15:10 return ferry (25 min). Arrive back at Sconser ~15:35. Check CalMac app on the day for exact return times — they run roughly every 90 minutes.",
+        "description": "Catch the 12:00 return ferry (25 min). Arrive back at Sconser around 12:25.",
         "mapLink": "https://maps.google.com/?q=Sconser+Ferry+Terminal+Skye"
       },
       {
-        "time": "15:45",
+        "time": "12:30",
+        "title": "Drive to Portree Harbour",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "15 miles north on the A87 to Portree Harbour — about 25 minutes. Time for some authentic fish and chips!",
+        "mapLink": "https://www.google.com/maps/dir/Sconser+Ferry+Terminal/Portree+Harbour"
+      },
+      {
+        "time": "13:00",
+        "title": "Lunch: The Chippy at Portree Harbour 🍟🐟",
+        "type": "food",
+        "icon": "fa-fish",
+        "description": "Head down to 'The Chippy' in Portree. This is the most authentic, casual, harbourside fish and chips experience on Skye. Grab your takeaway and eat it on the pier overlooking the iconic colourful houses and the water.",
+        "mapLink": "https://maps.google.com/?q=The+Chippy+Portree"
+      },
+      {
+        "time": "14:15",
         "title": "Drive to Dunvegan",
         "type": "travel",
         "icon": "fa-route",
-        "description": "40km north on A87 then A850 to Dunvegan — about 45 minutes.",
-        "mapLink": "https://www.google.com/maps/dir/Glen+Brittle+Beach/Dunvegan+Castle"
+        "description": "22 miles west via the A850 to Dunvegan — about 40 minutes.",
+        "mapLink": "https://www.google.com/maps/dir/Portree+Harbour/Dunvegan"
       },
       {
-        "time": "16:30",
+        "time": "15:00",
         "title": "Dunvegan — Coffee & Coral Beach Option",
         "type": "activity",
-        "icon": "fa-chess-rook",
-        "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. No need to do a castle entry (you have had enough castles!). Instead: coffee at the Dunvegan Hotel and consider the Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
-        "mapLink": "https://maps.google.com/?q=Dunvegan+Castle+Skye",
-        "ticketLink": "https://www.dunvegancastle.com/book-tickets/"
+        "icon": "fa-mug-hot",
+        "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. Grab a coffee at the Dunvegan Hotel. Optional: Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
+        "mapLink": "https://maps.google.com/?q=Coral+Beach+Skye"
       },
       {
-        "time": "17:15",
+        "time": "16:45",
         "title": "Drive to Neist Point",
         "type": "travel",
         "icon": "fa-route",
-        "description": "18km via the B884 Glendale road — allow 45 minutes. This is single-track road all the way — take it steady and use the passing places. The road winds through the Glendale valley and out to the very westernmost tip of Skye.",
+        "description": "18km via the B884 Glendale road — allow 45 minutes. Single-track road all the way — take it steady.",
         "mapLink": "https://www.google.com/maps/dir/Dunvegan/Neist+Point+Lighthouse"
       },
       {
-        "time": "18:00",
+        "time": "17:30",
         "title": "Neist Point Lighthouse Walk & Sunset Vigil 🌅",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "⛅→🌤️ FORECAST: BEST WINDOW OF THE DAY — partly cloudy, 0mm rain, 10mph wind from 18:00–20:00. Dramatic cloud effects over the sea. ⚠️ IMPORTANT: Camp gates close at 22:00 — you MUST leave Neist Point by 20:45 for the 1h15m drive back. Plan: walk to the lighthouse (3km return, 45 min), then settle on the clifftops and enjoy the evening light from 19:00–20:30. Pack dinner and a dram to eat on the headland — one of the finest viewpoints in Scotland. Actual sunset at 22:00 but the golden light peaks 19:30–20:30. Bring a warm layer.",
+        "description": "⛅→🌤️ FORECAST: BEST WINDOW OF THE DAY — partly cloudy, 0mm rain, 10mph wind from 18:00–20:00. Dramatic cloud effects over the sea. ⚠️ IMPORTANT: Camp gates close at 22:00 — you MUST leave Neist Point by 20:45. Walk to the lighthouse (3km return, 45 min), then settle on the clifftops and enjoy the evening light.",
         "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse+Skye"
       },
       {
