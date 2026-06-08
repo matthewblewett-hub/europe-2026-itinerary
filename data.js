@@ -2119,24 +2119,40 @@ const itinerary = [
         "title": "Hike Malham Cove 🥾",
         "type": "activity",
         "icon": "fa-hiking",
-        "description": "Hike up to the top of Malham Cove, a massive curving amphitheatre of white limestone rock rising 80 metres high. The top features a rare 'limestone pavement' (featured in Harry Potter and the Deathly Hallows) offering incredible views across the Yorkshire Dales.",
+        "description": "Hike up to the top of Malham Cove, a massive curving amphitheatre of white limestone rock rising 80 metres high. The top features a rare 'limestone pavement' offering incredible views across the Yorkshire Dales.",
         "mapLink": "https://maps.google.com/?q=Malham+Cove"
       },
       {
-        "time": "17:30",
-        "title": "Return to Wood Nook",
+        "time": "17:00",
+        "title": "Drive to Grassington",
         "type": "travel",
-        "icon": "fa-campground",
-        "description": "Drive ~30 minutes back to Grassington and the campsite.",
-        "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Wood+Nook+Caravan+Park"
+        "icon": "fa-route",
+        "description": "Drive ~30 minutes back towards Grassington.",
+        "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Grassington"
       },
       {
-        "time": "19:00",
-        "title": "Final Trip Celebration Dinner",
+        "time": "17:30",
+        "title": "Early Farewell Dinner / Supplies",
         "type": "food",
         "icon": "fa-glass-cheers",
-        "description": "Head into Grassington for a final celebratory pub dinner (try The Foresters Arms or The Devonshire), or enjoy a final BBQ at camp to use up any remaining supplies.",
+        "description": "Grab a quick, early final trip pub dinner in Grassington, or pick up some local supplies from the village to take back to camp.",
         "mapLink": "https://maps.google.com/?q=Grassington"
+      },
+      {
+        "time": "18:20",
+        "title": "Return to Camp",
+        "type": "travel",
+        "icon": "fa-route",
+        "description": "A short 10-minute drive back up to Wood Nook Caravan Park.",
+        "mapLink": "https://www.google.com/maps/dir/Grassington/Wood+Nook+Caravan+Park"
+      },
+      {
+        "time": "18:30",
+        "title": "Back at Wood Nook for the Evening ⛺",
+        "type": "activity",
+        "icon": "fa-campground",
+        "description": "Arrive back at camp by 6:30 PM. Relax, have a final BBQ if you didn't eat in the village, and start slowly organizing bags so you're ready for the early morning departure.",
+        "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
       }
     ]
   },
