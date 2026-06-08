@@ -1720,7 +1720,7 @@ const itinerary = [
     "id": "day-p3-10",
     "phase": "phase3",
     "date": "Tuesday 9 June 2026",
-    "title": "Skye: Fairy Pools, Raasay, Dunvegan & Sunset",
+    "title": "Skye: Fairy Pools, Raasay, Dunvegan & Neist Point",
     "overview": "Crystal pools, Scotland's finest whisky distillery, Cuillin views, and one of the most spectacular sunsets in Europe.",
     "bgImage": "",
     "coords": {"lat": 57.25, "lon": -6.35},
@@ -1809,14 +1809,6 @@ const itinerary = [
       },
       {
         "time": "14:30",
-        "title": "Dunvegan — Coral Beach Walk Option",
-        "type": "activity",
-        "icon": "fa-mug-hot",
-        "description": "⛅ FORECAST: Overcast, 13°C, 11mph — dry. Grab a coffee at the Dunvegan Hotel. Optional: Coral Beach walk (2km from Claigan, 30 min, free) — white maerl beach with turquoise water. Or just stretch your legs in the village before the Neist Point drive.",
-        "mapLink": "https://maps.google.com/?q=Coral+Beach+Skye"
-      },
-      {
-        "time": "16:45",
         "title": "Drive to Neist Point",
         "type": "travel",
         "icon": "fa-route",
@@ -1824,20 +1816,28 @@ const itinerary = [
         "mapLink": "https://www.google.com/maps/dir/Dunvegan/Neist+Point+Lighthouse"
       },
       {
-        "time": "17:30",
-        "title": "Neist Point Lighthouse Walk & Sunset Vigil 🌅",
+        "time": "15:15",
+        "title": "Neist Point Lighthouse Walk",
         "type": "activity",
         "icon": "fa-camera",
-        "description": "⛅→🌤️ FORECAST: BEST WINDOW OF THE DAY — partly cloudy, 0mm rain, 10mph wind from 18:00–20:00. Dramatic cloud effects over the sea. ⚠️ IMPORTANT: Camp gates close at 22:00 — you MUST leave Neist Point by 20:45. Walk to the lighthouse (3km return, 45 min), then settle on the clifftops and enjoy the evening light.",
+        "description": "Walk down the steep path to the lighthouse (3km return, allow 1-1.5 hours). One of the most dramatic landscapes on Skye, with towering sea cliffs and views to the Outer Hebrides. Keep an eye out for whales and dolphins in the water below.",
         "mapLink": "https://maps.google.com/?q=Neist+Point+Lighthouse+Skye"
       },
       {
-        "time": "20:45",
-        "title": "Drive Back to Portree Campsite — Gates Close at 22:00!",
+        "time": "16:45",
+        "title": "Drive Back to Portree",
         "type": "travel",
         "icon": "fa-route",
-        "description": "⚠️ Depart by 20:45 sharp — gates close at 22:00 and it is exactly 1h15m. Route: B884 back to Glendale, then A850 to Portree. It will still be light — this is June on Skye. Arrive camp ~22:00.",
+        "description": "Depart Neist Point by 16:45 to ensure you are back at camp comfortably before 18:30. Route: B884 back to Glendale, then A850 to Portree. The drive takes exactly 1h15m.",
         "mapLink": "https://www.google.com/maps/dir/Neist+Point+Lighthouse/Portree+Campsite"
+      },
+      {
+        "time": "18:00",
+        "title": "Back at Portree Campsite",
+        "type": "activity",
+        "icon": "fa-campground",
+        "description": "Arrive safely back at camp well before the 18:30 team deadline. Relax and enjoy a camp dinner after a massive day.",
+        "mapLink": "https://maps.google.com/?q=Portree+Campsite"
       }
     ]
   },
