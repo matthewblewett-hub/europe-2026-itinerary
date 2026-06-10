@@ -83,3 +83,30 @@ if (headerTitle) {
 }
 
 // Cache bust: Force reload wizard logic
+
+
+// --- LIVE SYNC LISTENER ---
+if (window.fbDb) {
+    let initialLoad = true;
+    window.fbDb.ref('sys/hard_refresh').on('value', (snap) => {
+        if (initialLoad) {
+            initialLoad = false;
+            return;
+        }
+        const data = snap.val();
+        if (data && data.timestamp) {
+            // The AI Wizard updated the backend!
+            // We wait 45 seconds to let GitHub Pages finish deploying before we reload the app.
+            if(wizardStatus) {
+                wizardStatus.textContent = 'App code rewritten! Waiting for server deployment (45s)...';
+                wizardStatus.style.color = '#fbbf24';
+            }
+            
+            setTimeout(() => {
+                alert("App Wizard 🪄: Itinerary update deployed! Reloading your screen...");
+                // Force a cache-busting reload
+                window.location.href = window.location.href.split('?')[0] + '?t=' + new Date().getTime();
+            }, 45000);
+        }
+    });
+}
