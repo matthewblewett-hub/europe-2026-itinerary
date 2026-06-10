@@ -368,6 +368,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let savedScrollY = 0;
 
     async function openDayDetails(day) {
+        const cardEl = document.querySelector(`.day-card[data-day-id="${day.id}"]`);
+        if (cardEl) {
+            cardEl.scrollIntoView({ behavior: 'instant', block: 'center' });
+        }
+        
         savedScrollY = window.scrollY;
         currentDayForLearnMore = day;
         window.__currentDayForQuotes = day.id;
