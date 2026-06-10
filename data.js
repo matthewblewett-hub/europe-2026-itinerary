@@ -1842,113 +1842,113 @@ const itinerary = [
     ]
   },
   {
-    "id": "day-p3-11",
-    "phase": "phase3",
-    "date": "Wednesday 10 June 2026",
-    "title": "The Road to the Isles: Mallaig to Fort William",
-    "overview": "Ferry arrival in Mallaig, stunning beaches, Glenfinnan, and Fort William.",
-    "bgImage": "",
-    "coords": {"lat": 56.82, "lon": -5.1},
-    "weatherLocation": "Fort William",
-    "items": [
-      {
-        "time": "10:30",
-        "title": "Arrive Mallaig Pier ⛴️",
-        "type": "travel",
-        "icon": "fa-ship",
-        "description": "Disembark the CalMac ferry at Mallaig harbour.",
-        "mapLink": "https://maps.google.com/?q=Mallaig+Ferry+Terminal"
-      },
-      {
-        "time": "10:45",
-        "title": "Coffee at Bakehouse & Crannog",
-        "type": "food",
-        "icon": "fa-coffee",
-        "description": "Head straight to the Bakehouse in Mallaig for excellent coffee and fresh pastries before hitting the road.",
-        "mapLink": "https://maps.google.com/?q=The+Bakehouse+Mallaig"
-      },
-      {
-        "time": "11:15",
-        "title": "Silver Sands of Morar 🏖️",
-        "type": "activity",
-        "icon": "fa-umbrella-beach",
-        "description": "A 10-minute drive south. Stop for a quick explore of the famous Silver Sands of Morar — spectacular white beaches with turquoise water.",
-        "mapLink": "https://maps.google.com/?q=Silver+Sands+of+Morar"
-      },
-      {
-        "time": "11:45",
-        "title": "Loch Morar",
-        "type": "activity",
-        "icon": "fa-water",
-        "description": "A very short detour to see Loch Morar, the deepest freshwater body in the British Isles (310m deep). Spend 15-30 mins taking in the view.",
-        "mapLink": "https://maps.google.com/?q=Loch+Morar"
-      },
-      {
-        "time": "12:15",
-        "title": "Drive to Glenfinnan",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive ~35 minutes east along the A830 (The Road to the Isles).",
-        "mapLink": "https://www.google.com/maps/dir/Morar/Glenfinnan+Viaduct"
-      },
-      {
-        "time": "12:50",
-        "title": "Glenfinnan Viaduct & Monument",
-        "type": "activity",
-        "icon": "fa-train",
-        "description": "Stop at the Glenfinnan Visitor Centre. Walk up to the viewpoint to see the iconic curved viaduct (Harry Potter fame) and look down Loch Shiel to the Jacobite Monument.",
-        "mapLink": "https://maps.google.com/?q=Glenfinnan+Viaduct"
-      },
-      {
-        "time": "13:30",
-        "title": "Drive to Fort William",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive the final ~30 minutes into Fort William.",
-        "mapLink": "https://www.google.com/maps/dir/Glenfinnan/Fort+William"
-      },
-      {
-        "time": "14:00",
-        "title": "M&S & Fort William High Street",
-        "type": "food",
-        "icon": "fa-shopping-bag",
-        "description": "Stop at Marks & Spencer in Fort William for supplies, and have a quick walk down the High Street. Grab some lunch if you haven't already.",
-        "mapLink": "https://maps.google.com/?q=Marks+and+Spencer+Fort+William"
-      },
-      {
-        "time": "14:30",
-        "title": "Remote Meeting 💻",
-        "type": "activity",
-        "icon": "fa-laptop",
-        "description": "Reserved 45-minute block for your meeting. You can take this from the campervan while parked up in Fort William.",
-        "mapLink": ""
-      },
-      {
-        "time": "15:25",
-        "title": "Nevis Range Mountain Gondola 🚠",
-        "type": "activity",
-        "icon": "fa-mountain",
-        "description": "If the weather is nice, drive 10 mins north to the Nevis Range. ⚠️ IMPORTANT: The last gondola up is usually 15:45 (closes at 16:00). You will need to head straight there after your meeting to catch it!",
-        "mapLink": "https://maps.google.com/?q=Nevis+Range+Mountain+Gondola"
-      },
-      {
-        "time": "16:30",
-        "title": "Ben Nevis Distillery 🥃",
-        "type": "activity",
-        "icon": "fa-wine-bottle",
-        "description": "Located right at the base of Ben Nevis on the A82. Pop into the visitor centre and shop (it closes at 17:00, so you'll have just enough time for a browse or a quick dram).",
-        "mapLink": "https://maps.google.com/?q=Ben+Nevis+Distillery"
-      },
-      {
-        "time": "17:15",
-        "title": "Arrive Glen Nevis Campsite",
-        "type": "hotel",
-        "icon": "fa-campground",
-        "description": "A 10-minute drive from the distillery back to the beautiful Glen Nevis Caravan & Camping Park to set up for the night.",
-        "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
-      }
-    ]
-  },
+  "id": "day-p3-11",
+  "phase": "phase3",
+  "date": "Wednesday 10 June 2026",
+  "title": "The Road to the Isles: Mallaig to Fort William (Delayed)",
+  "overview": "Ferry arrival in Mallaig, stunning beaches, Glenfinnan, and Fort William. (Times delayed by 30 minutes for testing)",
+  "bgImage": "",
+  "coords": {"lat": 56.82, "lon": -5.1},
+  "weatherLocation": "Fort William",
+  "items": [
+    {
+      "time": "11:00",
+      "title": "Arrive Mallaig Pier ⛴️",
+      "type": "travel",
+      "icon": "fa-ship",
+      "description": "Disembark the CalMac ferry at Mallaig harbour.",
+      "mapLink": "https://maps.google.com/?q=Mallaig+Ferry+Terminal"
+    },
+    {
+      "time": "11:15",
+      "title": "Coffee at Bakehouse & Crannog",
+      "type": "food",
+      "icon": "fa-coffee",
+      "description": "Head straight to the Bakehouse in Mallaig for excellent coffee and fresh pastries before hitting the road.",
+      "mapLink": "https://maps.google.com/?q=The+Bakehouse+Mallaig"
+    },
+    {
+      "time": "11:45",
+      "title": "Silver Sands of Morar 🏖️",
+      "type": "activity",
+      "icon": "fa-umbrella-beach",
+      "description": "A 10-minute drive south. Stop for a quick explore of the famous Silver Sands of Morar — spectacular white beaches with turquoise water.",
+      "mapLink": "https://maps.google.com/?q=Silver+Sands+of+Morar"
+    },
+    {
+      "time": "12:15",
+      "title": "Loch Morar",
+      "type": "activity",
+      "icon": "fa-water",
+      "description": "A very short detour to see Loch Morar, the deepest freshwater body in the British Isles (310m deep). Spend 15-30 mins taking in the view.",
+      "mapLink": "https://maps.google.com/?q=Loch+Morar"
+    },
+    {
+      "time": "12:45",
+      "title": "Drive to Glenfinnan",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive ~35 minutes east along the A830 (The Road to the Isles).",
+      "mapLink": "https://www.google.com/maps/dir/Morar/Glenfinnan+Viaduct"
+    },
+    {
+      "time": "13:20",
+      "title": "Glenfinnan Viaduct & Monument",
+      "type": "activity",
+      "icon": "fa-train",
+      "description": "Stop at the Glenfinnan Visitor Centre. Walk up to the viewpoint to see the iconic curved viaduct (Harry Potter fame) and look down Loch Shiel to the Jacobite Monument.",
+      "mapLink": "https://maps.google.com/?q=Glenfinnan+Viaduct"
+    },
+    {
+      "time": "14:00",
+      "title": "Drive to Fort William",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive the final ~30 minutes into Fort William.",
+      "mapLink": "https://www.google.com/maps/dir/Glenfinnan/Fort+William"
+    },
+    {
+      "time": "14:30",
+      "title": "M&S & Fort William High Street",
+      "type": "food",
+      "icon": "fa-shopping-bag",
+      "description": "Stop at Marks & Spencer in Fort William for supplies, and have a quick walk down the High Street. Grab some lunch if you haven't already.",
+      "mapLink": "https://maps.google.com/?q=Marks+and+Spencer+Fort+William"
+    },
+    {
+      "time": "15:00",
+      "title": "Remote Meeting 💻",
+      "type": "activity",
+      "icon": "fa-laptop",
+      "description": "Reserved 45-minute block for your meeting. You can take this from the campervan while parked up in Fort William.",
+      "mapLink": ""
+    },
+    {
+      "time": "15:55",
+      "title": "Nevis Range Mountain Gondola 🚠",
+      "type": "activity",
+      "icon": "fa-mountain",
+      "description": "If the weather is nice, drive 10 mins north to the Nevis Range. ⚠️ IMPORTANT: The last gondola up is usually 15:45 (closes at 16:00). You will need to head straight there after your meeting to catch it!",
+      "mapLink": "https://maps.google.com/?q=Nevis+Range+Mountain+Gondola"
+    },
+    {
+      "time": "17:00",
+      "title": "Ben Nevis Distillery 🥃",
+      "type": "activity",
+      "icon": "fa-wine-bottle",
+      "description": "Located right at the base of Ben Nevis on the A82. Pop into the visitor centre and shop (it closes at 17:00, so you'll have just enough time for a browse or a quick dram).",
+      "mapLink": "https://maps.google.com/?q=Ben+Nevis+Distillery"
+    },
+    {
+      "time": "17:45",
+      "title": "Arrive Glen Nevis Campsite",
+      "type": "hotel",
+      "icon": "fa-campground",
+      "description": "A 10-minute drive from the distillery back to the beautiful Glen Nevis Caravan & Camping Park to set up for the night.",
+      "mapLink": "https://maps.google.com/?q=Glen+Nevis+Caravan+and+Camping+Park"
+    }
+  ]
+},
   {
     "id": "day-p3-12",
     "phase": "phase3",
