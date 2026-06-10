@@ -1984,11 +1984,11 @@ const itinerary = [
     },
     {
       "time": "09:30",
-      "title": "Coffee Stop: St Mocha, Luss",
+      "title": "Coffee Stop: The Coach House @ Luss",
       "type": "food",
       "icon": "fa-coffee",
-      "description": "A beautiful specialty coffee stop right on the banks of Loch Lomond, roughly 2 hours into your drive.",
-      "mapLink": "https://maps.google.com/?q=St+Mocha+Coffee+House+Luss"
+      "description": "A fantastic alternative coffee stop in the conservation village of Luss, offering great coffee and home-baked treats, roughly 2 hours into your drive.",
+      "mapLink": "https://maps.google.com/?q=The+Coach+House+Luss"
     },
     {
       "time": "13:00",
