@@ -39,11 +39,8 @@ if (wizardSubmitBtn) {
         wizardStatus.style.color = '#fbbf24';
 
         try {
-            // This is a placeholder URL that we will replace with your real Vercel/Render endpoint
-            const backendUrl = 'YOUR_BACKEND_URL_HERE'; 
+            const backendUrl = 'https://europe-2026-itinerary.vercel.app/api/wizard'; 
             
-            /* 
-            // Uncomment when backend is ready
             const response = await fetch(backendUrl, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
@@ -54,10 +51,6 @@ if (wizardSubmitBtn) {
             });
             const data = await response.json();
             if(!response.ok) throw new Error(data.error || 'Failed to execute spell');
-            */
-
-            // Simulation for now
-            await new Promise(r => setTimeout(r, 2000));
             
             wizardStatus.textContent = 'Success! Code updated.';
             wizardStatus.style.color = '#4ade80';
