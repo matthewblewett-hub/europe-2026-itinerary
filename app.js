@@ -81,3 +81,5 @@ if (headerTitle) {
         tapTimeout = setTimeout(() => headerTaps = 0, 2000); // reset after 2 seconds
     });
 }
+
+// Cache bust: Force reload wizard logic

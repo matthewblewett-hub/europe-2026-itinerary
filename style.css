@@ -1540,3 +1540,47 @@ body {
     background: none; border: none; color: rgba(255,255,255,0.7);
     font-size: 1rem; cursor: pointer; padding: 4px 6px; line-height: 1;
 }
+
+
+/* --- WIZARD MODAL STYLES --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
+    z-index: 10000;
+    display: none;
+    justify-content: center;
+    align-items: flex-start;
+    padding-top: 15vh; /* About 1/3 down from top */
+}
+.modal-overlay.active {
+    display: flex;
+}
+.modal-content {
+    background: #1a202c;
+    border-radius: 12px;
+    padding: 20px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+    border: 1px solid #2d3748;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.modal-header h2 {
+    margin: 0;
+    color: #e2e8f0;
+    font-size: 1.2rem;
+}
+.close-modal {
+    background: none;
+    border: none;
+    color: #a0aec0;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
