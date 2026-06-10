@@ -1861,10 +1861,10 @@ const itinerary = [
     },
     {
       "time": "11:15",
-      "title": "Coffee at Bakehouse & Crannog",
+      "title": "Specialty Coffee at The Bakehouse",
       "type": "food",
       "icon": "fa-coffee",
-      "description": "Head straight to the Bakehouse in Mallaig for excellent coffee and fresh pastries before hitting the road.",
+      "description": "Head straight to The Bakehouse, a fantastic specialty coffee spot and artisan bakery in Mallaig. They serve top-tier specialty espresso from renowned Scottish roasters (like Dear Green) and open early at 8:30 AM, so they are fully open and ready for your arrival!",
       "mapLink": "https://maps.google.com/?q=The+Bakehouse+Mallaig"
     },
     {
