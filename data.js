@@ -1984,11 +1984,11 @@ const itinerary = [
     },
     {
       "time": "09:30",
-      "title": "Coffee Stop: The Coach House @ Luss",
+      "title": "Specialty Coffee: Hinba Coffee Roasters (Glasgow)",
       "type": "food",
       "icon": "fa-coffee",
-      "description": "A fantastic alternative coffee stop in the conservation village of Luss, offering great coffee and home-baked treats, roughly 2 hours into your drive.",
-      "mapLink": "https://maps.google.com/?q=The+Coach+House+Luss"
+      "description": "Since Luss options open late, make a stop at Hinba Coffee Roasters in Glasgow's West End (directly on your A82 route). They open at 8:00 AM and serve exceptional wood-roasted specialty coffee with a cool, minimalist roastery vibe.",
+      "mapLink": "https://maps.google.com/?q=Hinba+Coffee+Roasters+Glasgow"
     },
     {
       "time": "13:00",
