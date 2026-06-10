@@ -65,3 +65,19 @@ if (wizardSubmitBtn) {
         }
     });
 }
+
+// --- SECRET TAP WIZARD UNLOCK ---
+let headerTaps = 0;
+let tapTimeout;
+const headerTitle = document.querySelector('.header-content h1');
+if (headerTitle) {
+    headerTitle.addEventListener('click', () => {
+        headerTaps++;
+        clearTimeout(tapTimeout);
+        if (headerTaps >= 5) {
+            if(wizardBtn) wizardBtn.style.display = 'inline-block';
+            headerTaps = 0;
+        }
+        tapTimeout = setTimeout(() => headerTaps = 0, 2000); // reset after 2 seconds
+    });
+}
