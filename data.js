@@ -1983,6 +1983,14 @@ const itinerary = [
       "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
     },
     {
+      "time": "09:30",
+      "title": "Coffee Stop: St Mocha, Luss",
+      "type": "food",
+      "icon": "fa-coffee",
+      "description": "A beautiful specialty coffee stop right on the banks of Loch Lomond, roughly 2 hours into your drive.",
+      "mapLink": "https://maps.google.com/?q=St+Mocha+Coffee+House+Luss"
+    },
+    {
       "time": "13:00",
       "title": "Arrive at Castlerigg Hall",
       "type": "hotel",
