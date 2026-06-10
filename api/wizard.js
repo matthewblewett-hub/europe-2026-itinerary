@@ -4,7 +4,18 @@ export const config = {
 
 export default async function handler(req, res) {
   // Handle CORS
-  if (req.method === 'OPTIONS') return res.status(200).end();
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
+
+  if (req.method === 'OPTIONS') {
+    return res.status(200).end();
+  }
+  
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
   const { prompt } = req.body;
@@ -68,7 +79,7 @@ CRITICAL RULES:
 - Shift the times appropriately based on the user's delay request.
 `;
 
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`;
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
     const geminiRes = await fetch(geminiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
