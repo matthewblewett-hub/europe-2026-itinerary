@@ -1950,72 +1950,72 @@ const itinerary = [
   ]
 },
   {
-    "id": "day-p3-12",
-    "phase": "phase3",
-    "date": "Thursday 11 June 2026",
-    "title": "Drive to the Lake District",
-    "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
-    "bgImage": "",
-    "coords": {"lat": 54.6, "lon": -3.13},
-    "weatherLocation": "Keswick",
-    "learnMore": {
-      "title": "Keswick & the Lake District",
-      "intro": "The Lake District is England's largest national park and one of its most beloved landscapes — a compact but remarkably varied region of mountain, lake and valley that has inspired poets, artists and walkers for three centuries. Keswick is its northern hub, sitting between Derwentwater and Blencathra.",
-      "history": "The Lakes were 'discovered' by the Romantics in the late 18th century — William Wordsworth, Samuel Taylor Coleridge and Robert Southey all lived here, sparking a revolution in how people related to wild landscape. John Ruskin spent the last 28 years of his life at Brantwood on Coniston Water. Beatrix Potter bought Hill Top Farm near Hawkshead with the proceeds of Peter Rabbit and donated 4,000 acres to the National Trust on her death.",
-      "geography": "The Lake District covers 2,362km² and was formed by glaciation — the lakes occupy U-shaped valleys carved by ice sheets that retreated 10,000 years ago. The highest point is Scafell Pike (978m), England's highest mountain. Derwentwater — beside Keswick — is frequently cited as the most beautiful lake in England.",
-      "highlights": [
-            "Derwentwater & Keswick Launch",
-            "Catbells hike",
-            "Castlerigg Stone Circle",
-            "Buttermere",
-            "Wastwater",
-            "Grasmere & Dove Cottage"
-      ],
-      "funFact": "Castlerigg Stone Circle, just outside Keswick, was erected around 3000 BCE — making it one of the earliest stone circles in Britain, predating Stonehenge. It was placed with extraordinary precision: on the winter solstice, the rising sun aligns perfectly with one of its stones."
-},
-    "items": [
-      {
-        "time": "08:30",
-        "title": "Early Departure",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District.",
-        "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
-      },
-      {
-        "time": "14:00",
-        "title": "Arrive at Castlerigg Hall",
-        "type": "hotel",
-        "icon": "fa-campground",
-        "description": "Set up at Castlerigg Hall just south of Keswick. Panoramic views over Derwentwater.",
-        "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
-      },
-      {
-        "time": "15:00",
-        "title": "Castlerigg Stone Circle",
-        "type": "activity",
-        "icon": "fa-circle",
-        "description": "Free, 10-min drive from camp — one of the most spectacular prehistoric stone circles in England with mountain backdrop. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
-      },
-      {
-        "time": "16:00",
-        "title": "Friar's Crag & Derwentwater",
-        "type": "activity",
-        "icon": "fa-walking",
-        "description": "Stretch your legs with the short waterside walk to Friar's Crag for iconic lake views. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
-      },
-      {
-        "time": "18:00",
-        "title": "Dinner at The Dog and Gun",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Head into Keswick for a pint and Hungarian Goulash.",
-        "mapLink": "https://maps.google.com/?q=The+Dog+and+Gun+Keswick"
-      }
-    ]
+  "id": "day-p3-12",
+  "phase": "phase3",
+  "date": "Thursday 11 June 2026",
+  "title": "Drive to the Lake District",
+  "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
+  "bgImage": "",
+  "coords": {"lat": 54.6, "lon": -3.13},
+  "weatherLocation": "Keswick",
+  "learnMore": {
+    "title": "Keswick & the Lake District",
+    "intro": "The Lake District is England's largest national park and one of its most beloved landscapes — a compact but remarkably varied region of mountain, lake and valley that has inspired poets, artists and walkers for three centuries. Keswick is its northern hub, sitting between Derwentwater and Blencathra.",
+    "history": "The Lakes were 'discovered' by the Romantics in the late 18th century — William Wordsworth, Samuel Taylor Coleridge and Robert Southey all lived here, sparking a revolution in how people related to wild landscape. John Ruskin spent the last 28 years of his life at Brantwood on Coniston Water. Beatrix Potter bought Hill Top Farm near Hawkshead with the proceeds of Peter Rabbit and donated 4,000 acres to the National Trust on her death.",
+    "geography": "The Lake District covers 2,362km² and was formed by glaciation — the lakes occupy U-shaped valleys carved by ice sheets that retreated 10,000 years ago. The highest point is Scafell Pike (978m), England's highest mountain. Derwentwater — beside Keswick — is frequently cited as the most beautiful lake in England.",
+    "highlights": [
+          "Derwentwater & Keswick Launch",
+          "Catbells hike",
+          "Castlerigg Stone Circle",
+          "Buttermere",
+          "Wastwater",
+          "Grasmere & Dove Cottage"
+    ],
+    "funFact": "Castlerigg Stone Circle, just outside Keswick, was erected around 3000 BCE — making it one of the earliest stone circles in Britain, predating Stonehenge. It was placed with extraordinary precision: on the winter solstice, the rising sun aligns perfectly with one of its stones."
   },
+  "items": [
+    {
+      "time": "07:30",
+      "title": "Early Departure",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District.",
+      "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
+    },
+    {
+      "time": "13:00",
+      "title": "Arrive at Castlerigg Hall",
+      "type": "hotel",
+      "icon": "fa-campground",
+      "description": "Set up at Castlerigg Hall just south of Keswick. Panoramic views over Derwentwater.",
+      "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
+    },
+    {
+      "time": "14:00",
+      "title": "Castlerigg Stone Circle",
+      "type": "activity",
+      "icon": "fa-circle",
+      "description": "Free, 10-min drive from camp — one of the most spectacular prehistoric stone circles in England with mountain backdrop. (Oost List)",
+      "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
+    },
+    {
+      "time": "15:00",
+      "title": "Friar's Crag & Derwentwater",
+      "type": "activity",
+      "icon": "fa-walking",
+      "description": "Stretch your legs with the short waterside walk to Friar's Crag for iconic lake views. (Oost List)",
+      "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
+    },
+    {
+      "time": "17:00",
+      "title": "Dinner at The Dog and Gun",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "Head into Keswick for a pint and Hungarian Goulash.",
+      "mapLink": "https://maps.google.com/?q=The+Dog+and+Gun+Keswick"
+    }
+  ]
+},
   {
     "id": "day-p3-13",
     "phase": "phase3",
