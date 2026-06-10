@@ -365,7 +365,10 @@ document.addEventListener('DOMContentLoaded', () => {
     initTodayBanner();
 
     // ===== OPEN DAY DETAILS =====
+    let savedScrollY = 0;
+
     async function openDayDetails(day) {
+        savedScrollY = window.scrollY;
         currentDayForLearnMore = day;
         window.__currentDayForQuotes = day.id;
         modalTitle.textContent = day.date;
@@ -426,7 +429,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         modal.style.display = 'flex';
         setTimeout(() => modal.classList.add('show'), 10);
-        document.body.style.overflow = 'hidden';
+        document.body.style.position = 'fixed';
+        document.body.style.top = `-${savedScrollY}px`;
+        document.body.style.width = '100%';
 
         // Fetch weather
         const weather = await fetchWeather(day.coords, day.date);
@@ -528,7 +533,10 @@ document.addEventListener('DOMContentLoaded', () => {
     function closeModal() {
         modal.classList.remove('show');
         setTimeout(() => { modal.style.display = 'none'; }, 300);
-        document.body.style.overflow = '';
+        document.body.style.position = '';
+        document.body.style.top = '';
+        document.body.style.width = '';
+        window.scrollTo(0, savedScrollY);
         currentDayForLearnMore = null;
     }
 

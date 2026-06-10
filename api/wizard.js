@@ -70,12 +70,13 @@ ${rawJsonStr}
 Return a valid JSON response exactly in this format:
 {
   "targetId": "id-of-the-day-modified",
+  "summary": "Short 1-sentence summary of what was changed (e.g. 'Shifted departure to 7:30 and moved subsequent activities back').",
   "newDayCode": "the complete Javascript object for this day as a raw string (including braces { })"
 }
 
 CRITICAL RULES:
 - Respond ONLY with the JSON object above. No markdown wrapping.
-- The 'newDayCode' string must be exactly the replacement code for that day block in the array, maintaining the exact same property structure.
+- The 'newDayCode' string must be exactly the replacement code for that day block in the array.
 - Shift the times appropriately based on the user's delay request.
 `;
 
@@ -97,7 +98,7 @@ CRITICAL RULES:
     const geminiData = await geminiRes.json();
     const resultObj = JSON.parse(geminiData.candidates[0].content.parts[0].text);
     
-    const { targetId, newDayCode } = resultObj;
+    const { targetId, summary, newDayCode } = resultObj;
     if (!targetId || !newDayCode) throw new Error('AI returned invalid structure.');
 
     // 4. Splice the new day code into the original data.js string
@@ -149,16 +150,28 @@ CRITICAL RULES:
 
     if (!updateRes.ok) throw new Error('Failed to commit to GitHub');
 
-    // 6. Notify Firebase
-    // Assuming your app listens to this endpoint
-    await fetch('https://itineraryapp-europe2026-default-rtdb.europe-west1.firebasedatabase.app/updates.json', {
+    // 6. Notify Firebase so everyone's app updates
+    const fbUrl = 'https://europe-trip-2026-11512-default-rtdb.firebaseio.com';
+    
+    // Ping hard refresh listener
+    await fetch(`${fbUrl}/sys/hard_refresh.json`, {
+      method: 'PUT',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        timestamp: Date.now(),
+        message: summary || prompt
+      })
+    });
+
+    // Ping the update banner listener
+    await fetch(`${fbUrl}/appUpdate.json`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
         id: Date.now().toString(),
         title: "Wizard Spell Cast! 🪄",
-        description: `Itinerary updated: ${prompt}`,
-        timestamp: Date.now()
+        desc: summary || `Itinerary updated: ${prompt}`,
+        ts: Date.now()
       })
     });
 
