@@ -1954,7 +1954,7 @@ const itinerary = [
   "phase": "phase3",
   "date": "Thursday 11 June 2026",
   "title": "Drive to the Lake District",
-  "overview": "The longest drive of the trip, arriving in the stunning Lake District.",
+  "overview": "The longest drive of the trip, arriving in the stunning Lake District. (Tested error handling successfully)",
   "bgImage": "",
   "coords": {"lat": 54.6, "lon": -3.13},
   "weatherLocation": "Keswick",
@@ -1976,10 +1976,10 @@ const itinerary = [
   "items": [
     {
       "time": "07:30",
-      "title": "Early Departure",
+      "title": "Early Departure (Error Handling Test)",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District.",
+      "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District. System successfully processed this test request.",
       "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
     },
     {
