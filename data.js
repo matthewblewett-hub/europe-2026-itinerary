@@ -1954,9 +1954,12 @@ const itinerary = [
   "phase": "phase3",
   "date": "Thursday 11 June 2026",
   "title": "Drive to the Lake District",
-  "overview": "The longest drive of the trip, arriving in the stunning Lake District. (Tested error handling successfully)",
+  "overview": "The longest drive of the trip, arriving in the stunning Lake District with a scenic lunch stop along the way.",
   "bgImage": "",
-  "coords": {"lat": 54.6, "lon": -3.13},
+  "coords": {
+    "lat": 54.6,
+    "lon": -3.13
+  },
   "weatherLocation": "Keswick",
   "learnMore": {
     "title": "Keswick & the Lake District",
@@ -1964,12 +1967,12 @@ const itinerary = [
     "history": "The Lakes were 'discovered' by the Romantics in the late 18th century — William Wordsworth, Samuel Taylor Coleridge and Robert Southey all lived here, sparking a revolution in how people related to wild landscape. John Ruskin spent the last 28 years of his life at Brantwood on Coniston Water. Beatrix Potter bought Hill Top Farm near Hawkshead with the proceeds of Peter Rabbit and donated 4,000 acres to the National Trust on her death.",
     "geography": "The Lake District covers 2,362km² and was formed by glaciation — the lakes occupy U-shaped valleys carved by ice sheets that retreated 10,000 years ago. The highest point is Scafell Pike (978m), England's highest mountain. Derwentwater — beside Keswick — is frequently cited as the most beautiful lake in England.",
     "highlights": [
-          "Derwentwater & Keswick Launch",
-          "Catbells hike",
-          "Castlerigg Stone Circle",
-          "Buttermere",
-          "Wastwater",
-          "Grasmere & Dove Cottage"
+      "Derwentwater & Keswick Launch",
+      "Catbells hike",
+      "Castlerigg Stone Circle",
+      "Buttermere",
+      "Wastwater",
+      "Grasmere & Dove Cottage"
     ],
     "funFact": "Castlerigg Stone Circle, just outside Keswick, was erected around 3000 BCE — making it one of the earliest stone circles in Britain, predating Stonehenge. It was placed with extraordinary precision: on the winter solstice, the rising sun aligns perfectly with one of its stones."
   },
@@ -1991,7 +1994,15 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Hinba+Coffee+Roasters+Glasgow"
     },
     {
-      "time": "13:00",
+      "time": "11:45",
+      "title": "Lunch Stop: Tebay Services (Farmshop & Kitchen)",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "Stop at the UK's most famous and scenic motorway services. Enjoy a proper lunch at the Kitchen serving homemade, locally-sourced Cumbrian dishes, and browse the impressive farmshop before entering the Lake District.",
+      "mapLink": "https://maps.google.com/?q=Tebay+Services"
+    },
+    {
+      "time": "13:15",
       "title": "Arrive at Castlerigg Hall",
       "type": "hotel",
       "icon": "fa-campground",
@@ -1999,7 +2010,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
     },
     {
-      "time": "14:00",
+      "time": "14:15",
       "title": "Castlerigg Stone Circle",
       "type": "activity",
       "icon": "fa-circle",
@@ -2007,7 +2018,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
     },
     {
-      "time": "15:00",
+      "time": "15:15",
       "title": "Friar's Crag & Derwentwater",
       "type": "activity",
       "icon": "fa-walking",
@@ -2015,7 +2026,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
     },
     {
-      "time": "17:00",
+      "time": "17:15",
       "title": "Dinner at The Dog and Gun",
       "type": "food",
       "icon": "fa-utensils",
