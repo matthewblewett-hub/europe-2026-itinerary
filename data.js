@@ -1994,15 +1994,15 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Hinba+Coffee+Roasters+Glasgow"
     },
     {
-      "time": "11:45",
-      "title": "Lunch Stop: Tebay Services (Farmshop & Kitchen)",
-      "type": "food",
-      "icon": "fa-utensils",
-      "description": "Stop at the UK's most famous and scenic motorway services. Enjoy a proper lunch at the Kitchen serving homemade, locally-sourced Cumbrian dishes, and browse the impressive farmshop before entering the Lake District.",
-      "mapLink": "https://maps.google.com/?q=Tebay+Services"
+      "time": "12:30",
+      "title": "Campervan Parking: Lakeside Car Park, Keswick",
+      "type": "car",
+      "icon": "fa-parking",
+      "description": "Park the campervans at Lakeside Car Park (CA12 5DJ). This pay-and-display car park has designated long bays suitable for motorhomes and campervans. It is located right next to the Theatre by the Lake and Derwentwater, and is a short, flat walk into Keswick town centre.",
+      "mapLink": "https://maps.google.com/?q=Lakeside+Car+Park+Keswick"
     },
     {
-      "time": "13:15",
+      "time": "14:00",
       "title": "Arrive at Castlerigg Hall",
       "type": "hotel",
       "icon": "fa-campground",
@@ -2010,7 +2010,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
     },
     {
-      "time": "14:15",
+      "time": "15:00",
       "title": "Castlerigg Stone Circle",
       "type": "activity",
       "icon": "fa-circle",
@@ -2018,7 +2018,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
     },
     {
-      "time": "15:15",
+      "time": "16:00",
       "title": "Friar's Crag & Derwentwater",
       "type": "activity",
       "icon": "fa-walking",
@@ -2026,7 +2026,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
     },
     {
-      "time": "17:15",
+      "time": "17:30",
       "title": "Dinner at The Dog and Gun",
       "type": "food",
       "icon": "fa-utensils",
