@@ -5,6 +5,7 @@ const wizardBtn = document.getElementById('wizard-btn');
 const wizardModal = document.getElementById('wizard-modal');
 const closeWizardBtn = document.getElementById('close-wizard');
 const wizardSubmitBtn = document.getElementById('wizard-submit');
+const wizardUndoBtn = document.getElementById('wizard-undo');
 const wizardInput = document.getElementById('wizard-input');
 const wizardStatus = document.getElementById('wizard-status');
 
@@ -34,8 +35,9 @@ if (wizardSubmitBtn) {
         if (!promptText) return;
 
         wizardSubmitBtn.disabled = true;
+        if(wizardUndoBtn) wizardUndoBtn.disabled = true;
         wizardSubmitBtn.textContent = 'Casting...';
-        wizardStatus.textContent = 'Calling AI backend...';
+        wizardStatus.textContent = 'Connecting to Vercel...';
         wizardStatus.style.color = '#fbbf24';
 
         try {
@@ -62,6 +64,40 @@ if (wizardSubmitBtn) {
         } finally {
             wizardSubmitBtn.disabled = false;
             wizardSubmitBtn.textContent = 'Cast Spell';
+            wizardUndoBtn.disabled = false;
+        }
+    });
+}
+
+if (wizardUndoBtn) {
+    wizardUndoBtn.addEventListener('click', async () => {
+        if (!confirm("Are you sure you want to undo the last Wizard change?")) return;
+
+        wizardUndoBtn.disabled = true;
+        wizardSubmitBtn.disabled = true;
+        wizardStatus.textContent = 'Reverting time... ⏳';
+        wizardStatus.style.color = '#fbbf24';
+
+        try {
+            const res = await fetch('https://europe-2026-itinerary.vercel.app/api/undo', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({})
+            });
+            const data = await res.json();
+            
+            if (data.success) {
+                wizardStatus.textContent = 'Undo successful! Waiting for server (45s)...';
+                wizardStatus.style.color = '#fbbf24';
+                // Note: The live sync listener will auto-reload the page in 45s
+            } else {
+                throw new Error(data.error || 'Unknown error');
+            }
+        } catch (err) {
+            wizardStatus.textContent = 'Error: ' + err.message;
+            wizardStatus.style.color = '#ef4444';
+            wizardUndoBtn.disabled = false;
+            wizardSubmitBtn.disabled = false;
         }
     });
 }

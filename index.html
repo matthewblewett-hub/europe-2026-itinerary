@@ -184,9 +184,10 @@
             <div class="modal-body">
                 <p style="font-size: 0.9rem; margin-bottom: 15px; color: #a0aec0;">Describe the delay or change you need. The AI will rewrite the itinerary code and update the app for everyone.</p>
                 <textarea id="wizard-input" rows="4" style="width: 100%; padding: 10px; border-radius: 8px; background: rgba(0,0,0,0.2); color: white; border: 1px solid #4a5568; margin-bottom: 15px;" placeholder="e.g. We are delayed by 45 mins. Push everything back..."></textarea>
-                <div style="display: flex; justify-content: space-between; align-items: center;">
-                    <span id="wizard-status" style="font-size: 0.8rem; color: #e2e8f0;">Ready.</span>
-                    <button id="wizard-submit" class="hof-submit-btn" style="background:#3182ce; color:white; padding:8px 16px; border:none; border-radius:6px; font-weight:bold;">Cast Spell</button>
+                <div style="display: flex; justify-content: space-between; align-items: center; width: 100%; flex-wrap: wrap; gap: 8px;">
+                    <button id="wizard-undo" style="background:transparent; color:#f87171; border:1px solid #f87171; padding:6px 12px; border-radius:6px; cursor:pointer; font-size:0.8rem; font-weight:600;"><i class="fas fa-undo"></i> Undo Last</button>
+                    <span id="wizard-status" style="font-size: 0.8rem; color: #e2e8f0; flex:1; text-align:center;">Ready.</span>
+                    <button id="wizard-submit" class="hof-submit-btn" style="background:#3182ce; color:white; padding:8px 16px; border:none; border-radius:6px; font-weight:bold; cursor:pointer;">Cast Spell</button>
                 </div>
             </div>
         </div>
