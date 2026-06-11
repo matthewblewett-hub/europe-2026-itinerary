@@ -71,12 +71,14 @@ Return a valid JSON response exactly in this format:
 {
   "targetId": "id-of-the-day-modified",
   "summary": "Short 1-sentence summary of what was changed (e.g. 'Shifted departure to 7:30 and moved subsequent activities back').",
-  "newDayCode": "the complete Javascript object for this day as a raw string (including braces { })"
+  "newDayCode": {
+      // The complete updated day object (must be a valid JSON object matching the input structure)
+  }
 }
 
 CRITICAL RULES:
 - Respond ONLY with the JSON object above. No markdown wrapping.
-- The 'newDayCode' string must be exactly the replacement code for that day block in the array.
+- The 'newDayCode' object must be the complete, updated object for that day.
 - Shift the times appropriately based on the user's delay request.
 `;
 
@@ -96,10 +98,18 @@ CRITICAL RULES:
     }
 
     const geminiData = await geminiRes.json();
-    const resultObj = JSON.parse(geminiData.candidates[0].content.parts[0].text);
+    let resultText = geminiData.candidates[0].content.parts[0].text.trim();
+    if (resultText.startsWith('```json')) resultText = resultText.substring(7);
+    if (resultText.startsWith('```')) resultText = resultText.substring(3);
+    if (resultText.endsWith('```')) resultText = resultText.substring(0, resultText.length - 3);
+    resultText = resultText.trim();
+
+    const resultObj = JSON.parse(resultText);
     
     const { targetId, summary, newDayCode } = resultObj;
     if (!targetId || !newDayCode) throw new Error('AI returned invalid structure.');
+    
+    const newDayCodeStr = JSON.stringify(newDayCode, null, 2);
 
     // 4. Splice the new day code into the original data.js string
     // We find the day by its ID
@@ -129,7 +139,7 @@ CRITICAL RULES:
     if (objectEnd === -1) throw new Error('Could not find end of day object');
 
     // Replace the specific day in the file
-    const newFileCode = currentCode.substring(0, objectStart) + newDayCode + currentCode.substring(objectEnd);
+    const newFileCode = currentCode.substring(0, objectStart) + newDayCodeStr + currentCode.substring(objectEnd);
 
     // 5. Commit back to GitHub
     const updateRes = await fetch(ghUrl, {
