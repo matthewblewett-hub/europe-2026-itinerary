@@ -1954,7 +1954,7 @@ const itinerary = [
   "phase": "phase3",
   "date": "Thursday 11 June 2026",
   "title": "Drive to the Lake District",
-  "overview": "The longest drive of the trip, arriving in the stunning Lake District with a scenic lunch stop along the way.",
+  "overview": "The longest drive of the trip, arriving in the stunning Lake District with a scenic campervan lunch stop at Dodd Wood and an afternoon walk to Friar's Crag.",
   "bgImage": "",
   "coords": {
     "lat": 54.6,
@@ -1979,10 +1979,10 @@ const itinerary = [
   "items": [
     {
       "time": "07:30",
-      "title": "Early Departure (Error Handling Test)",
+      "title": "Early Departure",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District. System successfully processed this test request.",
+      "description": "Long drive (~4.5 to 5 hours) from Fort William down the M74 to the Lake District.",
       "mapLink": "https://www.google.com/maps/dir/Glen+Nevis+Caravan+Park/Castlerigg+Hall+Caravan+Park"
     },
     {
@@ -1990,47 +1990,55 @@ const itinerary = [
       "title": "Specialty Coffee: Hinba Coffee Roasters (Glasgow)",
       "type": "food",
       "icon": "fa-coffee",
-      "description": "Since Luss options open late, make a stop at Hinba Coffee Roasters in Glasgow's West End (directly on your A82 route). They open at 8:00 AM and serve exceptional wood-roasted specialty coffee with a cool, minimalist roastery vibe.",
+      "description": "Make a stop at Hinba Coffee Roasters in Glasgow's West End (directly on your A82 route) for exceptional wood-roasted specialty coffee.",
       "mapLink": "https://maps.google.com/?q=Hinba+Coffee+Roasters+Glasgow"
     },
     {
-      "time": "12:30",
+      "time": "12:15",
+      "title": "Campervan Lunch Spot: Dodd Wood (Bassenthwaite)",
+      "type": "food",
+      "icon": "fa-campground",
+      "description": "Just 10 minutes north of Keswick on your route. Dodd Wood has excellent pay-and-display parking suitable for campervans, beautiful views of Bassenthwaite Lake, forest walking trails, and the Old Sawmill Tearoom for a perfect lunch stop.",
+      "mapLink": "https://maps.google.com/?q=Dodd+Wood+Car+Park"
+    },
+    {
+      "time": "13:30",
       "title": "Campervan Parking: Lakeside Car Park, Keswick",
       "type": "car",
       "icon": "fa-parking",
-      "description": "Park the campervans at Lakeside Car Park (CA12 5DJ). This pay-and-display car park has designated long bays suitable for motorhomes and campervans. It is located right next to the Theatre by the Lake and Derwentwater, and is a short, flat walk into Keswick town centre.",
+      "description": "Park the campervans at Lakeside Car Park (CA12 5DJ). This pay-and-display car park has designated long bays suitable for motorhomes and campervans, located right next to the Theatre by the Lake.",
       "mapLink": "https://maps.google.com/?q=Lakeside+Car+Park+Keswick"
     },
     {
       "time": "14:00",
-      "title": "Arrive at Castlerigg Hall",
-      "type": "hotel",
-      "icon": "fa-campground",
-      "description": "Set up at Castlerigg Hall just south of Keswick. Panoramic views over Derwentwater.",
-      "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
-    },
-    {
-      "time": "15:00",
-      "title": "Castlerigg Stone Circle",
-      "type": "activity",
-      "icon": "fa-circle",
-      "description": "Free, 10-min drive from camp — one of the most spectacular prehistoric stone circles in England with mountain backdrop. (Oost List)",
-      "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
-    },
-    {
-      "time": "16:00",
-      "title": "Friar's Crag & Derwentwater",
+      "title": "Friar's Crag & Derwentwater Walk",
       "type": "activity",
       "icon": "fa-walking",
-      "description": "Stretch your legs with the short waterside walk to Friar's Crag for iconic lake views. (Oost List)",
+      "description": "Directly from the Lakeside Car Park, stretch your legs with the short, flat waterside walk to Friar's Crag for iconic, breathtaking lake views over Derwentwater.",
       "mapLink": "https://maps.google.com/?q=Friars+Crag+Keswick"
     },
     {
-      "time": "17:30",
+      "time": "15:30",
+      "title": "Arrive at Castlerigg Hall",
+      "type": "hotel",
+      "icon": "fa-campground",
+      "description": "Set up at Castlerigg Hall just south of Keswick. Enjoy panoramic views over Derwentwater from your pitch.",
+      "mapLink": "https://maps.google.com/?q=Castlerigg+Hall+Caravan+Park"
+    },
+    {
+      "time": "16:30",
+      "title": "Castlerigg Stone Circle",
+      "type": "activity",
+      "icon": "fa-circle",
+      "description": "A short 10-minute drive from camp — one of the most spectacular prehistoric stone circles in England with a dramatic mountain backdrop.",
+      "mapLink": "https://maps.google.com/?q=Castlerigg+Stone+Circle"
+    },
+    {
+      "time": "17:45",
       "title": "Dinner at The Dog and Gun",
       "type": "food",
       "icon": "fa-utensils",
-      "description": "Head into Keswick for a pint and Hungarian Goulash.",
+      "description": "Head into Keswick for a pint and their famous Hungarian Goulash in a classic, dog-friendly Lakeland pub.",
       "mapLink": "https://maps.google.com/?q=The+Dog+and+Gun+Keswick"
     }
   ]
