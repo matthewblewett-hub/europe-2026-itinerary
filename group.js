@@ -267,16 +267,20 @@ document.addEventListener('DOMContentLoaded', () => {
                 });
 
                 if (!res.ok) throw new Error(await res.text());
-
                 const data = await res.json();
                 
                 // Swap the PHOTO_ID_xxxx placeholders back into the massive base64 URLs locally!
                 let finalHtml = data.html;
                 if (rawPhotos) {
                     Object.entries(rawPhotos).forEach(([key, p]) => {
-                        // The AI might output PHOTO_ID_-Nxxxxx, so we search and replace
-                        const placeholderRegex = new RegExp(`PHOTO_ID_${key}`, 'g');
-                        finalHtml = finalHtml.replace(placeholderRegex, p.dataUrl);
+                        // Handle multiple ways the AI might have tried to insert the ID
+                        finalHtml = finalHtml.split(`PHOTO_ID_${key}`).join(p.dataUrl);
+                        finalHtml = finalHtml.split(`PHOTO_ID: ${key}`).join(p.dataUrl);
+                        finalHtml = finalHtml.split(`PHOTO_ID:${key}`).join(p.dataUrl);
+                        // If it just put the raw key inside the src attribute:
+                        finalHtml = finalHtml.split(`src="${key}"`).join(`src="${p.dataUrl}"`);
+                        finalHtml = finalHtml.split(`src='${key}'`).join(`src='${p.dataUrl}'`);
+                        // Just to be ultra safe, if it left any broken PHOTO_ID_ tags, we clean them up
                     });
                 }
                 
