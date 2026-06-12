@@ -2044,57 +2044,76 @@ const itinerary = [
   ]
 },
   {
-    "id": "day-p3-13",
-    "phase": "phase3",
-    "date": "Friday 12 June 2026",
-    "title": "Lake District Scenery",
-    "overview": "Catbells hike, Buttermere, and Wordsworth.",
-    "bgImage": "",
-    "coords": {"lat": 54.6, "lon": -3.13},
-    "weatherLocation": "Keswick",
-    "items": [
-      {
-        "time": "09:00",
-        "title": "Keswick Launch to Hawes End",
-        "type": "activity",
-        "icon": "fa-ship",
-        "description": "Take the hop-on/hop-off Derwentwater lake cruise to Hawes End jetty (50-min circuit). A stunning way to start the day. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Keswick+Launch",
-        "ticketLink": "https://keswick-launch.co.uk/"
-      },
-      {
-        "time": "10:00",
-        "title": "Catbells Hike",
-        "type": "activity",
-        "icon": "fa-hiking",
-        "description": "From Hawes End, hike up Catbells for sweeping fell views — short but rewarding. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Catbells+Lake+District"
-      },
-      {
-        "time": "12:30",
-        "title": "Buttermere Circuit",
-        "type": "activity",
-        "icon": "fa-walking",
-        "description": "Drive to Buttermere for a perfect low-level lake circuit with photogenic pine reflections and a café stop. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Buttermere"
-      },
-      {
-        "time": "15:00",
-        "title": "Grasmere & Dove Cottage",
-        "type": "activity",
-        "icon": "fa-home",
-        "description": "Visit Wordsworth's Dove Cottage and buy the world-famous Grasmere Gingerbread. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
-      },
-      {
-        "time": "17:30",
-        "title": "Sunset over the Fells",
-        "type": "activity",
-        "icon": "fa-sun",
-        "description": "Relax back at Castlerigg Hall watching the sunset over the fells."
-      }
-    ]
+  "id": "day-p3-13",
+  "phase": "phase3",
+  "date": "Friday 12 June 2026",
+  "title": "Lake District Scenery",
+  "overview": "Catbells hike, Hawkshead medieval village, Windermere, Ambleside, and Wordsworth's Dove Cottage.",
+  "bgImage": "",
+  "coords": {
+    "lat": 54.6,
+    "lon": -3.13
   },
+  "weatherLocation": "Keswick",
+  "items": [
+    {
+      "time": "09:00",
+      "title": "Keswick Launch to Hawes End",
+      "type": "activity",
+      "icon": "fa-ship",
+      "description": "Take the hop-on/hop-off Derwentwater lake cruise to Hawes End jetty (50-min circuit). A stunning way to start the day. (Oost List)",
+      "mapLink": "https://maps.google.com/?q=Keswick+Launch",
+      "ticketLink": "https://keswick-launch.co.uk/"
+    },
+    {
+      "time": "10:00",
+      "title": "Catbells Hike",
+      "type": "activity",
+      "icon": "fa-hiking",
+      "description": "From Hawes End, hike up Catbells for sweeping fell views — short but rewarding. (Oost List)",
+      "mapLink": "https://maps.google.com/?q=Catbells+Lake+District"
+    },
+    {
+      "time": "12:30",
+      "title": "Lunch & Drive to Hawkshead",
+      "type": "food",
+      "icon": "fa-car",
+      "description": "Grab a quick lunch in Keswick or en route, then drive south towards the beautiful vale of Hawkshead.",
+      "mapLink": "https://maps.google.com/?q=Hawkshead"
+    },
+    {
+      "time": "14:00",
+      "title": "Hawkshead Medieval Village & Beatrix Potter",
+      "type": "activity",
+      "icon": "fa-book",
+      "description": "Explore the charming, car-free medieval village of Hawkshead. Visit the Beatrix Potter Gallery (housed in her husband's former law office) and see the historic grammar school attended by William Wordsworth.",
+      "mapLink": "https://maps.google.com/?q=Beatrix+Potter+Gallery+Hawkshead"
+    },
+    {
+      "time": "15:30",
+      "title": "Ambleside & Windermere Lake",
+      "type": "activity",
+      "icon": "fa-water",
+      "description": "Drive to Ambleside at the northern tip of Lake Windermere. See the iconic Bridge House over Stock Ghyll, and enjoy scenic views or a short stroll along the shores of England's largest lake.",
+      "mapLink": "https://maps.google.com/?q=Ambleside+Windermere"
+    },
+    {
+      "time": "17:00",
+      "title": "Grasmere & Dove Cottage",
+      "type": "activity",
+      "icon": "fa-home",
+      "description": "Visit Wordsworth's beloved Dove Cottage in Grasmere and buy the world-famous Grasmere Gingerbread. (Oost List)",
+      "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
+    },
+    {
+      "time": "18:30",
+      "title": "Sunset over the Fells",
+      "type": "activity",
+      "icon": "fa-sun",
+      "description": "Relax back at Castlerigg Hall watching the sunset over the fells."
+    }
+  ]
+},
   {
     "id": "day-p3-14",
     "phase": "phase3",
