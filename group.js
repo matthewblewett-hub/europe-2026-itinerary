@@ -163,33 +163,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let photoUrl = null;
 
-            if (cropper && window.fbStorage) {
-                progressEl.textContent = 'Cropping and compressing photo...';
+            if (cropper) {
+                progressEl.textContent = 'Compressing profile photo...';
                 
                 // Get cropped canvas
                 const canvas = cropper.getCroppedCanvas({
-                    width: 400,
-                    height: 400
+                    width: 300,
+                    height: 300
                 });
 
-                // Convert canvas to blob (compressed JPEG)
-                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.8));
-                
-                progressEl.textContent = 'Uploading to cloud...';
-                const fileName = `profiles/${Date.now()}_${Math.random().toString(36).substring(7)}.jpg`;
-                const storageRef = window.fbStorage.ref().child(fileName);
-
-                try {
-                    const snapshot = await storageRef.put(blob);
-                    photoUrl = await snapshot.ref.getDownloadURL();
-                } catch (err) {
-                    console.error("Photo upload failed:", err);
-                    progressEl.textContent = 'Failed to upload photo.';
-                    progressEl.style.color = '#ef4444';
-                    saveBtn.disabled = false;
-                    saveBtn.textContent = 'Save Member';
-                    return;
-                }
+                // Convert canvas to a compressed base64 JPEG string
+                photoUrl = canvas.toDataURL('image/jpeg', 0.7);
             }
 
             const newMember = { name, relation: relationStr, photoUrl };
