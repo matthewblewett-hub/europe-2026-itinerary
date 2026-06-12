@@ -233,14 +233,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const itinerarySlice = itinerary.slice(sliceStart, sliceEnd);
                 
-                // Fetch quotes of the day
+                // Fetch quotes and gallery photos
                 let quotes = {};
+                let photos = [];
                 if (window.fbDb) {
-                    const snap = await window.fbDb.ref('quotes').once('value');
-                    quotes = snap.val() || {};
+                    const snapQuotes = await window.fbDb.ref('quotes').once('value');
+                    quotes = snapQuotes.val() || {};
+                    
+                    const snapPhotos = await window.fbDb.ref('gallery').once('value');
+                    const rawPhotos = snapPhotos.val() || {};
+                    // Convert photos object to an array with only relevant metadata
+                    photos = Object.values(rawPhotos).map(p => ({
+                        url: p.dataUrl,
+                        caption: p.caption,
+                        day: p.day
+                    }));
                 }
 
-                diaryStatus.textContent = 'AI is writing your diary... ✍️';
+                diaryStatus.textContent = 'The Wizard is writing your diary... ✍️';
                 
                 const res = await fetch('/api/diary', {
                     method: 'POST',
@@ -250,6 +260,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         tripGroup,
                         completedActivities: window.completedActivities || {},
                         quotes,
+                        photos,
                         itinerarySlice
                     })
                 });
@@ -264,6 +275,8 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Inject the generated HTML and open modal
                 diaryContent.innerHTML = data.html;
                 diaryModal.style.display = 'block';
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
                 // Force reflow
                 diaryModal.offsetHeight;
                 diaryModal.classList.add('show');
@@ -276,7 +289,27 @@ document.addEventListener('DOMContentLoaded', () => {
 
         closeDiaryBtn.addEventListener('click', () => {
             diaryModal.classList.remove('show');
+            document.body.style.overflow = ''; // Restore background scrolling
             setTimeout(() => diaryModal.style.display = 'none', 300);
         });
+
+        const shareBtn = document.getElementById('share-diary-btn');
+        if (shareBtn) {
+            shareBtn.addEventListener('click', async () => {
+                const textContent = diaryContent.innerText;
+                if (navigator.share) {
+                    try {
+                        await navigator.share({
+                            title: 'Our Europe Trip Diary',
+                            text: textContent
+                        });
+                    } catch (err) {
+                        console.log("Share cancelled or failed", err);
+                    }
+                } else {
+                    alert("Sharing is not supported on this device/browser.");
+                }
+            });
+        }
     }
 });

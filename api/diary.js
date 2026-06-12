@@ -15,23 +15,24 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { phase, tripGroup, completedActivities, quotes, itinerarySlice } = req.body;
+  const { phase, tripGroup, completedActivities, quotes, photos, itinerarySlice } = req.body;
 
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
     return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
   }
 
-  const systemInstruction = `You are a creative, fun, and magical AI Trip Diarist.
+  const systemInstruction = `You are a creative, fun, and magical AI Trip Diarist (aka The App Wizard).
 Your job is to read the provided trip data and write an engaging, narrative diary entry summarizing this phase of the trip.
 
 CRITICAL RULES:
 1. ONLY write about activities that are explicitly marked as "COMPLETED: TRUE" in the itinerary data. If an activity is NOT completed, pretend it didn't happen (maybe plans changed!).
 2. Incorporate the provided "Quotes of the Day" naturally into the story, attributing them to the correct person.
 3. Acknowledge the members of the "Trip Group" by name and their relationship.
-4. Format the output ENTIRELY as rich HTML. Use <h2> for days or major sections, <p> for paragraphs, <blockquote> for quotes, and <strong> or <em> for emphasis. 
-5. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
-6. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
+4. I have provided a list of "Trip Photos" with their image URLs, days, and captions. Select the best 3 to 5 photos that fit the narrative and embed them directly into your HTML output using <img src="URL" style="width:100%; border-radius:8px; margin: 15px 0;">. Include the caption underneath the photo in italicized text.
+5. Format the output ENTIRELY as rich HTML. Use <h2> for days or major sections, <p> for paragraphs, <blockquote> for quotes, and <strong> or <em> for emphasis. 
+6. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
+7. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
   // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
   const enhancedItinerary = itinerarySlice.map(day => {
@@ -53,6 +54,9 @@ Trip Phase: ${phase}
 
 Trip Group Members:
 ${JSON.stringify(tripGroup, null, 2)}
+
+Trip Photos (Embed 3-5 of these into the story):
+${JSON.stringify(photos, null, 2)}
 
 Quotes of the Day:
 ${JSON.stringify(quotes, null, 2)}
