@@ -2107,73 +2107,100 @@ const itinerary = [
   ]
 },
   {
-    "id": "day-p3-14",
-    "phase": "phase3",
-    "date": "Saturday 13 June 2026",
-    "title": "Drive to Yorkshire Dales",
-    "overview": "Picturesque villages and classic Dales pubs.",
-    "bgImage": "",
-    "coords": {"lat": 54.07, "lon": -2.0},
-    "weatherLocation": "Grassington",
-    "learnMore": {
-      "title": "Yorkshire Dales — Limestone Country",
-      "intro": "The Yorkshire Dales are a landscape of rare, sculptural beauty — pale limestone pavements, green glacial valleys, stone-walled fields, ancient field barns and fast-flowing becks. Grassington is the most characterful of all the Dales market towns, and the landscape around it is as rich in geology and history as anywhere in England.",
-      "history": "The Dales were heavily settled by Norse Vikings who named almost every feature — 'dale' (valley), 'beck' (stream), 'scar' (cliff) and 'fell' (hill) are all Old Norse words. The area was mined for lead from Roman times through to the 19th century; the moors above Grassington are dotted with the remains of this industry. Grassington itself was the setting for the BBC's long-running series 'All Creatures Great and Small' (filmed as Darrowby).",
-      "geography": "The Yorkshire Dales National Park covers 2,179km² of high moorland and deeply carved limestone valleys. Wharfedale — the valley of the River Wharfe — is the most accessible and arguably the most beautiful of all the dales, running from the high moors near Buckden down through Grassington, Bolton Abbey and out to Ilkley.",
-      "highlights": [
-            "Grassington village",
-            "Bolton Abbey & Priory",
-            "The Strid gorge",
-            "Kilnsey Crag",
-            "Linton Falls",
-            "Malham Cove",
-            "Embsay Steam Railway"
-      ],
-      "funFact": "The Strid, near Bolton Abbey, appears to be a narrow stream you could leap across — but it's actually a catastrophically dangerous gorge where the full force of the River Wharfe is compressed through a rock channel just 1.5 metres wide. No one who has fallen in has ever survived."
-},
-    "items": [
-      {
-        "time": "09:30",
-        "title": "Depart Keswick",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive east via the A66/A65 into the Yorkshire Dales (~2 hours).",
-        "mapLink": "https://www.google.com/maps/dir/Castlerigg+Hall+Caravan+Park/Wood+Nook+Caravan+Park"
-      },
-      {
-        "time": "11:15",
-        "title": "Kilnsey Crag Roadside Stop",
-        "type": "activity",
-        "icon": "fa-camera",
-        "description": "En-route on the B6160 into Grassington — the iconic overhanging limestone crag towering over the road. A 5-minute photo stop. (Oost List)",
-        "mapLink": "https://maps.google.com/?q=Kilnsey+Crag"
-      },
-      {
-        "time": "12:30",
-        "title": "Arrive at Wood Nook",
-        "type": "hotel",
-        "icon": "fa-campground",
-        "description": "Set up at Wood Nook Caravan Park in Grassington.",
-        "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
-      },
-      {
-        "time": "14:00",
-        "title": "Grassington Village",
-        "type": "activity",
-        "icon": "fa-walking",
-        "description": "Walk into the incredibly picturesque village of Grassington (which doubles as Darrowby in All Creatures Great and Small).",
-        "mapLink": "https://maps.google.com/?q=Grassington"
-      },
-      {
-        "time": "18:00",
-        "title": "Dinner at The Devonshire",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "Enjoy a classic Dales pub dinner.",
-        "mapLink": "https://maps.google.com/?q=The+Devonshire+Grassington"
-      }
-    ]
+  "id": "day-p3-14",
+  "phase": "phase3",
+  "date": "Saturday 13 June 2026",
+  "title": "Drive to Yorkshire Dales",
+  "overview": "Picturesque villages, scenic eastern stops, and classic Dales pubs.",
+  "bgImage": "",
+  "coords": {
+    "lat": 54.07,
+    "lon": -2
   },
+  "weatherLocation": "Grassington",
+  "learnMore": {
+    "title": "Yorkshire Dales — Limestone Country",
+    "intro": "The Yorkshire Dales are a landscape of rare, sculptural beauty — pale limestone pavements, green glacial valleys, stone-walled fields, ancient field barns and fast-flowing becks. Grassington is the most characterful of all the Dales market towns, and the landscape around it is as rich in geology and history as anywhere in England.",
+    "history": "The Dales were heavily settled by Norse Vikings who named almost every feature — 'dale' (valley), 'beck' (stream), 'scar' (cliff) and 'fell' (hill) are all Old Norse words. The area was mined for lead from Roman times through to the 19th century; the moors above Grassington are dotted with the remains of this industry. Grassington itself was the setting for the BBC's long-running series 'All Creatures Great and Small' (filmed as Darrowby).",
+    "geography": "The Yorkshire Dales National Park covers 2,179km² of high moorland and deeply carved limestone valleys. Wharfedale — the valley of the River Wharfe — is the most accessible and arguably the most beautiful of all the dales, running from the high moors near Buckden down through Grassington, Bolton Abbey and out to Ilkley.",
+    "highlights": [
+      "Grassington village",
+      "Bolton Abbey & Priory",
+      "The Strid gorge",
+      "Kilnsey Crag",
+      "Linton Falls",
+      "Malham Cove",
+      "Embsay Steam Railway"
+    ],
+    "funFact": "The Strid, near Bolton Abbey, appears to be a narrow stream you could leap across — but it's actually a catastrophically dangerous gorge where the full force of the River Wharfe is compressed through a rock channel just 1.5 metres wide. No one who has fallen in has ever survived."
+  },
+  "items": [
+    {
+      "time": "09:00",
+      "title": "Specialty Coffee in Keswick",
+      "type": "food",
+      "icon": "fa-coffee",
+      "description": "Start your morning with a great coffee at Lake Road Brunch or Merienda in Keswick before heading out.",
+      "mapLink": "https://maps.google.com/?q=Lake+Road+Brunch+Keswick"
+    },
+    {
+      "time": "09:45",
+      "title": "Peter Rabbit & Friends Shop",
+      "type": "activity",
+      "icon": "fa-shopping-bag",
+      "description": "Visit the Peter Rabbit & Friends shop on Lake Road in Keswick (opens at 9:00 AM) to pick up official Beatrix Potter gifts and toys before leaving the Lake District.",
+      "mapLink": "https://maps.google.com/?q=Peter+Rabbit+and+Friends+Keswick"
+    },
+    {
+      "time": "10:30",
+      "title": "Depart Keswick & Drive East",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive east via the A66 and A65 towards the Yorkshire Dales.",
+      "mapLink": "https://www.google.com/maps/dir/Keswick/Kirkby+Lonsdale"
+    },
+    {
+      "time": "12:00",
+      "title": "Scenic Stop: Kirkby Lonsdale",
+      "type": "activity",
+      "icon": "fa-camera",
+      "description": "A beautiful historic market town on the eastern edge of the route. Take a short stroll to Devil's Bridge and Ruskin's View, then grab a quick lunch in town.",
+      "mapLink": "https://maps.google.com/?q=Kirkby+Lonsdale"
+    },
+    {
+      "time": "14:15",
+      "title": "Kilnsey Crag Roadside Stop",
+      "type": "activity",
+      "icon": "fa-camera",
+      "description": "En-route on the B6160 into Grassington — the iconic overhanging limestone crag towering over the road. A 5-minute photo stop.",
+      "mapLink": "https://maps.google.com/?q=Kilnsey+Crag"
+    },
+    {
+      "time": "15:00",
+      "title": "Arrive at Wood Nook",
+      "type": "hotel",
+      "icon": "fa-campground",
+      "description": "Set up at Wood Nook Caravan Park in Grassington, arriving right on time at 3:00 PM.",
+      "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
+    },
+    {
+      "time": "16:00",
+      "title": "Grassington Village",
+      "type": "activity",
+      "icon": "fa-walking",
+      "description": "Walk into the incredibly picturesque village of Grassington (which doubles as Darrowby in All Creatures Great and Small).",
+      "mapLink": "https://maps.google.com/?q=Grassington"
+    },
+    {
+      "time": "18:00",
+      "title": "Dinner at The Devonshire",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "Enjoy a classic Dales pub dinner.",
+      "mapLink": "https://maps.google.com/?q=The+Devonshire+Grassington"
+    }
+  ]
+},
   {
     "id": "day-p3-15",
     "phase": "phase3",
