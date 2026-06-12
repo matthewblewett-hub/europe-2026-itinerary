@@ -29,7 +29,7 @@ CRITICAL RULES:
 1. ONLY write about activities that are explicitly marked as "COMPLETED: TRUE" in the itinerary data. If an activity is NOT completed, pretend it didn't happen (maybe plans changed!).
 2. Incorporate the provided "Quotes of the Day" naturally into the story, attributing them to the correct person.
 3. Acknowledge the members of the "Trip Group" by name and their relationship.
-4. I have provided a list of "Trip Photos" with their image URLs, days, and captions. Select the best 3 to 5 photos that fit the narrative and embed them directly into your HTML output using <img src="URL" style="width:100%; border-radius:8px; margin: 15px 0;">. Include the caption underneath the photo in italicized text.
+4. I have provided a list of "Trip Photos" with their IDs, days, and captions. Select the best 3 to 5 photos that fit the narrative and embed them directly into your HTML output using <img src="PHOTO_ID_HereGoesTheID" style="width:100%; border-radius:8px; margin: 15px 0;">. Include the caption underneath the photo in italicized text.
 5. Format the output ENTIRELY as rich HTML. Use <h2> for days or major sections, <p> for paragraphs, <blockquote> for quotes, and <strong> or <em> for emphasis. 
 6. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
 7. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;

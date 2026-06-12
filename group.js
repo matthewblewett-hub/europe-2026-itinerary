@@ -236,15 +236,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 // Fetch quotes and gallery photos
                 let quotes = {};
                 let photos = [];
+                let rawPhotos = {};
                 if (window.fbDb) {
                     const snapQuotes = await window.fbDb.ref('quotes').once('value');
                     quotes = snapQuotes.val() || {};
                     
                     const snapPhotos = await window.fbDb.ref('gallery').once('value');
-                    const rawPhotos = snapPhotos.val() || {};
-                    // Convert photos object to an array with only relevant metadata
-                    photos = Object.values(rawPhotos).map(p => ({
-                        url: p.dataUrl,
+                    rawPhotos = snapPhotos.val() || {};
+                    // Convert photos object to an array with only relevant metadata (DO NOT INCLUDE MASSIVE BASE64 dataUrl)
+                    photos = Object.entries(rawPhotos).map(([key, p]) => ({
+                        id: key,
                         caption: p.caption,
                         day: p.day
                     }));
@@ -269,11 +270,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 const data = await res.json();
                 
+                // Swap the PHOTO_ID_xxxx placeholders back into the massive base64 URLs locally!
+                let finalHtml = data.html;
+                if (rawPhotos) {
+                    Object.entries(rawPhotos).forEach(([key, p]) => {
+                        // The AI might output PHOTO_ID_-Nxxxxx, so we search and replace
+                        const placeholderRegex = new RegExp(`PHOTO_ID_${key}`, 'g');
+                        finalHtml = finalHtml.replace(placeholderRegex, p.dataUrl);
+                    });
+                }
+                
                 diaryStatus.style.display = 'none';
                 generateBtn.disabled = false;
                 
                 // Inject the generated HTML and open modal
-                diaryContent.innerHTML = data.html;
+                diaryContent.innerHTML = finalHtml;
                 diaryModal.style.display = 'block';
                 document.body.style.overflow = 'hidden'; // Prevent background scrolling
                 
