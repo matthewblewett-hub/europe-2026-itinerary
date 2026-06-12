@@ -1,6 +1,7 @@
 // Trip Group Profiles Logic
 
 let tripGroup = [];
+let cropper = null;
 
 function renderGroupProfiles() {
     const list = document.getElementById('group-profiles-list');
@@ -66,46 +67,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.getElementById('close-add-member');
     
     const photoInput = document.getElementById('member-photo-input');
-    const preview = document.getElementById('member-preview');
     const placeholder = document.getElementById('member-placeholder');
+    const cropContainer = document.getElementById('member-crop-container');
+    const cropImage = document.getElementById('member-crop-image');
+    
     const nameInput = document.getElementById('member-name-input');
-    const relationInput = document.getElementById('member-relation-input');
+    const roleSelect = document.getElementById('member-role-select');
+    const relatedToSelect = document.getElementById('member-related-to');
     const saveBtn = document.getElementById('save-member-btn');
     const progressEl = document.getElementById('member-upload-progress');
-
-    let selectedFile = null;
 
     if (addBtn && modal) {
         addBtn.addEventListener('click', () => {
             modal.style.display = 'block';
             setTimeout(() => modal.classList.add('show'), 10);
             
+            // Populate "Related To" dropdown
+            relatedToSelect.innerHTML = '<option value="">Of... (Select Person)</option>';
+            if (tripGroup.length > 0) {
+                relatedToSelect.style.display = 'block';
+                tripGroup.forEach(m => {
+                    const opt = document.createElement('option');
+                    opt.value = m.name;
+                    opt.textContent = m.name;
+                    relatedToSelect.appendChild(opt);
+                });
+            } else {
+                relatedToSelect.style.display = 'none';
+            }
+
             // Reset fields
-            selectedFile = null;
+            if (cropper) { cropper.destroy(); cropper = null; }
             photoInput.value = '';
-            preview.src = '';
-            preview.style.display = 'none';
+            cropImage.src = '';
+            cropContainer.style.display = 'none';
             placeholder.style.display = 'flex';
             nameInput.value = '';
-            relationInput.value = '';
+            roleSelect.value = '';
+            relatedToSelect.value = '';
             progressEl.textContent = '';
         });
 
         closeBtn.addEventListener('click', () => {
             modal.classList.remove('show');
             setTimeout(() => modal.style.display = 'none', 300);
+            if (cropper) { cropper.destroy(); cropper = null; }
         });
 
-        // Photo Preview
+        // Photo Preview and Cropper initialization
         photoInput.addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
-                selectedFile = file;
                 const reader = new FileReader();
                 reader.onload = (e) => {
-                    preview.src = e.target.result;
-                    preview.style.display = 'block';
                     placeholder.style.display = 'none';
+                    cropContainer.style.display = 'block';
+                    cropImage.src = e.target.result;
+                    
+                    if (cropper) cropper.destroy();
+                    
+                    // Initialize Cropper
+                    cropper = new Cropper(cropImage, {
+                        aspectRatio: 1, // Square for avatars
+                        viewMode: 1,
+                        autoCropArea: 0.8,
+                        dragMode: 'move',
+                        background: false
+                    });
                 };
                 reader.readAsDataURL(file);
             }
@@ -114,13 +142,19 @@ document.addEventListener('DOMContentLoaded', () => {
         // Save Logic
         saveBtn.addEventListener('click', async () => {
             const name = nameInput.value.trim();
-            const relation = relationInput.value.trim();
+            const role = roleSelect.value;
+            const relatedTo = relatedToSelect.value;
             
             if (!name) {
                 progressEl.textContent = 'Please enter a name.';
                 progressEl.style.color = '#ef4444';
                 return;
             }
+
+            // Build relation string
+            let relationStr = role;
+            if (role && relatedTo) relationStr = `${role} of ${relatedTo}`;
+            else if (!role && !relatedTo) relationStr = 'Member';
 
             saveBtn.disabled = true;
             saveBtn.textContent = 'Saving...';
@@ -129,14 +163,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
             let photoUrl = null;
 
-            if (selectedFile && window.fbStorage) {
-                progressEl.textContent = 'Uploading photo...';
-                const fileExt = selectedFile.name.split('.').pop() || 'jpg';
-                const fileName = `profiles/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+            if (cropper && window.fbStorage) {
+                progressEl.textContent = 'Cropping and compressing photo...';
+                
+                // Get cropped canvas
+                const canvas = cropper.getCroppedCanvas({
+                    width: 400,
+                    height: 400
+                });
+
+                // Convert canvas to blob (compressed JPEG)
+                const blob = await new Promise(resolve => canvas.toBlob(resolve, 'image/jpeg', 0.8));
+                
+                progressEl.textContent = 'Uploading to cloud...';
+                const fileName = `profiles/${Date.now()}_${Math.random().toString(36).substring(7)}.jpg`;
                 const storageRef = window.fbStorage.ref().child(fileName);
 
                 try {
-                    const snapshot = await storageRef.put(selectedFile);
+                    const snapshot = await storageRef.put(blob);
                     photoUrl = await snapshot.ref.getDownloadURL();
                 } catch (err) {
                     console.error("Photo upload failed:", err);
@@ -148,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             }
 
-            const newMember = { name, relation: relation || 'Member', photoUrl };
+            const newMember = { name, relation: relationStr, photoUrl };
             
             if (window.fbDb) {
                 const updatedGroup = [...tripGroup, newMember];
@@ -158,6 +202,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     setTimeout(() => modal.style.display = 'none', 300);
                     saveBtn.disabled = false;
                     saveBtn.textContent = 'Save Member';
+                    if (cropper) { cropper.destroy(); cropper = null; }
                 }).catch(err => {
                     progressEl.textContent = 'Database error: ' + err.message;
                     progressEl.style.color = '#ef4444';

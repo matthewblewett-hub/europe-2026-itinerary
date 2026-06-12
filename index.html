@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.css">
 </head>
 
 <body>
@@ -427,7 +428,25 @@
                 </div>
             </label>
             <input type="text" id="member-name-input" class="expense-input" placeholder="Name (e.g. Matt)">
-            <input type="text" id="member-relation-input" class="expense-input" placeholder="Relation (e.g. Husband, Friend)">
+            <div style="display: flex; gap: 10px; margin-bottom: 12px;">
+                <select id="member-role-select" class="expense-input expense-select" style="margin-bottom: 0;">
+                    <option value="">Role (e.g. Husband)...</option>
+                    <option value="Husband">Husband</option>
+                    <option value="Wife">Wife</option>
+                    <option value="Friend">Friend</option>
+                    <option value="Cousin">Cousin</option>
+                    <option value="Brother">Brother</option>
+                    <option value="Sister">Sister</option>
+                    <option value="Partner">Partner</option>
+                    <option value="Child">Child</option>
+                </select>
+                <select id="member-related-to" class="expense-input expense-select" style="margin-bottom: 0; display:none;">
+                    <option value="">Of... (Select Person)</option>
+                </select>
+            </div>
+            <div id="member-crop-container" style="display:none; width:100%; height:300px; margin-bottom:12px; background:#000;">
+                <img id="member-crop-image" src="" style="max-width:100%; display:block;">
+            </div>
             <div id="member-upload-progress" class="tracker-status" style="min-height:20px; text-align:center;"></div>
             <button id="save-member-btn" class="save-expense-btn" style="background:linear-gradient(135deg,#ec4899,#db2777)">Save Member</button>
         </div>
@@ -439,6 +458,7 @@
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-storage-compat.js"></script>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/cropperjs/1.5.13/cropper.min.js"></script>
     <script src="firebase-config.js"></script>
     <script src="expenses.js"></script>
     <script src="quotes.js"></script>
