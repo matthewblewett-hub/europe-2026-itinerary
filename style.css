@@ -1527,7 +1527,7 @@ body {
 .update-icon { font-size: 1.4rem; flex-shrink: 0; }
 .update-text { font-size: 0.82rem; line-height: 1.4; min-width: 0; }
 .update-text strong { display: block; font-size: 0.9rem; }
-.update-text span { opacity: 0.9; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.update-text span { opacity: 0.9; display: block; line-height: 1.3; }
 .update-actions { display: flex; align-items: center; gap: 6px; flex-shrink: 0; }
 .update-wa-btn {
     background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.35);
