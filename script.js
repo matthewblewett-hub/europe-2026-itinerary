@@ -627,25 +627,27 @@ document.addEventListener('DOMContentLoaded', () => {
 // ===== ACTIVITY CHECK-OFFS (Phase 1) =====
 window.completedActivities = {};
 
-if (window.fbDb) {
-    window.fbDb.ref('completedActivities').on('value', snap => {
-        window.completedActivities = snap.val() || {};
-        // If modal is open, re-render the checks (naive approach: just toggle classes if we can find them)
-        document.querySelectorAll('.activity-check-btn').forEach(btn => {
-            const dayId = btn.getAttribute('data-day-id');
-            const idx = btn.getAttribute('data-item-idx');
-            const isCompleted = window.completedActivities[dayId] && window.completedActivities[dayId][idx];
-            const icon = btn.querySelector('i');
-            if (isCompleted) {
-                btn.style.color = '#2ecc71';
-                icon.className = 'far fa-check-circle';
-            } else {
-                btn.style.color = 'rgba(255,255,255,0.3)';
-                icon.className = 'far fa-circle';
-            }
+document.addEventListener('DOMContentLoaded', () => {
+    if (window.fbDb) {
+        window.fbDb.ref('completedActivities').on('value', snap => {
+            window.completedActivities = snap.val() || {};
+            // If modal is open, re-render the checks (naive approach: just toggle classes if we can find them)
+            document.querySelectorAll('.activity-check-btn').forEach(btn => {
+                const dayId = btn.getAttribute('data-day-id');
+                const idx = btn.getAttribute('data-item-idx');
+                const isCompleted = window.completedActivities[dayId] && window.completedActivities[dayId][idx];
+                const icon = btn.querySelector('i');
+                if (isCompleted) {
+                    btn.style.color = '#2ecc71';
+                    icon.className = 'far fa-check-circle';
+                } else {
+                    btn.style.color = 'rgba(255,255,255,0.3)';
+                    icon.className = 'far fa-circle';
+                }
+            });
         });
-    });
-}
+    }
+});
 
 // Delegate click event for checkboxes since they are dynamically injected into the modal
 document.body.addEventListener('click', (e) => {
