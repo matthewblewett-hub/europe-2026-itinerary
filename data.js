@@ -2067,11 +2067,11 @@ const itinerary = [
     },
     {
       "time": "14:00",
-      "title": "Lunch & Drive to Hawkshead",
+      "title": "Lunch & Sticky Toffee Pudding Stop",
       "type": "food",
-      "icon": "fa-car",
-      "description": "Grab a late lunch after disembarking the cruise, then drive south towards the beautiful vale of Hawkshead.",
-      "mapLink": "https://maps.google.com/?q=Hawkshead"
+      "icon": "fa-utensils",
+      "description": "Grab a late lunch after disembarking the cruise. For the ultimate hot Sticky Toffee Pudding (a Lake District invention!), stop by The Apple Pie Cafe in Ambleside or head to the historic Drunken Duck Inn near Hawkshead.",
+      "mapLink": "https://maps.google.com/?q=The+Apple+Pie+Cafe+Ambleside"
     },
     {
       "time": "15:15",
@@ -2079,7 +2079,7 @@ const itinerary = [
       "type": "activity",
       "icon": "fa-book",
       "description": "Explore the charming, car-free medieval village of Hawkshead. Visit the Beatrix Potter Gallery (housed in her husband's former law office) and see the historic grammar school attended by William Wordsworth.",
-      "mapLink": "https://maps.google.com/?q=Beatrix+Potter+Gallery+Hawkshead"
+      "mapLink": "https://maps.google.com/?q=Hawkshead"
     },
     {
       "time": "16:30",
