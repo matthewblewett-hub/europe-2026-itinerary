@@ -2048,7 +2048,7 @@ const itinerary = [
   "phase": "phase3",
   "date": "Friday 12 June 2026",
   "title": "Lake District Scenery",
-  "overview": "Catbells hike, Hawkshead medieval village, Windermere, Ambleside, and Wordsworth's Dove Cottage.",
+  "overview": "Extended lake cruise, Hawkshead medieval village, Windermere, Ambleside, and Wordsworth's Dove Cottage.",
   "bgImage": "",
   "coords": {
     "lat": 54.6,
@@ -2058,31 +2058,23 @@ const itinerary = [
   "items": [
     {
       "time": "09:00",
-      "title": "Keswick Launch to Hawes End",
+      "title": "Keswick Launch Lake Cruise",
       "type": "activity",
       "icon": "fa-ship",
-      "description": "Take the hop-on/hop-off Derwentwater lake cruise to Hawes End jetty (50-min circuit). A stunning way to start the day. (Oost List)",
+      "description": "Enjoy an extended hop-on/hop-off Derwentwater lake cruise, relaxing on the water until 2:00 PM. A stunning, leisurely way to spend the morning.",
       "mapLink": "https://maps.google.com/?q=Keswick+Launch",
       "ticketLink": "https://keswick-launch.co.uk/"
     },
     {
-      "time": "10:00",
-      "title": "Catbells Hike",
-      "type": "activity",
-      "icon": "fa-hiking",
-      "description": "From Hawes End, hike up Catbells for sweeping fell views — short but rewarding. (Oost List)",
-      "mapLink": "https://maps.google.com/?q=Catbells+Lake+District"
-    },
-    {
-      "time": "12:30",
+      "time": "14:00",
       "title": "Lunch & Drive to Hawkshead",
       "type": "food",
       "icon": "fa-car",
-      "description": "Grab a quick lunch in Keswick or en route, then drive south towards the beautiful vale of Hawkshead.",
+      "description": "Grab a late lunch after disembarking the cruise, then drive south towards the beautiful vale of Hawkshead.",
       "mapLink": "https://maps.google.com/?q=Hawkshead"
     },
     {
-      "time": "14:00",
+      "time": "15:15",
       "title": "Hawkshead Medieval Village & Beatrix Potter",
       "type": "activity",
       "icon": "fa-book",
@@ -2090,7 +2082,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Beatrix+Potter+Gallery+Hawkshead"
     },
     {
-      "time": "15:30",
+      "time": "16:30",
       "title": "Ambleside & Windermere Lake",
       "type": "activity",
       "icon": "fa-water",
@@ -2098,7 +2090,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Ambleside+Windermere"
     },
     {
-      "time": "17:00",
+      "time": "17:45",
       "title": "Grasmere & Dove Cottage",
       "type": "activity",
       "icon": "fa-home",
@@ -2106,7 +2098,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
     },
     {
-      "time": "18:30",
+      "time": "19:00",
       "title": "Sunset over the Fells",
       "type": "activity",
       "icon": "fa-sun",
