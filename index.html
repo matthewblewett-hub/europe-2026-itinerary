@@ -410,6 +410,29 @@
         </div>
     </div>
 
+    <!-- Add Group Member Sheet -->
+    <div id="add-member-modal" class="add-expense-modal">
+        <div class="add-expense-sheet">
+            <div class="add-expense-handle"></div>
+            <div class="add-expense-header">
+                <h3>Add Group Member</h3>
+                <button id="close-add-member" class="close-add-btn">&#10005;</button>
+            </div>
+            <label class="photo-capture-area" for="member-photo-input">
+                <input type="file" accept="image/*" id="member-photo-input">
+                <img id="member-preview" alt="Preview" style="display:none;width:100%;max-height:200px;object-fit:cover;border-radius:8px">
+                <div id="member-placeholder" class="photo-placeholder">
+                    <i class="fas fa-user-circle" style="color:#a855f7; font-size: 2rem; margin-bottom: 8px;"></i>
+                    <span>Tap to add profile photo</span>
+                </div>
+            </label>
+            <input type="text" id="member-name-input" class="expense-input" placeholder="Name (e.g. Matt)">
+            <input type="text" id="member-relation-input" class="expense-input" placeholder="Relation (e.g. Husband, Friend)">
+            <div id="member-upload-progress" class="tracker-status" style="min-height:20px; text-align:center;"></div>
+            <button id="save-member-btn" class="save-expense-btn" style="background:linear-gradient(135deg,#ec4899,#db2777)">Save Member</button>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="script.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>

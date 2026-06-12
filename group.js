@@ -22,18 +22,25 @@ function renderGroupProfiles() {
         item.style.padding = '10px';
         item.style.borderRadius = '8px';
 
-        // Avatar placeholder based on initial
-        const initial = member.name ? member.name.charAt(0).toUpperCase() : '?';
+        // Avatar
+        let avatarHTML = '';
+        if (member.photoUrl) {
+            avatarHTML = `<img src="${member.photoUrl}" style="width:45px; height:45px; border-radius:50%; object-fit:cover; border: 2px solid #ec4899; flex-shrink:0;">`;
+        } else {
+            const initial = member.name ? member.name.charAt(0).toUpperCase() : '?';
+            avatarHTML = `
+                <div style="width:45px; height:45px; border-radius:50%; background:linear-gradient(135deg, #ec4899, #db2777); display:flex; align-items:center; justify-content:center; font-weight:bold; color:white; flex-shrink:0; font-size: 1.2rem; border: 2px solid rgba(255,255,255,0.2);">
+                    ${initial}
+                </div>`;
+        }
         
         item.innerHTML = `
-            <div style="width:40px; height:40px; border-radius:50%; background:linear-gradient(135deg, #a855f7, #7c3aed); display:flex; align-items:center; justify-content:center; font-weight:bold; color:white; flex-shrink:0;">
-                ${initial}
-            </div>
+            ${avatarHTML}
             <div style="flex:1;">
                 <div style="color:white; font-weight:600; font-size:0.95rem;">${member.name}</div>
                 <div style="color:var(--text-secondary); font-size:0.8rem;">${member.relation || 'Member'}</div>
             </div>
-            <button class="remove-member-btn" data-idx="${index}" style="background:transparent; border:none; color:#ef4444; cursor:pointer;"><i class="fas fa-trash"></i></button>
+            <button class="remove-member-btn" data-idx="${index}" style="background:transparent; border:none; color:#ef4444; cursor:pointer; font-size: 1.1rem;"><i class="fas fa-trash"></i></button>
         `;
         list.appendChild(item);
     });
@@ -52,20 +59,111 @@ function renderGroupProfiles() {
     });
 }
 
-// Add Member
+// Add Member Flow
 document.addEventListener('DOMContentLoaded', () => {
     const addBtn = document.getElementById('add-member-btn');
-    if (addBtn) {
+    const modal = document.getElementById('add-member-modal');
+    const closeBtn = document.getElementById('close-add-member');
+    
+    const photoInput = document.getElementById('member-photo-input');
+    const preview = document.getElementById('member-preview');
+    const placeholder = document.getElementById('member-placeholder');
+    const nameInput = document.getElementById('member-name-input');
+    const relationInput = document.getElementById('member-relation-input');
+    const saveBtn = document.getElementById('save-member-btn');
+    const progressEl = document.getElementById('member-upload-progress');
+
+    let selectedFile = null;
+
+    if (addBtn && modal) {
         addBtn.addEventListener('click', () => {
-            const name = prompt("Enter member name:");
-            if (!name) return;
-            const relation = prompt("Enter relationship/role (e.g., Husband, Friend, Kids):");
+            modal.style.display = 'block';
+            setTimeout(() => modal.classList.add('show'), 10);
             
-            const newMember = { name, relation: relation || 'Member' };
+            // Reset fields
+            selectedFile = null;
+            photoInput.value = '';
+            preview.src = '';
+            preview.style.display = 'none';
+            placeholder.style.display = 'flex';
+            nameInput.value = '';
+            relationInput.value = '';
+            progressEl.textContent = '';
+        });
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show');
+            setTimeout(() => modal.style.display = 'none', 300);
+        });
+
+        // Photo Preview
+        photoInput.addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                selectedFile = file;
+                const reader = new FileReader();
+                reader.onload = (e) => {
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                    placeholder.style.display = 'none';
+                };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Save Logic
+        saveBtn.addEventListener('click', async () => {
+            const name = nameInput.value.trim();
+            const relation = relationInput.value.trim();
+            
+            if (!name) {
+                progressEl.textContent = 'Please enter a name.';
+                progressEl.style.color = '#ef4444';
+                return;
+            }
+
+            saveBtn.disabled = true;
+            saveBtn.textContent = 'Saving...';
+            progressEl.textContent = 'Preparing profile...';
+            progressEl.style.color = '#e2e8f0';
+
+            let photoUrl = null;
+
+            if (selectedFile && window.fbStorage) {
+                progressEl.textContent = 'Uploading photo...';
+                const fileExt = selectedFile.name.split('.').pop() || 'jpg';
+                const fileName = `profiles/${Date.now()}_${Math.random().toString(36).substring(7)}.${fileExt}`;
+                const storageRef = window.fbStorage.ref().child(fileName);
+
+                try {
+                    const snapshot = await storageRef.put(selectedFile);
+                    photoUrl = await snapshot.ref.getDownloadURL();
+                } catch (err) {
+                    console.error("Photo upload failed:", err);
+                    progressEl.textContent = 'Failed to upload photo.';
+                    progressEl.style.color = '#ef4444';
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = 'Save Member';
+                    return;
+                }
+            }
+
+            const newMember = { name, relation: relation || 'Member', photoUrl };
             
             if (window.fbDb) {
                 const updatedGroup = [...tripGroup, newMember];
-                window.fbDb.ref('tripGroup').set(updatedGroup);
+                window.fbDb.ref('tripGroup').set(updatedGroup).then(() => {
+                    // Close and reset
+                    modal.classList.remove('show');
+                    setTimeout(() => modal.style.display = 'none', 300);
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = 'Save Member';
+                }).catch(err => {
+                    progressEl.textContent = 'Database error: ' + err.message;
+                    progressEl.style.color = '#ef4444';
+                    saveBtn.disabled = false;
+                    saveBtn.textContent = 'Save Member';
+                });
             }
         });
     }
