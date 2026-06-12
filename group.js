@@ -205,3 +205,78 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+// ===== AI DIARY GENERATOR =====
+document.addEventListener('DOMContentLoaded', () => {
+    const generateBtn = document.getElementById('generate-diary-btn');
+    const diaryPhaseSelect = document.getElementById('diary-phase-select');
+    const diaryStatus = document.getElementById('diary-status');
+    
+    const diaryModal = document.getElementById('diary-viewer-modal');
+    const closeDiaryBtn = document.getElementById('close-diary-viewer');
+    const diaryContent = document.getElementById('diary-viewer-content');
+
+    if (generateBtn && diaryModal) {
+        generateBtn.addEventListener('click', async () => {
+            const phase = diaryPhaseSelect.value;
+            
+            // Filter itinerary based on phase selection
+            let sliceStart = 0; let sliceEnd = window.itinerary.length;
+            if (phase === 'phase1') { sliceStart = 0; sliceEnd = 6; } // London Weekend
+            else if (phase === 'phase2') { sliceStart = 6; sliceEnd = 13; } // Cruise
+            else if (phase === 'phase3') { sliceStart = 13; sliceEnd = window.itinerary.length; } // Roadtrip
+
+            const itinerarySlice = window.itinerary.slice(sliceStart, sliceEnd);
+            
+            // Fetch quotes of the day
+            let quotes = {};
+            if (window.fbDb) {
+                const snap = await window.fbDb.ref('quotes').once('value');
+                quotes = snap.val() || {};
+            }
+
+            generateBtn.disabled = true;
+            diaryStatus.style.display = 'block';
+            diaryStatus.textContent = 'Gathering memories... ⏳';
+
+            try {
+                diaryStatus.textContent = 'AI is writing your diary... ✍️';
+                
+                const res = await fetch('/api/diary', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        phase: diaryPhaseSelect.options[diaryPhaseSelect.selectedIndex].text,
+                        tripGroup,
+                        completedActivities: window.completedActivities || {},
+                        quotes,
+                        itinerarySlice
+                    })
+                });
+
+                if (!res.ok) throw new Error(await res.text());
+
+                const data = await res.json();
+                
+                diaryStatus.style.display = 'none';
+                generateBtn.disabled = false;
+                
+                // Inject the generated HTML and open modal
+                diaryContent.innerHTML = data.html;
+                diaryModal.style.display = 'block';
+                // Force reflow
+                diaryModal.offsetHeight;
+                diaryModal.classList.add('show');
+            } catch (err) {
+                console.error(err);
+                diaryStatus.textContent = '❌ Error generating diary: ' + err.message;
+                generateBtn.disabled = false;
+            }
+        });
+
+        closeDiaryBtn.addEventListener('click', () => {
+            diaryModal.classList.remove('show');
+            setTimeout(() => diaryModal.style.display = 'none', 300);
+        });
+    }
+});

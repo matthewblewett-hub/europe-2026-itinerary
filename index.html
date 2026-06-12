@@ -452,6 +452,20 @@
         </div>
     </div>
 
+    <!-- Diary Viewer Modal -->
+    <div id="diary-viewer-modal" class="split-panel">
+        <div class="split-content" style="background: #fff; max-width: 800px; height: 100vh;">
+            <div class="split-header" style="background: #1e293b; color: white; border-bottom: none;">
+                <button id="close-diary-viewer" class="close-split-btn" style="color: white;">&#8592; Back</button>
+                <h2>✨ Trip Diary</h2>
+                <button id="share-diary-btn" style="background: transparent; border: none; color: white; font-size: 1.2rem; cursor: pointer;"><i class="fas fa-share-alt"></i></button>
+            </div>
+            <div id="diary-viewer-content" style="padding: 24px; overflow-y: auto; flex: 1; color: #334155; line-height: 1.6; font-size: 1.05rem; background: #fafafa;">
+                <!-- HTML from AI goes here -->
+            </div>
+        </div>
+    </div>
+
     <script src="data.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-database-compat.js"></script>
