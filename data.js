@@ -2066,15 +2066,7 @@ const itinerary = [
       "ticketLink": "https://keswick-launch.co.uk/"
     },
     {
-      "time": "14:00",
-      "title": "Lunch & Sticky Toffee Pudding Stop",
-      "type": "food",
-      "icon": "fa-utensils",
-      "description": "Grab a late lunch after disembarking the cruise. For the ultimate hot Sticky Toffee Pudding (a Lake District invention!), stop by The Apple Pie Cafe in Ambleside or head to the historic Drunken Duck Inn near Hawkshead.",
-      "mapLink": "https://maps.google.com/?q=The+Apple+Pie+Cafe+Ambleside"
-    },
-    {
-      "time": "15:15",
+      "time": "14:15",
       "title": "Hawkshead Medieval Village & Beatrix Potter",
       "type": "activity",
       "icon": "fa-book",
@@ -2082,15 +2074,15 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Hawkshead"
     },
     {
-      "time": "16:30",
-      "title": "Ambleside & Windermere Lake",
-      "type": "activity",
-      "icon": "fa-water",
-      "description": "Drive to Ambleside at the northern tip of Lake Windermere. See the iconic Bridge House over Stock Ghyll, and enjoy scenic views or a short stroll along the shores of England's largest lake.",
-      "mapLink": "https://maps.google.com/?q=Ambleside+Windermere"
+      "time": "15:45",
+      "title": "Ambleside, Windermere & Sticky Toffee Pudding",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "Drive to Ambleside at the northern tip of Lake Windermere. See the iconic Bridge House over Stock Ghyll, and stop by The Apple Pie Cafe for their famous hot Sticky Toffee Pudding (a local invention!).",
+      "mapLink": "https://maps.google.com/?q=The+Apple+Pie+Cafe+Ambleside"
     },
     {
-      "time": "17:45",
+      "time": "17:15",
       "title": "Grasmere & Dove Cottage",
       "type": "activity",
       "icon": "fa-home",
@@ -2098,7 +2090,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
     },
     {
-      "time": "19:00",
+      "time": "18:30",
       "title": "Sunset over the Fells",
       "type": "activity",
       "icon": "fa-sun",
