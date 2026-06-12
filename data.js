@@ -2070,8 +2070,8 @@ const itinerary = [
       "title": "Hawkshead Medieval Village & Beatrix Potter",
       "type": "activity",
       "icon": "fa-book",
-      "description": "Explore the charming, car-free medieval village of Hawkshead. Visit the Beatrix Potter Gallery (housed in her husband's former law office) and see the historic grammar school attended by William Wordsworth.",
-      "mapLink": "https://maps.google.com/?q=Hawkshead"
+      "description": "Explore the charming, car-free medieval village of Hawkshead. Visit the Beatrix Potter Gallery and be sure to pop into the 'Peter Rabbit and Friends' shop in the village square for a fantastic selection of official merchandise, toys, and books.",
+      "mapLink": "https://maps.google.com/?q=Peter+Rabbit+and+Friends+Hawkshead"
     },
     {
       "time": "15:45",
@@ -2090,7 +2090,15 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Dove+Cottage+Grasmere"
     },
     {
-      "time": "18:30",
+      "time": "18:00",
+      "title": "Peter Rabbit & Friends, Keswick",
+      "type": "activity",
+      "icon": "fa-shopping-bag",
+      "description": "En route back into Keswick, stop at the 'Peter Rabbit & Friends' shop on Lake Road. It is the perfect place to pick up Beatrix Potter gifts, soft toys, and souvenirs right in town before they close.",
+      "mapLink": "https://maps.google.com/?q=Peter+Rabbit+and+Friends+Keswick"
+    },
+    {
+      "time": "18:45",
       "title": "Sunset over the Fells",
       "type": "activity",
       "icon": "fa-sun",
