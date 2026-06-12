@@ -669,11 +669,13 @@ const closeMemoriesBtn = document.getElementById('close-memories');
 if (memoriesFab && memoriesPanel) {
     memoriesFab.addEventListener('click', () => {
         memoriesPanel.style.display = 'block';
-        setTimeout(() => memoriesPanel.style.opacity = '1', 10);
+        // Force reflow
+        memoriesPanel.offsetHeight;
+        memoriesPanel.classList.add('show');
     });
     
     closeMemoriesBtn.addEventListener('click', () => {
-        memoriesPanel.style.opacity = '0';
+        memoriesPanel.classList.remove('show');
         setTimeout(() => memoriesPanel.style.display = 'none', 300);
     });
 }
