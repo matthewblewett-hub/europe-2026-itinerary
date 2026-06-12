@@ -396,7 +396,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         let timelineHTML = '';
-        day.items.forEach(item => {
+        day.items.forEach((item, index) => {
             let linksHTML = '';
             if (item.mapLink) linksHTML += `<a href="${item.mapLink}" target="_blank" class="action-btn"><i class="fas fa-map-marker-alt"></i> Map</a>`;
             if (item.link) linksHTML += `<a href="${item.link}" target="_blank" class="action-btn"><i class="fas fa-external-link-alt"></i> Info</a>`;
@@ -408,12 +408,23 @@ document.addEventListener('DOMContentLoaded', () => {
                     linksHTML += `<button onclick="openPDF('${el.url}','${el.label}')" class="action-btn" style="cursor:pointer;border:none;background:#3a506b;color:white;padding:8px 12px;border-radius:6px;font-family:inherit;font-size:14px;display:inline-flex;align-items:center;gap:6px;"><i class="fas fa-file-pdf"></i> ${el.label}</button>`;
                 });
             }
+            
+            // Check if this activity is marked completed
+            const isCompleted = window.completedActivities && window.completedActivities[day.id] && window.completedActivities[day.id][index];
+            const checkIcon = isCompleted ? 'fa-check-circle' : 'fa-circle';
+            const checkColor = isCompleted ? '#2ecc71' : 'rgba(255,255,255,0.3)';
+
             timelineHTML += `
                 <div class="timeline-item">
                     <div class="timeline-icon"><i class="fas ${item.icon || 'fa-clock'}"></i></div>
                     <div class="timeline-content">
                         <div class="timeline-time">${item.time}</div>
-                        <h3 class="timeline-title">${item.title}</h3>
+                        <h3 class="timeline-title" style="display:flex; align-items:center; gap:8px;">
+                            <button class="activity-check-btn" data-day-id="${day.id}" data-item-idx="${index}" style="background:none; border:none; color:${checkColor}; font-size:1.2rem; cursor:pointer; padding:0; transition: color 0.2s;">
+                                <i class="far ${checkIcon}"></i>
+                            </button>
+                            ${item.title}
+                        </h3>
                         <p class="timeline-desc">${item.description}</p>
                         ${linksHTML ? `<div class="timeline-links">${linksHTML}</div>` : ''}
                     </div>
@@ -612,3 +623,57 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 });
+
+// ===== ACTIVITY CHECK-OFFS (Phase 1) =====
+window.completedActivities = {};
+
+if (window.fbDb) {
+    window.fbDb.ref('completedActivities').on('value', snap => {
+        window.completedActivities = snap.val() || {};
+        // If modal is open, re-render the checks (naive approach: just toggle classes if we can find them)
+        document.querySelectorAll('.activity-check-btn').forEach(btn => {
+            const dayId = btn.getAttribute('data-day-id');
+            const idx = btn.getAttribute('data-item-idx');
+            const isCompleted = window.completedActivities[dayId] && window.completedActivities[dayId][idx];
+            const icon = btn.querySelector('i');
+            if (isCompleted) {
+                btn.style.color = '#2ecc71';
+                icon.className = 'far fa-check-circle';
+            } else {
+                btn.style.color = 'rgba(255,255,255,0.3)';
+                icon.className = 'far fa-circle';
+            }
+        });
+    });
+}
+
+// Delegate click event for checkboxes since they are dynamically injected into the modal
+document.body.addEventListener('click', (e) => {
+    const btn = e.target.closest('.activity-check-btn');
+    if (!btn || !window.fbDb) return;
+    
+    const dayId = btn.getAttribute('data-day-id');
+    const idx = btn.getAttribute('data-item-idx');
+    
+    const currentlyCompleted = window.completedActivities[dayId] && window.completedActivities[dayId][idx];
+    const newState = !currentlyCompleted;
+    
+    window.fbDb.ref(`completedActivities/${dayId}/${idx}`).set(newState);
+});
+
+// ===== TRIP MEMORIES MODULE =====
+const memoriesFab = document.getElementById('memories-fab');
+const memoriesPanel = document.getElementById('memories-panel');
+const closeMemoriesBtn = document.getElementById('close-memories');
+
+if (memoriesFab && memoriesPanel) {
+    memoriesFab.addEventListener('click', () => {
+        memoriesPanel.style.display = 'block';
+        setTimeout(() => memoriesPanel.style.opacity = '1', 10);
+    });
+    
+    closeMemoriesBtn.addEventListener('click', () => {
+        memoriesPanel.style.opacity = '0';
+        setTimeout(() => memoriesPanel.style.display = 'none', 300);
+    });
+}

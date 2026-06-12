@@ -209,6 +209,55 @@
         <i class="fas fa-receipt"></i>
     </button>
 
+    <!-- Trip Memories FAB -->
+    <button id="memories-fab" class="split-fab" aria-label="Open Trip Memories" style="bottom: 92px; background: linear-gradient(135deg, #ec4899, #db2777); box-shadow: 0 4px 16px rgba(236,72,153,0.45);">
+        <i class="fas fa-book-open"></i>
+    </button>
+
+    <!-- Trip Memories Panel -->
+    <div id="memories-panel" class="split-panel">
+        <div class="split-content">
+            <div class="split-header">
+                <button id="close-memories" class="close-split-btn">&#8592; Back</button>
+                <h2>📖 Trip Memories</h2>
+            </div>
+            <div style="padding: 16px; overflow-y: auto; flex: 1;">
+                
+                <!-- Trip Group Profiles -->
+                <div style="background: var(--learn-more-card); border-radius: 12px; padding: 16px; margin-bottom: 20px; border: 1px solid var(--learn-more-border);">
+                    <h3 style="margin-top:0; font-size:1.1rem; color:#e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+                        <span><i class="fas fa-users" style="color:#a855f7;"></i> Trip Group</span>
+                        <button id="add-member-btn" style="background:transparent; border:none; color:#a855f7; cursor:pointer;"><i class="fas fa-plus"></i></button>
+                    </h3>
+                    <div id="group-profiles-list" style="display:flex; flex-direction:column; gap:10px; margin-top:10px;">
+                        <!-- Group profiles will render here -->
+                    </div>
+                </div>
+
+                <!-- Diary Generation -->
+                <div style="background: var(--learn-more-card); border-radius: 12px; padding: 16px; margin-bottom: 20px; border: 1px solid var(--learn-more-border);">
+                    <h3 style="margin-top:0; font-size:1.1rem; color:#e2e8f0;"><i class="fas fa-pen-fancy" style="color:#f59e0b;"></i> AI Trip Diary</h3>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.4; margin-bottom:12px;">Generate a fun, narrated diary of your trip based on completed activities, quotes, and highlights.</p>
+                    <select id="diary-phase-select" class="expense-input expense-select" style="margin-bottom:12px;">
+                        <option value="phase1">London Weekend</option>
+                        <option value="phase2">European Cruise</option>
+                        <option value="phase3">UK Road Trip</option>
+                    </select>
+                    <button id="generate-diary-btn" class="save-expense-btn" style="background: linear-gradient(135deg, #f59e0b, #d97706);"><i class="fas fa-magic"></i> Generate Diary</button>
+                    <div id="diary-status" style="font-size:0.85rem; color:#f59e0b; margin-top:10px; display:none; text-align:center;">Writing your memories... ⏳</div>
+                </div>
+
+                <!-- Video Generation (Phase 3) -->
+                <div style="background: var(--learn-more-card); border-radius: 12px; padding: 16px; border: 1px solid var(--learn-more-border); opacity: 0.6;">
+                    <h3 style="margin-top:0; font-size:1.1rem; color:#e2e8f0;"><i class="fas fa-film" style="color:#3b82f6;"></i> Photo Slideshow</h3>
+                    <p style="font-size:0.85rem; color:var(--text-secondary); line-height:1.4; margin-bottom:12px;">Create a cinematic memory player with music and photos. (Coming Soon)</p>
+                    <button class="save-expense-btn" style="background: #475569; cursor:not-allowed;" disabled><i class="fas fa-lock"></i> Locked</button>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
     <!-- Split Expense Panel -->
     <div id="split-panel" class="split-panel">
         <div class="split-content">
@@ -373,6 +422,7 @@
     <script src="tracker.js"></script>
     <script src="gallery.js"></script>
     <script src="updates.js"></script>
+    <script src="group.js"></script>
     <script src="app.js?v=1"></script>
 </body>
 
