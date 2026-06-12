@@ -220,26 +220,26 @@ document.addEventListener('DOMContentLoaded', () => {
         generateBtn.addEventListener('click', async () => {
             const phase = diaryPhaseSelect.value;
             
-            // Filter itinerary based on phase selection
-            let sliceStart = 0; let sliceEnd = window.itinerary.length;
-            if (phase === 'phase1') { sliceStart = 0; sliceEnd = 6; } // London Weekend
-            else if (phase === 'phase2') { sliceStart = 6; sliceEnd = 13; } // Cruise
-            else if (phase === 'phase3') { sliceStart = 13; sliceEnd = window.itinerary.length; } // Roadtrip
-
-            const itinerarySlice = window.itinerary.slice(sliceStart, sliceEnd);
-            
-            // Fetch quotes of the day
-            let quotes = {};
-            if (window.fbDb) {
-                const snap = await window.fbDb.ref('quotes').once('value');
-                quotes = snap.val() || {};
-            }
-
             generateBtn.disabled = true;
             diaryStatus.style.display = 'block';
             diaryStatus.textContent = 'Gathering memories... ⏳';
 
             try {
+                // Filter itinerary based on phase selection
+                let sliceStart = 0; let sliceEnd = itinerary.length;
+                if (phase === 'phase1') { sliceStart = 0; sliceEnd = 6; } // London Weekend
+                else if (phase === 'phase2') { sliceStart = 6; sliceEnd = 13; } // Cruise
+                else if (phase === 'phase3') { sliceStart = 13; sliceEnd = itinerary.length; } // Roadtrip
+
+                const itinerarySlice = itinerary.slice(sliceStart, sliceEnd);
+                
+                // Fetch quotes of the day
+                let quotes = {};
+                if (window.fbDb) {
+                    const snap = await window.fbDb.ref('quotes').once('value');
+                    quotes = snap.val() || {};
+                }
+
                 diaryStatus.textContent = 'AI is writing your diary... ✍️';
                 
                 const res = await fetch('/api/diary', {
