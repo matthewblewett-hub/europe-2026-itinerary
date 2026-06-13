@@ -2303,46 +2303,57 @@ const itinerary = [
     ]
   },
   {
-    "id": "day-p3-16",
-    "phase": "phase3",
-    "date": "Monday 15 June 2026",
-    "title": "Departure: Return Campervan",
-    "overview": "Early morning drive to Manchester to return the camper by 10am, and fly home.",
-    "bgImage": "",
-    "coords": {"lat": 53.48, "lon": -2.24},
-    "weatherLocation": "Manchester",
-    "items": [
-      {
-        "time": "06:30",
-        "title": "Early Wake-up & Pack Down",
-        "type": "activity",
-        "icon": "fa-box",
-        "description": "An early start to pack all bags, empty the chemical toilet, drain grey water, and ensure the camper is clean for the return."
-      },
-      {
-        "time": "07:30",
-        "title": "Depart Wood Nook for Manchester",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive the final stretch back to Manchester. It's approximately a 1.5 to 2 hour drive down the M66/M60 depending on morning traffic.",
-        "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Indie+Campers+Manchester"
-      },
-      {
-        "time": "09:30",
-        "title": "Arrive at Indie Campers Manchester",
-        "type": "activity",
-        "icon": "fa-truck-front",
-        "description": "Arrive at the depot with enough time to do the final handover. The vehicle MUST be returned by 10:00 AM to avoid late fees.",
-        "mapLink": "https://maps.google.com/?q=Indie+Campers+Manchester"
-      },
-      {
-        "time": "10:30",
-        "title": "Head to Manchester Airport",
-        "type": "travel",
-        "icon": "fa-plane-departure",
-        "description": "Grab a taxi or Uber from the depot to Manchester Airport for your flight home. Safe travels! ✈️",
-        "mapLink": "https://maps.google.com/?q=Manchester+Airport"
-      }
-    ]
-  }
+  "id": "day-p3-16",
+  "phase": "phase3",
+  "date": "Monday 15 June 2026",
+  "title": "Departure: Return Campervan",
+  "overview": "Early morning drive to Manchester to return the camper, Uber to the airport by 10:15, and fly home.",
+  "bgImage": "",
+  "coords": {
+    "lat": 53.48,
+    "lon": -2.24
+  },
+  "weatherLocation": "Manchester",
+  "items": [
+    {
+      "time": "06:15",
+      "title": "Early Wake-up & Pack Down",
+      "type": "activity",
+      "icon": "fa-box",
+      "description": "An early start to pack all bags, empty the chemical toilet, drain grey water, and ensure the camper is clean for the return."
+    },
+    {
+      "time": "07:15",
+      "title": "Depart Wood Nook for Manchester",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive the final stretch back to Manchester. It's approximately a 1.5 to 2 hour drive down the M66/M60 depending on morning traffic.",
+      "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Indie+Campers+Manchester"
+    },
+    {
+      "time": "09:15",
+      "title": "Arrive at Indie Campers Manchester",
+      "type": "activity",
+      "icon": "fa-truck-front",
+      "description": "Arrive at the depot with enough time to do the final handover and order your Uber.",
+      "mapLink": "https://maps.google.com/?q=Indie+Campers+Manchester"
+    },
+    {
+      "time": "09:45",
+      "title": "Uber to Manchester Airport",
+      "type": "travel",
+      "icon": "fa-taxi",
+      "description": "Grab an Uber from the depot to Manchester Airport to ensure you arrive by 10:15 AM.",
+      "mapLink": "https://maps.google.com/?q=Manchester+Airport"
+    },
+    {
+      "time": "10:15",
+      "title": "Arrive at Manchester Airport",
+      "type": "travel",
+      "icon": "fa-plane-departure",
+      "description": "Airport arrival target for your flight home. Safe travels! ✈️",
+      "mapLink": "https://maps.google.com/?q=Manchester+Airport"
+    }
+  ]
+}
 ];
