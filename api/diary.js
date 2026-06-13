@@ -1,25 +1,38 @@
 export const config = {
-  maxDuration: 60, // Vercel timeout
+  runtime: 'edge',
 };
 
-export default async function handler(req, res) {
-  // Handle CORS
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
-  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
-  res.setHeader(
-    'Access-Control-Allow-Headers',
-    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-  );
+const corsHeaders = {
+  'Access-Control-Allow-Credentials': 'true',
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
+  'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+};
 
-  if (req.method === 'OPTIONS') return res.status(200).end();
-  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
+export default async function handler(req) {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { status: 200, headers: corsHeaders });
+  }
 
-  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = req.body;
+  if (req.method !== 'POST') {
+    return new Response(JSON.stringify({ error: 'Method not allowed' }), { 
+      status: 405, 
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+    });
+  }
+
+  let body;
+  try {
+    body = await req.json();
+  } catch (e) {
+    return new Response(JSON.stringify({ error: 'Invalid JSON body' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+  }
+
+  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = body;
 
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
-    return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
+    return new Response(JSON.stringify({ error: 'Missing GEMINI_API_KEY environment variable.' }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 
   // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
@@ -44,7 +57,6 @@ CRITICAL RULES:
 8. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
 9. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
-  // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
   const enhancedItinerary = itinerarySlice.map(day => {
     const dayCompleted = completedActivities[day.id] || {};
     return {
@@ -71,41 +83,44 @@ ${JSON.stringify(dayNotes, null, 2)}
 Trip Photos (Embed 3-5 of these into the story):
 ${JSON.stringify(photos, null, 2)}
 
-Quotes of the Day:
+Quotes of the Day (Quote these directly):
 ${JSON.stringify(quotes, null, 2)}
 
-Itinerary Log:
+Itinerary (ONLY WRITE ABOUT COMPLETED ACTIVITIES):
 ${JSON.stringify(enhancedItinerary, null, 2)}
-
-Please generate the HTML diary!`;
+`;
 
   try {
-    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
-    const geminiRes = await fetch(geminiUrl, {
+    const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${GEMINI_API_KEY}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [{ parts: [{ text: prompt }] }],
-        systemInstruction: { parts: [{ text: systemInstruction }] },
-        generationConfig: { temperature: 0.7 }
+        system_instruction: { parts: { text: systemInstruction } },
+        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        generationConfig: {
+          temperature: 0.7,
+        }
       })
     });
 
     if (!geminiRes.ok) {
-        throw new Error('Gemini API Error: ' + await geminiRes.text());
+      const errorText = await geminiRes.text();
+      return new Response(JSON.stringify({ error: `Gemini API Error: ${errorText}` }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
     }
 
     const geminiData = await geminiRes.json();
     let diaryHtml = geminiData.candidates[0].content.parts[0].text;
     
-    // Clean up markdown block if the AI accidentally adds it
-    if (diaryHtml.startsWith('\`\`\`html')) diaryHtml = diaryHtml.replace(/^\`\`\`html\n/, '');
-    if (diaryHtml.startsWith('\`\`\`')) diaryHtml = diaryHtml.replace(/^\`\`\`\n/, '');
-    diaryHtml = diaryHtml.replace(/\n\`\`\`$/, '');
+    // Clean up markdown code blocks if the AI accidentally adds them despite instructions
+    diaryHtml = diaryHtml.replace(/^```html\n/, '').replace(/\n```$/, '');
 
-    return res.status(200).json({ html: diaryHtml });
+    return new Response(JSON.stringify({ html: diaryHtml }), { 
+      status: 200, 
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
+    });
+
   } catch (error) {
     console.error("Diary generation failed:", error);
-    return res.status(500).json({ error: error.message });
+    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
   }
 }
