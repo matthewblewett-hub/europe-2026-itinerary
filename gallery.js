@@ -259,6 +259,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Show modal instantly
                 ssModal.style.display = 'flex';
+                // Force opacity to 1 bypassing the .modal opacity:0 CSS bug
+                setTimeout(() => {
+                    ssModal.classList.add('show');
+                    ssModal.style.opacity = '1';
+                }, 10);
                 
                 // Play music
                 if (ssAudio) {
@@ -334,8 +339,12 @@ document.addEventListener('DOMContentLoaded', () => {
     if (ssClose) {
         ssClose.addEventListener('click', () => {
             clearInterval(ssTimer);
-            ssModal.style.display = 'none';
-            ssImg.src = ''; // clear to save memory
+            ssModal.classList.remove('show');
+            ssModal.style.opacity = '0';
+            setTimeout(() => {
+                ssModal.style.display = 'none';
+                ssImg.src = ''; // clear to save memory
+            }, 300);
             
             // Stop music
             if (ssAudio) {
