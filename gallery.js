@@ -229,6 +229,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let ssIndex = 0;
     let ssTimer = null;
     let ssIsPlaying = true;
+    let isFirstSlide = true;
 
     if (playBtn) {
         playBtn.addEventListener('click', async () => {
@@ -242,7 +243,9 @@ document.addEventListener('DOMContentLoaded', () => {
             try {
                 const snap = await window.fbDb.ref('gallery').once('value');
                 const data = snap.val() || {};
-                ssPhotos = Object.values(data).sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+                
+                // Fix: sorting key in gallery is 'ts', not 'timestamp'
+                ssPhotos = Object.values(data).sort((a, b) => (a.ts || 0) - (b.ts || 0));
                 
                 playBtn.innerHTML = originalText;
                 playBtn.disabled = false;
@@ -251,6 +254,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 ssIndex = 0;
                 ssIsPlaying = true;
+                isFirstSlide = true;
                 ssPlayPause.innerHTML = '<i class="fas fa-pause"></i>';
                 
                 // Show modal instantly
@@ -283,13 +287,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const photo = ssPhotos[ssIndex];
         
-        // Fade out current
-        ssImg.style.opacity = 0;
-        ssCap.style.opacity = 0;
-
-        setTimeout(() => {
-            ssImg.src = photo.dataUrl;
-            
+        // Define the swap function
+        const performSwap = () => {
             let captionText = '';
             if (photo.day) captionText += `<strong style="color:#f59e0b;">${photo.day}</strong><br>`;
             if (photo.caption) captionText += `${photo.caption}`;
@@ -297,18 +296,30 @@ document.addEventListener('DOMContentLoaded', () => {
             
             ssCap.innerHTML = captionText || '<em>No caption</em>';
             
-            // Fade in only once image has loaded
+            // Attach onload BEFORE setting src to prevent missing synchronous loads
             ssImg.onload = () => {
                 ssImg.style.opacity = 1;
                 ssCap.style.opacity = 1;
             };
             
-            // Failsafe: if image is from cache, onload might fire too fast or not at all sometimes
+            ssImg.src = photo.dataUrl;
+            
+            // Failsafe: if image is from cache or dataUrl loads instantly
             if (ssImg.complete) {
                 ssImg.style.opacity = 1;
                 ssCap.style.opacity = 1;
             }
-        }, 800); // Wait 800ms for CSS fade out to finish before swapping
+        };
+
+        if (isFirstSlide) {
+            isFirstSlide = false;
+            performSwap();
+        } else {
+            // Fade out current slide, wait for CSS transition, then swap
+            ssImg.style.opacity = 0;
+            ssCap.style.opacity = 0;
+            setTimeout(performSwap, 800);
+        }
     }
 
     function startSlideshow() {
