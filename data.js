@@ -2136,7 +2136,7 @@ const itinerary = [
   },
   "items": [
     {
-      "time": "09:00",
+      "time": "09:15",
       "title": "Drive Keswick → Bowness-on-Windermere",
       "type": "travel",
       "icon": "fa-route",
@@ -2144,7 +2144,7 @@ const itinerary = [
       "mapLink": "https://www.google.com/maps/dir/Keswick/Bowness-on-Windermere"
     },
     {
-      "time": "09:30",
+      "time": "09:45",
       "title": "Coffee in Bowness-on-Windermere",
       "type": "food",
       "icon": "fa-coffee",
@@ -2152,7 +2152,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Bowness-on-Windermere+Coffee"
     },
     {
-      "time": "10:15",
+      "time": "10:30",
       "title": "Peter Rabbit Shop & Attraction",
       "type": "activity",
       "icon": "fa-shopping-bag",
@@ -2160,7 +2160,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=The+World+of+Beatrix+Potter+Attraction"
     },
     {
-      "time": "11:30",
+      "time": "11:45",
       "title": "Depart Bowness & Drive East",
       "type": "travel",
       "icon": "fa-route",
@@ -2168,7 +2168,7 @@ const itinerary = [
       "mapLink": "https://www.google.com/maps/dir/Bowness-on-Windermere/Kirkby+Lonsdale"
     },
     {
-      "time": "12:15",
+      "time": "12:30",
       "title": "Scenic Stop: Kirkby Lonsdale",
       "type": "activity",
       "icon": "fa-camera",
@@ -2176,7 +2176,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Kirkby+Lonsdale"
     },
     {
-      "time": "14:15",
+      "time": "14:30",
       "title": "Kilnsey Crag Roadside Stop",
       "type": "activity",
       "icon": "fa-camera",
@@ -2184,15 +2184,15 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Kilnsey+Crag"
     },
     {
-      "time": "15:00",
+      "time": "15:15",
       "title": "Arrive at Wood Nook",
       "type": "hotel",
       "icon": "fa-campground",
-      "description": "Set up at Wood Nook Caravan Park in Grassington, arriving right on time at 3:00 PM.",
+      "description": "Set up at Wood Nook Caravan Park in Grassington, arriving right on time at 3:15 PM.",
       "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
     },
     {
-      "time": "16:00",
+      "time": "16:15",
       "title": "Grassington Village",
       "type": "activity",
       "icon": "fa-walking",
@@ -2200,7 +2200,7 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Grassington"
     },
     {
-      "time": "18:00",
+      "time": "18:15",
       "title": "Dinner at The Devonshire",
       "type": "food",
       "icon": "fa-utensils",
