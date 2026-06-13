@@ -234,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 const itinerarySlice = itinerary.slice(sliceStart, sliceEnd);
                 
                 // Fetch quotes and gallery photos
+                diaryStatus.textContent = 'Gathering quotes... ⏳';
                 let quotes = {};
                 let photos = [];
                 let rawPhotos = {};
@@ -241,19 +242,20 @@ document.addEventListener('DOMContentLoaded', () => {
                     const snapQuotes = await window.fbDb.ref('quotes').once('value');
                     quotes = snapQuotes.val() || {};
                     
+                    diaryStatus.textContent = 'Gathering photos... ⏳';
                     const snapPhotos = await window.fbDb.ref('gallery').once('value');
                     rawPhotos = snapPhotos.val() || {};
                     // Convert photos object to an array with only relevant metadata (DO NOT INCLUDE MASSIVE BASE64 dataUrl)
                     photos = Object.entries(rawPhotos).map(([key, p]) => ({
                         id: key,
-                        caption: p.caption,
-                        day: p.day
+                        caption: p.caption || '',
+                        day: p.day || ''
                     }));
                 }
 
                 diaryStatus.textContent = 'The Wizard is writing your diary... ✍️';
                 
-                const res = await fetch('/api/diary', {
+                const res = await fetch('https://europe-2026-itinerary.vercel.app/api/diary', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify({
