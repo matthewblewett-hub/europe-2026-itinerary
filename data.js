@@ -2137,30 +2137,38 @@ const itinerary = [
   "items": [
     {
       "time": "09:00",
-      "title": "Specialty Coffee in Keswick",
-      "type": "food",
-      "icon": "fa-coffee",
-      "description": "Start your morning with a great coffee at Lake Road Brunch or Merienda in Keswick before heading out.",
-      "mapLink": "https://maps.google.com/?q=Lake+Road+Brunch+Keswick"
-    },
-    {
-      "time": "09:45",
-      "title": "Peter Rabbit & Friends Shop",
-      "type": "activity",
-      "icon": "fa-shopping-bag",
-      "description": "Visit the Peter Rabbit & Friends shop on Lake Road in Keswick (opens at 9:00 AM) to pick up official Beatrix Potter gifts and toys before leaving the Lake District.",
-      "mapLink": "https://maps.google.com/?q=Peter+Rabbit+and+Friends+Keswick"
-    },
-    {
-      "time": "10:30",
-      "title": "Depart Keswick & Drive East",
+      "title": "Drive Keswick → Bowness-on-Windermere",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Drive east via the A66 and A65 towards the Yorkshire Dales.",
-      "mapLink": "https://www.google.com/maps/dir/Keswick/Kirkby+Lonsdale"
+      "description": "Drive south down the scenic A591 past Thirlmere and Windermere to Bowness-on-Windermere (~30 mins).",
+      "mapLink": "https://www.google.com/maps/dir/Keswick/Bowness-on-Windermere"
     },
     {
-      "time": "12:00",
+      "time": "09:30",
+      "title": "Coffee in Bowness-on-Windermere",
+      "type": "food",
+      "icon": "fa-coffee",
+      "description": "Enjoy a specialty coffee at a local café in Bowness, located right near the Peter Rabbit attraction.",
+      "mapLink": "https://maps.google.com/?q=Bowness-on-Windermere+Coffee"
+    },
+    {
+      "time": "10:15",
+      "title": "Peter Rabbit Shop & Attraction",
+      "type": "activity",
+      "icon": "fa-shopping-bag",
+      "description": "Visit the famous Peter Rabbit & Friends shop and the World of Beatrix Potter Attraction in Bowness.",
+      "mapLink": "https://maps.google.com/?q=The+World+of+Beatrix+Potter+Attraction"
+    },
+    {
+      "time": "11:30",
+      "title": "Depart Bowness & Drive East",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive east towards the Yorkshire Dales via Kirkby Lonsdale.",
+      "mapLink": "https://www.google.com/maps/dir/Bowness-on-Windermere/Kirkby+Lonsdale"
+    },
+    {
+      "time": "12:15",
       "title": "Scenic Stop: Kirkby Lonsdale",
       "type": "activity",
       "icon": "fa-camera",
