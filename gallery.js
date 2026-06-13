@@ -213,4 +213,130 @@ document.addEventListener('DOMContentLoaded', () => {
     function formatDate(ts) {
         return new Date(ts).toLocaleDateString('en-GB', { day:'numeric', month:'short' });
     }
+
+    // ===== PHOTO SLIDESHOW =====
+    const playBtn = document.getElementById('play-slideshow-btn');
+    const ssModal = document.getElementById('slideshow-modal');
+    const ssClose = document.getElementById('close-slideshow');
+    const ssImg = document.getElementById('slideshow-image');
+    const ssCap = document.getElementById('slideshow-caption');
+    const ssPlayPause = document.getElementById('slideshow-playpause');
+    const ssNext = document.getElementById('slideshow-next');
+    const ssPrev = document.getElementById('slideshow-prev');
+
+    let ssPhotos = [];
+    let ssIndex = 0;
+    let ssTimer = null;
+    let ssIsPlaying = true;
+
+    if (playBtn) {
+        playBtn.addEventListener('click', async () => {
+            if (!window.fbDb) return alert("Database not connected. Please wait.");
+            
+            // Show loading state
+            const originalText = playBtn.innerHTML;
+            playBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Loading Images...';
+            playBtn.disabled = true;
+
+            try {
+                const snap = await window.fbDb.ref('gallery').once('value');
+                const data = snap.val() || {};
+                ssPhotos = Object.values(data).sort((a, b) => (a.timestamp || 0) - (b.timestamp || 0));
+                
+                playBtn.innerHTML = originalText;
+                playBtn.disabled = false;
+
+                if (ssPhotos.length === 0) return alert("No photos have been uploaded to the gallery yet!");
+
+                ssIndex = 0;
+                ssIsPlaying = true;
+                ssPlayPause.innerHTML = '<i class="fas fa-pause"></i>';
+                
+                // Show modal instantly
+                ssModal.style.display = 'flex';
+                // Trigger first slide
+                showSlide(ssIndex);
+                startSlideshow();
+            } catch (e) {
+                console.error("Slideshow load error:", e);
+                playBtn.innerHTML = originalText;
+                playBtn.disabled = false;
+                alert("Failed to load photos.");
+            }
+        });
+    }
+
+    function showSlide(index) {
+        if (ssPhotos.length === 0) return;
+        if (index < 0) index = ssPhotos.length - 1;
+        if (index >= ssPhotos.length) index = 0;
+        ssIndex = index;
+
+        const photo = ssPhotos[ssIndex];
+        
+        // Fade out current
+        ssImg.style.opacity = 0;
+        ssCap.style.opacity = 0;
+
+        setTimeout(() => {
+            ssImg.src = photo.dataUrl;
+            
+            let captionText = '';
+            if (photo.day) captionText += `<strong style="color:#f59e0b;">${photo.day}</strong><br>`;
+            if (photo.caption) captionText += `${photo.caption}`;
+            if (photo.uploader) captionText += `<br><span style="font-size:0.8rem; color:#94a3b8; margin-top:4px; display:inline-block;">📷 ${photo.uploader}</span>`;
+            
+            ssCap.innerHTML = captionText || '<em>No caption</em>';
+            
+            // Fade in only once image has loaded
+            ssImg.onload = () => {
+                ssImg.style.opacity = 1;
+                ssCap.style.opacity = 1;
+            };
+            
+            // Failsafe: if image is from cache, onload might fire too fast or not at all sometimes
+            if (ssImg.complete) {
+                ssImg.style.opacity = 1;
+                ssCap.style.opacity = 1;
+            }
+        }, 800); // Wait 800ms for CSS fade out to finish before swapping
+    }
+
+    function startSlideshow() {
+        clearInterval(ssTimer);
+        if (ssIsPlaying) {
+            ssTimer = setInterval(() => {
+                showSlide(ssIndex + 1);
+            }, 5000); // Change slide every 5 seconds
+        }
+    }
+
+    if (ssClose) {
+        ssClose.addEventListener('click', () => {
+            clearInterval(ssTimer);
+            ssModal.style.display = 'none';
+            ssImg.src = ''; // clear to save memory
+        });
+
+        ssNext.addEventListener('click', () => {
+            showSlide(ssIndex + 1);
+            startSlideshow(); // Reset interval
+        });
+
+        ssPrev.addEventListener('click', () => {
+            showSlide(ssIndex - 1);
+            startSlideshow(); // Reset interval
+        });
+
+        ssPlayPause.addEventListener('click', () => {
+            ssIsPlaying = !ssIsPlaying;
+            if (ssIsPlaying) {
+                ssPlayPause.innerHTML = '<i class="fas fa-pause"></i>';
+                startSlideshow();
+            } else {
+                ssPlayPause.innerHTML = '<i class="fas fa-play"></i>';
+                clearInterval(ssTimer);
+            }
+        });
+    }
 });
