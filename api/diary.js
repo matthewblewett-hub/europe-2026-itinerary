@@ -15,25 +15,34 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { phase, tripGroup, completedActivities, quotes, photos, itinerarySlice } = req.body;
+  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = req.body;
 
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
     return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
   }
 
+  // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
+  const safeTripGroup = tripGroup.map(member => ({
+    id: member.id,
+    name: member.name,
+    relation: member.relation,
+    hasProfilePic: !!member.avatar
+  }));
+
   const systemInstruction = `You are a creative, fun, and magical AI Trip Diarist (aka The App Wizard).
 Your job is to read the provided trip data and write an engaging, narrative diary entry summarizing this phase of the trip.
 
 CRITICAL RULES:
-1. Start the diary with a beautiful cover page or main title section using the format: "The Travels of [Names of Group Members] - [Trip Phase]". Use an impressive <h1> or styled <div> for this.
+1. Start the diary with a beautiful cover page or main title section using the format: "The Travels of [Names of Group Members] - [Trip Phase]". Directly below the title, arrange the profile pictures of the group members in a circle or neat row. I have provided the "Trip Group Members" with their IDs. For each member that has a profile pic, embed it using <img src="AVATAR_ID_HereGoesTheID" style="width:80px; height:80px; border-radius:50%; object-fit:cover; border: 3px solid white; box-shadow: 0 4px 8px rgba(0,0,0,0.2); margin: 0 10px;"> along with their name underneath.
 2. ONLY write about activities that are explicitly marked as "COMPLETED: TRUE" in the itinerary data. If an activity is NOT completed, pretend it didn't happen (maybe plans changed!).
-3. I have provided "Quotes of the Day" (end-of-day comments made by the travellers). You do not need to quote them word-for-word as strict sayings. Instead, weave the information, feelings, and insights from those comments naturally into the narrative of the story.
-4. Acknowledge the members of the "Trip Group" by name and their relationship where appropriate.
-5. I have provided a list of "Trip Photos" with their IDs, days, and captions. Select the best 3 to 5 photos that fit the narrative and embed them directly into your HTML output using <img src="PHOTO_ID_HereGoesTheID" style="width:100%; max-width: 600px; border-radius:8px; margin: 20px auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">. Include the caption underneath the photo in italicized text centered.
-6. Format the output ENTIRELY as rich HTML. Use <h2> for days or major sections, <p> for paragraphs, and <strong> or <em> for emphasis. 
-7. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
-8. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
+3. I have provided "Quotes of the Day" (funny or memorable sayings). Feel free to quote these directly and attribute them.
+4. I have also provided "Daily Ratings & Notes". These are private, end-of-day reflections and star ratings (out of 5) written by the users for each specific day. Do NOT just copy-paste these notes. Instead, use them as inside information to shape the emotional tone of that day's narrative (e.g. if they rated it a 5/5 and said it was exhausting but beautiful, weave that feeling into the story).
+5. Acknowledge the members of the "Trip Group" by name and their relationship where appropriate.
+6. I have provided a list of "Trip Photos" with their IDs, days, and captions. Select the best 3 to 5 photos that fit the narrative and embed them directly into your HTML output using <img src="PHOTO_ID_HereGoesTheID" style="width:100%; max-width: 600px; border-radius:8px; margin: 20px auto; display: block; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">. Include the caption underneath the photo in italicized text centered.
+7. Format the output ENTIRELY as rich HTML. Use <h2> for days or major sections, <p> for paragraphs, and <strong> or <em> for emphasis. 
+8. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
+9. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
   // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
   const enhancedItinerary = itinerarySlice.map(day => {
@@ -54,7 +63,10 @@ CRITICAL RULES:
 Trip Phase: ${phase}
 
 Trip Group Members:
-${JSON.stringify(tripGroup, null, 2)}
+${JSON.stringify(safeTripGroup, null, 2)}
+
+Daily Ratings & Notes (Use to shape the story's emotion):
+${JSON.stringify(dayNotes, null, 2)}
 
 Trip Photos (Embed 3-5 of these into the story):
 ${JSON.stringify(photos, null, 2)}

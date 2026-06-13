@@ -253,6 +253,21 @@ document.addEventListener('DOMContentLoaded', () => {
                     }));
                 }
 
+                // Gather daily ratings/notes from localStorage
+                let dayNotes = {};
+                itinerarySlice.forEach(day => {
+                    try {
+                        const saved = JSON.parse(localStorage.getItem(`eurotrip-day-${day.id}`));
+                        if (saved && (saved.notes || saved.rating)) {
+                            dayNotes[day.id] = {
+                                title: day.title,
+                                rating: saved.rating || null,
+                                notes: saved.notes || ''
+                            };
+                        }
+                    } catch (e) {}
+                });
+
                 diaryStatus.textContent = 'The Wizard is writing your diary... ✍️';
                 
                 const res = await fetch('https://europe-2026-itinerary.vercel.app/api/diary', {
@@ -264,6 +279,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         completedActivities: window.completedActivities || {},
                         quotes,
                         photos,
+                        dayNotes,
                         itinerarySlice
                     })
                 });
@@ -285,6 +301,15 @@ document.addEventListener('DOMContentLoaded', () => {
                         // Just to be ultra safe, if it left any broken PHOTO_ID_ tags, we clean them up
                     });
                 }
+
+                // Swap AVATAR_ID_xxxx placeholders back into their base64 avatars
+                tripGroup.forEach(member => {
+                    if (member.avatar) {
+                        finalHtml = finalHtml.split(`AVATAR_ID_${member.id}`).join(member.avatar);
+                        finalHtml = finalHtml.split(`AVATAR_ID: ${member.id}`).join(member.avatar);
+                        finalHtml = finalHtml.split(`AVATAR_ID:${member.id}`).join(member.avatar);
+                    }
+                });
                 
                 diaryStatus.style.display = 'none';
                 generateBtn.disabled = false;
