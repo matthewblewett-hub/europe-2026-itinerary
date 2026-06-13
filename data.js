@@ -2223,7 +2223,7 @@ const itinerary = [
   "weatherLocation": "Grassington, Yorkshire Dales",
   "items": [
     {
-      "time": "09:00",
+      "time": "08:30",
       "title": "Kids Catch Up",
       "type": "activity",
       "icon": "fa-users",
