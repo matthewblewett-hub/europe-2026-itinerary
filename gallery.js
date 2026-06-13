@@ -223,6 +223,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const ssPlayPause = document.getElementById('slideshow-playpause');
     const ssNext = document.getElementById('slideshow-next');
     const ssPrev = document.getElementById('slideshow-prev');
+    const ssAudio = document.getElementById('slideshow-audio');
 
     let ssPhotos = [];
     let ssIndex = 0;
@@ -254,6 +255,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Show modal instantly
                 ssModal.style.display = 'flex';
+                
+                // Play music
+                if (ssAudio) {
+                    ssAudio.currentTime = 0;
+                    ssAudio.volume = 0.5; // Soft background volume
+                    ssAudio.play().catch(e => console.log("Audio autoplay blocked by browser:", e));
+                }
+
                 // Trigger first slide
                 showSlide(ssIndex);
                 startSlideshow();
@@ -316,6 +325,11 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(ssTimer);
             ssModal.style.display = 'none';
             ssImg.src = ''; // clear to save memory
+            
+            // Stop music
+            if (ssAudio) {
+                ssAudio.pause();
+            }
         });
 
         ssNext.addEventListener('click', () => {
@@ -332,9 +346,11 @@ document.addEventListener('DOMContentLoaded', () => {
             ssIsPlaying = !ssIsPlaying;
             if (ssIsPlaying) {
                 ssPlayPause.innerHTML = '<i class="fas fa-pause"></i>';
+                if (ssAudio) ssAudio.play().catch(e=>{});
                 startSlideshow();
             } else {
                 ssPlayPause.innerHTML = '<i class="fas fa-play"></i>';
+                if (ssAudio) ssAudio.pause();
                 clearInterval(ssTimer);
             }
         });
