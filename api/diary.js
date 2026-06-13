@@ -1,6 +1,4 @@
-export const config = {
-  maxDuration: 60, // 60 seconds
-};
+export const config = {};
 
 export default async function handler(req, res) {
   // Handle CORS
