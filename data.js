@@ -2316,53 +2316,92 @@ const itinerary = [
   "id": "day-p3-16",
   "phase": "phase3",
   "date": "Monday 15 June 2026",
-  "title": "Departure: Return Campervan",
-  "overview": "Early morning drive to Manchester to return the camper, Uber to the airport by 10:15, and fly home.",
+  "title": "Departure: Return Camper & London Afternoon",
+  "overview": "Return the camper in Manchester by 10:00 AM, catch a fast train to London, drop your bags at Euston to enjoy a final afternoon in central London, and head to Heathrow for your late-evening flight.",
   "bgImage": "",
   "coords": {
-    "lat": 53.48,
-    "lon": -2.24
+    "lat": 51.5074,
+    "lon": -0.1278
   },
-  "weatherLocation": "Manchester",
+  "weatherLocation": "London",
   "items": [
     {
-      "time": "06:15",
+      "time": "06:30",
       "title": "Early Wake-up & Pack Down",
       "type": "activity",
       "icon": "fa-box",
-      "description": "An early start to pack all bags, empty the chemical toilet, drain grey water, and ensure the camper is clean for the return."
+      "description": "Pack all bags, empty the chemical toilet, drain grey water, and ensure the camper is clean for return."
     },
     {
-      "time": "07:15",
+      "time": "07:30",
       "title": "Depart Wood Nook for Manchester",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Drive the final stretch back to Manchester. It's approximately a 1.5 to 2 hour drive down the M66/M60 depending on morning traffic.",
+      "description": "Drive back to Manchester. It's approximately a 1.5 to 2 hour drive down the M66/M60 depending on morning traffic.",
       "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Indie+Campers+Manchester"
     },
     {
-      "time": "09:15",
-      "title": "Arrive at Indie Campers Manchester",
+      "time": "09:30",
+      "title": "Arrive & Return Camper at Indie Campers",
       "type": "activity",
       "icon": "fa-truck-front",
-      "description": "Arrive at the depot with enough time to do the final handover and order your Uber.",
+      "description": "Arrive at the depot to complete the final handover before the 10:00 AM deadline.",
       "mapLink": "https://maps.google.com/?q=Indie+Campers+Manchester"
     },
     {
-      "time": "09:45",
-      "title": "Uber to Manchester Airport",
+      "time": "10:00",
+      "title": "Uber to Manchester Piccadilly Station",
       "type": "travel",
       "icon": "fa-taxi",
-      "description": "Grab an Uber from the depot to Manchester Airport to ensure you arrive by 10:15 AM.",
-      "mapLink": "https://maps.google.com/?q=Manchester+Airport"
+      "description": "Grab a quick Uber from the depot to Manchester Piccadilly Station to catch your train to London.",
+      "mapLink": "https://maps.google.com/?q=Manchester+Piccadilly+Station"
     },
     {
-      "time": "10:15",
-      "title": "Arrive at Manchester Airport",
+      "time": "10:35",
+      "title": "Train: Manchester Piccadilly → London Euston",
+      "type": "travel",
+      "icon": "fa-train",
+      "description": "Board the Avanti West Coast high-speed train to London Euston. Relax and enjoy the scenic 2-hour 10-minute journey.",
+      "mapLink": "https://maps.google.com/?q=London+Euston+Station"
+    },
+    {
+      "time": "12:45",
+      "title": "Arrive London Euston & Left Luggage",
+      "type": "activity",
+      "icon": "fa-suitcase",
+      "description": "Arrive at London Euston. Recommendation: Drop your heavy bags at the Euston Station Left Luggage facility (Excess Baggage Co) or pre-book a nearby Stasher/Bounce location. This allows you to explore central London completely hands-free without hauling bags to Heathrow first!",
+      "mapLink": "https://maps.google.com/?q=London+Euston+Station"
+    },
+    {
+      "time": "13:15",
+      "title": "Lunch & Afternoon in Central London",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "Take a short walk or quick tube ride down to Covent Garden or Soho. Enjoy a fantastic final British lunch, do some last-minute shopping, or visit the British Museum (free entry, near Euston).",
+      "mapLink": "https://maps.google.com/?q=Covent+Garden+London"
+    },
+    {
+      "time": "18:00",
+      "title": "Collect Bags & Travel to Heathrow",
+      "type": "travel",
+      "icon": "fa-subway",
+      "description": "Head back to Euston Station to collect your stored luggage. Take the London Underground (Northern/Victoria line to Warren Street/Tottenham Court Road, then change to the Elizabeth Line) straight to Heathrow Airport (~1 hour total).",
+      "mapLink": "https://maps.google.com/?q=Heathrow+Airport"
+    },
+    {
+      "time": "19:30",
+      "title": "Arrive at Heathrow Airport",
       "type": "travel",
       "icon": "fa-plane-departure",
-      "description": "Airport arrival target for your flight home. Safe travels! ✈️",
-      "mapLink": "https://maps.google.com/?q=Manchester+Airport"
+      "description": "Arrive at Heathrow Terminal 3 hours before your flight. Check in your bags, clear security, and grab a relaxed dinner or lounge drink before boarding.",
+      "mapLink": "https://maps.google.com/?q=Heathrow+Airport"
+    },
+    {
+      "time": "22:30",
+      "title": "Flight Departs Home ✈️",
+      "type": "flight",
+      "icon": "fa-plane",
+      "description": "Overnight flight home. Safe travels!"
     }
   ]
 }
