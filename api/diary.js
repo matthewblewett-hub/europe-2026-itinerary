@@ -15,22 +15,23 @@ export default async function handler(req, res) {
   if (req.method === 'OPTIONS') return res.status(200).end();
   if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = req.body;
+  try {
+    const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = req.body || {};
 
-  const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
-  if (!GEMINI_API_KEY) {
-    return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
-  }
+    const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+    if (!GEMINI_API_KEY) {
+      return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
+    }
 
-  // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
-  const safeTripGroup = tripGroup.map(member => ({
-    id: member.id,
-    name: member.name,
-    relation: member.relation,
-    hasProfilePic: !!member.avatar
-  }));
+    // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
+    const safeTripGroup = (tripGroup || []).map(member => ({
+      id: member.id,
+      name: member.name,
+      relation: member.relation,
+      hasProfilePic: !!member.avatar
+    }));
 
-  const systemInstruction = `You are a creative, fun, and magical AI Trip Diarist (aka The App Wizard).
+    const systemInstruction = `You are a creative, fun, and magical AI Trip Diarist (aka The App Wizard).
 Your job is to read the provided trip data and write an engaging, narrative diary entry summarizing this phase of the trip.
 
 CRITICAL RULES:
@@ -44,41 +45,40 @@ CRITICAL RULES:
 8. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
 9. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
-  // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
-  const enhancedItinerary = itinerarySlice.map(day => {
-    const dayCompleted = completedActivities[day.id] || {};
-    return {
-      day: day.title,
-      date: day.date,
-      activities: day.items.map((item, idx) => ({
-        time: item.time,
-        title: item.title,
-        description: item.description,
-        completed: !!dayCompleted[idx]
-      }))
-    };
-  });
+    // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
+    const enhancedItinerary = (itinerarySlice || []).map(day => {
+      const dayCompleted = (completedActivities || {})[day.id] || {};
+      return {
+        day: day.title,
+        date: day.date,
+        activities: (day.items || []).map((item, idx) => ({
+          time: item.time,
+          title: item.title,
+          description: item.description,
+          completed: !!dayCompleted[idx]
+        }))
+      };
+    });
 
-  const prompt = `
-Trip Phase: ${phase}
+    const prompt = `
+Trip Phase: ${phase || 'Unknown'}
 
 Trip Group Members:
 ${JSON.stringify(safeTripGroup, null, 2)}
 
 Daily Ratings & Notes (Use to shape the story's emotion):
-${JSON.stringify(dayNotes, null, 2)}
+${JSON.stringify(dayNotes || {}, null, 2)}
 
 Trip Photos (Embed 3-5 of these into the story):
-${JSON.stringify(photos, null, 2)}
+${JSON.stringify(photos || [], null, 2)}
 
 Quotes of the Day (Quote these directly):
-${JSON.stringify(quotes, null, 2)}
+${JSON.stringify(quotes || {}, null, 2)}
 
 Itinerary (ONLY WRITE ABOUT COMPLETED ACTIVITIES):
 ${JSON.stringify(enhancedItinerary, null, 2)}
 `;
 
-  try {
     const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
@@ -104,6 +104,6 @@ ${JSON.stringify(enhancedItinerary, null, 2)}
 
   } catch (error) {
     console.error("Diary generation failed:", error);
-    return res.status(500).json({ error: error.message });
+    return res.status(500).json({ error: error.message || 'Unknown Server Error' });
   }
 }
