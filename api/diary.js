@@ -95,11 +95,9 @@ ${JSON.stringify(enhancedItinerary, null, 2)}
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        system_instruction: { parts: { text: systemInstruction } },
         contents: [{ role: 'user', parts: [{ text: prompt }] }],
-        generationConfig: {
-          temperature: 0.7,
-        }
+        systemInstruction: { parts: [{ text: systemInstruction }] },
+        generationConfig: { temperature: 0.7 }
       })
     });
 
