@@ -1,5 +1,5 @@
 export const config = {
-  maxDuration: 300, // 5 minutes for Vercel Pro
+  maxDuration: 60, // 60 seconds
 };
 
 export default async function handler(req, res) {
