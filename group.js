@@ -310,20 +310,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const shareBtn = document.getElementById('share-diary-btn');
         if (shareBtn) {
-            shareBtn.addEventListener('click', async () => {
-                const textContent = diaryContent.innerText;
-                if (navigator.share) {
-                    try {
-                        await navigator.share({
-                            title: 'Our Europe Trip Diary',
-                            text: textContent
-                        });
-                    } catch (err) {
-                        console.log("Share cancelled or failed", err);
-                    }
-                } else {
-                    alert("Sharing is not supported on this device/browser.");
-                }
+            shareBtn.addEventListener('click', () => {
+                // Triggering print automatically brings up the "Save as PDF" option on both iOS and Android
+                window.print();
             });
         }
     }

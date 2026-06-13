@@ -1585,3 +1585,31 @@ body {
     font-size: 1.5rem;
     cursor: pointer;
 }
+
+/* ===== PRINT STYLES FOR DIARY PDF EXPORT ===== */
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    #diary-viewer-modal, #diary-viewer-modal * {
+        visibility: visible;
+    }
+    #diary-viewer-modal {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: auto;
+        background: white;
+        overflow: visible;
+    }
+    .split-header button {
+        display: none !important;
+    }
+    .split-header h2 {
+        color: black !important;
+    }
+    #diary-viewer-content {
+        color: black !important;
+    }
+}
