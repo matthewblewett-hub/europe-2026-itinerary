@@ -2210,98 +2210,108 @@ const itinerary = [
   ]
 },
   {
-    "id": "day-p3-15",
-    "phase": "phase3",
-    "date": "Sunday 14 June 2026",
-    "title": "Yorkshire Dales: Abbeys & Limestone Scars",
-    "overview": "A full day exploring the majestic ruins of Bolton Abbey and the dramatic limestone pavement of Malham Cove.",
-    "bgImage": "",
-    "coords": {"lat": 54.06, "lon": -2.15},
-    "weatherLocation": "Grassington, Yorkshire Dales",
-    "items": [
-      {
-        "time": "09:00",
-        "title": "Slow Morning at Wood Nook",
-        "type": "activity",
-        "icon": "fa-coffee",
-        "description": "Enjoy a relaxed breakfast at camp on your final full day in the UK. No packing up today!",
-        "mapLink": ""
-      },
-      {
-        "time": "10:00",
-        "title": "Drive to Bolton Abbey",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "A 20-minute drive south through Wharfedale to the Bolton Abbey Estate.",
-        "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Bolton+Abbey"
-      },
-      {
-        "time": "10:30",
-        "title": "Bolton Abbey Ruins & The Strid Walk",
-        "type": "activity",
-        "icon": "fa-monument",
-        "description": "Explore the majestic 12th-century ruins of the Augustinian Priory sitting by the River Wharfe. Walk the woodland trails up the river to 'The Strid' — a famously narrow and dangerous gorge where the entire river is forced through a gap just 1.5 metres wide.",
-        "mapLink": "https://maps.google.com/?q=Bolton+Abbey",
-        "ticketLink": "https://boltonabbey.com/visit-us/"
-      },
-      {
-        "time": "13:00",
-        "title": "Lunch at Cavendish Pavilion",
-        "type": "food",
-        "icon": "fa-utensils",
-        "description": "A charming riverside cafe on the Bolton Abbey estate, perfect for a light lunch and a pot of Yorkshire Tea.",
-        "mapLink": "https://maps.google.com/?q=Cavendish+Pavilion"
-      },
-      {
-        "time": "14:15",
-        "title": "Drive to Malham Cove",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive ~40 minutes west across the scenic Dales to the village of Malham.",
-        "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Malham+Cove"
-      },
-      {
-        "time": "15:00",
-        "title": "Hike Malham Cove 🥾",
-        "type": "activity",
-        "icon": "fa-hiking",
-        "description": "Hike up to the top of Malham Cove, a massive curving amphitheatre of white limestone rock rising 80 metres high. The top features a rare 'limestone pavement' offering incredible views across the Yorkshire Dales.",
-        "mapLink": "https://maps.google.com/?q=Malham+Cove"
-      },
-      {
-        "time": "17:00",
-        "title": "Drive to Grassington",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "Drive ~30 minutes back towards Grassington.",
-        "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Grassington"
-      },
-      {
-        "time": "17:30",
-        "title": "Early Farewell Dinner / Supplies",
-        "type": "food",
-        "icon": "fa-glass-cheers",
-        "description": "Grab a quick, early final trip pub dinner in Grassington, or pick up some local supplies from the village to take back to camp.",
-        "mapLink": "https://maps.google.com/?q=Grassington"
-      },
-      {
-        "time": "18:20",
-        "title": "Return to Camp",
-        "type": "travel",
-        "icon": "fa-route",
-        "description": "A short 10-minute drive back up to Wood Nook Caravan Park.",
-        "mapLink": "https://www.google.com/maps/dir/Grassington/Wood+Nook+Caravan+Park"
-      },
-      {
-        "time": "18:30",
-        "title": "Back at Wood Nook for the Evening ⛺",
-        "type": "activity",
-        "icon": "fa-campground",
-        "description": "Arrive back at camp by 6:30 PM. Relax, have a final BBQ if you didn't eat in the village, and start slowly organizing bags so you're ready for the early morning departure.",
-        "mapLink": "https://maps.google.com/?q=Wood+Nook+Caravan+Park"
-      }
-    ]
+  "id": "day-p3-15",
+  "phase": "phase3",
+  "date": "Sunday 14 June 2026",
+  "title": "Yorkshire Dales: Abbeys & Limestone Scars",
+  "overview": "A full day exploring the majestic ruins of Bolton Abbey and the dramatic limestone pavement of Malham Cove, starting with a kids catch up and church.",
+  "bgImage": "",
+  "coords": {
+    "lat": 54.06,
+    "lon": -2.15
   },
+  "weatherLocation": "Grassington, Yorkshire Dales",
+  "items": [
+    {
+      "time": "09:00",
+      "title": "Kids Catch Up",
+      "type": "activity",
+      "icon": "fa-users",
+      "description": "Catch up with the kids in the morning.",
+      "mapLink": ""
+    },
+    {
+      "time": "10:00",
+      "title": "Church Service",
+      "type": "activity",
+      "icon": "fa-church",
+      "description": "Attend morning church service from 10:00 AM to 11:30 AM.",
+      "mapLink": ""
+    },
+    {
+      "time": "11:30",
+      "title": "Drive to Bolton Abbey",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "A 20-minute drive south through Wharfedale to the Bolton Abbey Estate.",
+      "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Bolton+Abbey"
+    },
+    {
+      "time": "12:00",
+      "title": "Bolton Abbey Ruins & The Strid Walk",
+      "type": "activity",
+      "icon": "fa-monument",
+      "description": "Explore the majestic 12th-century ruins of the Augustinian Priory sitting by the River Wharfe. Walk the woodland trails up the river to 'The Strid' — a famously narrow and dangerous gorge where the entire river is forced through a gap just 1.5 metres wide.",
+      "mapLink": "https://maps.google.com/?q=Bolton+Abbey",
+      "ticketLink": "https://boltonabbey.com/visit-us/"
+    },
+    {
+      "time": "14:30",
+      "title": "Lunch at Cavendish Pavilion",
+      "type": "food",
+      "icon": "fa-utensils",
+      "description": "A charming riverside cafe on the Bolton Abbey estate, perfect for a light lunch and a pot of Yorkshire Tea.",
+      "mapLink": "https://maps.google.com/?q=Cavendish+Pavilion"
+    },
+    {
+      "time": "15:45",
+      "title": "Drive to Malham Cove",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive ~40 minutes west across the scenic Dales to the village of Malham.",
+      "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Malham+Cove"
+    },
+    {
+      "time": "16:30",
+      "title": "Hike Malham Cove 🥾",
+      "type": "activity",
+      "icon": "fa-hiking",
+      "description": "Hike up to the top of Malham Cove, a massive curving amphitheatre of white limestone rock rising 80 metres high. The top features a rare 'limestone pavement' offering incredible views across the Yorkshire Dales.",
+      "mapLink": "https://maps.google.com/?q=Malham+Cove"
+    },
+    {
+      "time": "18:30",
+      "title": "Drive to Grassington",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "Drive ~30 minutes back towards Grassington.",
+      "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Grassington"
+    },
+    {
+      "time": "19:00",
+      "title": "Early Farewell Dinner / Supplies",
+      "type": "food",
+      "icon": "fa-glass-cheers",
+      "description": "Grab a quick, early final trip pub dinner in Grassington, or pick up some local supplies from the village to take back to camp.",
+      "mapLink": "https://maps.google.com/?q=Grassington"
+    },
+    {
+      "time": "19:50",
+      "title": "Return to Camp",
+      "type": "travel",
+      "icon": "fa-route",
+      "description": "A short 10-minute drive back up to Wood Nook Caravan Park.",
+      "mapLink": "https://www.google.com/maps/dir/Grassington/Wood+Nook+Caravan+Park"
+    },
+    {
+      "time": "20:00",
+      "title": "Back at Wood Nook for the Evening ⛺",
+      "type": "activity",
+      "icon": "fa-campground",
+      "description": "Arrive back at camp by 8:00 PM. Relax, have a final BBQ if you didn't eat in the village, and start slowly organizing bags so you're ready for the early morning departure."
+    }
+  ]
+},
   {
   "id": "day-p3-16",
   "phase": "phase3",
