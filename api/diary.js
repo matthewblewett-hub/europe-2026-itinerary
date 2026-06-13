@@ -1,38 +1,25 @@
 export const config = {
-  runtime: 'edge',
+  maxDuration: 300, // 5 minutes for Vercel Pro
 };
 
-const corsHeaders = {
-  'Access-Control-Allow-Credentials': 'true',
-  'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
-  'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-};
+export default async function handler(req, res) {
+  // Handle CORS
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader(
+    'Access-Control-Allow-Headers',
+    'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
+  );
 
-export default async function handler(req) {
-  if (req.method === 'OPTIONS') {
-    return new Response(null, { status: 200, headers: corsHeaders });
-  }
+  if (req.method === 'OPTIONS') return res.status(200).end();
+  if (req.method !== 'POST') return res.status(405).json({ error: 'Method not allowed' });
 
-  if (req.method !== 'POST') {
-    return new Response(JSON.stringify({ error: 'Method not allowed' }), { 
-      status: 405, 
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-    });
-  }
-
-  let body;
-  try {
-    body = await req.json();
-  } catch (e) {
-    return new Response(JSON.stringify({ error: 'Invalid JSON body' }), { status: 400, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
-  }
-
-  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = body;
+  const { phase, tripGroup, completedActivities, quotes, photos, dayNotes, itinerarySlice } = req.body;
 
   const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
   if (!GEMINI_API_KEY) {
-    return new Response(JSON.stringify({ error: 'Missing GEMINI_API_KEY environment variable.' }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
   }
 
   // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
@@ -57,6 +44,7 @@ CRITICAL RULES:
 8. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
 9. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
+  // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
   const enhancedItinerary = itinerarySlice.map(day => {
     const dayCompleted = completedActivities[day.id] || {};
     return {
@@ -103,22 +91,19 @@ ${JSON.stringify(enhancedItinerary, null, 2)}
 
     if (!geminiRes.ok) {
       const errorText = await geminiRes.text();
-      return new Response(JSON.stringify({ error: `Gemini API Error: ${errorText}` }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+      return res.status(500).json({ error: \`Gemini API Error: \${errorText}\` });
     }
 
     const geminiData = await geminiRes.json();
     let diaryHtml = geminiData.candidates[0].content.parts[0].text;
     
     // Clean up markdown code blocks if the AI accidentally adds them despite instructions
-    diaryHtml = diaryHtml.replace(/^```html\n/, '').replace(/\n```$/, '');
+    diaryHtml = diaryHtml.replace(/^\`\`\`html\n/, '').replace(/\n\`\`\`$/, '');
 
-    return new Response(JSON.stringify({ html: diaryHtml }), { 
-      status: 200, 
-      headers: { ...corsHeaders, 'Content-Type': 'application/json' } 
-    });
+    return res.status(200).json({ html: diaryHtml });
 
   } catch (error) {
     console.error("Diary generation failed:", error);
-    return new Response(JSON.stringify({ error: error.message }), { status: 500, headers: { ...corsHeaders, 'Content-Type': 'application/json' } });
+    return res.status(500).json({ error: error.message });
   }
 }
