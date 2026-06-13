@@ -1,4 +1,6 @@
-export const config = {};
+export const config = {
+  maxDuration: 60, // Vercel timeout
+};
 
 export default async function handler(req, res) {
   // Handle CORS
@@ -21,7 +23,6 @@ export default async function handler(req, res) {
       return res.status(500).json({ error: 'Missing GEMINI_API_KEY environment variable.' });
     }
 
-    // Map tripGroup to remove the massive base64 avatars before sending to Gemini, sending only the IDs
     const safeTripGroup = (tripGroup || []).map(member => ({
       id: member.id,
       name: member.name,
@@ -43,7 +44,6 @@ CRITICAL RULES:
 8. DO NOT wrap your response in markdown code blocks (e.g. \`\`\`html). Return ONLY raw HTML.
 9. Make it sound like a beautiful, nostalgic memory scrapbook written by a close friend.`;
 
-    // Merge the "completedActivities" map directly into the itinerarySlice to make it easier for the AI
     const enhancedItinerary = (itinerarySlice || []).map(day => {
       const dayCompleted = (completedActivities || {})[day.id] || {};
       return {
@@ -58,8 +58,7 @@ CRITICAL RULES:
       };
     });
 
-    const prompt = `
-Trip Phase: ${phase || 'Unknown'}
+    const prompt = `Trip Phase: ${phase || 'Unknown'}
 
 Trip Group Members:
 ${JSON.stringify(safeTripGroup, null, 2)}
@@ -75,33 +74,34 @@ ${JSON.stringify(quotes || {}, null, 2)}
 
 Itinerary (ONLY WRITE ABOUT COMPLETED ACTIVITIES):
 ${JSON.stringify(enhancedItinerary, null, 2)}
-`;
 
-    const geminiRes = await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`, {
+Please generate the HTML diary!`;
+
+    const geminiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${GEMINI_API_KEY}`;
+    const geminiRes = await fetch(geminiUrl, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        contents: [{ role: 'user', parts: [{ text: prompt }] }],
+        contents: [{ parts: [{ text: prompt }] }],
         systemInstruction: { parts: [{ text: systemInstruction }] },
         generationConfig: { temperature: 0.7 }
       })
     });
 
     if (!geminiRes.ok) {
-      const errorText = await geminiRes.text();
-      return res.status(500).json({ error: \`Gemini API Error: \${errorText}\` });
+        throw new Error('Gemini API Error: ' + await geminiRes.text());
     }
 
     const geminiData = await geminiRes.json();
     let diaryHtml = geminiData.candidates[0].content.parts[0].text;
     
-    // Clean up markdown code blocks if the AI accidentally adds them despite instructions
-    diaryHtml = diaryHtml.replace(/^\`\`\`html\n/, '').replace(/\n\`\`\`$/, '');
+    if (diaryHtml.startsWith('\`\`\`html')) diaryHtml = diaryHtml.replace(/^\`\`\`html\n/, '');
+    if (diaryHtml.startsWith('\`\`\`')) diaryHtml = diaryHtml.replace(/^\`\`\`\n/, '');
+    diaryHtml = diaryHtml.replace(/\n\`\`\`$/, '');
 
     return res.status(200).json({ html: diaryHtml });
-
   } catch (error) {
     console.error("Diary generation failed:", error);
-    return res.status(500).json({ error: error.message || 'Unknown Server Error' });
+    return res.status(500).json({ error: error.message });
   }
 }
