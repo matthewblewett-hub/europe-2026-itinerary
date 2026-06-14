@@ -2214,7 +2214,7 @@ const itinerary = [
   "phase": "phase3",
   "date": "Sunday 14 June 2026",
   "title": "Yorkshire Dales: Abbeys & Limestone Scars",
-  "overview": "A full day exploring the majestic ruins of Bolton Abbey and the dramatic limestone pavement of Malham Cove, starting with a kids catch up and church.",
+  "overview": "A full day exploring the majestic ruins of Bolton Abbey and the dramatic limestone pavement of Malham Cove, starting with a kids catch up and ending with an evening church service.",
   "bgImage": "",
   "coords": {
     "lat": 54.06,
@@ -2223,7 +2223,7 @@ const itinerary = [
   "weatherLocation": "Grassington, Yorkshire Dales",
   "items": [
     {
-      "time": "08:30",
+      "time": "09:00",
       "title": "Kids Catch Up",
       "type": "activity",
       "icon": "fa-users",
@@ -2232,14 +2232,6 @@ const itinerary = [
     },
     {
       "time": "10:00",
-      "title": "Church Service",
-      "type": "activity",
-      "icon": "fa-church",
-      "description": "Attend morning church service from 10:00 AM to 11:30 AM.",
-      "mapLink": ""
-    },
-    {
-      "time": "11:30",
       "title": "Drive to Bolton Abbey",
       "type": "travel",
       "icon": "fa-route",
@@ -2247,7 +2239,7 @@ const itinerary = [
       "mapLink": "https://www.google.com/maps/dir/Wood+Nook+Caravan+Park/Bolton+Abbey"
     },
     {
-      "time": "12:00",
+      "time": "10:30",
       "title": "Bolton Abbey Ruins & The Strid Walk",
       "type": "activity",
       "icon": "fa-monument",
@@ -2256,15 +2248,15 @@ const itinerary = [
       "ticketLink": "https://boltonabbey.com/visit-us/"
     },
     {
-      "time": "14:30",
-      "title": "Lunch at Cavendish Pavilion",
+      "time": "13:30",
+      "title": "Lunch with Owen",
       "type": "food",
       "icon": "fa-utensils",
-      "description": "A charming riverside cafe on the Bolton Abbey estate, perfect for a light lunch and a pot of Yorkshire Tea.",
+      "description": "Lunch with Owen at the Cavendish Pavilion, a charming riverside cafe on the Bolton Abbey estate.",
       "mapLink": "https://maps.google.com/?q=Cavendish+Pavilion"
     },
     {
-      "time": "15:45",
+      "time": "14:45",
       "title": "Drive to Malham Cove",
       "type": "travel",
       "icon": "fa-route",
@@ -2272,7 +2264,7 @@ const itinerary = [
       "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Malham+Cove"
     },
     {
-      "time": "16:30",
+      "time": "15:30",
       "title": "Hike Malham Cove 🥾",
       "type": "activity",
       "icon": "fa-hiking",
@@ -2280,12 +2272,20 @@ const itinerary = [
       "mapLink": "https://maps.google.com/?q=Malham+Cove"
     },
     {
-      "time": "18:30",
-      "title": "Drive to Grassington",
+      "time": "16:45",
+      "title": "Drive to Church",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Drive ~30 minutes back towards Grassington.",
+      "description": "Drive back from Malham to attend the evening church service.",
       "mapLink": "https://www.google.com/maps/dir/Malham+Cove/Grassington"
+    },
+    {
+      "time": "17:30",
+      "title": "Church Service",
+      "type": "activity",
+      "icon": "fa-church",
+      "description": "Attend evening church service.",
+      "mapLink": ""
     },
     {
       "time": "19:00",
