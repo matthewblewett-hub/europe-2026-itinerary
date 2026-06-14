@@ -2249,19 +2249,19 @@ const itinerary = [
     },
     {
       "time": "13:30",
-      "title": "Lunch with Owen",
+      "title": "Lunch with Owain",
       "type": "food",
       "icon": "fa-utensils",
-      "description": "Lunch with Owen at the Cavendish Pavilion, a charming riverside cafe on the Bolton Abbey estate.",
-      "mapLink": "https://maps.google.com/?q=Cavendish+Pavilion"
+      "description": "Lunch with Owain at The Devonshire, a classic and cozy pub in Grassington.",
+      "mapLink": "https://maps.google.com/?q=The+Devonshire+Grassington"
     },
     {
       "time": "14:45",
       "title": "Drive to Malham Cove",
       "type": "travel",
       "icon": "fa-route",
-      "description": "Drive ~40 minutes west across the scenic Dales to the village of Malham.",
-      "mapLink": "https://www.google.com/maps/dir/Bolton+Abbey/Malham+Cove"
+      "description": "Drive ~30 minutes west from Grassington to the village of Malham.",
+      "mapLink": "https://www.google.com/maps/dir/Grassington/Malham+Cove"
     },
     {
       "time": "15:30",
